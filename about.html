@@ -8,143 +8,104 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
-        .nav-links { display: flex; gap: 35px; }
-        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-        .nav-links a:hover { opacity: 0.5; }
-
-        /* Banner uses a placeholder for portrait */
-        .page-banner { width: 100%; height: 65vh; position: relative; background: url('images/DAA-2024-RE-Overcome-06.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
-        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.5), rgba(250,250,250,1)); }
-        .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 100px; }
-        .banner-title h1 { font-size: 4.5rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
-
-        .about-container { max-width: 900px; margin: 0 auto; padding: 60px 20px 100px 20px; }
-        .section-block { margin-bottom: 80px; }
-        .section-header { text-align: center; margin-bottom: 40px; }
-        .section-header h2 { font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
-        .section-header .divider { width: 40px; height: 1px; background-color: #111; margin: 0 auto; }
         
-        .bio-text { font-size: 0.95rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 20px; }
-        .statement-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; text-align: center; color: #555; margin: 50px 0; padding: 0 40px; border-left: 2px solid #ccc; border-right: 2px solid #ccc; }
+        /* STANDART MÜZE MENÜSÜ */
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { height: 35px; width: auto; object-fit: contain; }
+        .nav-center { flex: 2; text-align: center; }
+        .nav-center a { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+        .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
+        .nav-right a:hover { opacity: 0.5; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
 
-        /* Media / Press Links */
-        .media-list { list-style: none; }
-        .media-list li { border-bottom: 1px solid #ddd; padding: 25px 0; transition: background 0.3s; }
-        .media-list li:hover { background-color: #f0f0f0; padding-left: 15px; }
-        .media-list a { display: block; }
-        .media-date { font-size: 0.75rem; color: #888; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px; }
-        .media-title { font-size: 1.4rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #111; }
-        .media-desc { font-size: 0.85rem; color: #666; margin-top: 10px; }
+        /* ABOUT LAYOUT (SAYFAYA ÖZEL) */
+        .about-container { max-width: 1200px; margin: 150px auto 100px auto; padding: 0 50px; display: flex; gap: 80px; align-items: flex-start; }
+        
+        .about-image { flex: 1; position: relative; }
+        .about-image img { width: 100%; height: auto; display: block; filter: grayscale(15%); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
 
-        .studio-box { background: #f4f4f4; padding: 50px; text-align: center; margin-bottom: 30px; border: 1px solid #eaeaea; }
-        .studio-box h3 { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
-        .studio-box p { font-size: 0.85rem; color: #666; margin-bottom: 25px; line-height: 1.8; }
-        .btn-dark { display: inline-block; padding: 12px 35px; background: #111; color: #fff; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; }
-        .btn-dark:hover { background: #444; }
+        .about-content { flex: 1.2; }
+        .about-content h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .about-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 30px; letter-spacing: 5px; } /* STANDART BOYUT */
+        
+        .bio-text { font-size: 1.1rem; color: #444; font-weight: 300; text-align: justify; margin-bottom: 50px; line-height: 2; }
+        .bio-text p { margin-bottom: 20px; }
 
-        .contact-section { text-align: center; margin-top: 80px; padding-top: 60px; border-top: 1px solid #eee; }
-        .social-links { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
-        .social-links a { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 5px; }
-        .social-links a:hover { border-bottom: 1px solid #111; }
+        .about-tags { display: flex; gap: 20px; border-top: 1px solid #e0e0e0; padding-top: 30px; }
+        .tag-btn { padding: 10px 25px; border: 1px solid #111; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; }
+        .tag-btn:hover { background: #111; color: #fff; }
 
-        @media (max-width: 900px) { .nav-links { display: none; } .banner-title h1 { font-size: 2.5rem; letter-spacing: 5px; } }
+        @media (max-width: 900px) {
+            .nav-left, .nav-right { display: none; }
+            .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
+            .about-container { flex-direction: column; margin-top: 100px; padding: 0 20px; gap: 40px; }
+            .about-content h1 { font-size: 3.2rem; }
+            .about-tags { flex-wrap: wrap; }
+        }
     </style>
 </head>
 <body>
 
-   <nav>
-        <div class="logo"><a href="index.html">DAA</a></div>
-        <div class="nav-links">
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="artworks.html">Artworks</a>
-            <a href="selections.html">Selections</a>
-            <a href="about.html">About</a>
+    <nav>
+        <div class="nav-left">
+            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
+        </div>
+        <div class="nav-right">
+            <div class="dropdown">
+                <a href="exhibitions.html">Exhibitions</a>
+                <div class="dropdown-content">
+                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
+                    <a href="exhibitions.html">All Exhibitions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="artworks.html">Artworks</a>
+                <div class="dropdown-content">
+                    <a href="artworks-series.html">Series</a>
+                    <a href="artworks-installations.html">Installations</a>
+                    <a href="artworks-newmedia.html">New Media</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="selections.html">Selections</a>
+            </div>
+            <div class="dropdown">
+                <a href="about.html" style="opacity: 0.5;">About</a>
+            </div>
         </div>
     </nav>
 
-    <header class="page-banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-title">
-            <h1>About The Artist</h1>
-        </div>
-    </header>
-
     <main class="about-container">
-        
-        <!-- BIOGRAPHY -->
-        <div class="section-block">
-            <p class="bio-text">
-                Born in Bursa in 1993, Dilara Altınkepçe Arslan began her undergraduate studies in 2011 at Mimar Sinan Fine Arts University (MSGSÜ), within the Department of Carpet, Kilim, and Traditional Fabric Patterns. Between 2015 and 2016, she broadened her artistic scope by training in Costume and Accessory Design at the prestigious Accademia di Belle Arti di Bologna, Italy.
-            </p>
-            <p class="bio-text">
-                In 2024, she published her master's thesis titled "Investigation of the Animal Image as a Symbol in Anatolian Kilims." Dilara synthesizes traditional weaving rituals with contemporary media, digital art, and VR installations, reflecting a profound dialogue between ancient human memory and modern technology.
-            </p>
+        <div class="about-image">
+            <img src="images/06-banner-daa-nevmekan-01.jpg" alt="Dilara Altınkepçe Arslan">
         </div>
 
-        <div class="statement-text">
-            "My work lies at the intersection of ancestral weaving rituals and the digital pixels of tomorrow. I aim to bridge the tangible threads of the past with the intangible virtual realities of the future."
-        </div>
+        <div class="about-content">
+            <h4>Conceptual Artist</h4>
+            <h1>About</h1>
 
-        <!-- PRESS & WRITINGS -->
-        <div class="section-block">
-            <div class="section-header">
-                <h2>Press & Writings</h2>
-                <div class="divider"></div>
-            </div>
-            <ul class="media-list">
-                <!-- Yasemin Green Makalesi -->
-                <li>
-                    <a href="#" target="_blank">
-                        <span class="media-date">Art Critique | Yasemin Green</span>
-                        <span class="media-title">An Exploration of Rituals and Digital Synthesis</span>
-                        <p class="media-desc">A deep dive into Dilara Altınkepçe Arslan's conceptual framework, exploring how traditional motifs are transformed into contemporary new media installations.</p>
-                    </a>
-                </li>
-                <!-- Nelumbo Blog -->
-                <li>
-                    <a href="https://nelumbostudios.com/blogs/news" target="_blank">
-                        <span class="media-date">Nelumbo Studios Blog</span>
-                        <span class="media-title">Artist's Notes: The Making of RE-</span>
-                        <p class="media-desc">Dilara's personal writings on the curation, production, and spatial design of her highly acclaimed solo exhibition, RE-.</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- NELUMBO & APPA -->
-        <div class="section-block">
-            <div class="section-header">
-                <h2>Initiatives</h2>
-                <div class="divider"></div>
-            </div>
-            
-            <div class="studio-box">
-                <h3>Nelumbo Studios</h3>
-                <p>An independent art studio and curatorial space co-founded by the artist, where personal artistic productions continue and various global exhibitions are organized.</p>
-                <a href="https://nelumbostudios.com" target="_blank" class="btn-dark">Visit Website</a>
+            <div class="bio-text">
+                <p>Dilara Altınkepçe Arslan is a contemporary conceptual artist whose practice bridges ancient textile traditions, Central Asian shamanic rituals, and spatial installations with modern new media technologies.</p>
+                <p>By weaving cotton threads onto raw fabrics and integrating virtual realities (VR), augmented reality (AR), and data-interactive sculptures, her work investigates collective unconsciousness, environmental collapse, and spiritual survival in the digital age.</p>
             </div>
 
-            <div class="studio-box">
-                <h3>APPA Tiny Things</h3>
-                <p>A sustainability movement launched in 2020, focusing on eco-conscious artistic production and upcycling in contemporary design.</p>
+            <div class="about-tags">
+                <a href="#press" class="tag-btn">Press</a>
+                <a href="#blog" class="tag-btn">Blog</a>
+                <a href="#contact" class="tag-btn">Contact</a>
             </div>
         </div>
-
-        <!-- CONTACT -->
-        <div class="contact-section">
-            <h2 style="font-size: 2rem; font-family: 'Cormorant Garamond'; letter-spacing: 5px; text-transform: uppercase;">Contact</h2>
-            <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">For exhibition inquiries, studio visits, and commissions.</p>
-            <div class="social-links">
-                <a href="mailto:contact@domain.com">Email</a>
-                <a href="https://instagram.com/dilaraaltinkepce" target="_blank">Instagram</a>
-                <a href="https://nelumbostudios.com" target="_blank">Nelumbo</a>
-            </div>
-        </div>
-
     </main>
 
 </body>
