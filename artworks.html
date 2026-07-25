@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Works & Collections | Dilara Altınkepçe Arslan</title>
+    <title>Artworks & Collections | Dilara Altınkepçe Arslan</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,31 +24,25 @@
         .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
         .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
 
-        /* COLLECTIONS CONTAINER - Genişletildi */
+        /* COLLECTIONS CONTAINER */
         .collections-wrapper { padding: 80px 5% 150px 5%; display: flex; flex-direction: column; gap: 160px; max-width: 1400px; margin: 0 auto; }
         
         .collection-item { display: flex; align-items: center; gap: 80px; }
         .collection-item:nth-child(even) { flex-direction: row-reverse; }
         
-        /* YENİ KARE VE GENİŞ KOLAJ EFEKTİ */
+        /* KARE VE GENİŞ KOLAJ EFEKTİ */
         .collection-collage { flex: 1.4; position: relative; height: 50vh; min-height: 450px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
         
-        /* Merkezdeki Kare Görsel */
         .collage-main { width: 55%; aspect-ratio: 1/1; object-fit: cover; position: relative; z-index: 3; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: grayscale(10%); }
-        
-        /* Alttaki Kare Görseller */
         .collage-sub { position: absolute; width: 45%; aspect-ratio: 1/1; object-fit: cover; z-index: 2; box-shadow: 0 15px 30px rgba(0,0,0,0.15); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: grayscale(30%); }
         
-        /* Başlangıçta daha yayık durmaları için açılar büyütüldü */
         .collage-left { top: 12%; left: 2%; transform: rotate(-15deg); }
         .collage-right { bottom: 12%; right: 2%; transform: rotate(15deg); z-index: 1; }
         
-        /* Hover (Üzerine gelince) - Yelpaze çok daha geniş açılır */
         .collection-item:hover .collage-main { transform: scale(1.05) translateY(-15px); filter: grayscale(0%); z-index: 4; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
         .collection-item:hover .collage-left { transform: rotate(-25deg) translate(-80px, -20px); filter: grayscale(5%); z-index: 3; }
         .collection-item:hover .collage-right { transform: rotate(25deg) translate(80px, 20px); filter: grayscale(5%); z-index: 3; }
 
-        /* METİN ALANI */
         .collection-text { flex: 1; padding: 20px; }
         .collection-text h4 { font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
         .collection-text h2 { font-size: 3.8rem; margin-bottom: 20px; line-height: 1.1; }
@@ -58,7 +52,7 @@
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
-            .-links { display: none; } 
+            .nav-links { display: none; } 
             .collection-item { flex-direction: column !important; text-align: center; gap: 60px; } 
             .collection-collage { height: 40vh; width: 100%; min-height: 350px; }
             .collection-text p { border-left: none; padding-left: 0; }
@@ -67,11 +61,11 @@
 </head>
 <body>
 
-   <nav>
+    <nav>
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
-            <a href="artworks.html">Artworks</a>
+            <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
             <a href="selections.html">Selections</a>
             <a href="about.html">About</a>
         </div>
@@ -80,7 +74,8 @@
     <header class="page-banner">
         <div class="banner-overlay"></div>
         <div class="banner-title">
-            <h1>Works & Collections</h1>
+            <!-- BAŞLIK DÜZELTİLDİ -->
+            <h1>Artworks & Collections</h1>
         </div>
     </header>
 
@@ -97,7 +92,8 @@
                 <h4>Narrative Driven Archives</h4>
                 <h2>Series</h2>
                 <p>An overarching exploration of interconnected stories. Discover the Ritual Series, the Köy (Village) Series, Intestine War, Portraits, and the Griffin narratives.</p>
-                <a href="works-series.html" class="btn-outline">Open Collection</a> 
+                <!-- LİNK DÜZELTİLDİ -->
+                <a href="artworks-series.html" class="btn-outline">Open Collection</a> 
             </div>
         </section>
 
@@ -112,7 +108,8 @@
                 <h4>Spatial Art Archives</h4>
                 <h2>Installation</h2>
                 <p>Site-specific and spatial arrangements that challenge perception. Featuring Budun, Ossified Uprisings, Alarm, Empathy, and Ascension.</p>
-                <a href="works-installations.html" class="btn-outline">Open Collection</a>
+                <!-- LİNK DÜZELTİLDİ -->
+                <a href="artworks-installations.html" class="btn-outline">Open Collection</a>
             </div>
         </section>
 
@@ -127,7 +124,8 @@
                 <h4>Digital & Interactive Archives</h4>
                 <h2>Mix Media</h2>
                 <p>Synthesizing traditional roots with virtual realities. Dive into Anthrenus Verbasci, ID Vesika, Alarm, and the Pazyryk Maidan VR experience.</p>
-                <a href="works-mixmedia.html" class="btn-outline">Open Collection</a>
+                <!-- LİNK DÜZELTİLDİ -->
+                <a href="artworks-mixmedia.html" class="btn-outline">Open Collection</a>
             </div>
         </section>
 
@@ -142,7 +140,8 @@
                 <h4>Traditional Roots Archives</h4>
                 <h2>Fiber Art</h2>
                 <p>A return to the essence of weaving and knotting. Highlighted by the 'Portal' and deep explorations into ancestral Anatolian textile methodologies.</p>
-                <a href="works-fiber.html" class="btn-outline">Open Collection</a>
+                <!-- LİNK DÜZELTİLDİ -->
+                <a href="artworks-fiber.html" class="btn-outline">Open Collection</a>
             </div>
         </section>
 
