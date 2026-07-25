@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
 
         /* HEADER NAV */
@@ -18,33 +18,47 @@
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* HERO SLIDER BANNER */
-        .hero { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+        /* FULLSCREEN SLIDER BANNER */
+        .hero-slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease-in-out; background-size: cover; background-position: center; }
         .slide.active { opacity: 1; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); }
+        .slider-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); }
 
-        .hero-content { position: absolute; bottom: 80px; left: 50px; color: #fff; z-index: 10; max-width: 800px; }
-        .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: 2px; }
+        .slider-content { position: absolute; bottom: 100px; left: 60px; color: #fff; z-index: 10; max-width: 800px; }
+        .slider-content h1 { font-size: 4.5rem; line-height: 1.1; letter-spacing: 3px; margin-bottom: 25px; }
         
-        .btn-light { display: inline-block; padding: 14px 35px; border: 1px solid #fff; color: #fff; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-light { display: inline-block; padding: 14px 40px; border: 1px solid #fff; color: #fff; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-light:hover { background: #fff; color: #111; }
 
-        /* 3'LÜ KART IZGARASI */
-        .featured-grid { max-width: 1400px; margin: 100px auto; padding: 0 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        
-        .grid-card { position: relative; height: 500px; overflow: hidden; background: #eee; display: block; }
-        .grid-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.8s ease, filter 0.8s ease; }
-        .grid-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
-        
-        .card-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; }
-        .card-info h4 { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #ccc; margin-bottom: 10px; }
-        .card-info h3 { font-size: 2.5rem; line-height: 1.1; }
+        /* AŞAĞIYA DOĞRU AKAN DEVASE DOKUSAL BÖLÜMLER (SECTION FLOW) */
+        .main-sections { max-width: 1400px; margin: 0 auto; padding: 120px 50px; display: flex; flex-direction: column; gap: 180px; }
+
+        .feature-block { display: flex; align-items: center; gap: 80px; }
+        .feature-block:nth-child(even) { flex-direction: row-reverse; }
+
+        .feature-image { flex: 1.4; height: 75vh; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+        .feature-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease; }
+        .feature-block:hover .feature-image img { transform: scale(1.04); filter: grayscale(0%); }
+
+        .feature-text { flex: 1; padding: 20px; }
+        .feature-text h4 { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 20px; }
+        .feature-text h2 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; color: #111; }
+        .feature-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 35px; border-left: 1px solid #ccc; padding-left: 20px; }
+
+        .btn-outline { display: inline-block; padding: 14px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-outline:hover { background: #111; color: #fff; }
+
+        /* FOOTER */
+        footer { padding: 80px 50px; text-align: center; border-top: 1px solid #eee; margin-top: 100px; font-size: 0.75rem; letter-spacing: 2px; color: #888; text-transform: uppercase; }
 
         @media (max-width: 900px) {
             .nav-links { display: none; }
-            .hero-content h1 { font-size: 2.8rem; }
-            .featured-grid { padding: 0 20px; }
+            .slider-content h1 { font-size: 3rem; }
+            .main-sections { padding: 60px 20px; gap: 100px; }
+            .feature-block { flex-direction: column !important; gap: 40px; }
+            .feature-image { height: 50vh; width: 100%; }
+            .feature-text h2 { font-size: 2.8rem; }
+            .feature-text p { border-left: none; padding-left: 0; }
         }
     </style>
 </head>
@@ -60,49 +74,82 @@
         </div>
     </nav>
 
-    <!-- HERO BANNER -->
-    <header class="hero">
+    <!-- FULLSCREEN HERO SLIDER BANNER -->
+    <header class="hero-slider">
         <div class="slide active" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
         <div class="slide" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');"></div>
         <div class="slide" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
-        <div class="hero-overlay"></div>
+        <div class="slider-overlay"></div>
 
-        <div class="hero-content">
+        <div class="slider-content">
             <h1>Dilara Altınkepçe Arslan</h1>
             <a href="artworks.html" class="btn-light">Explore Artworks</a>
         </div>
     </header>
 
-    <!-- FEATURED CARDS -->
-    <section class="featured-grid">
-        
-        <a href="exhibitions.html" class="grid-card">
-            <img src="images/01-banner-daa-re-overcome-01.jpg" alt="Exhibitions">
-            <div class="card-info">
-                <h4>Solo & Group Exhibitions</h4>
-                <h3>Exhibitions</h3>
-            </div>
-        </a>
+    <!-- AŞAĞIYA DOĞRU AKAN BÜYÜK KAPAKLAR / SECTIONS -->
+    <main class="main-sections">
 
-        <a href="artworks.html" class="grid-card">
-            <img src="images/02-banner-daa-grand-ritual-01.jpg" alt="Artworks & Collections">
-            <div class="card-info">
+        <!-- 1. BÖLÜM: EXHIBITIONS -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/01-banner-daa-re-overcome-01.jpg" alt="Exhibitions">
+            </div>
+            <div class="feature-text">
+                <h4>Spatial Curation & Solo Shows</h4>
+                <h2>Exhibitions</h2>
+                <p>An immersive record of solo exhibitions, biennials, and curated group shows across international and national contemporary art platforms.</p>
+                <a href="exhibitions.html" class="btn-outline">View Exhibitions</a>
+            </div>
+        </section>
+
+        <!-- 2. BÖLÜM: ARTWORKS & COLLECTIONS -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/02-banner-daa-grand-ritual-01.jpg" alt="Artworks & Collections">
+            </div>
+            <div class="feature-text">
                 <h4>Series • Installations • New Media</h4>
-                <h3>Artworks</h3>
+                <h2>Artworks & Collections</h2>
+                <p>Exploring conceptual fiber art, ritualistic thread weaving, spatial installations, augmented reality (AR), and data-driven new media sculptures.</p>
+                <a href="artworks.html" class="btn-outline">Explore Collections</a>
             </div>
-        </a>
+        </section>
 
-        <a href="selections.html" class="grid-card">
-            <img src="images/06-banner-daa-nevmekan-01.jpg" alt="Selections">
-            <div class="card-info">
-                <h4>Awarded & Selected Works</h4>
-                <h3>Selections</h3>
+        <!-- 3. BÖLÜM: SELECTIONS -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/06-banner-daa-nevmekan-01.jpg" alt="Selections">
             </div>
-        </a>
+            <div class="feature-text">
+                <h4>Awarded & Jury Selected Works</h4>
+                <h2>Selections</h2>
+                <p>A curated archive of works distinguished by prestige selection committees, biennials, and contemporary art awards.</p>
+                <a href="selections.html" class="btn-outline">Discover Selections</a>
+            </div>
+        </section>
 
-    </section>
+        <!-- 4. BÖLÜM: ABOUT -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/06-banner-daa-nevmekan-01.jpg" alt="About Dilara Altınkepçe Arslan">
+            </div>
+            <div class="feature-text">
+                <h4>Artist Statement & Practice</h4>
+                <h2>About</h2>
+                <p>Bridging ancient textile traditions, Central Asian shamanic memory, and spatial arrangements with modern virtual and interactive technologies.</p>
+                <a href="about.html" class="btn-outline">Read Biography</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© Dilara Altınkepçe Arslan. All Rights Reserved.</p>
+    </footer>
 
     <script>
+        /* HERO BANNER SLIDER SCRIPT */
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
 
