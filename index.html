@@ -28,9 +28,9 @@
         .hero-title { font-size: 4.5rem; letter-spacing: 10px; text-transform: uppercase; margin-bottom: 10px; }
         .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 4px; color: #444; font-style: italic; }
 
-        /* GATEWAY BANNERS */
+        /* GATEWAY BANNERS (Atlamayı engellemek için background-attachment: fixed; kaldırıldı) */
         .gateway-section { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #ebebeb; }
-        .gateway-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; background-attachment: fixed; transition: transform 2s ease; z-index: 1; filter: grayscale(15%); }
+        .gateway-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease; z-index: 1; filter: grayscale(15%); }
         .gateway-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: 2; transition: background 0.8s ease; }
         .gateway-section:hover .gateway-bg { transform: scale(1.03); filter: grayscale(0%); }
         .gateway-section:hover .gateway-overlay { background: rgba(255, 255, 255, 0.85); }
@@ -57,7 +57,7 @@
     </nav>
 
     <header class="slider-container">
-        <!-- En üst slider için 1'den 4'e kadar olan seri -->
+        <!-- En üst slider -->
         <div class="slide active" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');"></div>
         <div class="slide" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
         <div class="slide" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
@@ -80,7 +80,7 @@
         </div>
     </section>
 
-    <!-- 2. Works Banner (Nevmekan) -->
+    <!-- 2. Works Banner -->
     <section class="gateway-section">
         <div class="gateway-bg" style="background-image: url('images/06-banner-daa-nevmekan-01.jpg');"></div>
         <div class="gateway-overlay"></div>
@@ -104,7 +104,7 @@
         </div>
     </section>
 
-    <!-- 4. About Banner (Grand Ritual) -->
+    <!-- 4. About Banner -->
     <section class="gateway-section">
         <div class="gateway-bg" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
         <div class="gateway-overlay"></div>
