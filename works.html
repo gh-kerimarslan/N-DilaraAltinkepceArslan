@@ -18,22 +18,32 @@
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* HERO BANNER - Yeni banner bağlandı */
-        .page-banner { width: 100%; height: 60vh; position: relative; background: url('images/02-banner-daa-grand-ritual-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
-        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.4), rgba(250,250,250,1)); }
+        /* HERO BANNER - Nevmekan Eklendi */
+        .page-banner { width: 100%; height: 60vh; position: relative; background: url('images/06-banner-daa-nevmekan-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,1)); }
         .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
         .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
 
         /* COLLECTIONS CONTAINER */
-        .collections-wrapper { padding: 80px 5% 150px 5%; display: flex; flex-direction: column; gap: 120px; max-width: 1200px; margin: 0 auto; }
+        .collections-wrapper { padding: 80px 5% 150px 5%; display: flex; flex-direction: column; gap: 140px; max-width: 1200px; margin: 0 auto; }
         
         .collection-item { display: flex; align-items: center; gap: 60px; }
         .collection-item:nth-child(even) { flex-direction: row-reverse; }
         
-        .collection-image { flex: 1.2; overflow: hidden; }
-        .collection-image img { width: 100%; height: 65vh; object-fit: cover; filter: grayscale(15%); transition: transform 1s ease; display: block; aspect-ratio: 4/5; }
-        .collection-item:hover .collection-image img { transform: scale(1.03); filter: grayscale(0%); }
+        /* YENİ KOLEKSİYON KOLAJ EFEKTİ (Stacked Cards) */
+        .collection-collage { flex: 1.2; position: relative; height: 60vh; min-height: 400px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
         
+        .collage-main { width: 65%; height: 85%; object-fit: cover; position: relative; z-index: 3; box-shadow: 0 15px 35px rgba(0,0,0,0.15); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease; filter: grayscale(15%); aspect-ratio: 4/5; }
+        .collage-sub { position: absolute; width: 45%; height: 65%; object-fit: cover; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease; filter: grayscale(30%); }
+        
+        .collage-left { top: 5%; left: 5%; transform: rotate(-6deg); }
+        .collage-right { bottom: 5%; right: 5%; transform: rotate(8deg); z-index: 1; }
+        
+        /* Hover Effects - Fotoğraflar yelpaze gibi açılır */
+        .collection-item:hover .collage-main { transform: scale(1.05) translateY(-10px); filter: grayscale(0%); z-index: 4; }
+        .collection-item:hover .collage-left { transform: rotate(-12deg) translate(-25px, -15px); filter: grayscale(10%); }
+        .collection-item:hover .collage-right { transform: rotate(15deg) translate(25px, 15px); filter: grayscale(10%); }
+
         .collection-text { flex: 1; padding: 20px; }
         .collection-text h4 { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
         .collection-text h2 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
@@ -44,9 +54,9 @@
 
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
-            .collection-item { flex-direction: column !important; text-align: center; } 
+            .collection-item { flex-direction: column !important; text-align: center; gap: 40px; } 
+            .collection-collage { height: 45vh; width: 100%; }
             .collection-text p { border-left: none; padding-left: 0; }
-            .collection-image img { height: 45vh; }
         }
     </style>
 </head>
@@ -65,61 +75,69 @@
     <header class="page-banner">
         <div class="banner-overlay"></div>
         <div class="banner-title">
-            <h1>Works</h1>
+            <h1>Works & Collections</h1>
         </div>
     </header>
 
     <main class="collections-wrapper">
         
-        <!-- 1. SERIES -->
+        <!-- 1. SERIES FOLDER -->
         <section class="collection-item">
-            <div class="collection-image">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="Shaman Village - Series">
+            <div class="collection-collage">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" class="collage-main" alt="Series Main">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-02.webp" class="collage-sub collage-left" alt="Series File 1">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-03.webp" class="collage-sub collage-right" alt="Series File 2">
             </div>
             <div class="collection-text">
-                <h4>Narrative Driven</h4>
+                <h4>Narrative Driven Archives</h4>
                 <h2>Series</h2>
                 <p>An overarching exploration of interconnected stories. Discover the Ritual Series, the Köy (Village) Series, Intestine War, Portraits, and the Griffin narratives.</p>
-                <a href="works-series.html" class="btn-outline">Explore Series</a> 
+                <a href="works-series.html" class="btn-outline">Open Collection</a> 
             </div>
         </section>
 
-        <!-- 2. INSTALLATIONS -->
+        <!-- 2. INSTALLATIONS FOLDER -->
         <section class="collection-item">
-            <div class="collection-image">
-                <img src="images/DAA-2024-RE-Overcome-05.jpg" alt="Overcome Installation">
+            <div class="collection-collage">
+                <img src="images/DAA-2024-RE-Overcome-01.jpg" class="collage-main" alt="Installation Main">
+                <img src="images/daa-the-Exit-emphaty-02.jpg" class="collage-sub collage-left" alt="Installation File 1">
+                <img src="images/DAA-2024-RE-Overcome-05.jpg" class="collage-sub collage-right" alt="Installation File 2">
             </div>
             <div class="collection-text">
-                <h4>Spatial Art</h4>
+                <h4>Spatial Art Archives</h4>
                 <h2>Installation</h2>
                 <p>Site-specific and spatial arrangements that challenge perception. Featuring Budun, Ossified Uprisings, Alarm, Empathy, and Ascension.</p>
-                <a href="works-installations.html" class="btn-outline">Explore Installations</a>
+                <a href="works-installations.html" class="btn-outline">Open Collection</a>
             </div>
         </section>
 
-        <!-- 3. MIX MEDIA / NEW MEDIA -->
+        <!-- 3. MIX MEDIA FOLDER -->
         <section class="collection-item">
-            <div class="collection-image">
-                <img src="images/DAA-2023-Verbasci-01.jpg" alt="Anthrenus Verbasci">
+            <div class="collection-collage">
+                <img src="images/daa-ortak-mekik-verbasci-01.jpg" class="collage-main" alt="Mix Media Main">
+                <img src="images/daa-ortak-mekik-verbasci-02.jpg" class="collage-sub collage-left" alt="Mix Media File 1">
+                <img src="images/DAA-2023-Verbasci-01.jpg" class="collage-sub collage-right" alt="Mix Media File 2">
             </div>
             <div class="collection-text">
-                <h4>Digital & Interactive</h4>
+                <h4>Digital & Interactive Archives</h4>
                 <h2>Mix Media</h2>
                 <p>Synthesizing traditional roots with virtual realities. Dive into Anthrenus Verbasci, ID Vesika, Alarm, and the Pazyryk Maidan VR experience.</p>
-                <a href="works-mixmedia.html" class="btn-outline">Explore Mix Media</a>
+                <a href="works-mixmedia.html" class="btn-outline">Open Collection</a>
             </div>
         </section>
 
-        <!-- 4. FIBER ART -->
+        <!-- 4. FIBER ART FOLDER -->
         <section class="collection-item">
-            <div class="collection-image">
-                <img src="images/DAA-2024-Portal-Beyond-01.jpg" alt="Portal Fiber Art">
+            <div class="collection-collage">
+                <img src="images/01-banner-daa-re-overcome-01.jpg" class="collage-main" alt="Fiber Art Main">
+                <img src="images/02-banner-daa-grand-ritual-01.jpg" class="collage-sub collage-left" alt="Fiber Art File 1">
+                <img src="images/04-banner-daa-ortakmekik-verbasci-01.jpg" class="collage-sub collage-right" alt="Fiber Art File 2">
             </div>
             <div class="collection-text">
-                <h4>Traditional Roots</h4>
+                <h4>Traditional Roots Archives</h4>
                 <h2>Fiber Art</h2>
                 <p>A return to the essence of weaving and knotting. Highlighted by the 'Portal' and deep explorations into ancestral Anatolian textile methodologies.</p>
-                <a href="works-fiber.html" class="btn-outline">Explore Fiber Art</a>
+                <a href="works-fiber.html" class="btn-outline">Open Collection</a>
             </div>
         </section>
 
