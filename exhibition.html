@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,155 +10,234 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 
     <style>
-        /* TEMEL AYARLAR */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
+        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
 
-        /* HEADER (MENÜ) */
         nav {
             position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0));
         }
-        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; color: #111; }
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
         .nav-links { display: flex; gap: 35px; }
-        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #111; font-weight: 500; }
+        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* SAYFA BANNER'I (RE- SERGİSİ KAPAĞI) */
-        .page-banner {
-            width: 100%; height: 75vh; position: relative;
-            background: url('images/DAA-2024-RE-Overcome-01.jpg') center/cover no-repeat;
-            background-attachment: fixed; display: flex; align-items: center; justify-content: center;
+        /* Highlight Section: RE- */
+        .highlight-exhibition {
+            width: 100%; min-height: 80vh; padding: 150px 10% 50px 10%; display: flex; align-items: center; gap: 50px;
+            border-bottom: 1px solid #ebebeb;
         }
-        .banner-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,0.95));
-        }
-        .banner-title { position: relative; z-index: 2; text-align: center; }
-        .banner-title h1 { font-size: 4.5rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
-        .banner-title p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 4px; color: #555; font-style: italic; }
-
-        /* LİSTE / İÇERİK ALANI */
-        .exhibitions-container {
-            max-width: 900px; margin: 0 auto; padding: 100px 20px; text-align: center;
-        }
+        .highlight-image { flex: 1.2; }
+        .highlight-image img { width: 100%; max-height: 60vh; object-fit: cover; }
+        .highlight-text { flex: 1; }
+        .highlight-text h4 { font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .highlight-text h2 { font-size: 4rem; margin-bottom: 20px; }
+        .highlight-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 30px; }
         
-        .section-header { margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
-        .section-header .divider { width: 50px; height: 1px; background-color: #111; margin: 0 auto; }
+        /* Complete List Section */
+        .list-container { max-width: 1000px; margin: 0 auto; padding: 100px 20px; }
+        .list-header { text-align: center; margin-bottom: 60px; }
+        .list-header h3 { font-size: 2.5rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
+        .divider { width: 40px; height: 1px; background-color: #111; margin: 0 auto; }
 
-        /* Sergi Satırları */
-        .exhibition-item {
-            margin-bottom: 40px; display: flex; flex-direction: column; align-items: center;
+        .exhibition-row {
+            display: flex; justify-content: space-between; align-items: baseline;
+            padding: 25px 0; border-bottom: 1px solid #ddd; transition: background 0.3s;
         }
-        .exh-year { font-size: 1rem; color: #888; font-weight: 300; letter-spacing: 2px; margin-bottom: 5px; }
-        .exh-title { font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #111; margin-bottom: 5px; }
-        .exh-venue { font-size: 0.85rem; letter-spacing: 1px; color: #555; text-transform: uppercase; }
+        .exhibition-row:hover { background-color: #f0f0f0; padding-left: 10px; padding-right: 10px; }
+        
+        .exh-year { flex: 0.15; font-size: 1rem; color: #888; font-weight: 300; }
+        .exh-title { flex: 0.6; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: #111; }
+        .exh-location { flex: 0.25; text-align: right; font-size: 0.75rem; letter-spacing: 1px; color: #666; text-transform: uppercase; }
 
-        .spacing-large { margin-top: 120px; }
-
-        /* MOBİL UYUM */
         @media (max-width: 900px) {
             .nav-links { display: none; }
-            .banner-title h1 { font-size: 2.8rem; letter-spacing: 5px; }
-            .exh-title { font-size: 1.3rem; }
+            .highlight-exhibition { flex-direction: column; text-align: center; padding-top: 120px; }
+            .exhibition-row { flex-direction: column; gap: 5px; text-align: center; align-items: center; }
+            .exh-location { text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <nav>
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
-            <a href="exhibitions.html" style="opacity: 0.5;">Sergiler</a>
-            <a href="series.html">İşler</a>
-            <a href="new-media.html">New Media</a>
-            <a href="index.html#fairs">Fuar & Seçkiler</a>
-            <a href="about.html">Hakkında</a>
+            <a href="exhibitions.html" style="opacity: 0.5;">Exhibitions</a>
+            <a href="works.html">Works</a>
+            <a href="selections.html">Selections</a>
+            <a href="about.html">About</a>
         </div>
     </nav>
 
-    <!-- SAYFA BANNER -->
-    <header class="page-banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-title">
-            <h1>Exhibitions</h1>
-            <p>Solo & Group Shows</p>
+    <!-- HIGHLIGHT: RE- SOLO EXHIBITION -->
+    <section class="highlight-exhibition">
+        <div class="highlight-image">
+            <img src="images/DAA-2024-RE-Overcome-01.jpg" alt="RE- Solo Exhibition">
         </div>
-    </header>
+        <div class="highlight-text">
+            <h4>Solo Exhibition Highlight</h4>
+            <h2>"RE-"</h2>
+            <p>Nelumbo Studios, Istanbul | 2024 <br><br> An exploration of ossified uprisings, silenced hopes, and interconnected narratives through contemporary fiber art and installation.</p>
+        </div>
+    </section>
 
-    <!-- SERGİLER LİSTESİ -->
-    <main class="exhibitions-container">
+    <!-- COMPREHENSIVE EXHIBITION LIST -->
+    <main class="list-container">
+        <div class="list-header">
+            <h3>Selected Exhibitions</h3>
+            <div class="divider"></div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"The Probability of Exceptions" Group Exhibition</div>
+            <div class="exh-location">EArt, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"A World Unmade" Offgrid Art Project</div>
+            <div class="exh-location">Burada Collective, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"In the Memory of Hands" Duo Exhibition</div>
+            <div class="exh-location">GM Art, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"Artweeks XII" Taksim Sanat</div>
+            <div class="exh-location">Fulya, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"Noise Media_Art" ALARM</div>
+            <div class="exh-location">Nelumbo Studios, Bomontiada</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"Yasak Ağacın Meyvesi" Group Exhibition</div>
+            <div class="exh-location">Maçka Art Gallery, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"Projection" Group Exhibition</div>
+            <div class="exh-location">Nevmekan Sahil, Üsküdar</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"43rd Contemporary Artists Award Exhibition"</div>
+            <div class="exh-location">Akbank Sanat, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"Printemps Des Artistes" Group Exhibition</div>
+            <div class="exh-location">Saint Pulcherie, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"The Exit" Group Exhibition</div>
+            <div class="exh-location">Nelumbo Studios, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"Morphe" Group Exhibition</div>
+            <div class="exh-location">Loftcaz, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2025</div>
+            <div class="exh-title">"New:Now" Group Exhibition</div>
+            <div class="exh-location">Cermodern, Ankara</div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="exhibition-row">
+            <div class="exh-year">2024</div>
+            <div class="exh-title">"Baselected 2024"</div>
+            <div class="exh-location">BASE, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2024</div>
+            <div class="exh-title">"Trying to Re-Connect" Group Exhibition</div>
+            <div class="exh-location">Nelumbo Studios, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2024</div>
+            <div class="exh-title">"Textile Art in Anatolia II - Seclusion"</div>
+            <div class="exh-location">Textile Art Platform, Bursa</div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="exhibition-row">
+            <div class="exh-year">2023</div>
+            <div class="exh-title">"BASE 23" Juried Group Selection</div>
+            <div class="exh-location">Akaretler, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2023</div>
+            <div class="exh-title">"8+1 Düğüm" Group Exhibition</div>
+            <div class="exh-location">Nelumbo Studios, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2023</div>
+            <div class="exh-title">"Burada" Group Exhibition</div>
+            <div class="exh-location">MSGSÜ, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2023</div>
+            <div class="exh-title">"Ortak Mekik" Weaving & Interactive Tech.</div>
+            <div class="exh-location">Koç University KARMA Lab, Istanbul</div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="exhibition-row">
+            <div class="exh-year">2022</div>
+            <div class="exh-title">"The Eye - WTA 10th Biennial"</div>
+            <div class="exh-location">TAP & WTA, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2022</div>
+            <div class="exh-title">"Textile Art in Anatolia I - Zeugma"</div>
+            <div class="exh-location">Textile Art Platform, Gaziantep</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2022</div>
+            <div class="exh-title">"Face - Reverse 10" Group Exhibition</div>
+            <div class="exh-location">Textile Art Platform, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2022</div>
+            <div class="exh-title">"Before and After" Group Exhibition</div>
+            <div class="exh-location">MSGSÜ, Istanbul</div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="exhibition-row">
+            <div class="exh-year">2021</div>
+            <div class="exh-title">"White Lotus" Group Exhibition</div>
+            <div class="exh-location">Nelumbo Studios, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2021</div>
+            <div class="exh-title">"Face - Reverse 9" Group Exhibition</div>
+            <div class="exh-location">Textile Art Platform, Istanbul</div>
+        </div>
+
+        <!-- 2016 & 2015 -->
+        <div class="exhibition-row">
+            <div class="exh-year">2016</div>
+            <div class="exh-title">"Geometry from Seljuk to Present" Juried Exhibition</div>
+            <div class="exh-location">Selçuk, Istanbul</div>
+        </div>
+        <div class="exhibition-row">
+            <div class="exh-year">2015</div>
+            <div class="exh-title">"Sustain Your Village" Fiber Art Group</div>
+            <div class="exh-location">MSGSÜ, Istanbul</div>
+        </div>
         
-        <!-- KİŞİSEL SERGİLER -->
-        <div class="section-header">
-            <h2>Solo Exhibitions</h2>
-            <div class="divider"></div>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2024</span>
-            <span class="exh-title">"RE-"</span>
-            <span class="exh-venue">Nelumbo Studios, İstanbul</span>
-        </div>
-
-        <!-- KARMA SERGİLER -->
-        <div class="section-header spacing-large">
-            <h2>Selected Group Exhibitions</h2>
-            <div class="divider"></div>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2025</span>
-            <span class="exh-title">"New:Now"</span>
-            <span class="exh-venue">Cermodern, Ankara</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2025</span>
-            <span class="exh-title">"43rd Contemporary Artists Award Exhibition"</span>
-            <span class="exh-venue">Akbank Sanat, İstanbul</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2025</span>
-            <span class="exh-title">"Yasak Ağacın Meyvesi"</span>
-            <span class="exh-venue">Maçka Art Gallery, İstanbul</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2024</span>
-            <span class="exh-title">"Baselected 2024"</span>
-            <span class="exh-venue">BASE, İstanbul</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2024</span>
-            <span class="exh-title">"Trying to Re-Connect"</span>
-            <span class="exh-venue">Nelumbo Studios, İstanbul</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2023</span>
-            <span class="exh-title">"BASE 23"</span>
-            <span class="exh-venue">Akaretler, İstanbul</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2023</span>
-            <span class="exh-title">"Ortak Mekik - Dokuma, Doğal Boyama ve Etkileşimli Teknolojiler Sergisi"</span>
-            <span class="exh-venue">MSGSÜ & Koç Üniversitesi KARMA Lab, İstanbul</span>
-        </div>
-
-        <div class="exhibition-item">
-            <span class="exh-year">2022</span>
-            <span class="exh-title">"The Eye - WTA 10th Biennial"</span>
-            <span class="exh-venue">Textile Art Platform & WTA, İstanbul</span>
-        </div>
-
     </main>
 
 </body>
