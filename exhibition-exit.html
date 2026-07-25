@@ -17,7 +17,8 @@
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        .exhibition-hero { width: 100%; height: 80vh; position: relative; background: url('images/DAA-2024-WE-01.jpg') center/cover no-repeat; background-attachment: fixed; }
+        /* HERO BANNER - Yeni banner dosyanız eklendi */
+        .exhibition-hero { width: 100%; height: 80vh; position: relative; background: url('images/daa-the-Exit-emphaty-01.jpg') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.1), rgba(250,250,250,1)); }
         
         .content-container { max-width: 900px; margin: -100px auto 100px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
@@ -30,6 +31,10 @@
         .editorial-text { font-size: 1.05rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; }
         .editorial-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; text-align: center; color: #333; margin: 60px 0; padding: 0 40px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; }
 
+        .gallery-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); transition: 0.5s ease; cursor: pointer; aspect-ratio: 4/5; }
+        .gallery-item img:hover { filter: grayscale(0%); transform: scale(1.02); }
+
         .back-nav { text-align: center; margin: 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
@@ -37,6 +42,7 @@
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
             .artwork-title h1 { font-size: 3rem; }
+            .gallery-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -76,11 +82,20 @@
             "All the pain and disharmony in my life converges into a single and sweet harmony, and my worship unfolds like a blissful bird flying over the sea."
         </div>
 
-        <p class="editorial-text">
-            (Further exhibition documentation and curatorial texts can be placed here).
-        </p>
-
     </main>
+
+    <!-- YENİ DETAY FOTOĞRAFLARI GALERİSİ -->
+    <section class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/daa-the-Exit-emphaty-02.jpg" alt="Empathy Installation Detail 1">
+        </div>
+        <div class="gallery-item">
+            <img src="images/daa-the-Exit-emphaty-03.jpg" alt="Empathy Installation Detail 2">
+        </div>
+        <div class="gallery-item">
+            <img src="images/daa-the-Exit-emphaty-04.jpg" alt="Empathy Installation Detail 3">
+        </div>
+    </section>
 
     <div class="back-nav">
         <a href="exhibitions.html" class="btn-outline">Return to Exhibitions</a>
