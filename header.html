@@ -1,11 +1,18 @@
 <!-- STANDART MÜZE MENÜSÜ (HEADER) -->
 <nav>
+    <!-- SOL: SANATÇI İSMİ -->
     <div class="nav-left">
-        <a href="index.html"><img src="images/daa-Logo.png" alt="Dilara Altınkepçe Arslan Logo"></a>
+        <a href="index.html" class="artist-name">DİLARA ALTINKEPÇE ARSLAN</a>
     </div>
+
+    <!-- ORTA: LOGO GÖRSELİ -->
     <div class="nav-center">
-        <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
+        <a href="index.html">
+            <img src="images/daa-Logo.png" alt="Dilara Altınkepçe Arslan Logo" class="brand-logo">
+        </a>
     </div>
+
+    <!-- SAĞ: MENÜ LİNKLERİ -->
     <div class="nav-right">
         <div class="dropdown">
             <a href="exhibitions.html">Exhibitions</a>
@@ -35,3 +42,15 @@
         </div>
     </div>
 </nav>
+
+<style>
+    /* HEADER İÇİN ÖZEL STİLLER */
+    .nav-left { flex: 1; display: flex; align-items: center; justify-content: flex-start; }
+    .artist-name { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 4px; font-weight: 400; text-transform: uppercase; color: #111; white-space: nowrap; }
+    
+    .nav-center { flex: 1; display: flex; justify-content: center; align-items: center; }
+    .brand-logo { height: 38px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
+    .brand-logo:hover { transform: scale(1.05); }
+
+    .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+</style>
