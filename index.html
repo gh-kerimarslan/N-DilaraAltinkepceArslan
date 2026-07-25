@@ -24,9 +24,9 @@
         .slide.active { opacity: 1; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); }
 
-        .hero-content { position: absolute; bottom: 80px; left: 50px; color: #fff; z-index: 10; max-width: 700px; }
-        .hero-content h4 { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; opacity: 0.9; }
-        .hero-content h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: 2px; }
+        /* SADELEŞTİRİLMİŞ HERO İÇERİĞİ */
+        .hero-content { position: absolute; bottom: 80px; left: 50px; color: #fff; z-index: 10; max-width: 800px; }
+        .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; letter-spacing: 2px; }
         
         .btn-light { display: inline-block; padding: 14px 35px; border: 1px solid #fff; color: #fff; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-light:hover { background: #fff; color: #111; }
@@ -55,7 +55,6 @@
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
-            <!-- ARTWORKS OLARAK GÜNCELLENDİ -->
             <a href="artworks.html">Artworks</a>
             <a href="selections.html">Selections</a>
             <a href="about.html">About</a>
@@ -69,8 +68,8 @@
         <div class="slide" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
         <div class="hero-overlay"></div>
 
+        <!-- YALNIZCA BAŞLIK VE BUTON KALDI -->
         <div class="hero-content">
-            <h4>Conceptual Artist</h4>
             <h1>Dilara Altınkepçe Arslan</h1>
             <a href="artworks.html" class="btn-light">Explore Artworks</a>
         </div>
@@ -87,7 +86,7 @@
             </div>
         </a>
 
-        <!-- 3. KART: WORKS YERİNE ARTWORKS & COLLECTIONS -->
+        <!-- ARTWORKS YAZILDI -->
         <a href="artworks.html" class="grid-card">
             <img src="images/02-banner-daa-grand-ritual-01.jpg" alt="Artworks & Collections">
             <div class="card-info">
@@ -107,7 +106,6 @@
     </section>
 
     <script>
-        // Orijinal Banner Slider Kodu
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
 
