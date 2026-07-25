@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series Collections | Dilara Altınkepçe Arslan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        
+        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+        .nav-links a:hover { opacity: 0.5; }
+
+        /* YENİ BANNER */
+        .page-banner { width: 100%; height: 60vh; position: relative; background: url('images/02-banner-daa-grand-ritual-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,0.95)); }
+        .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
+        .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
+        .banner-title p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 4px; color: #444; font-style: italic; }
+
+        /* SERIES LİSTESİ */
+        .series-container { max-width: 1000px; margin: 0 auto; padding: 100px 20px 150px 20px; }
+        
+        .series-row { border-bottom: 1px solid #ddd; padding: 35px 0; transition: background 0.4s; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .series-row:hover { background-color: #f5f5f5; padding-left: 20px; padding-right: 20px; }
+        
+        .series-info { flex: 1; }
+        .series-info h2 { font-size: 2.5rem; margin-bottom: 10px; color: #111; }
+        .series-info p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #666; font-style: italic; }
+        
+        .series-arrow { font-size: 1.5rem; color: #aaa; transition: color 0.3s, transform 0.3s; }
+        .series-row:hover .series-arrow { color: #111; transform: translateX(10px); }
+
+        .back-nav { text-align: center; margin-top: 50px; }
+        .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-outline:hover { background: #111; color: #fff; }
+
+        @media (max-width: 900px) { 
+            .nav-links { display: none; } 
+            .series-row { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .series-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><a href="index.html">DAA</a></div>
+        <div class="nav-links">
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="works.html" style="opacity: 0.5;">Works</a>
+            <a href="selections.html">Selections</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <header class="page-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-title">
+            <h1>Series</h1>
+            <p>Narrative Driven Collections</p>
+        </div>
+    </header>
+
+    <main class="series-container">
+        
+        <!-- 1. RITUAL SERIES -->
+        <a href="series-ritual.html" class="series-row">
+            <div class="series-info">
+                <h2>The Ritual Series</h2>
+                <p>Featuring: Ayinlerin Tümü, We, Toy, Portal, Tunnel, Yükseliş</p>
+            </div>
+            <div class="series-arrow">→</div>
+        </a>
+
+        <!-- 2. KÖY SERİSİ -->
+        <a href="series-koy.html" class="series-row">
+            <div class="series-info">
+                <h2>Köy (Village) Series</h2>
+                <p>Featuring: Şaman Köyü 2022, Şaman Köyü Bozkırda, Şaman Köyü 2025</p>
+            </div>
+            <div class="series-arrow">→</div>
+        </a>
+
+        <!-- 3. INTESTINE WAR -->
+        <a href="series-intestine.html" class="series-row">
+            <div class="series-info">
+                <h2>Intestine War Series</h2>
+                <p>An exploration of internal and biological conflicts.</p>
+            </div>
+            <div class="series-arrow">→</div>
+        </a>
+
+        <!-- 4. PORTRAITS -->
+        <a href="series-portraits.html" class="series-row">
+            <div class="series-info">
+                <h2>Portraits</h2>
+                <p>Featuring: Hıdırellez, Durga'nın Ziyareti, Bir Başka Uyandım, Gelecekten Bir Mesaj</p>
+            </div>
+            <div class="series-arrow">→</div>
+        </a>
+
+        <!-- 5. GRIFON -->
+        <a href="series-grifon.html" class="series-row">
+            <div class="series-info">
+                <h2>Griffin Narratives</h2>
+                <p>All conceptual works and installations centered around the Griffin mythology.</p>
+            </div>
+            <div class="series-arrow">→</div>
+        </a>
+
+        <div class="back-nav">
+            <a href="works.html" class="btn-outline">Return to Works</a>
+        </div>
+
+    </main>
+
+</body>
+</html>
