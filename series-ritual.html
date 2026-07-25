@@ -11,38 +11,46 @@
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* HEADER NAV (Artworks olarak güncellendi) */
+        /* HEADER NAV */
         nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
         .nav-links { display: flex; gap: 35px; }
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* HERO BANNER - Grand Ritual Kapak */
+        /* HERO BANNER */
         .series-hero { width: 100%; height: 70vh; position: relative; background: url('images/02-banner-daa-grand-ritual-01.jpg') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
         
-        /* CONTENT CONTAINER */
         .content-container { max-width: 1000px; margin: -80px auto 80px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
         
         .series-title { margin-bottom: 50px; }
         .series-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
         .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
-        
         .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
 
-        /* ARTWORKS GRID (3 Kolonlu ferah yapı) */
-        .artworks-grid { max-width: 1400px; margin: 0 auto 100px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 50px; }
+        /* EDITORIAL DOWNWARD FLOW CONTAINER */
+        .artwork-flow-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px 20px; }
         
-        .artwork-card { text-align: center; cursor: pointer; }
-        .artwork-image { width: 100%; overflow: hidden; margin-bottom: 25px; background: #eaeaea; aspect-ratio: 4/5; }
-        .artwork-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
-        .artwork-card:hover .artwork-image img { transform: scale(1.03); filter: grayscale(0%); }
-        
-        .artwork-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 8px; color: #111; }
-        .artwork-card p { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #777; }
+        .artwork-block { margin-bottom: 150px; padding-bottom: 100px; border-bottom: 1px solid #e0e0e0; }
+        .artwork-block:last-child { border-bottom: none; }
 
-        /* BACK BUTTON */
+        /* ARTWORK HEADER (Title & Tags) */
+        .artwork-header { text-align: center; margin-bottom: 50px; }
+        .artwork-header h2 { font-size: 3.5rem; letter-spacing: 4px; margin-bottom: 10px; color: #111; }
+        .artwork-header .tags { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 3px; color: #888; text-transform: uppercase; }
+
+        /* IMAGES LAYOUT */
+        .img-large { width: 100%; display: block; margin-bottom: 30px; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        .img-large:hover { filter: grayscale(0%); transform: scale(1.02); }
+        
+        .img-group { display: flex; gap: 30px; margin-bottom: 30px; justify-content: space-between; }
+        
+        .img-half { width: calc(50% - 15px); background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; object-fit: cover; cursor: pointer; }
+        .img-third { width: calc(33.333% - 20px); background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; object-fit: cover; cursor: pointer; }
+        
+        .img-half:hover, .img-third:hover { filter: grayscale(0%); transform: scale(1.03); }
+
         .back-nav { text-align: center; margin-bottom: 100px; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
@@ -50,7 +58,9 @@
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
             .series-title h1 { font-size: 3rem; }
-            .artworks-grid { grid-template-columns: 1fr; gap: 60px; }
+            .artwork-header h2 { font-size: 2.5rem; }
+            .img-group { flex-direction: column; gap: 20px; }
+            .img-half, .img-third { width: 100%; }
         }
     </style>
 </head>
@@ -60,14 +70,12 @@
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
-            <!-- Navigasyon Artworks olarak güncellendi -->
             <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
             <a href="selections.html">Selections</a>
             <a href="about.html">About</a>
         </div>
     </nav>
 
-    <!-- HERO KAPAK -->
     <header class="series-hero">
         <div class="hero-overlay"></div>
     </header>
@@ -77,77 +85,124 @@
             <h4>Conceptual Fiber Art Collection</h4>
             <h1>The Ritual Series</h1>
         </div>
-
         <p class="editorial-text">
             "The Ritual Series" delves into the repetitive actions, ancestral habits, and collective unconscious that shape the human experience. Through the meticulous interlacing of threads, the artist deconstructs historical ceremonies and reconstructs them as contemporary spatial inquiries. Each piece in this series acts as a gateway—a physical and spiritual portal connecting past memories to modern existence.
         </p>
     </main>
 
-    <!-- 6 ESERLİK GALERİ IZGARASI -->
-    <section class="artworks-grid">
-        
-        <!-- 1. The Grand Ritual -->
-        <div class="artwork-card">
-            <div class="artwork-image">
-                <img src="images/02-banner-daa-grand-ritual-01.jpg" alt="The Grand Ritual">
+    <!-- EDİTORYAL ESER AKIŞI (AŞAĞI DOĞRU) -->
+    <section class="artwork-flow-container">
+
+        <!-- 1. TUNNEL OF TIME -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>Tunnel of Time</h2>
+                <div class="tags">Fiber Art • BASE Selected 2024</div>
             </div>
-            <h3>The Grand Ritual</h3>
-            <p>Fiber Art | Installation</p>
+            <img src="images/DAA-2024-Tunnel-01.jpg" class="img-large" alt="Tunnel of Time 1">
+            <div class="img-group">
+                <img src="images/DAA-2024-Tunnel-02.jpg" class="img-half" alt="Tunnel of Time 2">
+                <img src="images/DAA-2024-Tunnel-03.jpg" class="img-half" alt="Tunnel of Time 3">
+            </div>
         </div>
 
-        <!-- 2. We -->
-        <div class="artwork-card">
-            <div class="artwork-image">
-                <!-- Yer tutucu: Gerçek fotoğraf adı ile değiştirin -->
-                <img src="images/daa-ritual-we-01.jpg" alt="We">
+        <!-- 2. THE GRAND RITUAL -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>The Grand Ritual</h2>
+                <div class="tags">Fiber Art • BASE 2023 Selection</div>
             </div>
-            <h3>We</h3>
-            <p>Conceptual Fiber Art</p>
+            <img src="images/DAA-2023-TheGrandRitual-01.jpg" class="img-large" alt="The Grand Ritual 1">
+            <div class="img-group">
+                <img src="images/DAA-2023-TheGrandRitual-02.jpg" class="img-half" alt="The Grand Ritual 2">
+                <img src="images/DAA-2023-TheGrandRitual-03.jpg" class="img-half" alt="The Grand Ritual 3">
+            </div>
         </div>
 
-        <!-- 3. The Gathering (Toy) -->
-        <div class="artwork-card">
-            <div class="artwork-image">
-                <!-- Yer tutucu: Gerçek fotoğraf adı ile değiştirin -->
-                <img src="images/daa-ritual-toy-01.jpg" alt="The Gathering (Toy)">
+        <!-- 3. THE RITUAL I -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>The Ritual I</h2>
+                <div class="tags">Fiber Art</div>
             </div>
-            <h3>The Gathering (Toy)</h3>
-            <p>Mixed Media</p>
+            <img src="images/DAA-2022-Rituel-01.jpg" class="img-large" alt="The Ritual I 1">
+            <div class="img-group">
+                <img src="images/DAA-2022-Rituel-02.jpg" class="img-half" alt="The Ritual I 2">
+                <img src="images/DAA-2022-Rituel-03.jpg" class="img-half" alt="The Ritual I 3">
+            </div>
         </div>
 
-        <!-- 4. Portal -->
-        <div class="artwork-card">
-            <div class="artwork-image">
-                <img src="images/DAA-2024-Portal-Beyond-01.jpg" alt="Portal">
+        <!-- 4. THE RITUAL II -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>The Ritual II</h2>
+                <div class="tags">Fiber Art • BASE Selected 2024</div>
             </div>
-            <h3>Portal</h3>
-            <p>Fiber Art</p>
+            <img src="images/DAA-2024-Ritual-II-01.jpg" class="img-large" alt="The Ritual II 1">
+            <div class="img-group">
+                <img src="images/DAA-2024-Ritual-II-02.jpg" class="img-half" alt="The Ritual II 2">
+                <img src="images/DAA-2024-Ritual-II-03.jpg" class="img-half" alt="The Ritual II 3">
+            </div>
         </div>
 
-        <!-- 5. Tunnel of Time -->
-        <div class="artwork-card">
-            <div class="artwork-image">
-                <!-- Yer tutucu: Gerçek fotoğraf adı ile değiştirin -->
-                <img src="images/daa-ritual-tunnel-01.jpg" alt="Tunnel of Time">
+        <!-- 5. TOY (THE GATHERING) -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>Toy (The Gathering)</h2>
+                <div class="tags">Fiber Art • Taksim Sanat Artweeks</div>
             </div>
-            <h3>Tunnel of Time</h3>
-            <p>Spatial Arrangement</p>
+            <img src="images/daa-artworks-toy.jpg" class="img-large" alt="Toy Main">
+            <!-- Toy için 3 yan yana küçük görsel -->
+            <div class="img-group">
+                <img src="images/daa-artworks-toy1-1.jpg" class="img-third" alt="Toy Detail 1">
+                <img src="images/daa-artworks-toy2-1.jpg" class="img-third" alt="Toy Detail 2">
+                <img src="images/daa-artworks-toy3-1.jpg" class="img-third" alt="Toy Detail 3">
+            </div>
         </div>
 
-        <!-- 6. Ascension -->
-        <div class="artwork-card">
-            <div class="artwork-image">
-                <img src="images/DAA-2024-RE-Ascension-01.jpg" alt="Ascension">
+        <!-- 6. WE -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>We</h2>
+                <div class="tags">Fiber Art • "The Exit" Exhibition • Artweeks</div>
             </div>
-            <h3>Ascension</h3>
-            <p>Installation</p>
+            <!-- We için yan yana 2 büyük görsel -->
+            <div class="img-group">
+                <img src="images/DAA-2024-WE-01.jpg" class="img-half" alt="We 1">
+                <img src="images/DAA-2024-WE-03.jpg" class="img-half" alt="We 2">
+            </div>
+        </div>
+
+        <!-- 7. PORTAL II -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>Portal II</h2>
+                <div class="tags">Fiber Art • BASE Selected 2024</div>
+            </div>
+            <img src="images/DAA-2024-Portal-Beyond-01.jpg" class="img-large" alt="Portal II 1">
+            <div class="img-group">
+                <img src="images/DAA-2024-Portal-Beyond-02.jpg" class="img-half" alt="Portal II 2">
+                <img src="images/DAA-2024-Portal-Beyond-03.jpg" class="img-half" alt="Portal II 3">
+            </div>
+        </div>
+
+        <!-- 8. ASCENSION (YÜKSELİŞ) -->
+        <div class="artwork-block">
+            <div class="artwork-header">
+                <h2>Ascension</h2>
+                <div class="tags">Fiber Art • Installation • "RE-" Solo Exhibition</div>
+            </div>
+            <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-large" alt="Ascension 1">
+            <div class="img-group">
+                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-half" alt="Ascension 2">
+                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-half" alt="Ascension 3">
+            </div>
         </div>
 
     </section>
 
     <div class="back-nav">
-        <!-- Geri dönüş linki artworks-series olarak güncellendi -->
-       <a href="artworks-series.html" class="btn-outline">Return to Series</a>
+        <a href="artworks-series.html" class="btn-outline">Return to Series</a>
     </div>
 
 </body>
