@@ -13,21 +13,15 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* HEADER NAV */
+        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
         nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        
         .nav-left { flex: 1; display: flex; align-items: center; }
         .nav-left img { height: 35px; width: auto; object-fit: contain; }
-        
-        /* MÜZE HAVASI: ZARİF, KÜÇÜLTÜLMÜŞ, İNCE VE GENİŞ FONT */
         .nav-center { flex: 2; text-align: center; }
         .nav-center a { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
-        
         .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
         .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
         .nav-right a:hover { opacity: 0.5; }
-
-        /* DROPDOWN (KUTUSUZ, YALNIZCA YAZI) */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
         .dropdown:hover .dropdown-content { display: block; }
@@ -38,26 +32,20 @@
         .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 2s ease-in-out; }
         .slide.active { opacity: 1; }
-        
-        /* SLIDER BEYAZ OVERLAY VE RESİM EFEKTİ */
         .bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease, filter 1s ease; z-index: 1; filter: grayscale(15%); }
         .white-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.65); z-index: 2; transition: background 0.8s ease; }
         .slider-container:hover .white-overlay { background: rgba(255, 255, 255, 0.85); }
         .slider-container:hover .slide.active .bg-image { transform: scale(1.02); filter: grayscale(0%); }
-
-        /* KİBAR SLIDER KÜNYESİ */
         .slide-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #111; z-index: 10; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 500; text-align: center; }
 
-        /* GATEWAY BANNERS (TAM SAYFA AŞAĞI AKAN BLOKLAR) */
+        /* GATEWAY BANNERS */
         .gateway-section { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #ebebeb; }
         .gateway-section:hover .bg-image { transform: scale(1.03); filter: grayscale(0%); }
         .gateway-section:hover .white-overlay { background: rgba(255, 255, 255, 0.88); }
-        
         .gateway-content { position: relative; z-index: 3; max-width: 900px; padding: 0 20px; color: #111; }
-        .gateway-content h2 { font-size: 4rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; }
+        .gateway-content h2 { font-size: 4.5rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; } /* 4.5rem STANDARDI */
         .gateway-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #333; margin-bottom: 15px; font-style: italic; }
         .gateway-content p { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; font-weight: 500; }
-        
         .btn-outline { display: inline-block; padding: 15px 40px; border: 1px solid #111; color: #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; background: transparent; cursor: pointer; }
         .btn-outline:hover { background: #111; color: #fff; }
 
@@ -71,23 +59,14 @@
 </head>
 <body>
 
-    <!-- 3 BÖLMELİ HEADER & AÇILIR MENÜ -->
     <nav>
-        <!-- Sol: Logo -->
         <div class="nav-left">
-            <a href="index.html">
-                <img src="images/daa-Logo.png" alt="Logo">
-            </a>
+            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
         </div>
-        
-        <!-- Orta: İsim (Müze Tipografisi) -->
         <div class="nav-center">
             <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
         </div>
-        
-        <!-- Sağ: Menüler & Dropdowns -->
         <div class="nav-right">
-            
             <div class="dropdown">
                 <a href="exhibitions.html">Exhibitions</a>
                 <div class="dropdown-content">
@@ -95,7 +74,6 @@
                     <a href="exhibitions.html">All Exhibitions</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="artworks.html">Artworks</a>
                 <div class="dropdown-content">
@@ -104,48 +82,38 @@
                     <a href="artworks-newmedia.html">New Media</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="selections.html">Selections</a>
             </div>
-
             <div class="dropdown">
                 <a href="about.html">About</a>
             </div>
-
         </div>
     </nav>
 
-    <!-- FULLSCREEN HERO SLIDER BANNER -->
     <header class="slider-container">
-        
         <div class="slide active">
             <div class="bg-image" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');"></div>
             <div class="white-overlay"></div>
             <div class="slide-caption">Overcome • Suspended Installation, 2024</div>
         </div>
-        
         <div class="slide">
             <div class="bg-image" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
             <div class="white-overlay"></div>
             <div class="slide-caption">The Grand Ritual • Fiber Art, 2023</div>
         </div>
-        
         <div class="slide">
             <div class="bg-image" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
             <div class="white-overlay"></div>
             <div class="slide-caption">Alarm: Modern Age Griffin • New Media, 2025</div>
         </div>
-
         <div class="slide">
             <div class="bg-image" style="background-image: url('images/04-banner-daa-ortakmekik-verbasci-01.jpg');"></div>
             <div class="white-overlay"></div>
             <div class="slide-caption">Anthrenus Verbasci • VR Experience, 2023</div>
         </div>
-        
     </header>
 
-    <!-- 1. Exhibitions Banner -->
     <section class="gateway-section">
         <div class="bg-image" style="background-image: url('images/05-banner-daa-artweeks-01.jpg');"></div>
         <div class="white-overlay"></div>
@@ -157,7 +125,6 @@
         </div>
     </section>
 
-    <!-- 2. Artworks Banner -->
     <section class="gateway-section">
         <div class="bg-image" style="background-image: url('images/06-banner-daa-nevmekan-01.jpg');"></div>
         <div class="white-overlay"></div>
@@ -169,7 +136,6 @@
         </div>
     </section>
 
-    <!-- 3. Selections Banner -->
     <section class="gateway-section">
         <div class="bg-image" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
         <div class="white-overlay"></div>
@@ -181,7 +147,6 @@
         </div>
     </section>
 
-    <!-- 4. About Banner -->
     <section class="gateway-section">
         <div class="bg-image" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
         <div class="white-overlay"></div>
