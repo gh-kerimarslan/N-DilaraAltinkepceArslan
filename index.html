@@ -4,118 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dilara Altınkepçe Arslan | Contemporary Fiber & New Media Artist</title>
+    
+    <!-- Sanat Galerisi Standartlarında Google Fontları -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+
     <style>
-        /* TEMEL AYARLAR */
+        /* SIFIRLAMA & TEMEL AYARLAR */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #070707; /* Derin Siyah */
-            color: #e0e0e0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #030303; /* Tam Siyah - Chiharu Shiota Derinliği */
+            color: #dcdcdc;
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
 
         /* TİPOGRAFİ */
-        h1, h2, h3 { font-family: 'Georgia', serif; font-weight: 300; letter-spacing: 2px; }
-        p { line-height: 1.8; font-size: 0.95rem; font-weight: 300; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
         a { color: #fff; text-decoration: none; transition: color 0.3s; }
-        a:hover { color: #888; }
+        a:hover { color: #777; }
 
-        /* MENÜ (NAVIGASYON) */
+        /* MENÜ */
         nav {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 30px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: linear-gradient(rgba(0,0,0,0.8), transparent);
+            position: fixed; top: 0; width: 100%; padding: 30px 60px;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; background: linear-gradient(rgba(0,0,0,0.9), transparent);
         }
-        .nav-links { display: flex; gap: 40px; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 40px; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; }
 
         /* HERO (KARŞILAMA) EKRANI */
         .hero {
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            /* Ana görsel olarak sergiden dramatik bir fotoğraf kullanıyoruz */
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(7,7,7,1)), url('images/DAA-2024-RE-Overcome-06.jpeg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; position: relative;
+            background: linear-gradient(rgba(3,3,3,0.3), rgba(3,3,3,1)), url('images/DAA-2024-RE-Overcome-06.jpeg') center/cover no-repeat;
+            background-attachment: fixed;
             text-align: center;
         }
-        .hero-content h1 { font-size: 4rem; color: #ffffff; margin-bottom: 20px; letter-spacing: 8px; text-transform: uppercase; }
-        .hero-content p { font-size: 1.1rem; letter-spacing: 3px; color: #a8a8a8; font-style: italic; }
+        .hero-content h1 { font-size: 4.5rem; color: #ffffff; letter-spacing: 10px; text-transform: uppercase; margin-bottom: 20px; }
+        .hero-content p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 4px; color: #888; font-style: italic; }
 
-        /* ESERLER (RİTÜEL) BÖLÜMÜ */
-        .exhibition-section { padding: 120px 8%; }
-        .section-title {
-            text-align: center; font-size: 2rem; margin-bottom: 100px; color: #fff;
-            text-transform: uppercase; letter-spacing: 5px;
+        /* ESERLER (100VH TAM EKRAN TASARIMI) */
+        .artwork-section {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            padding: 5% 10%;
+            gap: 5%;
+            border-bottom: 1px solid #111;
         }
+        .artwork-section:nth-child(even) { flex-direction: row-reverse; }
 
-        .artwork-container { display: flex; flex-direction: column; gap: 150px; }
-        
-        .artwork {
-            display: flex; align-items: center; gap: 80px; opacity: 0.85; transition: opacity 0.6s ease;
+        /* GÖRSEL ALANI */
+        .artwork-image-container {
+            flex: 1.2;
+            height: 85vh;
+            overflow: hidden;
+            position: relative;
         }
-        .artwork:hover { opacity: 1; }
-        .artwork:nth-child(even) { flex-direction: row-reverse; }
-
-        /* Fotoğrafların boyutları (Shiota tarzı büyük) */
         .artwork-img {
-            flex: 1.5;
-            width: 100%; height: 75vh;
+            width: 100%; height: 100%;
             object-fit: cover;
-            filter: grayscale(15%) contrast(110%);
-            transition: filter 0.6s ease, transform 0.6s ease;
+            filter: grayscale(25%) contrast(110%) brightness(80%);
+            transition: all 1.5s ease;
         }
-        .artwork:hover .artwork-img { filter: grayscale(0%) contrast(100%); transform: scale(1.02); }
+        .artwork-section:hover .artwork-img {
+            filter: grayscale(0%) contrast(100%) brightness(100%);
+            transform: scale(1.03);
+        }
 
-        /* Metin Alanı */
-        .artwork-text { flex: 1; padding: 20px; }
-        .artwork-text h3 { font-size: 2.2rem; margin-bottom: 15px; color: #ffffff; }
-        .artwork-text .details { font-size: 0.8rem; color: #777; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
+        /* METİN ALANI */
+        .artwork-info { flex: 1; padding: 40px; }
+        .artwork-info h3 { font-size: 3rem; color: #fff; margin-bottom: 10px; line-height: 1.2; }
+        .details { font-size: 0.7rem; color: #555; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 40px; }
         
-        /* Şiirsel Manifestolar */
         .poem-tr {
-            font-family: 'Georgia', serif; font-style: italic; color: #ccc;
-            border-left: 1px solid #444; padding-left: 20px; margin-top: 25px;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.8;
+            font-style: italic; color: #b0b0b0; border-left: 1px solid #333; padding-left: 25px; margin-bottom: 20px;
         }
         .poem-en {
-            font-family: 'Georgia', serif; font-style: italic; color: #888;
-            padding-left: 20px; margin-top: 15px; font-size: 0.9rem;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.8;
+            font-style: italic; color: #666; padding-left: 25px;
         }
 
-        /* HAKKINDA (ABOUT) BÖLÜMÜ */
+        /* HAKKINDA BÖLÜMÜ */
         .about-section {
-            background-color: #111; padding: 120px 20%; text-align: center; border-top: 1px solid #222;
+            min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 0 20%; text-align: center; background-color: #050505;
         }
-        .about-section p { font-size: 1.1rem; line-height: 2; color: #bbb; margin-top: 40px; }
+        .about-section h2 { font-size: 2.5rem; letter-spacing: 5px; text-transform: uppercase; color: #fff; margin-bottom: 40px; }
+        .about-section p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; line-height: 2; color: #999; font-weight: 300; }
 
         /* MOBİL UYUM */
         @media (max-width: 900px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .artwork { flex-direction: column !important; gap: 40px; }
-            .artwork-img { height: 50vh; flex: none; }
-            .about-section { padding: 80px 10%; }
+            .hero-content h1 { font-size: 2.5rem; letter-spacing: 5px; }
+            .artwork-section { flex-direction: column !important; padding: 10% 5%; gap: 30px; min-height: auto; }
+            .artwork-image-container { height: 60vh; width: 100%; }
+            .about-section { padding: 100px 10%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- MENÜ -->
+    <!-- NAVİGASYON -->
     <nav>
-        <div class="logo"><a href="#">DAA</a></div>
+        <div class="logo"><a href="#" style="font-family: 'Cormorant Garamond', serif; font-size:1.5rem; letter-spacing: 4px;">DAA</a></div>
         <div class="nav-links">
-            <a href="#works">Works</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#exhibition">Sergi / Exhibition</a>
+            <a href="#about">Hakkında / About</a>
         </div>
     </nav>
 
-    <!-- HERO EKRANI -->
+    <!-- KARŞILAMA -->
     <header class="hero">
         <div class="hero-content">
             <h1>Dilara Altınkepçe Arslan</h1>
@@ -123,85 +124,143 @@
         </div>
     </header>
 
-    <!-- ESERLER GALERİSİ -->
-    <section id="works" class="exhibition-section">
-        <h2 class="section-title">Selected Works</h2>
-        
-        <div class="artwork-container">
-            
-            <!-- ESER 1: Overcome -->
-            <div class="artwork">
-                <img src="images/DAA-2024-RE-Overcome-05.jpeg" alt="Overcome" class="artwork-img">
-                <div class="artwork-text">
-                    <h3>Overcome | Geldiler</h3>
-                    <p class="details">2024 | Installation</p>
-                    <div class="poem-tr">
-                        Kaç gün daha susabilirim? Sustukça sesim daha da kısılıyor… <br>
-                        Gözümü kaç gün daha kapalı tutabilirim? <br>
-                        Ellerim daha fazla gözlerimi kapatmaya yetmiyor…
-                    </div>
-                    <div class="poem-en">
-                        How many more days can I remain silent? The more I remain silent, the quieter my voice becomes... How many more days can I keep my eyes closed?
-                    </div>
-                </div>
+    <div id="exhibition">
+        <!-- 1. OVERCOME -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-Overcome-06.jpeg" alt="Overcome" class="artwork-img">
             </div>
-
-            <!-- ESER 2: Tunnel of Time -->
-            <div class="artwork">
-                <img src="images/DAA-2024-Tunnel-02.jpg" alt="Tunnel of Time" class="artwork-img" style="height: 50vh;">
-                <div class="artwork-text">
-                    <h3>Tunnel of Time | Zaman Tüneli</h3>
-                    <p class="details">2024 | 156x55 cm | Fiber Art</p>
-                    <div class="poem-tr">
-                        Başının ve sonunun ölçülemez uzaklıkta olduğu bir tünelde kaç biçimde var olduk? <br>
-                        Kaç biçime ayna olup, kaç biçim oluşturduk?
-                    </div>
-                    <div class="poem-en">
-                        In a tunnel where the beginning and end are immeasurably distant, in how many forms did we exist? How many forms did we become mirrors of, and how many forms did we create?
-                    </div>
-                </div>
+            <div class="artwork-info">
+                <h3>Overcome <br> Geldiler</h3>
+                <p class="details">2024 | Installation | RE-</p>
+                <div class="poem-tr">Kaç gün daha susabilirim? Sustukça sesim daha da kısılıyor… Gözümü kaç gün daha kapalı tutabilirim? Ellerim daha fazla gözlerimi kapatmaya yetmiyor…</div>
+                <div class="poem-en">How many more days can I remain silent? The more I remain silent, the quieter my voice becomes... How many more days can I keep my eyes closed?</div>
             </div>
+        </section>
 
-            <!-- ESER 3: ID -->
-            <div class="artwork">
-                <img src="images/DAA-2024-RE-ID-03.jpg" alt="ID Vesika" class="artwork-img">
-                <div class="artwork-text">
-                    <h3>ID | Vesika</h3>
-                    <p class="details">2024 | 100x125 cm</p>
-                    <div class="poem-tr">
-                        “Köyümüzde her yıl, ayin öncesi nüfus sayımı yapılır. Kayıplarımıza göre ayin biçimimizi belirleriz. Bu sayım Ud Yılı’ndan. Kaybımız az, coşkuyla kutladık.”
-                    </div>
-                    <div class="poem-en">
-                        "Each year in our village, a census is taken before the ritual. We determine the form of the ritual based on our losses. This census is from the Year of Ud."
-                    </div>
-                </div>
+        <!-- 2. UNANSWERED QUESTIONS -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-Unanswered-02.jpeg" alt="Unanswered Questions" class="artwork-img">
             </div>
+            <div class="artwork-info">
+                <h3>Unanswered Questions <br> Cevapsız Sorular</h3>
+                <p class="details">2024 | Textile | RE-</p>
+                <div class="poem-tr">Bu halkım şeytana yeniliyor. Ağır acılardan kurtulamıyorlar. Bu Tanrım bir merhamet gösterecek mi? Devam eden ömrüm az olur, yaşım kısa olur. Büyük engel nasıl aşılır?</div>
+                <div class="poem-en">My people are succumbing to the devil. They cannot escape their heavy pains. Will my God show mercy? Will my remaining life be short?</div>
+            </div>
+        </section>
 
-            <!-- ESER 4: Portal -->
-            <div class="artwork">
+        <!-- 3. INQUIRY -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-inquiry-02.jpeg" alt="Inquiry" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>Inquiry <br> Sorgu</h3>
+                <p class="details">2024 | Textile | RE-</p>
+                <div class="poem-tr">Gelecek sene merhamet edilecek mi? Bu sene huzur verilecek mi? Bundan sonra yeşil otları ayaklarımız ezecek mi?</div>
+                <div class="poem-en">Will there be mercy next year? Will there be peace this year? From now on, will we tread on green grass?</div>
+            </div>
+        </section>
+
+        <!-- 4. FLAG OF UPRISING -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-FlagUprising-03.jpeg" alt="Flag of Uprising" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>Flag of Uprising <br> İsyan Bayrağı</h3>
+                <p class="details">2024 | Textile | RE-</p>
+                <div class="poem-tr">Bizi yalvartıp ağlatmayın. Yanlışlarımız çoğaldı. Tanrımız, diye yalvarmaya başladığımızda başımıza merhamet gelir mi? Ölümsüz hayat istiyoruz, sönmeyen ateş istiyoruz.</div>
+                <div class="poem-en">Do not make us beg and cry. Our wrongs have multiplied. When we begin to plead, saying our God, will mercy come upon us? We desire eternal life.</div>
+            </div>
+        </section>
+
+        <!-- 5. MUTED -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-Muted-02.jpeg" alt="Muted" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>Muted <br> Susturulmuş</h3>
+                <p class="details">2024 | Textile | RE-</p>
+                <div class="poem-tr">Biz kuzgun gibi çığlık atarken, Dualar Tanrımıza ulaşmıyor. Tay gibi kişnediğimizde, Yine de sesimiz ulaşmıyor.</div>
+                <div class="poem-en">While we scream like ravens, Our prayers do not reach our God. When we neigh like colts, Our voices still do not get through.</div>
+            </div>
+        </section>
+
+        <!-- 6. DURGA'S VISIT -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-DurgasVisit-01.jpg" alt="Durga's Visit" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>Durga's Visit-Year of Ud <br> Durga'nın Ziyareti</h3>
+                <p class="details">2023 | 59x49 cm | RE-</p>
+                <div class="poem-tr">Bahar dönümümüzü Ud’a teslim ettiğimiz ayinde ruhumu yola koyup, Gök’te Durga ile buluştum. Sakinlik, akıl ve bilinç yılı olan bu döngü için ona danıştım.</div>
+                <div class="poem-en">In the ceremony that we delivered our spring anniversary to Ud, I set my soul on the road and met with Durga in Sky.</div>
+            </div>
+        </section>
+
+        <!-- 7. A MESSAGE FROM THE FUTURE -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-RE-MessageFrom-01.jpg" alt="A Message From the Future" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>A Message From the Future <br> Gelecekten Bir Mesaj</h3>
+                <p class="details">2024 | 49x59 cm | RE-</p>
+                <div class="poem-tr">Ekin zamanı toprak besin vermedi, bu yıl ruhunu Gök’e teslim edenler bol oldu. Tanrılara danıştım, bir cevap bulamadım. Suçlu ellerimde.</div>
+                <div class="poem-en">The soil gave no nutrients during the planting season, and many souls ascended to the Sky this year. I consulted the gods, but found no answer. The guilt remains in my hands.</div>
+            </div>
+        </section>
+
+        <!-- 8. TUNNEL OF TIME -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2024-Tunnel-02.jpg" alt="Tunnel of Time" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>Tunnel of Time <br> Zaman Tüneli</h3>
+                <p class="details">2024 | 156x55 cm | Baselected</p>
+                <div class="poem-tr">Başının ve sonunun ölçülemez uzaklıkta olduğu bir tünelde kaç biçimde var olduk? Kaç biçime ayna olup, kaç biçim oluşturduk?</div>
+                <div class="poem-en">In a tunnel where the beginning and end are immeasurably distant, in how many forms did we exist? How many forms did we become mirrors of, and how many forms did we create?</div>
+            </div>
+        </section>
+
+        <!-- 9. PORTAL -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
                 <img src="images/DAA-2024-Portal-Beyond-03.jpg" alt="Portal" class="artwork-img">
-                <div class="artwork-text">
-                    <h3>Portal: Beyond the Door</h3>
-                    <p class="details">2024 | 30x60 cm</p>
-                    <div class="poem-tr">
-                        Aynı yolda olanlar birleşir bir olur,<br>
-                        Aynı güneşle ısınıp, aynı yağmurla sulanır,<br>
-                        Hangi yöne dönerse dönsün, aynı yola gider.
-                    </div>
-                    <div class="poem-en">
-                        Those who are on the same path unite and become one, Warmed by the same sun and watered by the same rain, Whichever way they turn, they go the same way.
-                    </div>
-                </div>
             </div>
+            <div class="artwork-info">
+                <h3>Portal: Beyond the Door <br> Kapının Ardı</h3>
+                <p class="details">2024 | 30x60 cm | Baselected</p>
+                <div class="poem-tr">Aynı yolda olanlar birleşir bir olur, Aynı güneşle ısınıp, aynı yağmurla sulanır, Hangi yöne dönerse dönsün, aynı yola gider.</div>
+                <div class="poem-en">Those who are on the same path unite and become one, Warmed by the same sun and watered by the same rain, Whichever way they turn, they go the same way.</div>
+            </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- 10. PAZYRYK MAIDAN VR -->
+        <section class="artwork-section">
+            <div class="artwork-image-container">
+                <img src="images/DAA-2023-PazarykMaidan-VR-07.jpg" alt="Pazyryk Maidan VR" class="artwork-img">
+            </div>
+            <div class="artwork-info">
+                <h3>Pazyryk Maidan <br> VR Experience</h3>
+                <p class="details">2023 | Interactive Art</p>
+                <div class="poem-tr">M.Ö. 5.-4. yüzyıllara tarihlenen ve tarihin bilinen en eski halısı olan Pazırık Halısı... Bu meydanda dolaşmak nasıl olurdu?</div>
+                <div class="poem-en">Dating back to the 5th-4th centuries BC, the Pazyryk Carpet is known as the oldest known carpet in history. What would it be like to walk through this maidan?</div>
+            </div>
+        </section>
+    </div>
 
-    <!-- HAKKINDA BÖLÜMÜ -->
+    <!-- HAKKINDA -->
     <section id="about" class="about-section">
-        <h2 class="section-title" style="margin-bottom: 20px;">The Artist</h2>
+        <h2>The Artist</h2>
         <p>
-            1993 yılında Bursa’da doğan Dilara Altınkepçe Arslan, Mimar Sinan Güzel Sanatlar Üniversitesi ve Accademia di Belle Arti di Bologna'da eğitim aldı. "Anadolu Kilimlerinde Sembol Olarak Hayvan İmgesi" üzerine yazdığı yüksek lisans tezi, onun kadim ritüellere olan akademik yaklaşımının temelini oluşturdu. Eserlerinde geleneksel halı ve kilim dokuma pratiklerini; dijital sanat, VR deneyimleri ve modern enstalasyonlarla sentezliyor. Sadece eser üreten değil, bir sanat ekosistemi kuran sanatçı vizyonuyla; 2020 yılında sürdürülebilirlik odaklı APPA Tiny Things hareketini başlattı ve Nelumbo Studios'un kurucu ortağı oldu. BASE, Cermodern ve Akbank Sanat gibi prestijli platformlarda eserleri sergilenmektedir.
+            1993 yılında Bursa’da doğan Dilara Altınkepçe Arslan, Mimar Sinan Güzel Sanatlar Üniversitesi ve Accademia di Belle Arti di Bologna'da eğitim aldı. "Anadolu Kilimlerinde Sembol Olarak Hayvan İmgesi" üzerine yazdığı yüksek lisans tezi, onun kadim ritüellere olan akademik yaklaşımının temelini oluşturdu. Eserlerinde geleneksel halı ve kilim dokuma pratiklerini; dijital sanat, VR deneyimleri ve modern enstalasyonlarla sentezliyor. 2020 yılında sürdürülebilirlik odaklı APPA Tiny Things hareketini başlattı ve Nelumbo Studios'un kurucu ortağı oldu. BASE, Cermodern ve Akbank Sanat gibi prestijli platformlarda eserleri sergilenmektedir.
         </p>
     </section>
 
