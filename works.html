@@ -18,44 +18,49 @@
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* HERO BANNER - Nevmekan Eklendi */
+        /* HERO BANNER */
         .page-banner { width: 100%; height: 60vh; position: relative; background: url('images/06-banner-daa-nevmekan-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
         .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,1)); }
         .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
         .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
 
-        /* COLLECTIONS CONTAINER */
-        .collections-wrapper { padding: 80px 5% 150px 5%; display: flex; flex-direction: column; gap: 140px; max-width: 1200px; margin: 0 auto; }
+        /* COLLECTIONS CONTAINER - Genişletildi */
+        .collections-wrapper { padding: 80px 5% 150px 5%; display: flex; flex-direction: column; gap: 160px; max-width: 1400px; margin: 0 auto; }
         
-        .collection-item { display: flex; align-items: center; gap: 60px; }
+        .collection-item { display: flex; align-items: center; gap: 80px; }
         .collection-item:nth-child(even) { flex-direction: row-reverse; }
         
-        /* YENİ KOLEKSİYON KOLAJ EFEKTİ (Stacked Cards) */
-        .collection-collage { flex: 1.2; position: relative; height: 60vh; min-height: 400px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
+        /* YENİ KARE VE GENİŞ KOLAJ EFEKTİ */
+        .collection-collage { flex: 1.4; position: relative; height: 50vh; min-height: 450px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
         
-        .collage-main { width: 65%; height: 85%; object-fit: cover; position: relative; z-index: 3; box-shadow: 0 15px 35px rgba(0,0,0,0.15); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease; filter: grayscale(15%); aspect-ratio: 4/5; }
-        .collage-sub { position: absolute; width: 45%; height: 65%; object-fit: cover; z-index: 2; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease; filter: grayscale(30%); }
+        /* Merkezdeki Kare Görsel */
+        .collage-main { width: 55%; aspect-ratio: 1/1; object-fit: cover; position: relative; z-index: 3; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: grayscale(10%); }
         
-        .collage-left { top: 5%; left: 5%; transform: rotate(-6deg); }
-        .collage-right { bottom: 5%; right: 5%; transform: rotate(8deg); z-index: 1; }
+        /* Alttaki Kare Görseller */
+        .collage-sub { position: absolute; width: 45%; aspect-ratio: 1/1; object-fit: cover; z-index: 2; box-shadow: 0 15px 30px rgba(0,0,0,0.15); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: grayscale(30%); }
         
-        /* Hover Effects - Fotoğraflar yelpaze gibi açılır */
-        .collection-item:hover .collage-main { transform: scale(1.05) translateY(-10px); filter: grayscale(0%); z-index: 4; }
-        .collection-item:hover .collage-left { transform: rotate(-12deg) translate(-25px, -15px); filter: grayscale(10%); }
-        .collection-item:hover .collage-right { transform: rotate(15deg) translate(25px, 15px); filter: grayscale(10%); }
+        /* Başlangıçta daha yayık durmaları için açılar büyütüldü */
+        .collage-left { top: 12%; left: 2%; transform: rotate(-15deg); }
+        .collage-right { bottom: 12%; right: 2%; transform: rotate(15deg); z-index: 1; }
+        
+        /* Hover (Üzerine gelince) - Yelpaze çok daha geniş açılır */
+        .collection-item:hover .collage-main { transform: scale(1.05) translateY(-15px); filter: grayscale(0%); z-index: 4; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+        .collection-item:hover .collage-left { transform: rotate(-25deg) translate(-80px, -20px); filter: grayscale(5%); z-index: 3; }
+        .collection-item:hover .collage-right { transform: rotate(25deg) translate(80px, 20px); filter: grayscale(5%); z-index: 3; }
 
+        /* METİN ALANI */
         .collection-text { flex: 1; padding: 20px; }
-        .collection-text h4 { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
-        .collection-text h2 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; }
-        .collection-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 30px; border-left: 1px solid #ccc; padding-left: 20px; }
+        .collection-text h4 { font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .collection-text h2 { font-size: 3.8rem; margin-bottom: 20px; line-height: 1.1; }
+        .collection-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 30px; border-left: 1px solid #ccc; padding-left: 20px; }
         
-        .btn-outline { display: inline-block; padding: 12px 35px; border: 1px solid #111; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-outline { display: inline-block; padding: 14px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
-            .collection-item { flex-direction: column !important; text-align: center; gap: 40px; } 
-            .collection-collage { height: 45vh; width: 100%; }
+            .collection-item { flex-direction: column !important; text-align: center; gap: 60px; } 
+            .collection-collage { height: 40vh; width: 100%; min-height: 350px; }
             .collection-text p { border-left: none; padding-left: 0; }
         }
     </style>
