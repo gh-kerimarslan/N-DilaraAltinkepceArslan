@@ -70,37 +70,7 @@
 </head>
 <body>
 
-   <nav>
-        <div class="nav-left">
-            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
-        </div>
-        <div class="nav-center">
-            <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
-        </div>
-        <div class="nav-right">
-            <div class="dropdown">
-                <a href="exhibitions.html">Exhibitions</a>
-                <div class="dropdown-content">
-                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
-                    <a href="exhibitions.html">All Exhibitions</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="artworks.html">Artworks</a>
-                <div class="dropdown-content">
-                    <a href="artworks-series.html">Series</a>
-                    <a href="artworks-installations.html">Installations</a>
-                    <a href="artworks-newmedia.html">New Media</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="selections.html">Selections</a>
-            </div>
-            <div class="dropdown">
-                <a href="about.html" style="opacity: 0.5;">About</a>
-            </div>
-        </div>
-    </nav>
+  <div id="header-placeholder"></div>
 
     <header class="page-banner">
         <div class="banner-overlay"></div>
@@ -182,6 +152,12 @@
         </div>
 
     </main>
-
+<script>
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
+</script>
 </body>
 </html>
