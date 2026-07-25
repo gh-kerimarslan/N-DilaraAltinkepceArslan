@@ -19,36 +19,53 @@
         .nav-links a:hover { opacity: 0.5; }
 
         /* HERO BANNER */
-        .exhibition-hero { width: 100%; height: 85vh; position: relative; background: url('images/DAA-2024-RE-Overcome-01.jpg') center/cover no-repeat; background-attachment: fixed; }
+        .exhibition-hero { width: 100%; height: 75vh; position: relative; background: url('images/01-banner-daa-re-overcome-01.jpg') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.1), rgba(250,250,250,1)); }
         
-        /* CONTENT CONTAINER */
-        .content-container { max-width: 900px; margin: -100px auto 100px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
-        
-        .artwork-title { margin-bottom: 50px; }
-        .artwork-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
-        .artwork-title h1 { font-size: 5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 10px; }
-        .artwork-meta { font-size: 0.85rem; letter-spacing: 2px; color: #555; text-transform: uppercase; }
+        /* EXHIBITION INFO */
+        .info-container { max-width: 900px; margin: -100px auto 80px auto; padding: 40px; position: relative; z-index: 2; text-align: center; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .info-container h4 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 10px; }
+        .info-container h1 { font-size: 4.5rem; margin-bottom: 20px; line-height: 1.1; letter-spacing: 5px; }
+        .info-details { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 30px; display: flex; justify-content: center; gap: 30px; }
+        .curatorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; padding: 0 5%; font-family: 'Montserrat', sans-serif; }
 
-        /* TEXT EDITORIAL */
-        .editorial-text { font-size: 1.05rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; }
-        .editorial-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; text-align: center; color: #333; margin: 60px 0; padding: 0 40px; border-left: 1px solid #ccc; border-right: 1px solid #ccc; }
+        /* SELECTED WORKS SECTION */
+        .works-section-title { text-align: center; margin: 100px 0 60px 0; }
+        .works-section-title h3 { font-size: 2.5rem; letter-spacing: 3px; color: #111; }
+        .works-section-title p { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-top: 10px; }
 
-        /* IMAGE GALLERY */
-        .gallery-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); transition: 0.5s ease; cursor: pointer; aspect-ratio: 4/5; }
-        .gallery-item img:hover { filter: grayscale(0%); transform: scale(1.02); }
-        .gallery-caption { font-size: 0.75rem; letter-spacing: 2px; color: #888; text-transform: uppercase; margin-top: 10px; text-align: center; }
+        .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
+        .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 65vh; margin-bottom: 80px; padding: 60px 0; border-bottom: 1px solid #e5e5e5; }
+        .artwork-block:nth-child(even) { flex-direction: row-reverse; }
+        .artwork-block:last-child { border-bottom: none; margin-bottom: 0; }
 
-        /* BACK BUTTON */
-        .back-nav { text-align: center; margin: 100px 0; }
+        .artwork-text { flex: 1; padding: 20px; }
+        .artwork-meta { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 15px; }
+        .artwork-text h2 { font-size: 3rem; letter-spacing: 2px; margin-bottom: 15px; color: #111; line-height: 1.1; }
+        .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
+
+        .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        .artwork-gallery:hover img { filter: grayscale(0%); }
+        .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+        .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
+        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
+        .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+
+        .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
-            .artwork-title h1 { font-size: 3.5rem; }
-            .gallery-container { grid-template-columns: 1fr; }
+            .info-container { margin-top: -50px; padding: 30px 20px; }
+            .info-container h1 { font-size: 3.2rem; }
+            .info-details { flex-direction: column; gap: 10px; }
+            .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
+            .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .artwork-text h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -58,62 +75,100 @@
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html" style="opacity: 0.5;">Exhibitions</a>
-            <a href="works.html">Works</a>
+            <a href="artworks.html">Artworks</a>
             <a href="selections.html">Selections</a>
             <a href="about.html">About</a>
         </div>
     </nav>
 
-    <!-- HERO KAPAK -->
     <header class="exhibition-hero">
         <div class="hero-overlay"></div>
     </header>
 
-    <!-- METİN VE BİLGİ -->
-    <main class="content-container">
-        
-        <div class="artwork-title">
-            <h4>Solo Exhibition • Nelumbo Studios • 2024</h4>
-            <h1>RE-</h1>
-            <p class="artwork-meta">Fiber Art | Spatial Installation | Mixed Media</p>
+    <main class="info-container">
+        <h4>Solo Exhibition</h4>
+        <h1>RE-</h1>
+        <div class="info-details">
+            <span>2024</span>
+            <span>|</span>
+            <span>İstanbul, Türkiye</span>
         </div>
-
-        <p class="editorial-text">
-            History is not behind us; it echoes through actions, thoughts, and memories woven into the present moment. Every passing second reverberates in our current lives, making it feel both strangely familiar and entirely new, reminding us of all the times that have been lived before.
+        <p class="curatorial-text">
+            The prefix "re-" implies a return, a repetition, and a reconstruction. In this comprehensive solo exhibition, Dilara Altınkepçe Arslan explores the cyclical nature of human existence, ancestral memory, and spatial confrontation. Through a multidisciplinary approach encompassing fiber art, suspended installations, and augmented reality (AR), "RE-" transforms the gallery space into a sanctuary of reawakening and introspection.
         </p>
-
-        <p class="editorial-text">
-            "RE-" stands as a profound exploration of these cyclical patterns. The exhibition delves into the concept of ossified uprisings, silenced hopes, and the interconnected narratives that bind humanity. Through the meticulous process of contemporary fiber art and grand spatial installations, the artist physically ties the knots of past traumas and future possibilities.
-        </p>
-        
-        <div class="editorial-quote">
-            "How many more days can I remain silent? My hands are no longer enough to keep them shut..."
-        </div>
-
-        <p class="editorial-text">
-            (Note: You can add further curatorial details from Nelumbo Studios here).
-        </p>
-
     </main>
 
-    <!-- SERGİDEN DİĞER KARELER -->
-    <section class="gallery-container">
-        <div class="gallery-item">
-            <img src="images/DAA-2024-RE-Overcome-05.jpg" alt="Overcome Installation">
-            <div class="gallery-caption">Overcome</div>
+    <div class="works-section-title">
+        <h3>Selected Works in Exhibition</h3>
+        <p>Installations & Fiber Art</p>
+    </div>
+
+    <section class="artwork-flow-container">
+
+        <!-- 1. OVERCOME -->
+        <div class="artwork-block">
+            <div class="artwork-text">
+                <div class="artwork-meta">Suspended Installation</div>
+                <h2>Overcome (Geldiler)</h2>
+                <div class="artwork-specs">2024 | Fabric & Fishing Line</div>
+                <a href="artworks-installations.html" class="btn-outline" style="margin-top: 15px;">View Details</a>
+            </div>
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-RE-Overcome-01.jpg" class="img-main" alt="Overcome Main">
+                <img src="images/DAA-2024-RE-Overcome-02.jpg" class="img-sub1" alt="Overcome Detail 1">
+                <img src="images/DAA-2024-RE-Overcome-05.jpg" class="img-sub2" alt="Overcome Detail 2">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" alt="Ballad of Road">
-            <div class="gallery-caption">Ballad of Road</div>
+
+        <!-- 2. BALLAD OF THE ROAD -->
+        <div class="artwork-block">
+            <div class="artwork-text">
+                <div class="artwork-meta">Fiber Art</div>
+                <h2>Ballad of the Road</h2>
+                <div class="artwork-specs">2024 | 200x85 cm | Raw Cotton Fabric & Thread</div>
+                <a href="artworks-series.html" class="btn-outline" style="margin-top: 15px;">View Details</a>
+            </div>
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" class="img-main" alt="Ballad of the Road Main">
+                <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" alt="Ballad of the Road Detail 1">
+                <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" alt="Ballad of the Road Detail 2">
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/DAA-2024-RE-Ascension-01.jpg" alt="Ascension">
-            <div class="gallery-caption">Ascension</div>
+
+        <!-- 3. ASCENSION -->
+        <div class="artwork-block">
+            <div class="artwork-text">
+                <div class="artwork-meta">Wall Installation</div>
+                <h2>Ascension</h2>
+                <div class="artwork-specs">2024 | 30x60 cm x 9 Pieces</div>
+                <a href="artworks-installations.html" class="btn-outline" style="margin-top: 15px;">View Details</a>
+            </div>
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension Main">
+                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Ascension Detail 1">
+                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Ascension Detail 2">
+            </div>
         </div>
+
+        <!-- 4. ID (VESİKA) - AR -->
+        <div class="artwork-block">
+            <div class="artwork-text">
+                <div class="artwork-meta">New Media & Augmented Reality</div>
+                <h2>ID (Vesika)</h2>
+                <div class="artwork-specs">2024 | 100x125 cm | Fiber Art + AR</div>
+                <a href="artworks-newmedia.html" class="btn-outline" style="margin-top: 15px;">View Details</a>
+            </div>
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-RE-ID-01.jpg" class="img-main" alt="ID Vesika Main">
+                <img src="images/DAA-2024-RE-ID-02.jpg" class="img-sub1" alt="ID Vesika Detail 1">
+                <img src="images/DAA-2024-RE-ID-03.jpg" class="img-sub2" alt="ID Vesika Detail 2">
+            </div>
+        </div>
+
     </section>
 
     <div class="back-nav">
-        <a href="exhibitions.html" class="btn-outline">Return to Exhibitions</a>
+        <a href="exhibitions.html" class="btn-outline">Return to All Exhibitions</a>
     </div>
 
 </body>
