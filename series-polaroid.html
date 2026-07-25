@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polaroid Series | Dilara Altınkepçe Arslan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        
+        /* HEADER NAV */
+        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+        .nav-links a:hover { opacity: 0.5; }
+
+        /* HERO BANNER */
+        .series-hero { width: 100%; height: 70vh; position: relative; background: url('images/DAA-2024-RE-MessageFrom-01.jpg') center/cover no-repeat; background-attachment: fixed; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
+        
+        .content-container { max-width: 900px; margin: -80px auto 100px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
+        .series-title { margin-bottom: 50px; }
+        .series-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
+        .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; padding: 0 5%; }
+
+        /* POLAROID SATIRLARI (ROW) */
+        .polaroid-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 20px 100px 20px; display: flex; flex-direction: column; gap: 120px; }
+        
+        .polaroid-row { display: flex; align-items: center; gap: 80px; }
+        .polaroid-row:nth-child(even) { flex-direction: row-reverse; }
+
+        /* POLAROID ÇERÇEVE EFEKTİ */
+        .polaroid-frame-container { flex: 1; display: flex; justify-content: center; perspective: 1000px; }
+        .polaroid-card { background: #fff; padding: 25px 25px 80px 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease; position: relative; }
+        
+        /* Hafif sağa sola yatık durmaları için */
+        .polaroid-row:nth-child(odd) .polaroid-card { transform: rotate(-3deg); }
+        .polaroid-row:nth-child(even) .polaroid-card { transform: rotate(3deg); }
+        
+        .polaroid-card:hover { transform: rotate(0deg) scale(1.05) translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); z-index: 10; }
+        
+        .polaroid-card img { width: 100%; aspect-ratio: 4/5; object-fit: cover; background: #eaeaea; filter: grayscale(10%) contrast(95%); transition: filter 0.6s ease; display: block; }
+        .polaroid-card:hover img { filter: grayscale(0%) contrast(100%); }
+        
+        .polaroid-caption { position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #aaa; font-style: italic; letter-spacing: 2px; }
+
+        /* METİN VE ŞİİR ALANI */
+        .polaroid-details { flex: 1.2; padding: 20px; }
+        .polaroid-details h2 { font-size: 3rem; letter-spacing: 2px; margin-bottom: 10px; color: #111; line-height: 1.1; }
+        .polaroid-specs { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 2px; color: #888; margin-bottom: 30px; text-transform: uppercase; }
+        .polaroid-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ddd; padding-left: 20px; }
+
+        .back-nav { text-align: center; margin: 50px 0 100px 0; }
+        .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-outline:hover { background: #111; color: #fff; }
+
+        @media (max-width: 900px) { 
+            .nav-links { display: none; } 
+            .polaroid-row { flex-direction: column !important; gap: 40px; text-align: center; }
+            .polaroid-card { transform: rotate(0deg) !important; padding: 15px 15px 60px 15px; width: 90%; }
+            .polaroid-details h2 { font-size: 2.5rem; }
+            .polaroid-poem { border-left: none; padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><a href="index.html">DAA</a></div>
+        <div class="nav-links">
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
+            <a href="selections.html">Selections</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <header class="series-hero">
+        <div class="hero-overlay"></div>
+    </header>
+
+    <main class="content-container">
+        <div class="series-title">
+            <h4>Captured Fragments of Time</h4>
+            <h1>Polaroid Series</h1>
+        </div>
+        <p class="editorial-text">
+            The Polaroid Series acts as a collection of spiritual snapshots. Like an instant photograph developing before your eyes, these fiber art pieces freeze fleeting mythological moments, ancestral encounters, and celestial messages into tangible forms.
+        </p>
+    </main>
+
+    <section class="polaroid-wrapper">
+
+        <!-- 1. A MESSAGE FROM THE FUTURE -->
+        <div class="polaroid-row">
+            <div class="polaroid-frame-container">
+                <div class="polaroid-card">
+                    <img src="images/DAA-2024-RE-MessageFrom-01.jpg" alt="A Message From the Future">
+                    <div class="polaroid-caption">DAA Studio Archives</div>
+                </div>
+            </div>
+            <div class="polaroid-details">
+                <h2>A Message From the Future</h2>
+                <div class="polaroid-specs">2024 | 49x59 cm | Fiber Art</div>
+                <div class="polaroid-poem">
+                    "The soil gave no nutrients during the planting season, and many souls ascended to the Sky this year. I consulted the gods, but found no answer. I pursued my question across lands and from time to time. The guilt remains in my hands."
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. HIDIRELLEZ -->
+        <div class="polaroid-row">
+            <div class="polaroid-frame-container">
+                <div class="polaroid-card">
+                    <img src="images/DAA-2024-RE-Hidirellez-01.jpg" alt="Hidirellez">
+                    <div class="polaroid-caption">DAA Studio Archives</div>
+                </div>
+            </div>
+            <div class="polaroid-details">
+                <h2>Hidirellez</h2>
+                <div class="polaroid-specs">2024 | 49x59 cm | Fiber Art</div>
+                <div class="polaroid-poem">
+                    "I celebrated the arrival of spring with all my friends."
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. DURGA'S VISIT -->
+        <div class="polaroid-row">
+            <div class="polaroid-frame-container">
+                <div class="polaroid-card">
+                    <img src="images/DAA-2024-RE-DurgasVisit-01.jpg" alt="Durga's Visit">
+                    <div class="polaroid-caption">DAA Studio Archives</div>
+                </div>
+            </div>
+            <div class="polaroid-details">
+                <h2>Durga's Visit (Year of Ud)</h2>
+                <div class="polaroid-specs">2023 | 59x49 cm | Fiber Art</div>
+                <div class="polaroid-poem">
+                    "In the ceremony that we delivered our spring anniversary to Ud, I set my soul on the road and met with Durga in Sky. I consulted her for this cycle, which is the year of calmness, reason, and consciousness. Here is a picture from our meeting.. Happy Ud Year!"
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. AWAKENED ANEW -->
+        <div class="polaroid-row">
+            <div class="polaroid-frame-container">
+                <div class="polaroid-card">
+                    <img src="images/daa-artworks-Awakened-Anew.-01.jpg" alt="Awakened Anew">
+                    <div class="polaroid-caption">DAA Studio Archives</div>
+                </div>
+            </div>
+            <div class="polaroid-details">
+                <h2>Awakened Anew</h2>
+                <div class="polaroid-specs">2024 | Fiber Art</div>
+                <div class="polaroid-poem">
+                    "A spiritual reawakening, piecing together the fragmented memories of the past to forge a resilient existence in the present."
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="back-nav">
+        <a href="artworks-series.html" class="btn-outline">Return to Series</a>
+    </div>
+
+</body>
+</html>
