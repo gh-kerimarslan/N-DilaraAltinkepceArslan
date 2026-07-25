@@ -13,73 +13,141 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* HEADER NAV (ORTADA İSİM) */
-        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: center; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        /* HEADER NAV (3 BÖLMELİ VE AÇILIR MENÜLÜ) */
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         
-        .nav-logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 6px; font-weight: 600; text-transform: uppercase; color: #111; }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { height: 35px; width: auto; object-fit: contain; } /* LOGO */
         
-        /* LOGO GÖRSELİ KULLANMAK İSTERSENİZ AŞAĞIDAKİ YAPIYI AÇABİLİRSİNİZ
-        .nav-logo img { height: 40px; width: auto; object-fit: contain; } 
-        */
+        .nav-center { flex: 2; text-align: center; }
+        .nav-center a { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 5px; font-weight: 600; text-transform: uppercase; color: #111; }
+        
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+        .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
+        .nav-right a:hover { opacity: 0.5; }
 
-        /* MAIN SLIDER (HERO) */
+        /* DROPDOWN (AÇILIR MENÜ) CSS */
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: rgba(255,255,255,0.98); min-width: 180px; box-shadow: 0px 10px 30px rgba(0,0,0,0.08); padding: 10px 0; text-align: center; border-top: 2px solid #111; border-radius: 2px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #111; padding: 12px 20px; text-decoration: none; display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+        .dropdown-content a:hover { background-color: #f7f7f7; opacity: 1; }
+
+        /* MAIN SLIDER */
         .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 2s ease-in-out; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 2s ease-in-out; }
         .slide.active { opacity: 1; }
         
-        /* SLIDER BEYAZ OVERLAY VE BÜYÜTÜLMÜŞ ORTA YAZI */
-        .slider-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,0.85)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 10; }
-        .hero-title { font-size: 6rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; color: #111; font-family: 'Cormorant Garamond', serif; }
+        /* SLIDER BEYAZ OVERLAY VE RESİM EFEKTİ */
+        .bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease, filter 1s ease; z-index: 1; filter: grayscale(15%); }
+        .white-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.65); z-index: 2; transition: background 0.8s ease; }
+        .slider-container:hover .white-overlay { background: rgba(255, 255, 255, 0.85); }
+        .slider-container:hover .slide.active .bg-image { transform: scale(1.02); filter: grayscale(0%); }
 
-        /* GATEWAY BANNERS (SAYFA KAPAKLARI) */
+        /* KİBAR SLIDER KÜNYESİ */
+        .slide-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #111; z-index: 10; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 500; text-align: center; }
+
+        /* GATEWAY BANNERS (TAM SAYFA AŞAĞI AKAN BLOKLAR) */
         .gateway-section { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #ebebeb; }
-        .gateway-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease; z-index: 1; filter: grayscale(15%); }
-        .gateway-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: 2; transition: background 0.8s ease; }
-        .gateway-section:hover .gateway-bg { transform: scale(1.03); filter: grayscale(0%); }
-        .gateway-section:hover .gateway-overlay { background: rgba(255, 255, 255, 0.85); }
-        .gateway-content { position: relative; z-index: 3; max-width: 900px; padding: 0 20px; }
+        .gateway-section:hover .bg-image { transform: scale(1.03); filter: grayscale(0%); }
+        .gateway-section:hover .white-overlay { background: rgba(255, 255, 255, 0.88); }
+        
+        .gateway-content { position: relative; z-index: 3; max-width: 900px; padding: 0 20px; color: #111; }
         .gateway-content h2 { font-size: 4rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; }
         .gateway-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #333; margin-bottom: 15px; font-style: italic; }
-        .gateway-content p { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #666; margin-bottom: 40px; }
-        .btn-outline { display: inline-block; padding: 15px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; background: transparent; cursor: pointer; }
+        .gateway-content p { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; font-weight: 500; }
+        
+        .btn-outline { display: inline-block; padding: 15px 40px; border: 1px solid #111; color: #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; background: transparent; cursor: pointer; }
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
-            .nav-logo a { font-size: 1rem; letter-spacing: 3px; }
-            .hero-title { font-size: 3rem; letter-spacing: 5px; }
+            .nav-left, .nav-right { display: none; }
+            .nav-center a { font-size: 1rem; letter-spacing: 3px; }
+            .slide-caption { font-size: 0.7rem; letter-spacing: 3px; width: 90%; }
             .gateway-content h2 { font-size: 2.5rem; letter-spacing: 5px; } 
         }
     </style>
 </head>
 <body>
 
-    <!-- ORTALI SABİT NAVİGASYON (SADECE İSİM) -->
+    <!-- 3 BÖLMELİ HEADER & AÇILIR MENÜ -->
     <nav>
-        <div class="nav-logo">
+        <!-- Sol: Logo -->
+        <div class="nav-left">
+            <a href="index.html">
+                <img src="images/daa-Logo.png" alt="Logo">
+            </a>
+        </div>
+        
+        <!-- Orta: İsim -->
+        <div class="nav-center">
             <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
-            <!-- Görsel logo kullanmak isterseniz üstteki a etiketinin içini silip şunu ekleyin: 
-            <img src="images/daa-Logo.png" alt="Dilara Altınkepçe Arslan"> 
-            -->
+        </div>
+        
+        <!-- Sağ: Menüler & Dropdowns -->
+        <div class="nav-right">
+            
+            <div class="dropdown">
+                <a href="exhibitions.html">Exhibitions</a>
+                <div class="dropdown-content">
+                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
+                    <a href="exhibitions.html">All Exhibitions</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="artworks.html">Artworks</a>
+                <div class="dropdown-content">
+                    <a href="artworks-series.html">Series</a>
+                    <a href="artworks-installations.html">Installations</a>
+                    <a href="artworks-newmedia.html">New Media</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="selections.html">Selections</a>
+            </div>
+
+            <div class="dropdown">
+                <a href="about.html">About</a>
+            </div>
+
         </div>
     </nav>
 
-    <!-- MAIN SLIDER (HERO) -->
+    <!-- FULLSCREEN HERO SLIDER BANNER (AYDINLIK HOVER EFEKTLİ VE ZARİF KÜNYELİ) -->
     <header class="slider-container">
-        <!-- En üst slider -->
-        <div class="slide active" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');"></div>
-        <div class="slide" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
-        <div class="slide" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
-        <div class="slide" style="background-image: url('images/04-banner-daa-ortakmekik-verbasci-01.jpg');"></div>
         
-        <div class="slider-overlay">
-            <div class="hero-title">Dilara Altınkepçe Arslan</div>
+        <div class="slide active">
+            <div class="bg-image" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');"></div>
+            <div class="white-overlay"></div>
+            <div class="slide-caption">Overcome • Suspended Installation, 2024</div>
         </div>
+        
+        <div class="slide">
+            <div class="bg-image" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
+            <div class="white-overlay"></div>
+            <div class="slide-caption">The Grand Ritual • Fiber Art, 2023</div>
+        </div>
+        
+        <div class="slide">
+            <div class="bg-image" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
+            <div class="white-overlay"></div>
+            <div class="slide-caption">Alarm: Modern Age Griffin • New Media, 2025</div>
+        </div>
+
+        <div class="slide">
+            <div class="bg-image" style="background-image: url('images/04-banner-daa-ortakmekik-verbasci-01.jpg');"></div>
+            <div class="white-overlay"></div>
+            <div class="slide-caption">Anthrenus Verbasci • VR Experience, 2023</div>
+        </div>
+        
     </header>
 
     <!-- 1. Exhibitions Banner -->
     <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/05-banner-daa-artweeks-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
+        <div class="bg-image" style="background-image: url('images/05-banner-daa-artweeks-01.jpg');"></div>
+        <div class="white-overlay"></div>
         <div class="gateway-content">
             <h2>Exhibitions</h2>
             <h3>Curated Showcases</h3>
@@ -90,8 +158,8 @@
 
     <!-- 2. Artworks Banner -->
     <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/06-banner-daa-nevmekan-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
+        <div class="bg-image" style="background-image: url('images/06-banner-daa-nevmekan-01.jpg');"></div>
+        <div class="white-overlay"></div>
         <div class="gateway-content">
             <h2>Artworks</h2>
             <h3>Collections & Archives</h3>
@@ -102,8 +170,8 @@
 
     <!-- 3. Selections Banner -->
     <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
+        <div class="bg-image" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
+        <div class="white-overlay"></div>
         <div class="gateway-content">
             <h2>Selections</h2>
             <h3>Highlight: Noise Media Art "Alarm"</h3>
@@ -114,8 +182,8 @@
 
     <!-- 4. About Banner -->
     <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
+        <div class="bg-image" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
+        <div class="white-overlay"></div>
         <div class="gateway-content">
             <h2>About</h2>
             <h3>Dilara Altınkepçe Arslan</h3>
