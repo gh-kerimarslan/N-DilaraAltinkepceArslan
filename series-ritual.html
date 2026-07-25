@@ -23,44 +23,58 @@
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
         
         .content-container { max-width: 1000px; margin: -80px auto 80px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
-        
         .series-title { margin-bottom: 50px; }
         .series-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
         .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
         .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
 
-        /* EDITORIAL DOWNWARD FLOW CONTAINER */
-        .artwork-flow-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 100px 20px; }
+        /* TEK EKRANA SIĞAN (COMPACT) ESER BLOKLARI */
+        .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
         
-        .artwork-block { margin-bottom: 150px; padding-bottom: 100px; border-bottom: 1px solid #e0e0e0; }
-        .artwork-block:last-child { border-bottom: none; }
+        .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 75vh; margin-bottom: 80px; padding: 80px 0; border-bottom: 1px solid #e5e5e5; }
+        .artwork-block:nth-child(even) { flex-direction: row-reverse; }
+        .artwork-block:last-child { border-bottom: none; margin-bottom: 0; }
 
-        /* ARTWORK HEADER (Title & Tags) */
-        .artwork-header { text-align: center; margin-bottom: 50px; }
-        .artwork-header h2 { font-size: 3.5rem; letter-spacing: 4px; margin-bottom: 10px; color: #111; }
-        .artwork-header .tags { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 3px; color: #888; text-transform: uppercase; }
+        /* METİN VE KÜNYE ALANI */
+        .artwork-text { flex: 1; padding: 20px; }
+        .artwork-meta { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 15px; }
+        .artwork-text h2 { font-size: 3.5rem; letter-spacing: 2px; margin-bottom: 15px; color: #111; line-height: 1.1; }
+        .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
+        .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
-        /* IMAGES LAYOUT */
-        .img-large { width: 100%; display: block; margin-bottom: 30px; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
-        .img-large:hover { filter: grayscale(0%); transform: scale(1.02); }
-        
-        .img-group { display: flex; gap: 30px; margin-bottom: 30px; justify-content: space-between; }
-        
-        .img-half { width: calc(50% - 15px); background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; object-fit: cover; cursor: pointer; }
-        .img-third { width: calc(33.333% - 20px); background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; object-fit: cover; cursor: pointer; }
-        
-        .img-half:hover, .img-third:hover { filter: grayscale(0%); transform: scale(1.03); }
+        /* IZGARA (GRID) GALERİ ALANI */
+        .artwork-gallery { flex: 1.2; display: grid; gap: 15px; height: 60vh; min-height: 400px; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(15%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        .artwork-gallery:hover img { filter: grayscale(0%); }
+        .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        .back-nav { text-align: center; margin-bottom: 100px; }
+        /* 3 Fotoğraflı Standart Dizilim (1 Büyük + 2 Küçük) */
+        .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
+        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; }
+        .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+
+        /* 2 Fotoğraflı Dizilim (Yarı yarıya) */
+        .grid-2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+
+        /* 4 Fotoğraflı Dizilim (Toy için özel) */
+        .grid-4 { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
+        .grid-4 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; }
+        .grid-4 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 4; }
+        .grid-4 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+        .grid-4 .img-sub3 { grid-row: 2 / 3; grid-column: 3 / 4; }
+
+        .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
-            .series-title h1 { font-size: 3rem; }
-            .artwork-header h2 { font-size: 2.5rem; }
-            .img-group { flex-direction: column; gap: 20px; }
-            .img-half, .img-third { width: 100%; }
+            .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
+            .artwork-gallery { height: auto; min-height: 50vh; width: 100%; grid-template-columns: 1fr; grid-template-rows: auto; }
+            .grid-3 .img-main, .grid-4 .img-main { grid-row: auto; grid-column: auto; height: 40vh; }
+            .grid-3 .img-sub1, .grid-3 .img-sub2, .grid-4 .img-sub1, .grid-4 .img-sub2, .grid-4 .img-sub3 { grid-row: auto; grid-column: auto; height: 25vh; }
+            .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -90,112 +104,146 @@
         </p>
     </main>
 
-    <!-- EDİTORYAL ESER AKIŞI (AŞAĞI DOĞRU) -->
     <section class="artwork-flow-container">
 
         <!-- 1. TUNNEL OF TIME -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">BASE Selected 2024</div>
                 <h2>Tunnel of Time</h2>
-                <div class="tags">Fiber Art • BASE Selected 2024</div>
+                <div class="artwork-specs">2024 | 156x55 cm | Fiber Art</div>
+                <div class="artwork-poem">
+                    "In a tunnel where the beginning and end are immeasurably distant, in how many forms did we exist? <br>
+                    How many forms did we become mirrors of, and how many forms did we create? <br>
+                    On this path filled with echoes, with all the ongoing searches, and all the efforts against non-existent arrivals…"
+                </div>
             </div>
-            <img src="images/DAA-2024-Tunnel-01.jpg" class="img-large" alt="Tunnel of Time 1">
-            <div class="img-group">
-                <img src="images/DAA-2024-Tunnel-02.jpg" class="img-half" alt="Tunnel of Time 2">
-                <img src="images/DAA-2024-Tunnel-03.jpg" class="img-half" alt="Tunnel of Time 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-Tunnel-01.jpg" class="img-main" alt="Tunnel of Time 1">
+                <img src="images/DAA-2024-Tunnel-02.jpg" class="img-sub1" alt="Tunnel of Time 2">
+                <img src="images/DAA-2024-Tunnel-03.jpg" class="img-sub2" alt="Tunnel of Time 3">
             </div>
         </div>
 
         <!-- 2. THE GRAND RITUAL -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">BASE 2023 Selection</div>
                 <h2>The Grand Ritual</h2>
-                <div class="tags">Fiber Art • BASE 2023 Selection</div>
+                <div class="artwork-specs">2023 | 135x108 cm | Cotton thread on raw cotton fabric</div>
+                <div class="artwork-poem">
+                    "Those who are on the same path unite and become one,<br>
+                    Warmed by the same sun and watered by the same rain,<br>
+                    Whichever way they turn, they go the same way.<br>
+                    Taking refuge in the same Sky, it breaks into thousands of pieces,<br>
+                    As it is divided, it becomes completed and becomes One.<br>
+                    Unity becomes sound, direction, rhythm."
+                </div>
             </div>
-            <img src="images/DAA-2023-TheGrandRitual-01.jpg" class="img-large" alt="The Grand Ritual 1">
-            <div class="img-group">
-                <img src="images/DAA-2023-TheGrandRitual-02.jpg" class="img-half" alt="The Grand Ritual 2">
-                <img src="images/DAA-2023-TheGrandRitual-03.jpg" class="img-half" alt="The Grand Ritual 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2023-TheGrandRitual-01.jpg" class="img-main" alt="The Grand Ritual 1">
+                <img src="images/DAA-2023-TheGrandRitual-02.jpg" class="img-sub1" alt="The Grand Ritual 2">
+                <img src="images/DAA-2023-TheGrandRitual-03.jpg" class="img-sub2" alt="The Grand Ritual 3">
             </div>
         </div>
 
         <!-- 3. THE RITUAL I -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">Fiber Art</div>
                 <h2>The Ritual I</h2>
-                <div class="tags">Fiber Art</div>
+                <div class="artwork-specs">2022 | 50x50 cm</div>
+                <div class="artwork-poem">
+                    "Those who are on the same path unite and become one, <br>
+                    Unity becomes sound, direction, rhythm."
+                </div>
             </div>
-            <img src="images/DAA-2022-Rituel-01.jpg" class="img-large" alt="The Ritual I 1">
-            <div class="img-group">
-                <img src="images/DAA-2022-Rituel-02.jpg" class="img-half" alt="The Ritual I 2">
-                <img src="images/DAA-2022-Rituel-03.jpg" class="img-half" alt="The Ritual I 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2022-Rituel-01.jpg" class="img-main" alt="The Ritual I 1">
+                <img src="images/DAA-2022-Rituel-02.jpg" class="img-sub1" alt="The Ritual I 2">
+                <img src="images/DAA-2022-Rituel-03.jpg" class="img-sub2" alt="The Ritual I 3">
             </div>
         </div>
 
         <!-- 4. THE RITUAL II -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">BASE Selected 2024</div>
                 <h2>The Ritual II</h2>
-                <div class="tags">Fiber Art • BASE Selected 2024</div>
+                <div class="artwork-specs">2024 | 75x75 cm | Fiber Art</div>
+                <div class="artwork-poem">
+                    "As with every spring, <br>
+                    In the rawest form of life, <br>
+                    To all within us and all around us."
+                </div>
             </div>
-            <img src="images/DAA-2024-Ritual-II-01.jpg" class="img-large" alt="The Ritual II 1">
-            <div class="img-group">
-                <img src="images/DAA-2024-Ritual-II-02.jpg" class="img-half" alt="The Ritual II 2">
-                <img src="images/DAA-2024-Ritual-II-03.jpg" class="img-half" alt="The Ritual II 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-Ritual-II-01.jpg" class="img-main" alt="The Ritual II 1">
+                <img src="images/DAA-2024-Ritual-II-02.jpg" class="img-sub1" alt="The Ritual II 2">
+                <img src="images/DAA-2024-Ritual-II-03.jpg" class="img-sub2" alt="The Ritual II 3">
             </div>
         </div>
 
         <!-- 5. TOY (THE GATHERING) -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">Taksim Sanat Artweeks</div>
                 <h2>Toy (The Gathering)</h2>
-                <div class="tags">Fiber Art • Taksim Sanat Artweeks</div>
+                <div class="artwork-specs">Fiber Art</div>
+                <div class="artwork-poem">
+                    "A conceptual gathering bridging the ancestral memory with the contemporary existence."
+                </div>
             </div>
-            <img src="images/daa-artworks-toy.jpg" class="img-large" alt="Toy Main">
-            <!-- Toy için 3 yan yana küçük görsel -->
-            <div class="img-group">
-                <img src="images/daa-artworks-toy1-1.jpg" class="img-third" alt="Toy Detail 1">
-                <img src="images/daa-artworks-toy2-1.jpg" class="img-third" alt="Toy Detail 2">
-                <img src="images/daa-artworks-toy3-1.jpg" class="img-third" alt="Toy Detail 3">
+            <div class="artwork-gallery grid-4">
+                <img src="images/daa-artworks-toy.jpg" class="img-main" alt="Toy Main">
+                <img src="images/daa-artworks-toy1-1.jpg" class="img-sub1" alt="Toy Detail 1">
+                <img src="images/daa-artworks-toy2-1.jpg" class="img-sub2" alt="Toy Detail 2">
+                <img src="images/daa-artworks-toy3-1.jpg" class="img-sub3" alt="Toy Detail 3">
             </div>
         </div>
 
         <!-- 6. WE -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">"The Exit" Exhibition • Artweeks</div>
                 <h2>We</h2>
-                <div class="tags">Fiber Art • "The Exit" Exhibition • Artweeks</div>
+                <div class="artwork-specs">2024 | 75x75 cm | Fiber Art</div>
             </div>
-            <!-- We için yan yana 2 büyük görsel -->
-            <div class="img-group">
-                <img src="images/DAA-2024-WE-01.jpg" class="img-half" alt="We 1">
-                <img src="images/DAA-2024-WE-03.jpg" class="img-half" alt="We 2">
+            <div class="artwork-gallery grid-2">
+                <img src="images/DAA-2024-WE-01.jpg" alt="We 1">
+                <img src="images/DAA-2024-WE-03.jpg" alt="We 2">
             </div>
         </div>
 
-        <!-- 7. PORTAL II -->
+        <!-- 7. PORTAL: BEYOND THE DOOR -->
         <div class="artwork-block">
-            <div class="artwork-header">
-                <h2>Portal II</h2>
-                <div class="tags">Fiber Art • BASE Selected 2024</div>
+            <div class="artwork-text">
+                <div class="artwork-meta">BASE Selected 2024</div>
+                <h2>Portal: Beyond the Door</h2>
+                <div class="artwork-specs">2024 | 30x60 cm | Fiber Art</div>
             </div>
-            <img src="images/DAA-2024-Portal-Beyond-01.jpg" class="img-large" alt="Portal II 1">
-            <div class="img-group">
-                <img src="images/DAA-2024-Portal-Beyond-02.jpg" class="img-half" alt="Portal II 2">
-                <img src="images/DAA-2024-Portal-Beyond-03.jpg" class="img-half" alt="Portal II 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-Portal-Beyond-01.jpg" class="img-main" alt="Portal II 1">
+                <img src="images/DAA-2024-Portal-Beyond-02.jpg" class="img-sub1" alt="Portal II 2">
+                <img src="images/DAA-2024-Portal-Beyond-03.jpg" class="img-sub2" alt="Portal II 3">
             </div>
         </div>
 
         <!-- 8. ASCENSION (YÜKSELİŞ) -->
         <div class="artwork-block">
-            <div class="artwork-header">
+            <div class="artwork-text">
+                <div class="artwork-meta">"RE-" Solo Exhibition</div>
                 <h2>Ascension</h2>
-                <div class="tags">Fiber Art • Installation • "RE-" Solo Exhibition</div>
+                <div class="artwork-specs">2024 | 30x60 cm x 9 | Installation / Fiber Art</div>
+                <div class="artwork-poem">
+                    "All the pain and disharmony in my life converges into a single and sweet harmony, and my worship unfolds like a blissful bird flying over the sea." <br>
+                    — Gitanjali
+                </div>
             </div>
-            <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-large" alt="Ascension 1">
-            <div class="img-group">
-                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-half" alt="Ascension 2">
-                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-half" alt="Ascension 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension 1">
+                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Ascension 2">
+                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Ascension 3">
             </div>
         </div>
 
