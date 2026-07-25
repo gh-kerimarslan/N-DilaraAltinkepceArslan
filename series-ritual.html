@@ -28,41 +28,50 @@
         .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
         .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
 
-        /* TEK EKRANA SIĞAN (COMPACT) ESER BLOKLARI */
+        /* ESER BLOKLARI */
         .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
-        
         .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 75vh; margin-bottom: 80px; padding: 80px 0; border-bottom: 1px solid #e5e5e5; }
         .artwork-block:nth-child(even) { flex-direction: row-reverse; }
         .artwork-block:last-child { border-bottom: none; margin-bottom: 0; }
 
-        /* METİN VE KÜNYE ALANI */
+        /* METİN VE KÜNYE */
         .artwork-text { flex: 1; padding: 20px; }
         .artwork-meta { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 15px; }
         .artwork-text h2 { font-size: 3.5rem; letter-spacing: 2px; margin-bottom: 15px; color: #111; line-height: 1.1; }
         .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
-        /* IZGARA (GRID) GALERİ ALANI */
-        .artwork-gallery { flex: 1.2; display: grid; gap: 15px; height: 60vh; min-height: 400px; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(15%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        /* --- DİNAMİK CSS GRID MATRİSLERİ --- */
+        .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
         .artwork-gallery:hover img { filter: grayscale(0%); }
         .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        /* 3 Fotoğraflı Standart Dizilim (1 Büyük + 2 Küçük) */
+        /* 1. Geniş Üst, 2 Küçük Alt (Tunnel of Time) */
+        .grid-wide-top-2 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+        .grid-wide-top-2 .img-main { grid-column: 1 / 3; aspect-ratio: 21/9; object-fit: cover; }
+        .grid-wide-top-2 .img-sub1, .grid-wide-top-2 .img-sub2 { aspect-ratio: 4/3; }
+
+        /* 2. Kare Format (Ritual 1 ve 2 - Eserin kesilmemesi için sığdırılır) */
+        .grid-square-main { grid-template-columns: 1.5fr 1fr; grid-template-rows: 1fr 1fr; }
+        .grid-square-main .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 1/1; object-fit: contain; background: #fafafa; padding: 10px; }
+        .grid-square-main .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .grid-square-main .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+
+        /* 3. Geniş Üst, 3 Küçük Alt (Toy) */
+        .grid-wide-top-3 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; }
+        .grid-wide-top-3 .img-main { grid-column: 1 / 4; aspect-ratio: 16/9; }
+        .grid-wide-top-3 .img-sub1, .grid-wide-top-3 .img-sub2, .grid-wide-top-3 .img-sub3 { aspect-ratio: 1/1; }
+
+        /* 4. Standart 3'lü (Grand Ritual, Portal, vb.) */
         .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; }
+        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
         .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
         .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
 
-        /* 2 Fotoğraflı Dizilim (Yarı yarıya) */
+        /* 5. Yarı Yarıya (We) */
         .grid-2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
-
-        /* 4 Fotoğraflı Dizilim (Toy için özel) */
-        .grid-4 { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-4 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; }
-        .grid-4 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 4; }
-        .grid-4 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
-        .grid-4 .img-sub3 { grid-row: 2 / 3; grid-column: 3 / 4; }
+        .grid-2 img { aspect-ratio: 1/1; }
 
         .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
@@ -71,9 +80,9 @@
         @media (max-width: 900px) { 
             .nav-links { display: none; } 
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
-            .artwork-gallery { height: auto; min-height: 50vh; width: 100%; grid-template-columns: 1fr; grid-template-rows: auto; }
-            .grid-3 .img-main, .grid-4 .img-main { grid-row: auto; grid-column: auto; height: 40vh; }
-            .grid-3 .img-sub1, .grid-3 .img-sub2, .grid-4 .img-sub1, .grid-4 .img-sub2, .grid-4 .img-sub3 { grid-row: auto; grid-column: auto; height: 25vh; }
+            .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .artwork-gallery img { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
+            .grid-square-main .img-main { height: auto !important; aspect-ratio: 1/1 !important; }
             .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
@@ -106,7 +115,7 @@
 
     <section class="artwork-flow-container">
 
-        <!-- 1. TUNNEL OF TIME -->
+        <!-- 1. TUNNEL OF TIME (Geniş Üst + 2 Alt) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">BASE Selected 2024</div>
@@ -118,14 +127,14 @@
                     On this path filled with echoes, with all the ongoing searches, and all the efforts against non-existent arrivals…"
                 </div>
             </div>
-            <div class="artwork-gallery grid-3">
+            <div class="artwork-gallery grid-wide-top-2">
                 <img src="images/DAA-2024-Tunnel-01.jpg" class="img-main" alt="Tunnel of Time 1">
                 <img src="images/DAA-2024-Tunnel-02.jpg" class="img-sub1" alt="Tunnel of Time 2">
                 <img src="images/DAA-2024-Tunnel-03.jpg" class="img-sub2" alt="Tunnel of Time 3">
             </div>
         </div>
 
-        <!-- 2. THE GRAND RITUAL -->
+        <!-- 2. THE GRAND RITUAL (Standart) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">BASE 2023 Selection</div>
@@ -147,7 +156,7 @@
             </div>
         </div>
 
-        <!-- 3. THE RITUAL I -->
+        <!-- 3. THE RITUAL I (Kare Kadraj) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Fiber Art</div>
@@ -158,14 +167,14 @@
                     Unity becomes sound, direction, rhythm."
                 </div>
             </div>
-            <div class="artwork-gallery grid-3">
+            <div class="artwork-gallery grid-square-main">
                 <img src="images/DAA-2022-Rituel-01.jpg" class="img-main" alt="The Ritual I 1">
                 <img src="images/DAA-2022-Rituel-02.jpg" class="img-sub1" alt="The Ritual I 2">
                 <img src="images/DAA-2022-Rituel-03.jpg" class="img-sub2" alt="The Ritual I 3">
             </div>
         </div>
 
-        <!-- 4. THE RITUAL II -->
+        <!-- 4. THE RITUAL II (Kare Kadraj) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">BASE Selected 2024</div>
@@ -177,14 +186,14 @@
                     To all within us and all around us."
                 </div>
             </div>
-            <div class="artwork-gallery grid-3">
+            <div class="artwork-gallery grid-square-main">
                 <img src="images/DAA-2024-Ritual-II-01.jpg" class="img-main" alt="The Ritual II 1">
                 <img src="images/DAA-2024-Ritual-II-02.jpg" class="img-sub1" alt="The Ritual II 2">
                 <img src="images/DAA-2024-Ritual-II-03.jpg" class="img-sub2" alt="The Ritual II 3">
             </div>
         </div>
 
-        <!-- 5. TOY (THE GATHERING) -->
+        <!-- 5. TOY (Geniş Üst + 3 Alt) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Taksim Sanat Artweeks</div>
@@ -194,7 +203,7 @@
                     "A conceptual gathering bridging the ancestral memory with the contemporary existence."
                 </div>
             </div>
-            <div class="artwork-gallery grid-4">
+            <div class="artwork-gallery grid-wide-top-3">
                 <img src="images/daa-artworks-toy.jpg" class="img-main" alt="Toy Main">
                 <img src="images/daa-artworks-toy1-1.jpg" class="img-sub1" alt="Toy Detail 1">
                 <img src="images/daa-artworks-toy2-1.jpg" class="img-sub2" alt="Toy Detail 2">
@@ -202,7 +211,7 @@
             </div>
         </div>
 
-        <!-- 6. WE -->
+        <!-- 6. WE (2 Eşit Parça) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">"The Exit" Exhibition • Artweeks</div>
@@ -215,7 +224,7 @@
             </div>
         </div>
 
-        <!-- 7. PORTAL: BEYOND THE DOOR -->
+        <!-- 7. PORTAL: BEYOND THE DOOR (Standart) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">BASE Selected 2024</div>
@@ -229,7 +238,7 @@
             </div>
         </div>
 
-        <!-- 8. ASCENSION (YÜKSELİŞ) -->
+        <!-- 8. ASCENSION (Standart) -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">"RE-" Solo Exhibition</div>
