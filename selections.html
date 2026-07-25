@@ -3,124 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selections | Dilara Altınkepçe Arslan</title>
+    <title>Selections & Awards | Dilara Altınkepçe Arslan</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        
+        /* HEADER NAV */
         nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
         .nav-links { display: flex; gap: 35px; }
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        .page-banner { width: 100%; height: 75vh; position: relative; background: url('images/DAA-2025-NoiseMedaiArt-Alarm-banner.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
-        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.1), rgba(250,250,250,0.95)); }
-        .banner-title { position: relative; z-index: 2; text-align: center; }
-        .banner-title h1 { font-size: 4.5rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
-        .banner-title p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 4px; color: #555; font-style: italic; }
+        /* HERO BANNER (Budun Cover) */
+        .selections-hero { width: 100%; height: 80vh; position: relative; background: url('images/daa-bienal-budun-cover.jpg') center/cover no-repeat; background-attachment: fixed; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)); }
+        .hero-content { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; z-index: 2; width: 100%; max-width: 800px; }
+        .hero-content h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 15px; opacity: 0.9; }
+        .hero-content h1 { font-size: 4.5rem; letter-spacing: 5px; margin-bottom: 10px; line-height: 1.1; }
 
-        .selections-container { max-width: 1100px; margin: 0 auto; padding: 80px 5%; }
-        .category-title { font-size: 2rem; letter-spacing: 5px; text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 60px; margin-top: 80px; }
+        /* MAIN WRAPPER */
+        .main-wrapper { max-width: 1200px; margin: 0 auto; padding: 100px 20px; display: flex; flex-direction: column; gap: 150px; }
 
-        .selection-item { display: flex; gap: 40px; margin-bottom: 80px; align-items: center; }
-        .selection-image { flex: 1; }
-        .selection-image img { width: 100%; max-height: 50vh; object-fit: cover; filter: grayscale(15%); transition: 0.5s ease; }
-        .selection-image:hover img { filter: grayscale(0%); }
-        .selection-info { flex: 1.2; }
-        .selection-info h4 { font-size: 0.8rem; color: #888; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
-        .selection-info h3 { font-size: 2.5rem; margin-bottom: 15px; }
-        .selection-info p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.8; color: #555; font-style: italic; }
+        /* 1. EDİRNE BİENALİ (BUDUN) ÖZEL BLOK */
+        .budun-feature { display: flex; flex-direction: column; gap: 60px; }
+        .budun-text-block { max-width: 900px; margin: 0 auto; text-align: center; }
+        .budun-text-block h2 { font-size: 3rem; margin-bottom: 20px; }
+        .budun-text-block .meta { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 40px; }
+        .budun-poetry { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; color: #333; line-height: 1.8; text-align: justify; columns: 2; column-gap: 50px; }
+        
+        .budun-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; }
+        .budun-gallery img { width: 100%; aspect-ratio: 3/4; object-fit: cover; filter: grayscale(15%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        .budun-gallery img:hover { filter: grayscale(0%); transform: scale(1.03); z-index: 2; position: relative; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
 
-        @media (max-width: 900px) { .nav-links { display: none; } .selection-item { flex-direction: column; } .selection-image img { max-height: 40vh; } }
+        /* SECTION TITLES */
+        .section-header { text-align: center; margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 20px; }
+        .section-header h2 { font-size: 2.5rem; letter-spacing: 3px; color: #111; text-transform: uppercase; }
+
+        /* HORIZONTAL HIGHLIGHT CARDS (AWARDS & WTA) */
+        .highlight-card { display: flex; align-items: center; gap: 60px; margin-bottom: 80px; }
+        .highlight-card:nth-child(even) { flex-direction: row-reverse; }
+        .highlight-image { flex: 1; position: relative; }
+        .highlight-image img { width: 100%; height: auto; max-height: 500px; object-fit: cover; filter: grayscale(10%); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .highlight-text { flex: 1; padding: 20px; }
+        .highlight-text h4 { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 10px; }
+        .highlight-text h3 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 15px; color: #111; }
+        .highlight-text p { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; font-weight: 500; }
+
+        /* ART FAIRS & SELECTIONS LIST */
+        .fairs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .fair-item { display: flex; flex-direction: column; gap: 15px; border-top: 1px solid #eee; padding-top: 20px; }
+        .fair-item h4 { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+        .fair-item h3 { font-size: 1.8rem; color: #111; line-height: 1.2; }
+        .fair-item p { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; color: #666; }
+
+        @media (max-width: 900px) { 
+            .nav-links { display: none; } 
+            .hero-content h1 { font-size: 3rem; }
+            .budun-poetry { columns: 1; }
+            .budun-gallery { grid-template-columns: repeat(2, 1fr); }
+            .highlight-card { flex-direction: column !important; gap: 30px; text-align: center; }
+        }
     </style>
 </head>
 <body>
-<nav>
+
+    <nav>
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
             <a href="artworks.html">Artworks</a>
-            <a href="selections.html">Selections</a>
+            <a href="selections.html" style="opacity: 0.5;">Selections</a>
             <a href="about.html">About</a>
         </div>
     </nav>
 
-    <header class="page-banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-title">
+    <!-- HERO BANNER (BUDUN COVER) -->
+    <header class="selections-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h4>Highlights & Awards</h4>
             <h1>Selections</h1>
-            <p>Fairs, Biennials & Awards</p>
         </div>
     </header>
 
-    <main class="selections-container">
+    <main class="main-wrapper">
 
-        <!-- FAIRS -->
-        <h2 class="category-title">Art Fairs</h2>
-        
-        <div class="selection-item">
-            <div class="selection-image"><img src="images/DAA-2025-NoiseMedaiArt-Alarm-01.jpg" alt="Noise Media Art"></div>
-            <div class="selection-info">
-                <h4>2025 | Bomontiada, Istanbul</h4>
-                <h3>Noise Media Art: "ALARM"</h3>
-                <p>Featuring the highly acclaimed "Modern Age Griffin" project, symbolizing the intersection of humanity's environmental crisis, drought, and radiation through a contemporary lens.</p>
+        <!-- 1. EDİRNE BİENALİ - BUDUN -->
+        <section class="budun-feature">
+            <div class="budun-text-block">
+                <h2>Budun</h2>
+                <div class="meta">Edirne Biennial • Current Edition</div>
+                <div class="budun-poetry">
+                    "Birleşmek kelimesine her zaman heyecan duyarım. Kökündeki 'bir' kelimesinden de azade tekleşmek olarak değil de çoğalmak gibi gelir hep bana. Zaten kendine özgü ve bir olan doğanın nefes alan ve almayan her parçası bu kelimenin hakkını doldurur bende, başka anlamlara pek de yer kalmaz.<br><br>
+                    Mesela gözümüzü açtığımız anda ona ilişen her görüntü birleşmedir. Aynı göz ve aynı şey olsa bile hal farklıdır. Bu sebeple birleşmeler hep yenidir, keşif doludur. İnsana yaşadığını hissettirir, daha doğrusu yaşam denen şeyi.<br><br>
+                    Pek çoğumuz yaşamı anlamaya çalışıyoruz, bazılarımız ise ömrünü buna adıyor, araştırıyor, yazıyor. Peki yaşamı hissetmeyi deniyor muyuz hiç? Konuşabildiğimiz ve düşünebildiğimiz için özümüzde hayvan olduğumuzu unutmasak hislerimize daha çok yer verir miydik? Bu iki özelliğin bedelini hislerimiz mi ödüyor?"
+                </div>
             </div>
-        </div>
+            
+            <div class="budun-gallery">
+                <img src="images/daa-bienal-budun-00.jpg" alt="Budun Detail 00">
+                <img src="images/daa-bienal-budun-01.jpg" alt="Budun Detail 01">
+                <img src="images/daa-bienal-budun-02.jpg" alt="Budun Detail 02">
+                <img src="images/daa-bienal-budun-03.jpg" alt="Budun Detail 03">
+            </div>
+        </section>
 
-        <div class="selection-item" style="flex-direction: row-reverse;">
-            <div class="selection-image"><img src="images/DAA-2024-Tunnel-01.jpg" alt="Baselected"></div>
-            <div class="selection-info">
-                <h4>2024 & 2023 | Istanbul</h4>
-                <h3>Baselected Curations</h3>
-                <p>Selected among the top emerging contemporary artists in Turkey for two consecutive years, exhibiting works like "Tunnel of Time" and "The Grand Ritual".</p>
+        <!-- 2. AWARDS -->
+        <section class="awards-section">
+            <div class="section-header">
+                <h2>Awards</h2>
             </div>
-        </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="A Shaman Village on the Steppe">
+                </div>
+                <div class="highlight-text">
+                    <h4>43. Günümüz Sanatçıları Ödülü Sergisi</h4>
+                    <h3>Bozkırda Bir Şaman Köyü</h3>
+                    <p>2025 | Contemporary Artists Award</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="selection-item">
-            <div class="selection-image"><img src="images/DAA-2022-Loop-01.jpg" alt="Artweeks"></div>
-            <div class="selection-info">
-                <h4>2025 | Taksim Sanat, Istanbul</h4>
-                <h3>Artweeks XII</h3>
-                <p>A comprehensive showcase of new fiber installations and experimental textile approaches.</p>
+        <!-- 3. INTERNATIONAL BIENNIALS -->
+        <section class="biennials-section">
+            <div class="section-header">
+                <h2>International Biennials</h2>
             </div>
-        </div>
+            
+            <div class="highlight-card">
+                <div class="highlight-image">
+                    <!-- WTA Bienali için gönderdiğiniz iki görseli üst üste veya yan yana (flex) kullanabiliriz, tek ana görsel seçildi -->
+                    <img src="images/DAA-2022-Holistic-01.jpg" alt="Holistic Map of Sense">
+                </div>
+                <div class="highlight-text">
+                    <h4>WTA 10th Biennial "The Eye"</h4>
+                    <h3>Holistic Map of Sense</h3>
+                    <p>2022 | TAP & WTA, Istanbul</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- AWARDS -->
-        <h2 class="category-title">Awards</h2>
-        
-        <div class="selection-item">
-            <div class="selection-image"><img src="images/DAA-2024-RE-ShamanVillage-01.jpg" alt="Akbank Sanat Award"></div>
-            <div class="selection-info">
-                <h4>2025 | Akbank Sanat, Istanbul</h4>
-                <h3>43rd Contemporary Artists Award</h3>
-                <p>Accepted to the prestigious 43rd Contemporary Artists Exhibition organized by Akbank Sanat and the Painting and Sculpture Museums Association, featuring the "Shaman Village" artwork.</p>
+        <!-- 4. ART FAIRS & CURATED SELECTIONS -->
+        <section class="fairs-section">
+            <div class="section-header">
+                <h2>Art Fairs & Curated Selections</h2>
             </div>
-        </div>
+            
+            <div class="fairs-grid">
+                
+                <div class="fair-item">
+                    <h4>NOISE Media Art</h4>
+                    <h3>Alarm: Modern Age Griffin</h3>
+                    <p>2025 | Multi-Screen Interactive Installation</p>
+                </div>
 
-        <!-- BIENNIALS -->
-        <h2 class="category-title">Biennials</h2>
-        
-        <div class="selection-item">
-            <div class="selection-image"><img src="images/DAA-2024-RE-Ascension-01.jpg" alt="Edirne Biennial"></div>
-            <div class="selection-info">
-                <h4>Edirne, Turkey</h4>
-                <h3>Edirne Biennial</h3>
-                <p>Site-specific installation featuring the "Budun" artwork, exploring deep-rooted cultural memory within the historical context of the city.</p>
-            </div>
-        </div>
+                <div class="fair-item">
+                    <h4>CERMODERN</h4>
+                    <h3>New: Now (Genç Yeni Farklı)</h3>
+                    <p>2025 | Shaman Village II & Awakened Anew</p>
+                </div>
 
-        <div class="selection-item" style="flex-direction: row-reverse;">
-            <div class="selection-image"><img src="images/DAA-2022-Holistic-02.jpg" alt="WTA Biennial"></div>
-            <div class="selection-info">
-                <h4>2022 | TAP & WTA</h4>
-                <h3>WTA 10th World Textile Art Biennial</h3>
-                <p>Exhibited "Holistic Map of Sense" at the 25th-anniversary celebration of the World Textile Art Biennial in Istanbul/Barcelona.</p>
+                <div class="fair-item">
+                    <h4>Art Weeks 2025</h4>
+                    <h3>Toy (The Gathering)</h3>
+                    <p>2025 | İBB Taksim Sanat Selection</p>
+                </div>
+
+                <div class="fair-item">
+                    <h4>BASE Selected</h4>
+                    <h3>Curated Alumni Showcase</h3>
+                    <p>2024 | Intestine War II, Ritual II, Tunnel of Time</p>
+                </div>
+
+                <div class="fair-item">
+                    <h4>BASE</h4>
+                    <h3>New Graduates Exhibition</h3>
+                    <p>2023 | The Grand Ritual & Anthrenus Verbasci</p>
+                </div>
+
             </div>
-        </div>
+        </section>
 
     </main>
+
 </body>
 </html>
