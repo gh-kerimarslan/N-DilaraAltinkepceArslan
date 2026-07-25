@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works & Collections | Dilara Altınkepçe Arslan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
+        .nav-links { display: flex; gap: 35px; }
+        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+        .nav-links a:hover { opacity: 0.5; }
+
+        .page-banner { width: 100%; height: 70vh; position: relative; background: url('images/DAA-2024-Ritual-II-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,0.95)); }
+        .banner-title { position: relative; z-index: 2; text-align: center; }
+        .banner-title h1 { font-size: 4.5rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
+        .banner-title p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 4px; color: #555; font-style: italic; }
+
+        .collections-container { max-width: 1200px; margin: 0 auto; padding: 100px 5%; }
+        .collection-section { margin-bottom: 150px; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
+        .section-header .divider { width: 40px; height: 1px; background-color: #111; margin: 0 auto; }
+
+        .artwork-highlight { display: flex; align-items: center; gap: 60px; }
+        .artwork-highlight:nth-child(even) { flex-direction: row-reverse; }
+        .art-image { flex: 1.2; overflow: hidden; }
+        .art-image img { width: 100%; max-height: 75vh; object-fit: cover; filter: grayscale(10%) contrast(95%); transition: transform 1.5s ease; }
+        .art-image:hover img { transform: scale(1.03); filter: grayscale(0%) contrast(100%); }
+        .art-info { flex: 1; padding: 20px; }
+        .art-info h3 { font-size: 2.8rem; margin-bottom: 10px; line-height: 1.2; }
+        .details { font-size: 0.75rem; color: #777; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; font-weight: 400; }
+        .poem { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.8; font-style: italic; color: #555; border-left: 1px solid #ccc; padding-left: 20px; margin-bottom: 30px; }
+        .btn-collection { display: inline-block; padding: 12px 30px; border: 1px solid #111; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-collection:hover { background: #111; color: #fff; }
+
+        @media (max-width: 900px) { .nav-links { display: none; } .artwork-highlight { flex-direction: column !important; gap: 30px; } .art-image img { max-height: 50vh; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">DAA</a></div>
+        <div class="nav-links">
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="works.html" style="opacity: 0.5;">Works</a>
+            <a href="selections.html">Selections</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <header class="page-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-title">
+            <h1>Works</h1>
+            <p>Collections & Disciplines</p>
+        </div>
+    </header>
+
+    <main class="collections-container">
+        
+        <!-- SERIES -->
+        <div class="collection-section">
+            <div class="section-header"><h2>Series</h2><div class="divider"></div></div>
+            <div class="artwork-highlight">
+                <div class="art-image"><img src="images/DAA-2023-TheGrandRitual-03.jpg" alt="The Grand Ritual"></div>
+                <div class="art-info">
+                    <h3>The Ritual Series</h3>
+                    <p class="details">Connected Narratives | 2022-2024</p>
+                    <div class="poem">"Taking refuge in the same Sky, it breaks into thousands of pieces... As it is divided, it becomes completed and becomes One."</div>
+                    <a href="#" class="btn-collection">View Full Series</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW MEDIA -->
+        <div class="collection-section">
+            <div class="section-header"><h2>New Media</h2><div class="divider"></div></div>
+            <div class="artwork-highlight" style="flex-direction: row-reverse;">
+                <div class="art-image"><img src="images/DAA-2023-Verbasci-01.jpg" alt="Anthrenus Verbasci"></div>
+                <div class="art-info">
+                    <h3>Anthrenus Verbasci <br> VR Experience</h3>
+                    <p class="details">Interactive Technologies | 2023</p>
+                    <div class="poem">"What if we were one of them, and how would it be to look at another? A deep empathy with the micro-world through virtual reality."</div>
+                    <a href="#" class="btn-collection">Explore Digital Works</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIBER ART -->
+        <div class="collection-section">
+            <div class="section-header"><h2>Fiber Art</h2><div class="divider"></div></div>
+            <div class="artwork-highlight">
+                <div class="art-image"><img src="images/DAA-2024-Portal-Beyond-01.jpg" alt="Portal"></div>
+                <div class="art-info">
+                    <h3>Portal</h3>
+                    <p class="details">Textile & Traditional Weaving | 2024</p>
+                    <div class="poem">"Those who are on the same path unite and become one. Whichever way they turn, they go the same way."</div>
+                    <a href="#" class="btn-collection">View Fiber Collection</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSTALLATION -->
+        <div class="collection-section">
+            <div class="section-header"><h2>Installation</h2><div class="divider"></div></div>
+            <div class="artwork-highlight" style="flex-direction: row-reverse;">
+                <div class="art-image"><img src="images/DAA-2024-RE-Overcome-05.jpg" alt="Overcome"></div>
+                <div class="art-info">
+                    <h3>Overcome</h3>
+                    <p class="details">Spatial Installation | 2024</p>
+                    <div class="poem">"How many more days can I remain silent? My hands are no longer enough to keep them shut..."</div>
+                    <a href="#" class="btn-collection">Explore Installations</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
