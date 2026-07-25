@@ -4,67 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Dilara Altınkepçe Arslan</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-
-        /* NAV */
         nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
         .nav-links { display: flex; gap: 35px; }
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* BANNER */
-        .page-banner { width: 100%; height: 60vh; position: relative; background: url('images/DAA-2022-Holistic-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        /* Banner uses a placeholder for portrait */
+        .page-banner { width: 100%; height: 65vh; position: relative; background: url('images/DAA-2024-RE-Overcome-06.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
         .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.5), rgba(250,250,250,1)); }
         .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 100px; }
-        .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
+        .banner-title h1 { font-size: 4.5rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
 
-        /* CONTENT WRAPPER */
         .about-container { max-width: 900px; margin: 0 auto; padding: 60px 20px 100px 20px; }
-        
         .section-block { margin-bottom: 80px; }
         .section-header { text-align: center; margin-bottom: 40px; }
         .section-header h2 { font-size: 2.2rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 15px; }
         .section-header .divider { width: 40px; height: 1px; background-color: #111; margin: 0 auto; }
         
-        /* TEXT STYLING */
         .bio-text { font-size: 0.95rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 20px; }
-        .statement-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; text-align: center; color: #555; margin: 50px 0; padding: 0 40px; }
+        .statement-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; text-align: center; color: #555; margin: 50px 0; padding: 0 40px; border-left: 2px solid #ccc; border-right: 2px solid #ccc; }
 
-        /* LISTS (PRESS & BLOG) */
+        /* Media / Press Links */
         .media-list { list-style: none; }
-        .media-list li { border-bottom: 1px solid #ddd; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
-        .media-list li:hover { background-color: #f0f0f0; padding-left: 10px; cursor: pointer; }
-        .media-date { font-size: 0.75rem; color: #888; letter-spacing: 2px; }
-        .media-title { font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; }
+        .media-list li { border-bottom: 1px solid #ddd; padding: 25px 0; transition: background 0.3s; }
+        .media-list li:hover { background-color: #f0f0f0; padding-left: 15px; }
+        .media-list a { display: block; }
+        .media-date { font-size: 0.75rem; color: #888; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 5px; }
+        .media-title { font-size: 1.4rem; font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #111; }
+        .media-desc { font-size: 0.85rem; color: #666; margin-top: 10px; }
 
-        /* STUDIO & COLLABS */
-        .studio-box { background: #f4f4f4; padding: 40px; text-align: center; margin-bottom: 30px; }
-        .studio-box h3 { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 15px; }
-        .studio-box p { font-size: 0.85rem; color: #666; margin-bottom: 20px; }
-        .btn-dark { display: inline-block; padding: 10px 30px; background: #111; color: #fff; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+        .studio-box { background: #f4f4f4; padding: 50px; text-align: center; margin-bottom: 30px; border: 1px solid #eaeaea; }
+        .studio-box h3 { font-size: 1.8rem; letter-spacing: 4px; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+        .studio-box p { font-size: 0.85rem; color: #666; margin-bottom: 25px; line-height: 1.8; }
+        .btn-dark { display: inline-block; padding: 12px 35px; background: #111; color: #fff; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; }
         .btn-dark:hover { background: #444; }
 
-        /* CONTACT & SOCIAL */
         .contact-section { text-align: center; margin-top: 80px; padding-top: 60px; border-top: 1px solid #eee; }
-        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-        .social-links a { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; }
+        .social-links { display: flex; justify-content: center; gap: 40px; margin-top: 30px; }
+        .social-links a { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 5px; }
+        .social-links a:hover { border-bottom: 1px solid #111; }
 
-        @media (max-width: 900px) {
-            .nav-links { display: none; }
-            .banner-title h1 { font-size: 2.5rem; letter-spacing: 5px; }
-            .statement-text { font-size: 1.2rem; padding: 0 10px; }
-            .media-list li { flex-direction: column; align-items: flex-start; gap: 5px; }
-        }
+        @media (max-width: 900px) { .nav-links { display: none; } .banner-title h1 { font-size: 2.5rem; letter-spacing: 5px; } }
     </style>
 </head>
 <body>
@@ -73,8 +60,8 @@
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
-            <a href="series.html">Works</a>
-            <a href="fairs.html">Fairs & Selections</a>
+            <a href="works.html">Works</a>
+            <a href="selections.html">Selections</a>
             <a href="about.html" style="opacity: 0.5;">About</a>
         </div>
     </nav>
@@ -94,13 +81,38 @@
                 Born in Bursa in 1993, Dilara Altınkepçe Arslan began her undergraduate studies in 2011 at Mimar Sinan Fine Arts University (MSGSÜ), within the Department of Carpet, Kilim, and Traditional Fabric Patterns. Between 2015 and 2016, she broadened her artistic scope by training in Costume and Accessory Design at the prestigious Accademia di Belle Arti di Bologna, Italy.
             </p>
             <p class="bio-text">
-                In 2024, she published her master's thesis titled "Investigation of the Animal Image as a Symbol in Anatolian Kilims," which heavily influenced her artistic philosophy. Dilara synthesizes traditional weaving rituals with contemporary media, digital art, and VR installations, reflecting a profound dialogue between ancient human memory and modern technology.
+                In 2024, she published her master's thesis titled "Investigation of the Animal Image as a Symbol in Anatolian Kilims." Dilara synthesizes traditional weaving rituals with contemporary media, digital art, and VR installations, reflecting a profound dialogue between ancient human memory and modern technology.
             </p>
         </div>
 
-        <!-- ARTIST STATEMENT -->
         <div class="statement-text">
             "My work lies at the intersection of ancestral weaving rituals and the digital pixels of tomorrow. I aim to bridge the tangible threads of the past with the intangible virtual realities of the future."
+        </div>
+
+        <!-- PRESS & WRITINGS -->
+        <div class="section-block">
+            <div class="section-header">
+                <h2>Press & Writings</h2>
+                <div class="divider"></div>
+            </div>
+            <ul class="media-list">
+                <!-- Yasemin Green Makalesi -->
+                <li>
+                    <a href="#" target="_blank">
+                        <span class="media-date">Art Critique | Yasemin Green</span>
+                        <span class="media-title">An Exploration of Rituals and Digital Synthesis</span>
+                        <p class="media-desc">A deep dive into Dilara Altınkepçe Arslan's conceptual framework, exploring how traditional motifs are transformed into contemporary new media installations.</p>
+                    </a>
+                </li>
+                <!-- Nelumbo Blog -->
+                <li>
+                    <a href="https://nelumbostudios.com/blogs/news" target="_blank">
+                        <span class="media-date">Nelumbo Studios Blog</span>
+                        <span class="media-title">Artist's Notes: The Making of RE-</span>
+                        <p class="media-desc">Dilara's personal writings on the curation, production, and spatial design of her highly acclaimed solo exhibition, RE-.</p>
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <!-- NELUMBO & APPA -->
@@ -112,8 +124,8 @@
             
             <div class="studio-box">
                 <h3>Nelumbo Studios</h3>
-                <p>An independent art studio and curatorial space where personal artistic productions continue and various global exhibitions are organized.</p>
-                <a href="https://nelumbostudios.com" target="_blank" class="btn-dark">Visit Nelumbo Studios</a>
+                <p>An independent art studio and curatorial space co-founded by the artist, where personal artistic productions continue and various global exhibitions are organized.</p>
+                <a href="https://nelumbostudios.com" target="_blank" class="btn-dark">Visit Website</a>
             </div>
 
             <div class="studio-box">
@@ -122,37 +134,11 @@
             </div>
         </div>
 
-        <!-- PRESS & BLOG -->
-        <div class="section-block">
-            <div class="section-header">
-                <h2>Press & Blog</h2>
-                <div class="divider"></div>
-            </div>
-            <ul class="media-list">
-                <!-- Buradaki linkleri (href="#") daha sonra asıl haber linkleriyle değiştirebilirsiniz -->
-                <li>
-                    <span class="media-title">Interview: The Intersection of Tradition and VR</span>
-                    <span class="media-date">Art & Tech Magazine | 2024</span>
-                </li>
-                <li>
-                    <span class="media-title">Review: 'RE-' Solo Exhibition at Nelumbo Studios</span>
-                    <span class="media-date">Contemporary Istanbul Blog | 2024</span>
-                </li>
-                <li>
-                    <span class="media-title">Featured Artist: Dilara Altınkepçe Arslan at Baselected</span>
-                    <span class="media-date">BASE Istanbul | 2023</span>
-                </li>
-            </ul>
-        </div>
-
         <!-- CONTACT -->
         <div class="contact-section">
-            <div class="section-header">
-                <h2>Get in Touch</h2>
-            </div>
-            <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">For exhibition inquiries, studio visits, and commissions.</p>
+            <h2 style="font-size: 2rem; font-family: 'Cormorant Garamond'; letter-spacing: 5px; text-transform: uppercase;">Contact</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">For exhibition inquiries, studio visits, and commissions.</p>
             <div class="social-links">
-                <!-- Kendi mail ve instagram adresinizi buraya yazabilirsiniz -->
                 <a href="mailto:contact@domain.com">Email</a>
                 <a href="https://instagram.com/dilaraaltinkepce" target="_blank">Instagram</a>
                 <a href="https://nelumbostudios.com" target="_blank">Nelumbo</a>
