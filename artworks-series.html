@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Series | Dilara Altınkepçe Arslan</title>
+    <title>Series Archives | Dilara Altınkepçe Arslan</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,7 +11,7 @@
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
+        /* STANDART MÜZE MENÜSÜ CSS */
         nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         .nav-left { flex: 1; display: flex; align-items: center; }
         .nav-left img { height: 35px; width: auto; object-fit: contain; }
@@ -26,17 +26,14 @@
         .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
         .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
 
-        /* STANDART İÇ SAYFA BANNER'I */
-        .page-hero { width: 100%; height: 70vh; position: relative; background: url('images/02-banner-daa-grand-ritual-01.jpg') center/cover no-repeat; background-attachment: fixed; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
-        
-        .content-container { max-width: 1000px; margin: -80px auto 80px auto; padding: 40px; position: relative; z-index: 2; text-align: center; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .content-container h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
-        .content-container h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; } /* STANDART BOYUT */
-        
-        .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; padding: 0 5%; }
+        /* BANNER */
+        .page-banner { width: 100%; height: 50vh; position: relative; background: url('images/daa-2025-gss-samankoyu-bozkirda-01.webp') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.5), rgba(250,250,250,1)); }
+        .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
+        .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
 
-        .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
+        /* ARTWORK FLOW CONTAINER */
+        .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 80px 20px 100px 20px; }
         .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 75vh; margin-bottom: 80px; padding: 80px 0; border-bottom: 1px solid #e5e5e5; }
         .artwork-block:nth-child(even) { flex-direction: row-reverse; }
         .artwork-block:last-child { border-bottom: none; margin-bottom: 0; }
@@ -48,7 +45,7 @@
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; }
         .artwork-gallery:hover img { filter: grayscale(0%); }
         .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
@@ -64,128 +61,91 @@
         @media (max-width: 900px) { 
             .nav-left, .nav-right { display: none; }
             .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
-            .content-container { margin-top: -50px; padding: 30px 20px; }
-            .content-container h1 { font-size: 3.2rem; }
+            .banner-title h1 { font-size: 2.5rem; letter-spacing: 5px; }
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
-            .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-left">
-            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
-        </div>
-        <div class="nav-center">
-            <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
-        </div>
-        <div class="nav-right">
-            <div class="dropdown">
-                <a href="exhibitions.html">Exhibitions</a>
-                <div class="dropdown-content">
-                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
-                    <a href="exhibitions.html">All Exhibitions</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
-                <div class="dropdown-content">
-                    <a href="artworks-series.html">Series</a>
-                    <a href="artworks-installations.html">Installations</a>
-                    <a href="artworks-newmedia.html">New Media</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="selections.html">Selections</a>
-            </div>
-            <div class="dropdown">
-                <a href="about.html">About</a>
-            </div>
-        </div>
-    </nav>
+    <!-- DİNAMİK HEADER PLACEHOLDER -->
+    <div id="header-placeholder"></div>
 
-    <header class="page-hero">
-        <div class="hero-overlay"></div>
+    <header class="page-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-title">
+            <h1>Series Archives</h1>
+        </div>
     </header>
 
-    <main class="content-container">
-        <h4>Narrative Driven Archives</h4>
-        <h1>Series</h1>
-        <p class="editorial-text">
-            Conceptual fiber art and raw textile works that delve into humanity's collective unconsciousness. Each series acts as a tactile manuscript, bridging ancient mythologies with modern introspections through the repetitive, meditative act of threading.
-        </p>
-    </main>
-
     <section class="artwork-flow-container">
+
+        <!-- 1. THE RITUAL SERIES -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">BASE 2023 Selection</div>
-                <h2>The Grand Ritual</h2>
-                <div class="artwork-specs">2023 | 250x125 cm | Raw Cotton Fabric & Thread</div>
+                <div class="artwork-meta">Series 01</div>
+                <h2>The Ritual Series</h2>
+                <div class="artwork-specs">2023–2024 | Mixed Media & Tapestry Weaving</div>
                 <div class="artwork-poem">
-                    "Since the first existence, there has been a ritual ongoing in the mind. A repetitive cycle of creation, loss, and rebirth..."
+                    "Sacred geometry interwoven with ancestral memory. A spatial inquiry into how ancient communal gatherings transform into modern internal reflections."
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/02-banner-daa-grand-ritual-01.jpg" class="img-main" alt="Grand Ritual Main">
-                <img src="images/DAA-2023-Grand-Ritual-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2023-Grand-Ritual-03.jpg" class="img-sub2" alt="Detail 2">
+                <img src="images/02-banner-daa-grand-ritual-01.jpg" class="img-main" alt="The Grand Ritual">
+                <img src="images/DAA-2024-RE-Ritual-01.jpg" class="img-sub1" alt="Ritual Detail 1">
+                <img src="images/DAA-2024-RE-Ritual-02.jpg" class="img-sub2" alt="Ritual Detail 2">
             </div>
         </div>
 
+        <!-- 2. SHAMAN VILLAGE SERIES -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">"RE-" Solo Exhibition</div>
-                <h2>Ballad of the Road</h2>
-                <div class="artwork-specs">2024 | 200x85 cm | Raw Cotton Fabric & Thread</div>
+                <div class="artwork-meta">Series 02</div>
+                <h2>Village Series (Köy)</h2>
+                <div class="artwork-specs">2024–2025 | Fiber Art & Natural Dyes</div>
                 <div class="artwork-poem">
-                    "When I step onto the road, the road remembers my ancestors. Every thread woven is a step taken on a path already traveled."
+                    "Traces of Anatolian steppe life, ancestral hearths, and forgotten rural sanctuaries captured within organic woven textures."
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" class="img-main" alt="Ballad of the Road Main">
-                <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" alt="Detail 2">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" class="img-main" alt="Shaman Village">
+                <img src="images/DAA-2024-RE-Overcome-06.jpg" class="img-sub1" alt="Village Detail 1">
+                <img src="images/DAA-2024-RE-MessageFrom-01.jpg" class="img-sub2" alt="Village Detail 2">
             </div>
         </div>
 
+        <!-- 3. INTESTINE WAR SERIES -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">CERMODERN "New: Now"</div>
-                <h2>Awakened Anew</h2>
-                <div class="artwork-specs">2024 | 120x80 cm | Cotton Thread on Canvas</div>
+                <div class="artwork-meta">Series 03</div>
+                <h2>Intestine War Series</h2>
+                <p class="artwork-specs">2024 | Woven Fiber & Tension Studies</p>
                 <div class="artwork-poem">
-                    "Rising from the ash of forgotten centuries, the form reorganizes itself. To be awake is to bear the weight of all past slumber."
+                    "Internal friction, structural tension, and silent psychological battles materialized through raw threads pulling against fixed frames."
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-Awakened-Anew-01.jpg" class="img-main" alt="Awakened Anew Main">
-                <img src="images/DAA-2024-Awakened-Anew-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-Awakened-Anew-03.jpg" class="img-sub2" alt="Detail 2">
+                <img src="images/DAA-2024-RE-MessageFrom-01.jpg" class="img-main" alt="Intestine War Main">
+                <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-sub1" alt="War Detail 1">
+                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub2" alt="War Detail 2">
             </div>
         </div>
 
-        <div class="artwork-block">
-            <div class="artwork-text">
-                <div class="artwork-meta">"RE-" Solo Exhibition</div>
-                <h2>Polaroids</h2>
-                <div class="artwork-specs">2024 | 14x16 cm x 4 Pieces | Fiber Art</div>
-                <div class="artwork-poem">
-                    "Moments captured not by light and lens, but by the slow tension of thread. Snapshots of the mind's most fleeting memories."
-                </div>
-            </div>
-            <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-Polaroid-01.jpg" class="img-main" alt="Polaroid Main">
-                <img src="images/DAA-2024-RE-Polaroid-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-Polaroid-03.jpg" class="img-sub2" alt="Detail 2">
-            </div>
-        </div>
     </section>
 
     <div class="back-nav">
-        <a href="artworks.html" class="btn-outline">Return to Collections</a>
+        <a href="javascript:history.back()" class="btn-outline">Return to Collections</a>
     </div>
+
+    <!-- HEADER SCRIPT -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+    <script src="lightbox.js"></script>
 </body>
 </html>
