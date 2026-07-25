@@ -11,28 +11,35 @@
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* HEADER NAV */
-        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
-        .nav-links { display: flex; gap: 35px; }
-        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-        .nav-links a:hover { opacity: 0.5; }
+        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { height: 35px; width: auto; object-fit: contain; }
+        .nav-center { flex: 2; text-align: center; }
+        .nav-center a { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+        .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
+        .nav-right a:hover { opacity: 0.5; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
 
-        /* HERO BANNER */
-        .exhibition-hero { width: 100%; height: 75vh; position: relative; background: url('images/01-banner-daa-re-overcome-01.jpg') center/cover no-repeat; background-attachment: fixed; }
+        /* STANDART İÇ SAYFA BANNER'I */
+        .page-hero { width: 100%; height: 75vh; position: relative; background: url('images/01-banner-daa-re-overcome-01.jpg') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.1), rgba(250,250,250,1)); }
         
-        /* EXHIBITION INFO & CURATORIAL TEXT */
-        .info-container { max-width: 950px; margin: -100px auto 80px auto; padding: 60px; position: relative; z-index: 2; text-align: center; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .info-container h4 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 10px; }
-        .info-container h1 { font-size: 5rem; margin-bottom: 20px; line-height: 1.1; letter-spacing: 5px; }
+        .content-container { max-width: 950px; margin: -80px auto 80px auto; padding: 40px; position: relative; z-index: 2; text-align: center; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .content-container h4 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .content-container h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; } /* STANDART BOYUT */
+        
         .info-details { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: #333; font-weight: 500; margin-bottom: 50px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
         
-        .curatorial-text { font-size: 1.15rem; font-weight: 300; color: #444; text-align: justify; font-family: 'Montserrat', sans-serif; line-height: 2; }
+        .curatorial-text { font-size: 1.15rem; font-weight: 300; color: #444; text-align: justify; font-family: 'Montserrat', sans-serif; line-height: 2; padding: 0 20px; }
         .curatorial-text p { margin-bottom: 25px; }
         .curatorial-text p:first-of-type { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: #222; text-align: center; margin-bottom: 40px; }
 
-        /* SELECTED WORKS SECTION */
         .works-section-title { text-align: center; margin: 100px 0 60px 0; }
         .works-section-title h3 { font-size: 2.5rem; letter-spacing: 3px; color: #111; }
         .works-section-title p { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-top: 10px; }
@@ -63,9 +70,10 @@
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
-            .nav-links { display: none; } 
-            .info-container { margin-top: -50px; padding: 40px 20px; }
-            .info-container h1 { font-size: 3.5rem; }
+            .nav-left, .nav-right { display: none; }
+            .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
+            .content-container { margin-top: -50px; padding: 30px 20px; }
+            .content-container h1 { font-size: 3.2rem; }
             .info-details { flex-direction: column; gap: 10px; }
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
@@ -76,20 +84,42 @@
 <body>
 
     <nav>
-        <div class="logo"><a href="index.html">DAA</a></div>
-        <div class="nav-links">
-            <a href="exhibitions.html" style="opacity: 0.5;">Exhibitions</a>
-            <a href="artworks.html">Artworks</a>
-            <a href="selections.html">Selections</a>
-            <a href="about.html">About</a>
+        <div class="nav-left">
+            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
+        </div>
+        <div class="nav-center">
+            <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
+        </div>
+        <div class="nav-right">
+            <div class="dropdown">
+                <a href="exhibitions.html" style="opacity: 0.5;">Exhibitions</a>
+                <div class="dropdown-content">
+                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
+                    <a href="exhibitions.html">All Exhibitions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="artworks.html">Artworks</a>
+                <div class="dropdown-content">
+                    <a href="artworks-series.html">Series</a>
+                    <a href="artworks-installations.html">Installations</a>
+                    <a href="artworks-newmedia.html">New Media</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="selections.html">Selections</a>
+            </div>
+            <div class="dropdown">
+                <a href="about.html">About</a>
+            </div>
         </div>
     </nav>
 
-    <header class="exhibition-hero">
+    <header class="page-hero">
         <div class="hero-overlay"></div>
     </header>
 
-    <main class="info-container">
+    <main class="content-container">
         <h4>Solo Exhibition</h4>
         <h1>RE-</h1>
         <div class="info-details">
@@ -101,24 +131,12 @@
         </div>
         
         <div class="curatorial-text">
-            <p>
-                “She had always thought that things were certain. Everything about her life, her place in the world, the people she met, her everyday routine, seemed predetermined, like the plot of a story she already knew. She would get up at the same time every morning, walk the dogs, and say hello to the same people. As the seasons changed, everything appeared to be in its proper place. But gradually things started to change.”
-            </p>
-            <p>
-                At first, hardly noticeable changes. Occasionally, she would find herself mid-conversation, abruptly overcome with the realization that she had been here before. Not in a blurry kind of déjà vu, but as though this same moment has happened countless times before. She started to see echoes of things she couldn't quite place—patterns where none should have existed. Time seemed to be folding back on itself in odd and surprising ways, instead of moving forward. 
-            </p>
-            <p>
-                She began to wonder. What if? What if these parallels are expressions of a deeper consciousness rather than coincidences? What if the story, — or better yet, history is not behind but all around her: living, breathing, changing. A continuous cycle of repeated actions and moments spiraling endlessly.
-            </p>
-            <p>
-                In RE-, time doesn’t move forward or back; it loops and refracts, shifting shape like a continuous echo. Here, moments return not as identical repetitions, but as layered reflections of everything that has come before. History isn’t something behind us—it’s interwoven with the present, resonating through actions, thoughts, and memories that ripple through each moment. Every moment has echoes that pulse and replay throughout our lives, recalling us of all the times it has happened before while also seeming oddly familiar and brand-new.
-            </p>
-            <p>
-                This perspective gives everyday things a sense of timeless quality, where familiar rituals and routines take on new meaning. What if our most ordinary gestures hold the weight of centuries, embodying the rhythms of ancient practices? In this world, myth and reality don’t seem so separate from each other. Figures from long ago seem to reappear in contemporary disguises, performing tasks that feel ordinary and effortless as well as eternal. In RE- , these figures seem to be suspended, derived from historical echoes while still being in a state of change. They exist in a moment that is distinct from the conventional flow of time.
-            </p>
-            <p>
-                Dilara Altınkepçe Arslan’s first solo exhibition, RE-, shifts our way of seeing: in her work, “what if” focuses more on viewing the present from a different angle than they do on the distant future or the past. Her pieces challenge us to think of time not as a straight line but as an energy woven continuously into the now. Rather than pulling us forward or backward, her works encourage us to fully occupy the present, seeing it from multiple angles.
-            </p>
+            <p>“She had always thought that things were certain. Everything about her life, her place in the world, the people she met, her everyday routine, seemed predetermined, like the plot of a story she already knew. She would get up at the same time every morning, walk the dogs, and say hello to the same people. As the seasons changed, everything appeared to be in its proper place. But gradually things started to change.”</p>
+            <p>At first, hardly noticeable changes. Occasionally, she would find herself mid-conversation, abruptly overcome with the realization that she had been here before. Not in a blurry kind of déjà vu, but as though this same moment has happened countless times before. She started to see echoes of things she couldn't quite place—patterns where none should have existed. Time seemed to be folding back on itself in odd and surprising ways, instead of moving forward.</p>
+            <p>She began to wonder. What if? What if these parallels are expressions of a deeper consciousness rather than coincidences? What if the story, — or better yet, history is not behind but all around her: living, breathing, changing. A continuous cycle of repeated actions and moments spiraling endlessly.</p>
+            <p>In RE-, time doesn’t move forward or back; it loops and refracts, shifting shape like a continuous echo. Here, moments return not as identical repetitions, but as layered reflections of everything that has come before. History isn’t something behind us—it’s interwoven with the present, resonating through actions, thoughts, and memories that ripple through each moment. Every moment has echoes that pulse and replay throughout our lives, recalling us of all the times it has happened before while also seeming oddly familiar and brand-new.</p>
+            <p>This perspective gives everyday things a sense of timeless quality, where familiar rituals and routines take on new meaning. What if our most ordinary gestures hold the weight of centuries, embodying the rhythms of ancient practices? In this world, myth and reality don’t seem so separate from each other. Figures from long ago seem to reappear in contemporary disguises, performing tasks that feel ordinary and effortless as well as eternal. In RE- , these figures seem to be suspended, derived from historical echoes while still being in a state of change. They exist in a moment that is distinct from the conventional flow of time.</p>
+            <p>Dilara Altınkepçe Arslan’s first solo exhibition, RE-, shifts our way of seeing: in her work, “what if” focuses more on viewing the present from a different angle than they do on the distant future or the past. Her pieces challenge us to think of time not as a straight line but as an energy woven continuously into the now. Rather than pulling us forward or backward, her works encourage us to fully occupy the present, seeing it from multiple angles.</p>
         </div>
     </main>
 
@@ -128,75 +146,61 @@
     </div>
 
     <section class="artwork-flow-container">
-
-        <!-- 1. OVERCOME -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Suspended Installation</div>
                 <h2>Overcome (Geldiler)</h2>
                 <div class="artwork-specs">2024 | Fabric & Fishing Line</div>
-                <div class="artwork-poem">
-                    "How many more days can I remain silent? The more I remain silent, the quieter my voice becomes... My hands are no longer enough to keep my eyes shut."
-                </div>
+                <div class="artwork-poem">"How many more days can I remain silent? The more I remain silent, the quieter my voice becomes... My hands are no longer enough to keep my eyes shut."</div>
             </div>
             <div class="artwork-gallery grid-3">
                 <img src="images/DAA-2024-RE-Overcome-01.jpg" class="img-main" alt="Overcome Main">
-                <img src="images/DAA-2024-RE-Overcome-02.jpg" class="img-sub1" alt="Overcome Detail 1">
-                <img src="images/DAA-2024-RE-Overcome-05.jpg" class="img-sub2" alt="Overcome Detail 2">
+                <img src="images/DAA-2024-RE-Overcome-02.jpg" class="img-sub1" alt="Detail 1">
+                <img src="images/DAA-2024-RE-Overcome-05.jpg" class="img-sub2" alt="Detail 2">
             </div>
         </div>
 
-        <!-- 2. BALLAD OF THE ROAD -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Fiber Art</div>
                 <h2>Ballad of the Road</h2>
                 <div class="artwork-specs">2024 | 200x85 cm | Raw Cotton Fabric & Thread</div>
-                <div class="artwork-poem">
-                    "A timeless journey mapped in thread, reflecting the cyclical repetition of history where every step echoes an ancient, unforgotten rhythm."
-                </div>
+                <div class="artwork-poem">"A timeless journey mapped in thread, reflecting the cyclical repetition of history where every step echoes an ancient, unforgotten rhythm."</div>
             </div>
             <div class="artwork-gallery grid-3">
                 <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" class="img-main" alt="Ballad of the Road Main">
-                <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" alt="Ballad of the Road Detail 1">
-                <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" alt="Ballad of the Road Detail 2">
+                <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" alt="Detail 1">
+                <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" alt="Detail 2">
             </div>
         </div>
 
-        <!-- 3. ASCENSION -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Wall Installation</div>
                 <h2>Ascension</h2>
                 <div class="artwork-specs">2024 | 30x60 cm x 9 Pieces</div>
-                <div class="artwork-poem">
-                    "All the pain and disharmony in my life converges into a single and sweet harmony, and my worship unfolds like a blissful bird flying over the sea."
-                </div>
+                <div class="artwork-poem">"All the pain and disharmony in my life converges into a single and sweet harmony, and my worship unfolds like a blissful bird flying over the sea."</div>
             </div>
             <div class="artwork-gallery grid-3">
                 <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension Main">
-                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Ascension Detail 1">
-                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Ascension Detail 2">
+                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Detail 1">
+                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Detail 2">
             </div>
         </div>
 
-        <!-- 4. ID (VESİKA) - AR -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">New Media & Augmented Reality</div>
                 <h2>ID (Vesika)</h2>
                 <div class="artwork-specs">2024 | 100x125 cm | Fiber Art + AR</div>
-                <div class="artwork-poem">
-                    "Each year in our village, a census is taken before the ritual. We determine the form of the ritual based on our losses. This census is from the Year of Ud."
-                </div>
+                <div class="artwork-poem">"Each year in our village, a census is taken before the ritual. We determine the form of the ritual based on our losses. This census is from the Year of Ud."</div>
             </div>
             <div class="artwork-gallery grid-3">
                 <img src="images/DAA-2024-RE-ID-01.jpg" class="img-main" alt="ID Vesika Main">
-                <img src="images/DAA-2024-RE-ID-02.jpg" class="img-sub1" alt="ID Vesika Detail 1">
-                <img src="images/DAA-2024-RE-ID-03.jpg" class="img-sub2" alt="ID Vesika Detail 2">
+                <img src="images/DAA-2024-RE-ID-02.jpg" class="img-sub1" alt="Detail 1">
+                <img src="images/DAA-2024-RE-ID-03.jpg" class="img-sub2" alt="Detail 2">
             </div>
         </div>
-
     </section>
 
     <div class="back-nav">
