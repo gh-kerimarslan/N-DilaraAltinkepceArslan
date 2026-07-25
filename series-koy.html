@@ -17,7 +17,6 @@
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* HERO BANNER - Şaman Köyü Görseli */
         .series-hero { width: 100%; height: 70vh; position: relative; background: url('images/daa-2025-gss-samankoyu-bozkirda-01.webp') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
         
@@ -29,15 +28,14 @@
         
         .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
 
-        /* ARTWORKS GRID */
         .artworks-grid { max-width: 1200px; margin: 0 auto 100px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         
-        .artwork-card { text-align: center; }
+        .artwork-card { text-align: center; cursor: pointer; }
         .artwork-image { width: 100%; overflow: hidden; margin-bottom: 20px; background: #eaeaea; aspect-ratio: 4/5; }
         .artwork-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
         .artwork-card:hover .artwork-image img { transform: scale(1.03); filter: grayscale(0%); }
         
-        .artwork-card h3 { font-size: 1.8rem; margin-bottom: 5px; color: #111; }
+        .artwork-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 5px; color: #111; }
         .artwork-card p { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #777; }
 
         .back-nav { text-align: center; margin-bottom: 100px; }
@@ -57,7 +55,7 @@
         <div class="logo"><a href="index.html">DAA</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
-            <a href="works.html" style="opacity: 0.5;">Works</a>
+            <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
             <a href="selections.html">Selections</a>
             <a href="about.html">About</a>
         </div>
@@ -78,41 +76,41 @@
         </p>
     </main>
 
-    <!-- ESERLER LİSTESİ -->
     <section class="artworks-grid">
         
-        <!-- Şaman Köyü 2022 -->
+        <!-- 1. Şaman Köyü I (2022) -->
         <div class="artwork-card">
             <div class="artwork-image">
-                <!-- Buraya 2022 işinin fotoğrafını bağlayabilirsiniz, şimdilik yer tutucu -->
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-02.webp" alt="Şaman Köyü 2022">
+                <!-- Buraya kendi dosya adınızı yazın -->
+                <img src="images/daa-koy-shaman-1-01.jpg" alt="Shaman Village I">
             </div>
-            <h3>Şaman Köyü</h3>
+            <h3>Shaman Village I</h3>
             <p>2022 • Fiber Art</p>
         </div>
 
-        <!-- Şaman Köyü Bozkırda (Ödüllü İş) -->
+        <!-- 2. Şaman Köyü Bozkırda -->
         <div class="artwork-card">
             <div class="artwork-image">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="Şaman Köyü Bozkırda">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="Shaman Village in the Steppe">
             </div>
-            <h3>Şaman Köyü Bozkırda</h3>
+            <h3>Shaman Village in the Steppe</h3>
             <p>2025 • Award-Winning Work</p>
         </div>
 
-        <!-- Şaman Köyü 2025 -->
+        <!-- 3. Şaman Köyü II (2025) -->
         <div class="artwork-card">
             <div class="artwork-image">
-                <!-- Buraya 2025 işinin detayını bağlayabilirsiniz -->
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-03.webp" alt="Şaman Köyü 2025">
+                 <!-- Buraya kendi dosya adınızı yazın -->
+                <img src="images/daa-koy-shaman-2-01.jpg" alt="Shaman Village II">
             </div>
-            <h3>Şaman Köyü 2025</h3>
-            <p>2025 • New Edition</p>
+            <h3>Shaman Village II</h3>
+            <p>2025 • Fiber Art</p>
         </div>
 
     </section>
 
     <div class="back-nav">
+        <!-- Geri dönüş linki düzeltildi -->
         <a href="artworks-series.html" class="btn-outline">Return to Series</a>
     </div>
 
