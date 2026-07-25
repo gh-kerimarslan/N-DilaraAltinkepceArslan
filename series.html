@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewing Room | Dilara Altınkepçe Arslan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #ffffff; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        
+        /* Özel Oda Üst Menüsü */
+        .room-nav { position: fixed; top: 0; width: 100%; padding: 20px 40px; display: flex; justify-content: space-between; z-index: 1000; background: #fff; border-bottom: 1px solid #eee; }
+        .room-nav a { color: #111; text-decoration: none; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; transition: opacity 0.3s; }
+        .room-nav a:hover { opacity: 0.5; }
+        
+        /* Oda Başlığı */
+        .room-header { padding: 150px 10% 50px 10%; text-align: center; }
+        .room-header h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; margin-bottom: 20px; }
+        .room-header p { font-size: 0.8rem; letter-spacing: 4px; color: #888; text-transform: uppercase; }
+
+        /* Minimal Sergi Izgarası */
+        .artwork-container { display: flex; flex-direction: column; gap: 100px; padding: 0 10% 100px 10%; }
+        
+        .art-piece { display: flex; align-items: center; gap: 80px; }
+        .art-piece:nth-child(even) { flex-direction: row-reverse; }
+        
+        .art-image { flex: 1.5; text-align: center; }
+        .art-image img { width: 100%; max-height: 85vh; object-fit: contain; } /* Kırpmadan eserin tamamını gösterir */
+        
+        .art-text { flex: 1; }
+        .art-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .details { font-size: 0.7rem; color: #999; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
+        
+        .poem-tr { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: #333; line-height: 1.8; margin-bottom: 20px; border-left: 1px solid #ddd; padding-left: 20px; }
+        .poem-en { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #777; line-height: 1.8; padding-left: 20px; }
+
+        @media (max-width: 900px) {
+            .art-piece { flex-direction: column !important; gap: 40px; }
+            .art-image img { max-height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Kapatıp Ana Sayfaya Dönüş Butonu -->
+    <div class="room-nav">
+        <a href="index.html">⟵ Back to Main Exhibition</a>
+        <a href="#">Viewing Room</a>
+    </div>
+
+    <div class="room-header">
+        <h1>The Inquiries & Uprisings</h1>
+        <p>A Connected Narrative Series | 2024</p>
+    </div>
+
+    <div class="artwork-container">
+        
+        <!-- 1. Unanswered Questions -->
+        <div class="art-piece">
+            <div class="art-image"><img src="images/DAA-2024-RE-Unanswered-02.jpg" alt="Unanswered Questions"></div>
+            <div class="art-text">
+                <h3>Unanswered Questions <br> Cevapsız Sorular</h3>
+                <p class="details">Textile | RE-</p>
+                <div class="poem-tr">Bu halkım şeytana yeniliyor. Ağır acılardan kurtulamıyorlar. Bu Tanrım bir merhamet gösterecek mi? Devam eden ömrüm az olur, yaşım kısa olur. Büyük engel nasıl aşılır? Bir yargısını verecek mi?</div>
+                <div class="poem-en">My people are succumbing to the devil. They cannot escape their heavy pains. Will my God show mercy? Will my remaining life be short? Will my age be brief?</div>
+            </div>
+        </div>
+
+        <!-- 2. Inquiry -->
+        <div class="art-piece">
+            <div class="art-image"><img src="images/DAA-2024-RE-inquiry-02.jpg" alt="Inquiry"></div>
+            <div class="art-text">
+                <h3>Inquiry <br> Sorgu</h3>
+                <p class="details">Textile | RE-</p>
+                <div class="poem-tr">Gelecek sene merhamet edilecek mi? Bu sene huzur verilecek mi? Bundan sonra yeşil otları ayaklarımız ezecek mi? Bu sene guguk kuşu aynı şekilde ötecek mi? Yıpratıcı kış zamanının üstinden geçebilecek miyiz?</div>
+                <div class="poem-en">Will there be mercy next year? Will there be peace this year? From now on, will we tread on green grass? Will the cuckoo sing in the same way this year?</div>
+            </div>
+        </div>
+
+        <!-- 3. Flag of Uprising -->
+        <div class="art-piece">
+            <div class="art-image"><img src="images/DAA-2024-RE-FlagUprising-03.jpg" alt="Flag of Uprising"></div>
+            <div class="art-text">
+                <h3>Flag of Uprising <br> İsyan Bayrağı</h3>
+                <p class="details">Textile | RE-</p>
+                <div class="poem-tr">Bizi yalvartıp ağlatmayın. Yanlışlarımız çoğaldı. Tanrımız, diye yalvarmaya başladığımızda başımıza merhamet gelir mi? Ölümsüz hayat istiyoruz, sönmeyen ateş istiyoruz.</div>
+                <div class="poem-en">Do not make us beg and cry. Our wrongs have multiplied. When we begin to plead, saying our God, will mercy come upon us? We desire eternal life, we want an unquenchable fire.</div>
+            </div>
+        </div>
+
+        <!-- 4. Muted -->
+        <div class="art-piece">
+            <div class="art-image"><img src="images/DAA-2024-RE-Muted-02.jpg" alt="Muted"></div>
+            <div class="art-text">
+                <h3>Muted <br> Susturulmuş</h3>
+                <p class="details">Textile | RE-</p>
+                <div class="poem-tr">Biz kuzgun gibi çığlık atarken, Dualar Tanrımıza ulaşmıyor. Tay gibi kişnediğimizde, Yine de sesimiz ulaşmıyor.</div>
+                <div class="poem-en">While we scream like ravens, Our prayers do not reach our God. When we neigh like colts, Our voices still do not get through.</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
