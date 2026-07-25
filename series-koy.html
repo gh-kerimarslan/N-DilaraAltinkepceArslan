@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Köy (Village) Series | Dilara Altınkepçe Arslan</title>
+    <title>Village (Köy) Series | Dilara Altınkepçe Arslan</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        
-        /* HEADER NAV */
-        nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
-        .nav-links { display: flex; gap: 35px; }
-        .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
-        .nav-links a:hover { opacity: 0.5; }
 
-        /* HERO BANNER */
         .series-hero { width: 100%; height: 70vh; position: relative; background: url('images/daa-2025-gss-samankoyu-bozkirda-01.webp') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
         
@@ -28,65 +20,41 @@
         .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
         .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
 
-        /* ESER BLOKLARI */
         .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
         .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 75vh; margin-bottom: 80px; padding: 80px 0; border-bottom: 1px solid #e5e5e5; }
         .artwork-block:nth-child(even) { flex-direction: row-reverse; }
         .artwork-block:last-child { border-bottom: none; margin-bottom: 0; }
 
-        /* METİN VE KÜNYE */
         .artwork-text { flex: 1; padding: 20px; }
         .artwork-meta { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 15px; }
         .artwork-text h2 { font-size: 3.5rem; letter-spacing: 2px; margin-bottom: 15px; color: #111; line-height: 1.1; }
         .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
-        /* --- DİNAMİK CSS GRID MATRİSLERİ --- */
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; }
         .artwork-gallery:hover img { filter: grayscale(0%); }
         .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        /* KARE FORMAT (Büyük Kare + 2 Küçük Kare) */
-        .grid-square-main { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-square-main .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 1/1; object-fit: contain; background: #fafafa; padding: 15px; border: 1px solid #f0f0f0; }
-        .grid-square-main .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; aspect-ratio: 1/1; object-fit: cover; }
-        .grid-square-main .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; aspect-ratio: 1/1; object-fit: cover; }
-
-        /* GENİŞ ÜST, 3 KÜÇÜK ALT (Bozkırda Şaman Köyü için) */
-        .grid-wide-top-3 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; }
-        .grid-wide-top-3 .img-main { grid-column: 1 / 4; aspect-ratio: 16/9; }
-        .grid-wide-top-3 .img-sub1, .grid-wide-top-3 .img-sub2, .grid-wide-top-3 .img-sub3 { aspect-ratio: 1/1; }
-
-        /* TEK BÜYÜK GÖRSEL */
-        .grid-single { display: block; }
-        .grid-single img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
+        .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
+        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
+        .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
 
         .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
 
         @media (max-width: 900px) { 
-            .nav-links { display: none; } 
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
-            .artwork-gallery img { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
-            .grid-square-main .img-main { height: auto !important; aspect-ratio: 1/1 !important; padding: 5px; }
             .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo"><a href="index.html">DAA</a></div>
-        <div class="nav-links">
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
-            <a href="selections.html">Selections</a>
-            <a href="about.html">About</a>
-        </div>
-    </nav>
+    <div id="header-placeholder"></div>
 
     <header class="series-hero">
         <div class="hero-overlay"></div>
@@ -94,75 +62,63 @@
 
     <main class="content-container">
         <div class="series-title">
-            <h4>Narrative Driven Collection</h4>
-            <h1>Köy (Village) Series</h1>
+            <h4>Anatolian Heritage & Shamanic Memory</h4>
+            <h1>Village (Köy) Series</h1>
         </div>
         <p class="editorial-text">
-            The "Köy" (Village) Series is an ongoing exploration of communal memory, ancestral roots, and the shamanic heritage embedded within Anatolian and Central Asian cultures. Through intricate fiber art and conceptual mapping, this series reimagines the village not just as a physical space, but as a spiritual habitat where human consciousness and nature intertwine.
+            Tracing the roots of nomadic Anatolian life, "Köy" explores the physical and spiritual geography of rural sanctuaries. Connecting raw straw, wool, and natural earth dyes, the artworks capture forgotten shamanic rites and ancestral hearths that continue to whisper through contemporary steppe landscapes.
         </p>
     </main>
 
     <section class="artwork-flow-container">
 
-        <!-- 1. ŞAMAN KÖYÜ I -->
+        <!-- 1. SHAMAN VILLAGE ON THE STEPPE -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">"Burada" (2023) • "RE-" Solo Exhibition (2024)</div>
-                <h2>Shaman Village I</h2>
-                <div class="artwork-specs">2022 | 100x100 cm | Cotton Thread on Raw Cotton Fabric</div>
-                <div class="artwork-poem">
-                    "In our village, all abstract and concrete entities live in balance and harmony. No blood is shed in this village; food comes from the earth, and we sit side by side with animals at the table to eat what the earth provides us."
-                </div>
-            </div>
-            <!-- Eğer elinizde I'e ait detay fotoğraflar varsa grid-square-main kullanabilirsiniz. Tekse grid-single sınıfına alın -->
-            <div class="artwork-gallery grid-square-main">
-                <img src="images/daa-koy-shaman-1-01.jpg" class="img-main" alt="Shaman Village I Main">
-                <!-- Şimdilik tasarım dolgun dursun diye iki detay alanı açtım, elinizdeki detaylarla değiştirin veya silin -->
-                <img src="images/daa-koy-shaman-1-02.jpg" class="img-sub1" alt="Shaman Village I Detail 1">
-                <img src="images/daa-koy-shaman-1-03.jpg" class="img-sub2" alt="Shaman Village I Detail 2">
-            </div>
-        </div>
-
-        <!-- 2. BOZKIRDA BİR ŞAMAN KÖYÜ (Ödüllü Eser - 4 Fotoğraf) -->
-        <div class="artwork-block">
-            <div class="artwork-text">
-                <div class="artwork-meta">43rd Contemporary Artists Award Exhibition</div>
+                <div class="artwork-meta">43rd Contemporary Artists Award • Akbank Sanat</div>
                 <h2>A Shaman Village on the Steppe</h2>
-                <div class="artwork-specs">2025 | 175x75 cm | Raw Cotton Fabric & Thread</div>
+                <div class="artwork-specs">2025 | Mixed Media Installation</div>
                 <div class="artwork-poem">
-                    "We have soldiers who are very strong. They are trained to carry the full extent of ancient knowledge passed down from our ancestors."
+                    "Traces of ancestral hearths, sacred straw shelters, and forgotten steppe rituals materialized through organic fiber structures."
                 </div>
             </div>
-            <div class="artwork-gallery grid-wide-top-3">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" class="img-main" alt="Shaman Village Steppe Main">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-02.webp" class="img-sub1" alt="Shaman Village Steppe Detail 1">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-03.webp" class="img-sub2" alt="Shaman Village Steppe Detail 2">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-04.webp" class="img-sub3" alt="Shaman Village Steppe Detail 3">
+            <div class="artwork-gallery grid-3">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" class="img-main" alt="Shaman Village 01">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-02.webp" class="img-sub1" alt="Shaman Village 02">
+                <img src="images/daa-2025-gss-samankoyu-bozkirda-03.webp" class="img-sub2" alt="Shaman Village 03">
             </div>
         </div>
 
-        <!-- 3. ŞAMAN KÖYÜ II -->
+        <!-- 2. SHAMAN VILLAGE II -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">New:Now at CERMODERN</div>
+                <div class="artwork-meta">Cermodern "New: Now" Selection</div>
                 <h2>Shaman Village II</h2>
-                <div class="artwork-specs">2025 | 86x86 cm | Raw Cotton Fabric & Thread</div>
+                <div class="artwork-specs">2024–2025 | Natural Dye & Fiber</div>
                 <div class="artwork-poem">
-                    "An enduring sanctuary where the earthly roots interconnect with celestial rituals, guarding the delicate memory of humanity."
+                    "Every village carries an unspoken protective shield. A tactile mapping of sacred boundaries woven with unspun threads."
                 </div>
             </div>
-            <div class="artwork-gallery grid-square-main">
-                <img src="images/daa-koy-shaman-2-01.jpg" class="img-main" alt="Shaman Village II Main">
-                <img src="images/daa-koy-shaman-2-02.jpg" class="img-sub1" alt="Shaman Village II Detail 1">
-                <img src="images/daa-koy-shaman-2-03.jpg" class="img-sub2" alt="Shaman Village II Detail 2">
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2024-RE-Overcome-06.jpg" class="img-main" alt="Shaman Village II Main">
+                <img src="images/DAA-2024-RE-MessageFrom-01.jpg" class="img-sub1" alt="Detail 1">
+                <img src="images/DAA-2024-RE-Ritual-01.jpg" class="img-sub2" alt="Detail 2">
             </div>
         </div>
 
     </section>
 
     <div class="back-nav">
-        <a href="artworks-series.html" class="btn-outline">Return to Series</a>
+        <a href="javascript:history.back()" class="btn-outline">← Return to Series</a>
     </div>
 
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+    <script src="lightbox.js"></script>
 </body>
 </html>
