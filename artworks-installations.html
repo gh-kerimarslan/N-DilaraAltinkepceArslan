@@ -26,14 +26,16 @@
         .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
         .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
 
-        /* BANNER */
-        .page-banner { width: 100%; height: 50vh; position: relative; background: url('images/DAA-2024-RE-Overcome-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
-        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.5), rgba(250,250,250,1)); }
-        .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
-        .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
+        .series-hero { width: 100%; height: 70vh; position: relative; background: url('images/01-banner-daa-re-overcome-01.jpg') center/cover no-repeat; background-attachment: fixed; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
+        
+        .content-container { max-width: 1000px; margin: -80px auto 80px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
+        .series-title { margin-bottom: 50px; }
+        .series-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
+        .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
 
-        /* ARTWORK FLOW CONTAINER */
-        .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 80px 20px 100px 20px; }
+        .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
         .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 75vh; margin-bottom: 80px; padding: 80px 0; border-bottom: 1px solid #e5e5e5; }
         .artwork-block:nth-child(even) { flex-direction: row-reverse; }
         .artwork-block:last-child { border-bottom: none; margin-bottom: 0; }
@@ -61,9 +63,9 @@
         @media (max-width: 900px) { 
             .nav-left, .nav-right { display: none; }
             .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
-            .banner-title h1 { font-size: 2.5rem; letter-spacing: 5px; }
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -72,21 +74,45 @@
     <!-- DİNAMİK HEADER PLACEHOLDER -->
     <div id="header-placeholder"></div>
 
-    <header class="page-banner">
-        <div class="banner-overlay"></div>
-        <div class="banner-title">
+    <header class="series-hero">
+        <div class="hero-overlay"></div>
+    </header>
+
+    <main class="content-container">
+        <div class="series-title">
+            <h4>Spatial Art Archives</h4>
             <h1>Installations</h1>
         </div>
-    </header>
+        <p class="editorial-text">
+            Site-specific and spatial arrangements that challenge physical perception. Through hanging forms, shadows, digital screens, and suspended fabrics, these spatial inquiries transform environment into an immersive conceptual sanctuary.
+        </p>
+    </main>
 
     <section class="artwork-flow-container">
 
-        <!-- 1. OVERCOME -->
+        <!-- 1. ALARM: MODERN AGE GRIFFIN -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">Suspended Installation</div>
-                <h2>Overcome (Geldiler)</h2>
-                <div class="artwork-specs">2024 | Fabric & Fishing Line</div>
+                <div class="artwork-meta">NOISE Media Art Selection</div>
+                <h2>Alarm: Modern Age Griffin</h2>
+                <div class="artwork-specs">2025 | 1+5+1 Screen Installation | Interactive Digital Sculpture</div>
+                <div class="artwork-poem">
+                    "A multi-screen interactive installation examining humanity's future perception of divinity amidst technological acceleration and climate crises."
+                </div>
+            </div>
+            <div class="artwork-gallery grid-3">
+                <img src="images/03-banner-daa-noise-alarm-01.jpg" class="img-main" alt="Alarm Main">
+                <img src="images/daa-newmedia-alarm-grifon-01.jpg" class="img-sub1" alt="Alarm Installation 1">
+                <img src="images/daa-newmedia-alarm-grifon-02.jpg" class="img-sub2" alt="Alarm Installation 2">
+            </div>
+        </div>
+
+        <!-- 2. OVERCOME & OSSIFIED UPRISINGS -->
+        <div class="artwork-block">
+            <div class="artwork-text">
+                <div class="artwork-meta">"RE-" Solo Exhibition</div>
+                <h2>Overcome & Ossified Uprisings</h2>
+                <div class="artwork-specs">2024 | Fabric, Fishing Line, Suspended Installation</div>
                 <div class="artwork-poem">
                     "How many more days can I remain silent? The more I remain silent, the quieter my voice becomes... My hands are no longer enough to keep my eyes shut."
                 </div>
@@ -98,44 +124,61 @@
             </div>
         </div>
 
-        <!-- 2. EMPATHY -->
+        <!-- 3. EMPATHY -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">The Exit Exhibition</div>
+                <div class="artwork-meta">"The Exit" Exhibition</div>
                 <h2>Empathy</h2>
-                <div class="artwork-specs">2025 | Spatial Installation</div>
+                <div class="artwork-specs">2025 | Raw Cotton Fabric, Thread, Brass Wire</div>
                 <div class="artwork-poem">
-                    "Stepping into another's space means feeling the tension of their unspoken boundaries. An architecture constructed purely of shared resonance."
+                    "Bridging spatial dimensions through metallic tension and textile warmth, exploring the boundaries of mutual resonance."
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/daa-the-Exit-emphaty-01.jpg" class="img-main" alt="Empathy Main">
-                <img src="images/daa-the-Exit-emphaty-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/daa-the-Exit-emphaty-03.jpg" class="img-sub2" alt="Detail 2">
+                <img src="images/daa-the-Exit-emphaty-02.jpg" class="img-main" alt="Empathy Main">
+                <img src="images/daa-the-Exit-emphaty-01.jpg" class="img-sub1" alt="Empathy Detail 1">
+                <img src="images/daa-the-Exit-emphaty-03.jpg" class="img-sub2" alt="Empathy Detail 2">
             </div>
         </div>
 
-        <!-- 3. ASCENSION -->
+        <!-- 4. ASCENSION -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">Wall Installation</div>
+                <div class="artwork-meta">"RE-" Solo Exhibition</div>
                 <h2>Ascension</h2>
-                <div class="artwork-specs">2024 | 30x60 cm x 9 Pieces</div>
+                <div class="artwork-specs">2024 | 30x60 cm x 9 | Wall Installation</div>
                 <div class="artwork-poem">
                     "All the pain and disharmony in my life converges into a single and sweet harmony, and my worship unfolds like a blissful bird flying over the sea."
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
                 <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension Main">
-                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Detail 2">
+                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Ascension Detail 1">
+                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Ascension Detail 2">
+            </div>
+        </div>
+
+        <!-- 5. CONNECTING TO SECURE NETWORK -->
+        <div class="artwork-block">
+            <div class="artwork-text">
+                <div class="artwork-meta">"Ters-Yüz 10" Exhibition</div>
+                <h2>Connecting to Secure Network...</h2>
+                <div class="artwork-specs">2022 | 44x44x120 cm | Totem Installation (Cotton, Wood)</div>
+                <div class="artwork-poem">
+                    "Our body is surrounded by a shield made up of vibrations that imitate us, forming the magnetic link of integrity with the universe. This totem reminds us of this eternal bond."
+                </div>
+            </div>
+            <div class="artwork-gallery grid-3">
+                <img src="images/DAA-2022-Secure-Network-01.jpg" class="img-main" alt="Secure Network Main">
+                <img src="images/DAA-2022-Secure-Network-01.jpg" class="img-sub1" alt="Detail 1" style="opacity: 0.8;">
+                <img src="images/DAA-2022-Secure-Network-01.jpg" class="img-sub2" alt="Detail 2" style="opacity: 0.8;">
             </div>
         </div>
 
     </section>
 
     <div class="back-nav">
-        <a href="javascript:history.back()" class="btn-outline">Return to Collections</a>
+        <a href="javascript:history.back()" class="btn-outline">Return to Artworks</a>
     </div>
 
     <!-- HEADER SCRIPT -->
