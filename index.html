@@ -13,25 +13,26 @@
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* HEADER NAV (3 BÖLMELİ VE AÇILIR MENÜLÜ) */
+        /* HEADER NAV */
         nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         
         .nav-left { flex: 1; display: flex; align-items: center; }
-        .nav-left img { height: 35px; width: auto; object-fit: contain; } /* LOGO */
+        .nav-left img { height: 35px; width: auto; object-fit: contain; }
         
+        /* MÜZE HAVASI: ZARİF, KÜÇÜLTÜLMÜŞ, İNCE VE GENİŞ FONT */
         .nav-center { flex: 2; text-align: center; }
-        .nav-center a { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 5px; font-weight: 600; text-transform: uppercase; color: #111; }
+        .nav-center a { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
         
         .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
         .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
         .nav-right a:hover { opacity: 0.5; }
 
-        /* DROPDOWN (AÇILIR MENÜ) CSS */
+        /* DROPDOWN (KUTUSUZ, YALNIZCA YAZI) */
         .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: rgba(255,255,255,0.98); min-width: 180px; box-shadow: 0px 10px 30px rgba(0,0,0,0.08); padding: 10px 0; text-align: center; border-top: 2px solid #111; border-radius: 2px; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
         .dropdown:hover .dropdown-content { display: block; }
-        .dropdown-content a { color: #111; padding: 12px 20px; text-decoration: none; display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
-        .dropdown-content a:hover { background-color: #f7f7f7; opacity: 1; }
+        .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
 
         /* MAIN SLIDER */
         .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
@@ -62,7 +63,7 @@
 
         @media (max-width: 900px) { 
             .nav-left, .nav-right { display: none; }
-            .nav-center a { font-size: 1rem; letter-spacing: 3px; }
+            .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
             .slide-caption { font-size: 0.7rem; letter-spacing: 3px; width: 90%; }
             .gateway-content h2 { font-size: 2.5rem; letter-spacing: 5px; } 
         }
@@ -79,7 +80,7 @@
             </a>
         </div>
         
-        <!-- Orta: İsim -->
+        <!-- Orta: İsim (Müze Tipografisi) -->
         <div class="nav-center">
             <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
         </div>
@@ -115,7 +116,7 @@
         </div>
     </nav>
 
-    <!-- FULLSCREEN HERO SLIDER BANNER (AYDINLIK HOVER EFEKTLİ VE ZARİF KÜNYELİ) -->
+    <!-- FULLSCREEN HERO SLIDER BANNER -->
     <header class="slider-container">
         
         <div class="slide active">
