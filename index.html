@@ -10,43 +10,65 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        
+
         /* HEADER NAV */
         nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 5px; font-weight: 600; }
+        
+        /* LOGO GÜNCELLENDİ VE UZUN İSİM İÇİN KİBARLAŞTIRILDI */
+        .logo a { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; letter-spacing: 3px; font-weight: 600; text-transform: uppercase; }
+        
         .nav-links { display: flex; gap: 35px; }
         .nav-links a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
         .nav-links a:hover { opacity: 0.5; }
 
-        /* MAIN SLIDER */
-        .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 2s ease-in-out; }
+        /* FULLSCREEN HERO SLIDER BANNER */
+        .hero-slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease-in-out; background-size: cover; background-position: center; }
         .slide.active { opacity: 1; }
-        .slider-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,0.85)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; z-index: 10; }
-        .hero-title { font-size: 4.5rem; letter-spacing: 10px; text-transform: uppercase; margin-bottom: 10px; }
+        .slider-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); }
 
-        /* GATEWAY BANNERS */
-        .gateway-section { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #ebebeb; }
-        .gateway-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease; z-index: 1; filter: grayscale(15%); }
-        .gateway-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.7); z-index: 2; transition: background 0.8s ease; }
-        .gateway-section:hover .gateway-bg { transform: scale(1.03); filter: grayscale(0%); }
-        .gateway-section:hover .gateway-overlay { background: rgba(255, 255, 255, 0.85); }
-        .gateway-content { position: relative; z-index: 3; max-width: 900px; padding: 0 20px; }
-        .gateway-content h2 { font-size: 4rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; }
-        .gateway-content h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #333; margin-bottom: 15px; font-style: italic; }
-        .gateway-content p { font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #666; margin-bottom: 40px; }
-        .btn-outline { display: inline-block; padding: 15px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; background: transparent; cursor: pointer; }
+        /* ZARİF ORTA KÜNYE (YENİ) */
+        .slide-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: rgba(255,255,255,0.9); z-index: 10; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 300; text-align: center; }
+
+        /* AŞAĞIYA DOĞRU AKAN DEVASE DOKUSAL BÖLÜMLER (SECTION FLOW) */
+        .main-sections { max-width: 1400px; margin: 0 auto; padding: 120px 50px; display: flex; flex-direction: column; gap: 180px; }
+
+        .feature-block { display: flex; align-items: center; gap: 80px; }
+        .feature-block:nth-child(even) { flex-direction: row-reverse; }
+
+        .feature-image { flex: 1.4; height: 75vh; position: relative; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+        .feature-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease; }
+        .feature-block:hover .feature-image img { transform: scale(1.04); filter: grayscale(0%); }
+
+        .feature-text { flex: 1; padding: 20px; }
+        .feature-text h4 { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 20px; }
+        .feature-text h2 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; color: #111; }
+        .feature-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 35px; border-left: 1px solid #ccc; padding-left: 20px; }
+
+        .btn-outline { display: inline-block; padding: 14px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
 
-        @media (max-width: 900px) { .nav-links { display: none; } .hero-title, .gateway-content h2 { font-size: 2.5rem; letter-spacing: 5px; } }
+        /* FOOTER */
+        footer { padding: 80px 50px; text-align: center; border-top: 1px solid #eee; margin-top: 100px; font-size: 0.75rem; letter-spacing: 2px; color: #888; text-transform: uppercase; }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .logo a { font-size: 0.9rem; letter-spacing: 2px; }
+            .slide-caption { font-size: 0.7rem; letter-spacing: 3px; width: 90%; }
+            .main-sections { padding: 60px 20px; gap: 100px; }
+            .feature-block { flex-direction: column !important; gap: 40px; }
+            .feature-image { height: 50vh; width: 100%; }
+            .feature-text h2 { font-size: 2.8rem; }
+            .feature-text p { border-left: none; padding-left: 0; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo"><a href="index.html">DAA</a></div>
+        <div class="logo"><a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a></div>
         <div class="nav-links">
             <a href="exhibitions.html">Exhibitions</a>
             <a href="artworks.html">Artworks</a>
@@ -55,73 +77,99 @@
         </div>
     </nav>
 
-    <header class="slider-container">
-        <!-- En üst slider -->
-        <div class="slide active" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');"></div>
-        <div class="slide" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
-        <div class="slide" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
-        <div class="slide" style="background-image: url('images/04-banner-daa-ortakmekik-verbasci-01.jpg');"></div>
-        <div class="slider-overlay">
-            <div class="hero-title">Dilara Altınkepçe Arslan</div>
+    <!-- FULLSCREEN HERO SLIDER BANNER (YENİ KÜNYE SİSTEMİ) -->
+    <header class="hero-slider">
+        
+        <div class="slide active" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');">
+            <div class="slider-overlay"></div>
+            <div class="slide-caption">The Grand Ritual • 2023</div>
         </div>
+        
+        <div class="slide" style="background-image: url('images/01-banner-daa-re-overcome-01.jpg');">
+            <div class="slider-overlay"></div>
+            <div class="slide-caption">Overcome • 2024</div>
+        </div>
+        
+        <div class="slide" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');">
+            <div class="slider-overlay"></div>
+            <div class="slide-caption">Alarm: Modern Age Griffin • 2025</div>
+        </div>
+
     </header>
 
-    <!-- 1. Exhibitions Banner -->
-    <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/05-banner-daa-artweeks-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
-        <div class="gateway-content">
-            <h2>Exhibitions</h2>
-            <h3>Curated Showcases</h3>
-            <p>Exclusive selections from solo and group exhibitions</p>
-            <a href="exhibitions.html" class="btn-outline">View Exhibitions</a>
-        </div>
-    </section>
+    <!-- AŞAĞIYA DOĞRU AKAN BÜYÜK KAPAKLAR / SECTIONS -->
+    <main class="main-sections">
 
-    <!-- 2. Artworks Banner (Güncellendi) -->
-    <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/06-banner-daa-nevmekan-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
-        <div class="gateway-content">
-            <h2>Artworks</h2>
-            <h3>Collections & Archives</h3>
-            <p>Series | Installation | New Media</p>
-            <a href="artworks.html" class="btn-outline">Explore Artworks</a>
-        </div>
-    </section>
+        <!-- 1. BÖLÜM: EXHIBITIONS -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/01-banner-daa-re-overcome-01.jpg" alt="Exhibitions">
+            </div>
+            <div class="feature-text">
+                <h4>Spatial Curation & Solo Shows</h4>
+                <h2>Exhibitions</h2>
+                <p>An immersive record of solo exhibitions, biennials, and curated group shows across international and national contemporary art platforms.</p>
+                <a href="exhibitions.html" class="btn-outline">View Exhibitions</a>
+            </div>
+        </section>
 
-    <!-- 3. Selections Banner -->
-    <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/03-banner-daa-noise-alarm-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
-        <div class="gateway-content">
-            <h2>Selections</h2>
-            <h3>Highlight: Noise Media Art "Alarm"</h3>
-            <p>Awards | Fairs | Biennials</p>
-            <a href="selections.html" class="btn-outline">View Selections</a>
-        </div>
-    </section>
+        <!-- 2. BÖLÜM: ARTWORKS & COLLECTIONS -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/02-banner-daa-grand-ritual-01.jpg" alt="Artworks & Collections">
+            </div>
+            <div class="feature-text">
+                <h4>Series • Installations • New Media</h4>
+                <h2>Artworks & Collections</h2>
+                <p>Exploring conceptual fiber art, ritualistic thread weaving, spatial installations, augmented reality (AR), and data-driven new media sculptures.</p>
+                <a href="artworks.html" class="btn-outline">Explore Collections</a>
+            </div>
+        </section>
 
-    <!-- 4. About Banner (Güncellendi) -->
-    <section class="gateway-section">
-        <div class="gateway-bg" style="background-image: url('images/02-banner-daa-grand-ritual-01.jpg');"></div>
-        <div class="gateway-overlay"></div>
-        <div class="gateway-content">
-            <h2>About</h2>
-            <h3>Dilara Altınkepçe Arslan</h3>
-            <p>Artist Statement & Biography</p>
-            <a href="about.html" class="btn-outline">Read the Story</a>
-        </div>
-    </section>
+        <!-- 3. BÖLÜM: SELECTIONS -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/06-banner-daa-nevmekan-01.jpg" alt="Selections">
+            </div>
+            <div class="feature-text">
+                <h4>Awarded & Jury Selected Works</h4>
+                <h2>Selections</h2>
+                <p>A curated archive of works distinguished by prestige selection committees, biennials, and contemporary art awards.</p>
+                <a href="selections.html" class="btn-outline">Discover Selections</a>
+            </div>
+        </section>
+
+        <!-- 4. BÖLÜM: ABOUT -->
+        <section class="feature-block">
+            <div class="feature-image">
+                <img src="images/06-banner-daa-nevmekan-01.jpg" alt="About Dilara Altınkepçe Arslan">
+            </div>
+            <div class="feature-text">
+                <h4>Artist Statement & Practice</h4>
+                <h2>About</h2>
+                <p>Bridging ancient textile traditions, Central Asian shamanic memory, and spatial arrangements with modern virtual and interactive technologies.</p>
+                <a href="about.html" class="btn-outline">Read Biography</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© Dilara Altınkepçe Arslan. All Rights Reserved.</p>
+    </footer>
 
     <script>
+        /* HERO BANNER SLIDER SCRIPT */
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
-        setInterval(() => {
+
+        function nextSlide() {
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % slides.length;
             slides[currentSlide].classList.add('active');
-        }, 4000);
+        }
+
+        setInterval(nextSlide, 5000);
     </script>
 </body>
 </html>
