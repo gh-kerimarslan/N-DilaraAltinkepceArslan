@@ -11,36 +11,30 @@
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* ---------------- YENİ MÜZE TİPİ HEADER CSS ---------------- */
+        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
         nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        
         .nav-left { flex: 1; display: flex; align-items: center; }
         .nav-left img { height: 35px; width: auto; object-fit: contain; }
-        
         .nav-center { flex: 2; text-align: center; }
         .nav-center a { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
-        
         .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
         .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
         .nav-right a:hover { opacity: 0.5; }
-
-        /* YENİ DROPDOWN CSS */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
         .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
-        /* ---------------- BİTİŞ ---------------- */
 
-        /* İÇ SAYFA DÜZENİ */
-        .series-hero { width: 100%; height: 70vh; position: relative; background: url('images/02-banner-daa-grand-ritual-01.jpg') center/cover no-repeat; background-attachment: fixed; }
+        /* STANDART İÇ SAYFA BANNER'I */
+        .page-hero { width: 100%; height: 70vh; position: relative; background: url('images/02-banner-daa-grand-ritual-01.jpg') center/cover no-repeat; background-attachment: fixed; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(250,250,250,0.2), rgba(250,250,250,1)); }
         
-        .content-container { max-width: 1000px; margin: -80px auto 80px auto; padding: 0 20px; position: relative; z-index: 2; text-align: center; }
-        .series-title { margin-bottom: 50px; }
-        .series-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
-        .series-title h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
-        .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; margin-bottom: 30px; padding: 0 5%; }
+        .content-container { max-width: 1000px; margin: -80px auto 80px auto; padding: 40px; position: relative; z-index: 2; text-align: center; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .content-container h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .content-container h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; } /* STANDART BOYUT */
+        
+        .editorial-text { font-size: 1.1rem; font-weight: 300; color: #444; text-align: justify; padding: 0 5%; }
 
         .artwork-flow-container { max-width: 1300px; margin: 0 auto; padding: 0 20px 100px 20px; }
         .artwork-block { display: flex; align-items: center; gap: 60px; min-height: 75vh; margin-bottom: 80px; padding: 80px 0; border-bottom: 1px solid #e5e5e5; }
@@ -70,6 +64,8 @@
         @media (max-width: 900px) { 
             .nav-left, .nav-right { display: none; }
             .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
+            .content-container { margin-top: -50px; padding: 30px 20px; }
+            .content-container h1 { font-size: 3.2rem; }
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
             .artwork-text h2 { font-size: 2.8rem; }
@@ -78,18 +74,13 @@
 </head>
 <body>
 
-    <!-- YENİ 3 BÖLMELİ HEADER & AÇILIR MENÜ EKLENDİ -->
     <nav>
         <div class="nav-left">
-            <a href="index.html">
-                <img src="images/daa-Logo.png" alt="Logo">
-            </a>
+            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
         </div>
-        
         <div class="nav-center">
             <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
         </div>
-        
         <div class="nav-right">
             <div class="dropdown">
                 <a href="exhibitions.html">Exhibitions</a>
@@ -98,7 +89,6 @@
                     <a href="exhibitions.html">All Exhibitions</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="artworks.html" style="opacity: 0.5;">Artworks</a>
                 <div class="dropdown-content">
@@ -107,34 +97,28 @@
                     <a href="artworks-newmedia.html">New Media</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="selections.html">Selections</a>
             </div>
-
             <div class="dropdown">
                 <a href="about.html">About</a>
             </div>
         </div>
     </nav>
 
-    <header class="series-hero">
+    <header class="page-hero">
         <div class="hero-overlay"></div>
     </header>
 
     <main class="content-container">
-        <div class="series-title">
-            <h4>Narrative Driven Archives</h4>
-            <h1>Series</h1>
-        </div>
+        <h4>Narrative Driven Archives</h4>
+        <h1>Series</h1>
         <p class="editorial-text">
             Conceptual fiber art and raw textile works that delve into humanity's collective unconsciousness. Each series acts as a tactile manuscript, bridging ancient mythologies with modern introspections through the repetitive, meditative act of threading.
         </p>
     </main>
 
     <section class="artwork-flow-container">
-
-        <!-- 1. THE GRAND RITUAL -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">BASE 2023 Selection</div>
@@ -151,7 +135,6 @@
             </div>
         </div>
 
-        <!-- 2. BALLAD OF THE ROAD -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">"RE-" Solo Exhibition</div>
@@ -168,7 +151,6 @@
             </div>
         </div>
 
-        <!-- 3. AWAKENED ANEW -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">CERMODERN "New: Now"</div>
@@ -185,7 +167,6 @@
             </div>
         </div>
 
-        <!-- 4. POLAROIDS -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">"RE-" Solo Exhibition</div>
@@ -201,12 +182,10 @@
                 <img src="images/DAA-2024-RE-Polaroid-03.jpg" class="img-sub2" alt="Detail 2">
             </div>
         </div>
-
     </section>
 
     <div class="back-nav">
         <a href="artworks.html" class="btn-outline">Return to Collections</a>
     </div>
-
 </body>
 </html>
