@@ -1,5 +1,5 @@
 <!-- STANDART MÜZE MENÜSÜ (HEADER) -->
-<nav>
+<nav class="main-museum-nav">
     <!-- SOL: SANATÇI İSMİ -->
     <div class="nav-left">
         <a href="index.html" class="artist-name">DİLARA ALTINKEPÇE ARSLAN</a>
@@ -44,18 +44,108 @@
 </nav>
 
 <style>
-    /* HEADER İÇİN ÖZEL STİLLER */
-    .nav-left { flex: 1; display: flex; align-items: center; justify-content: flex-start; }
-    .artist-name { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 4px; font-weight: 400; text-transform: uppercase; color: #111; white-space: nowrap; }
+    /* ZORUNLU HEADER STİLLERİ (ALT SAYFA ÇAKIŞMALARINI SIFIRLAR) */
+    .main-museum-nav {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding: 25px 50px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        z-index: 99999 !important;
+        background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)) !important;
+        box-sizing: border-box !important;
+    }
+
+    .main-museum-nav .nav-left { 
+        flex: 1 !important; 
+        display: flex !important; 
+        align-items: center !important; 
+        justify-content: flex-start !important; 
+    }
     
-    .nav-center { flex: 1; display: flex; justify-content: center; align-items: center; }
-    .brand-logo { height: 38px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
-    .brand-logo:hover { transform: scale(1.05); }
+    .main-museum-nav .artist-name { 
+        font-family: 'Montserrat', sans-serif !important; 
+        font-size: 0.85rem !important; 
+        letter-spacing: 4px !important; 
+        font-weight: 400 !important; 
+        text-transform: uppercase !important; 
+        color: #111 !important; 
+        white-space: nowrap !important; 
+        text-decoration: none !important;
+    }
+    
+    .main-museum-nav .nav-center { 
+        flex: 1 !important; 
+        display: flex !important; 
+        justify-content: center !important; 
+        align-items: center !important; 
+    }
+    
+    .main-museum-nav .brand-logo { 
+        height: 38px !important; 
+        width: auto !important; 
+        object-fit: contain !important; 
+        transition: transform 0.3s ease !important; 
+    }
+    
+    .main-museum-nav .brand-logo:hover { 
+        transform: scale(1.05) !important; 
+    }
 
-    .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+    .main-museum-nav .nav-right { 
+        flex: 1 !important; 
+        display: flex !important; 
+        justify-content: flex-end !important; 
+        gap: 30px !important; 
+        align-items: center !important; 
+    }
 
-    /* TÜM SERİ VE DETAY SAYFALARINDAKİ HEADER ÇAKIŞMASINI ÇÖZEN KURAL */
+    .main-museum-nav .nav-right a {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        font-weight: 500 !important;
+        color: #111 !important;
+        text-decoration: none !important;
+    }
+
+    .main-museum-nav .dropdown { 
+        position: relative !important; 
+        display: inline-block !important; 
+    }
+
+    .main-museum-nav .dropdown-content { 
+        display: none; 
+        position: absolute !important; 
+        top: 100% !important; 
+        left: 50% !important; 
+        transform: translateX(-50%) !important; 
+        background-color: transparent !important; 
+        padding-top: 10px !important; 
+        text-align: center !important; 
+        min-width: max-content !important; 
+    }
+
+    .main-museum-nav .dropdown:hover .dropdown-content { 
+        display: block !important; 
+    }
+
+    .main-museum-nav .dropdown-content a { 
+        color: #111 !important; 
+        padding: 8px 15px !important; 
+        display: block !important; 
+        font-size: 0.65rem !important; 
+        letter-spacing: 3px !important; 
+        text-shadow: 0 0 5px rgba(255,255,255,0.8) !important; 
+    }
+
+    /* BANNER BİNME HASSASİYETİ */
     .series-hero, .page-banner {
-        padding-top: 100px !important;
+        margin-top: 0 !important;
+        padding-top: 80px !important;
     }
 </style>
