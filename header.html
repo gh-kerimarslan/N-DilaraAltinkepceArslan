@@ -1,8 +1,11 @@
 <!-- STANDART MÜZE MENÜSÜ (HEADER) -->
 <nav class="main-museum-nav">
-    <!-- SOL: SANATÇI İSMİ (Sadece Masaüstü) -->
-    <div class="nav-left desktop-name">
-        <a href="index.html" class="artist-name">DİLARA ALTINKEPÇE ARSLAN</a>
+    <!-- SOL: SANATÇI İSMİ (Masaüstü) / LOGO (Mobil) -->
+    <div class="nav-left">
+        <a href="index.html" class="desktop-name">DİLARA ALTINKEPÇE ARSLAN</a>
+        <a href="index.html" class="mobile-logo">
+            <img src="images/daa-Logo.png" alt="Dilara Altınkepçe Arslan Logo" class="brand-logo">
+        </a>
     </div>
 
     <!-- ORTA: LOGO (Masaüstü) / İSİM (Mobil) -->
@@ -13,45 +16,47 @@
         <a href="index.html" class="mobile-name">DİLARA ALTINKEPÇE ARSLAN</a>
     </div>
 
-    <!-- SAĞ: MENÜ LİNKLERİ (Sadece Masaüstü) -->
-    <div class="nav-right desktop-menu">
-        <div class="dropdown">
-            <a href="exhibitions.html">Exhibitions</a>
-            <div class="dropdown-content">
-                <a href="exhibitions-re.html">RE- Solo Exhibition</a>
-                <a href="exhibitions.html">All Exhibitions</a>
+    <!-- SAĞ: MENÜ LİNKLERİ (Masaüstü) / HAMBURGER (Mobil) -->
+    <div class="nav-right">
+        <div class="desktop-menu">
+            <div class="dropdown">
+                <a href="exhibitions.html">Exhibitions</a>
+                <div class="dropdown-content">
+                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
+                    <a href="exhibitions.html">All Exhibitions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="artworks.html">Artworks</a>
+                <div class="dropdown-content">
+                    <a href="artworks-series.html">Series</a>
+                    <a href="artworks-installations.html">Installations</a>
+                    <a href="artworks-newmedia.html">New Media</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="selections.html">Selections</a>
+                <div class="dropdown-content">
+                    <a href="selections.html#biennials">Biennials</a>
+                    <a href="selections.html#awards">Awards</a>
+                    <a href="selections.html#fairs">Art Fairs & Shows</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="about.html">About</a>
             </div>
         </div>
-        <div class="dropdown">
-            <a href="artworks.html">Artworks</a>
-            <div class="dropdown-content">
-                <a href="artworks-series.html">Series</a>
-                <a href="artworks-installations.html">Installations</a>
-                <a href="artworks-newmedia.html">New Media</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="selections.html">Selections</a>
-            <div class="dropdown-content">
-                <a href="selections.html#biennials">Biennials</a>
-                <a href="selections.html#awards">Awards</a>
-                <a href="selections.html#fairs">Art Fairs & Shows</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="about.html">About</a>
-        </div>
-    </div>
 
-    <!-- MOBİL MENÜ TETİKLEYİCİSİ (GİZLİ CHECKBOX HACK - JS GEREKTİRMEZ) -->
-    <input type="checkbox" id="mobile-toggle" style="display: none;">
-    
-    <!-- HAMBURGER İKONU -->
-    <label for="mobile-toggle" class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </label>
+        <!-- MOBİL MENÜ TETİKLEYİCİSİ (GİZLİ CHECKBOX) -->
+        <input type="checkbox" id="mobile-toggle" style="display: none;">
+        
+        <!-- HAMBURGER İKONU (Sadece Mobilde Görünür) -->
+        <label for="mobile-toggle" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+    </div>
 
     <!-- TAM EKRAN MOBİL MENÜ -->
     <div class="mobile-menu-overlay">
@@ -82,15 +87,19 @@
     }
 
     .main-museum-nav .nav-left { flex: 1 !important; display: flex !important; align-items: center !important; justify-content: flex-start !important; }
-    .main-museum-nav .artist-name { font-family: 'Montserrat', sans-serif !important; font-size: 0.85rem !important; letter-spacing: 4px !important; font-weight: 400 !important; text-transform: uppercase !important; color: #111 !important; white-space: nowrap !important; text-decoration: none !important; }
+    .main-museum-nav .desktop-name { font-family: 'Montserrat', sans-serif !important; font-size: 0.85rem !important; letter-spacing: 4px !important; font-weight: 400 !important; text-transform: uppercase !important; color: #111 !important; white-space: nowrap !important; text-decoration: none !important; }
     
     .main-museum-nav .nav-center { flex: 1 !important; display: flex !important; justify-content: center !important; align-items: center !important; }
     .main-museum-nav .brand-logo { height: 38px !important; width: auto !important; object-fit: contain !important; transition: transform 0.3s ease !important; }
     .main-museum-nav .brand-logo:hover { transform: scale(1.05) !important; }
-    .main-museum-nav .mobile-name { display: none !important; } /* Masaüstünde Gizli */
+    
+    .main-museum-nav .nav-right { flex: 1 !important; display: flex !important; justify-content: flex-end !important; align-items: center !important; gap: 30px !important; }
+    .desktop-menu { display: flex !important; gap: 30px !important; align-items: center !important; }
+    .desktop-menu a { font-family: 'Montserrat', sans-serif !important; font-size: 0.75rem !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 500 !important; color: #111 !important; text-decoration: none !important; }
 
-    .main-museum-nav .nav-right { flex: 1 !important; display: flex !important; justify-content: flex-end !important; gap: 30px !important; align-items: center !important; }
-    .main-museum-nav .nav-right a { font-family: 'Montserrat', sans-serif !important; font-size: 0.75rem !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 500 !important; color: #111 !important; text-decoration: none !important; }
+    /* Başlangıçta Gizli Olan Mobil Elemanlar */
+    .mobile-logo { display: none !important; }
+    .mobile-name { display: none !important; }
 
     .main-museum-nav .dropdown { position: relative !important; display: inline-block !important; }
     .main-museum-nav .dropdown-content { display: none; position: absolute !important; top: 100% !important; left: 50% !important; transform: translateX(-50%) !important; background-color: transparent !important; padding-top: 10px !important; text-align: center !important; min-width: max-content !important; }
@@ -106,10 +115,8 @@
     .mobile-menu-content a { font-family: 'Cormorant Garamond', serif !important; font-size: 2.2rem !important; text-decoration: none !important; color: #111 !important; font-style: italic !important; transition: opacity 0.3s ease !important; }
     .mobile-menu-content a:hover { opacity: 0.5 !important; }
 
-    /* CHECKBOX AKTİF OLDUĞUNDA (Tıklanınca) */
     #mobile-toggle:checked ~ .mobile-menu-overlay { opacity: 1 !important; pointer-events: auto !important; }
     #mobile-toggle:checked ~ .mobile-menu-overlay .mobile-menu-content { transform: translateY(0); }
-    
     #mobile-toggle:checked + .hamburger .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #mobile-toggle:checked + .hamburger .bar:nth-child(2) { opacity: 0; }
     #mobile-toggle:checked + .hamburger .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -120,24 +127,36 @@
 
     /* --- MOBİL GÖRÜNÜM --- */
     @media (max-width: 900px) {
-        .main-museum-nav { padding: 20px 25px !important; }
-        .desktop-name { display: none !important; } /* Soldaki İsim Gizlenir */
-        .desktop-logo { display: none !important; } /* Logo Gizlenir */
-        .desktop-menu { display: none !important; } /* Sağdaki Menü Gizlenir */
+        .main-museum-nav { padding: 15px 20px !important; }
         
-        /* Ortada İsim Görünür */
-        .main-museum-nav .mobile-name { 
+        /* Masaüstü Elemanları Kapanır */
+        .desktop-name { display: none !important; } 
+        .desktop-logo { display: none !important; } 
+        .desktop-menu { display: none !important; } 
+        
+        /* Sol: Logo Görünür */
+        .mobile-logo { display: block !important; }
+        .mobile-logo .brand-logo { height: 26px !important; } /* Mobilde daha zarif bir logo boyutu */
+
+        /* Orta: İsim Görünür (Küçük Yazı Tipi) */
+        .mobile-name { 
             display: block !important; 
             font-family: 'Montserrat', sans-serif !important; 
-            font-size: 0.80rem !important; 
-            letter-spacing: 3px !important; 
+            font-size: 0.65rem !important; /* Çok şık ve kibar bir boyut */
+            letter-spacing: 2px !important; 
             font-weight: 500 !important; 
             text-transform: uppercase !important; 
             color: #111 !important; 
             text-decoration: none !important; 
+            text-align: center !important;
         }
         
-        .main-museum-nav .nav-center { flex: 1; display: flex; justify-content: flex-start !important; }
-        .hamburger { display: flex; } /* Menü İkonu Görünür */
+        /* Sağ: Menü İkonu Görünür */
+        .hamburger { display: flex !important; }
+
+        /* Mobil Flex Hizalaması */
+        .main-museum-nav .nav-left { flex: 1 !important; justify-content: flex-start !important; }
+        .main-museum-nav .nav-center { flex: 2 !important; justify-content: center !important; } /* İsmin taşmaması için daha geniş alan */
+        .main-museum-nav .nav-right { flex: 1 !important; justify-content: flex-end !important; }
     }
 </style>
