@@ -58,14 +58,32 @@
         </label>
     </div>
 
-    <!-- TAM EKRAN MOBİL MENÜ -->
+    <!-- TAM EKRAN MOBİL MENÜ (TÜM İÇERİK) -->
     <div class="mobile-menu-overlay">
         <div class="mobile-menu-content">
-            <a href="index.html">Home</a>
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="artworks.html">Artworks</a>
-            <a href="selections.html">Selections</a>
-            <a href="about.html">About</a>
+            <a href="index.html" class="main-link">Home</a>
+            
+            <div class="mobile-menu-group">
+                <a href="exhibitions.html" class="main-link">Exhibitions</a>
+                <a href="exhibitions-re.html" class="sub-link">RE- Solo Exhibition</a>
+                <a href="exhibitions.html" class="sub-link">All Exhibitions</a>
+            </div>
+
+            <div class="mobile-menu-group">
+                <a href="artworks.html" class="main-link">Artworks</a>
+                <a href="artworks-series.html" class="sub-link">Series</a>
+                <a href="artworks-installations.html" class="sub-link">Installations</a>
+                <a href="artworks-newmedia.html" class="sub-link">New Media</a>
+            </div>
+
+            <div class="mobile-menu-group">
+                <a href="selections.html" class="main-link">Selections</a>
+                <a href="selections.html#biennials" class="sub-link">Biennials</a>
+                <a href="selections.html#awards" class="sub-link">Awards</a>
+                <a href="selections.html#fairs" class="sub-link">Art Fairs & Shows</a>
+            </div>
+
+            <a href="about.html" class="main-link">About</a>
         </div>
     </div>
 </nav>
@@ -110,10 +128,14 @@
     .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 100000; }
     .hamburger .bar { width: 25px; height: 2px; background-color: #111; transition: 0.3s; }
     
-    .mobile-menu-overlay { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100vh !important; background-color: rgba(250, 250, 250, 0.98) !important; display: flex !important; justify-content: center !important; align-items: center !important; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; z-index: 99998 !important; }
-    .mobile-menu-content { display: flex; flex-direction: column; gap: 30px; text-align: center; transform: translateY(20px); transition: transform 0.4s ease; }
-    .mobile-menu-content a { font-family: 'Cormorant Garamond', serif !important; font-size: 2.2rem !important; text-decoration: none !important; color: #111 !important; font-style: italic !important; transition: opacity 0.3s ease !important; }
-    .mobile-menu-content a:hover { opacity: 0.5 !important; }
+    .mobile-menu-overlay { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100vh !important; background-color: rgba(250, 250, 250, 0.98) !important; display: flex !important; justify-content: center !important; align-items: center !important; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; z-index: 99998 !important; overflow-y: auto; padding: 60px 0; }
+    .mobile-menu-content { display: flex; flex-direction: column; gap: 25px; text-align: center; transform: translateY(20px); transition: transform 0.4s ease; width: 100%; margin: auto; }
+    
+    .mobile-menu-group { display: flex; flex-direction: column; gap: 8px; }
+    .main-link { font-family: 'Cormorant Garamond', serif !important; font-size: 2.2rem !important; text-decoration: none !important; color: #111 !important; font-style: italic !important; transition: opacity 0.3s ease !important; }
+    .sub-link { font-family: 'Montserrat', sans-serif !important; font-size: 0.75rem !important; letter-spacing: 3px !important; text-transform: uppercase !important; color: #666 !important; text-decoration: none !important; transition: color 0.3s ease; }
+    
+    .main-link:hover, .sub-link:hover { opacity: 0.5 !important; }
 
     #mobile-toggle:checked ~ .mobile-menu-overlay { opacity: 1 !important; pointer-events: auto !important; }
     #mobile-toggle:checked ~ .mobile-menu-overlay .mobile-menu-content { transform: translateY(0); }
@@ -129,20 +151,17 @@
     @media (max-width: 900px) {
         .main-museum-nav { padding: 15px 20px !important; }
         
-        /* Masaüstü Elemanları Kapanır */
         .desktop-name { display: none !important; } 
         .desktop-logo { display: none !important; } 
         .desktop-menu { display: none !important; } 
         
-        /* Sol: Logo Görünür */
         .mobile-logo { display: block !important; }
-        .mobile-logo .brand-logo { height: 26px !important; } /* Mobilde daha zarif bir logo boyutu */
+        .mobile-logo .brand-logo { height: 26px !important; } 
 
-        /* Orta: İsim Görünür (Küçük Yazı Tipi) */
         .mobile-name { 
             display: block !important; 
             font-family: 'Montserrat', sans-serif !important; 
-            font-size: 0.65rem !important; /* Çok şık ve kibar bir boyut */
+            font-size: 0.65rem !important; 
             letter-spacing: 2px !important; 
             font-weight: 500 !important; 
             text-transform: uppercase !important; 
@@ -151,12 +170,10 @@
             text-align: center !important;
         }
         
-        /* Sağ: Menü İkonu Görünür */
         .hamburger { display: flex !important; }
 
-        /* Mobil Flex Hizalaması */
         .main-museum-nav .nav-left { flex: 1 !important; justify-content: flex-start !important; }
-        .main-museum-nav .nav-center { flex: 2 !important; justify-content: center !important; } /* İsmin taşmaması için daha geniş alan */
+        .main-museum-nav .nav-center { flex: 2 !important; justify-content: center !important; } 
         .main-museum-nav .nav-right { flex: 1 !important; justify-content: flex-end !important; }
     }
 </style>
