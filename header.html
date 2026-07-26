@@ -1,6 +1,6 @@
 <!-- STANDART MÜZE MENÜSÜ (HEADER) -->
 <nav class="main-museum-nav">
-    <!-- SOL: SANATÇI İSMİ -->
+    <!-- SOL: SANATÇI İSMİ (Mobilde Gizlenecek) -->
     <div class="nav-left">
         <a href="index.html" class="artist-name">DİLARA ALTINKEPÇE ARSLAN</a>
     </div>
@@ -12,7 +12,7 @@
         </a>
     </div>
 
-    <!-- SAĞ: MENÜ LİNKLERİ -->
+    <!-- SAĞ: MENÜ LİNKLERİ (Masaüstü) -->
     <div class="nav-right">
         <div class="dropdown">
             <a href="exhibitions.html">Exhibitions</a>
@@ -41,10 +41,27 @@
             <a href="about.html">About</a>
         </div>
     </div>
+
+    <!-- HAMBURGER İKONU (Sadece Mobilde Görünür) -->
+    <div class="hamburger" id="hamburger-icon" onclick="toggleMobileMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- TAM EKRAN MOBİL MENÜ (Başlangıçta Gizli) -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="exhibitions.html" onclick="toggleMobileMenu()">Exhibitions</a>
+            <a href="artworks.html" onclick="toggleMobileMenu()">Artworks</a>
+            <a href="selections.html" onclick="toggleMobileMenu()">Selections</a>
+            <a href="about.html" onclick="toggleMobileMenu()">About</a>
+        </div>
+    </div>
 </nav>
 
 <style>
-    /* ZORUNLU HEADER STİLLERİ (ALT SAYFA ÇAKIŞMALARINI SIFIRLAR) */
+    /* --- MASAÜSTÜ (DESKTOP) STİLLERİ --- */
     .main-museum-nav {
         position: fixed !important;
         top: 0 !important;
@@ -57,95 +74,70 @@
         z-index: 99999 !important;
         background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)) !important;
         box-sizing: border-box !important;
+        transition: background 0.3s ease;
     }
 
-    .main-museum-nav .nav-left { 
-        flex: 1 !important; 
-        display: flex !important; 
-        align-items: center !important; 
-        justify-content: flex-start !important; 
-    }
+    .main-museum-nav .nav-left { flex: 1 !important; display: flex !important; align-items: center !important; justify-content: flex-start !important; }
+    .main-museum-nav .artist-name { font-family: 'Montserrat', sans-serif !important; font-size: 0.85rem !important; letter-spacing: 4px !important; font-weight: 400 !important; text-transform: uppercase !important; color: #111 !important; white-space: nowrap !important; text-decoration: none !important; }
     
-    .main-museum-nav .artist-name { 
-        font-family: 'Montserrat', sans-serif !important; 
-        font-size: 0.85rem !important; 
-        letter-spacing: 4px !important; 
-        font-weight: 400 !important; 
-        text-transform: uppercase !important; 
-        color: #111 !important; 
-        white-space: nowrap !important; 
-        text-decoration: none !important;
-    }
+    .main-museum-nav .nav-center { flex: 1 !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+    .main-museum-nav .brand-logo { height: 38px !important; width: auto !important; object-fit: contain !important; transition: transform 0.3s ease !important; }
+    .main-museum-nav .brand-logo:hover { transform: scale(1.05) !important; }
+
+    .main-museum-nav .nav-right { flex: 1 !important; display: flex !important; justify-content: flex-end !important; gap: 30px !important; align-items: center !important; }
+    .main-museum-nav .nav-right a { font-family: 'Montserrat', sans-serif !important; font-size: 0.75rem !important; letter-spacing: 2px !important; text-transform: uppercase !important; font-weight: 500 !important; color: #111 !important; text-decoration: none !important; }
+
+    .main-museum-nav .dropdown { position: relative !important; display: inline-block !important; }
+    .main-museum-nav .dropdown-content { display: none; position: absolute !important; top: 100% !important; left: 50% !important; transform: translateX(-50%) !important; background-color: transparent !important; padding-top: 10px !important; text-align: center !important; min-width: max-content !important; }
+    .main-museum-nav .dropdown:hover .dropdown-content { display: block !important; }
+    .main-museum-nav .dropdown-content a { color: #111 !important; padding: 8px 15px !important; display: block !important; font-size: 0.65rem !important; letter-spacing: 3px !important; text-shadow: 0 0 5px rgba(255,255,255,0.8) !important; }
+
+    /* --- HAMBURGER VE MOBİL MENÜ BİLEŞENLERİ --- */
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 6px; z-index: 100000; }
+    .hamburger .bar { width: 25px; height: 2px; background-color: #111; transition: 0.3s; }
     
-    .main-museum-nav .nav-center { 
-        flex: 1 !important; 
-        display: flex !important; 
-        justify-content: center !important; 
-        align-items: center !important; 
-    }
-    
-    .main-museum-nav .brand-logo { 
-        height: 38px !important; 
-        width: auto !important; 
-        object-fit: contain !important; 
-        transition: transform 0.3s ease !important; 
-    }
-    
-    .main-museum-nav .brand-logo:hover { 
-        transform: scale(1.05) !important; 
-    }
+    .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background-color: rgba(250, 250, 250, 0.98); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; z-index: 99998; }
+    .mobile-menu-overlay.active { opacity: 1; pointer-events: auto; }
+    .mobile-menu-content { display: flex; flex-direction: column; gap: 30px; text-align: center; transform: translateY(20px); transition: transform 0.4s ease; }
+    .mobile-menu-overlay.active .mobile-menu-content { transform: translateY(0); }
+    .mobile-menu-content a { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; text-decoration: none; color: #111; font-style: italic; transition: opacity 0.3s ease; }
+    .mobile-menu-content a:hover { opacity: 0.5; }
 
-    .main-museum-nav .nav-right { 
-        flex: 1 !important; 
-        display: flex !important; 
-        justify-content: flex-end !important; 
-        gap: 30px !important; 
-        align-items: center !important; 
-    }
+    /* İÇ SAYFA AKIŞ DÜZELTMESİ (ÖNCEKİ AYARLAR) */
+    .series-hero, .page-banner { padding-top: 0 !important; }
+    .content-container { margin-top: 40px !important; }
 
-    .main-museum-nav .nav-right a {
-        font-family: 'Montserrat', sans-serif !important;
-        font-size: 0.75rem !important;
-        letter-spacing: 2px !important;
-        text-transform: uppercase !important;
-        font-weight: 500 !important;
-        color: #111 !important;
-        text-decoration: none !important;
-    }
+    /* --- MOBİL (RESPONSIVE) STİLLERİ --- */
+    @media (max-width: 900px) {
+        .main-museum-nav { padding: 20px 25px !important; }
+        .main-museum-nav .nav-left { display: none !important; } /* Sanatçı İsmi Gizlenir */
+        .main-museum-nav .nav-right { display: none !important; } /* Masaüstü Linkleri Gizlenir */
+        
+        .main-museum-nav .nav-center { flex: 1; display: flex; justify-content: flex-start !important; }
+        .hamburger { display: flex; } /* Menü İkonu Görünür */
 
-    .main-museum-nav .dropdown { 
-        position: relative !important; 
-        display: inline-block !important; 
-    }
-
-    .main-museum-nav .dropdown-content { 
-        display: none; 
-        position: absolute !important; 
-        top: 100% !important; 
-        left: 50% !important; 
-        transform: translateX(-50%) !important; 
-        background-color: transparent !important; 
-        padding-top: 10px !important; 
-        text-align: center !important; 
-        min-width: max-content !important; 
-    }
-
-    .main-museum-nav .dropdown:hover .dropdown-content { 
-        display: block !important; 
-    }
-
-    .main-museum-nav .dropdown-content a { 
-        color: #111 !important; 
-        padding: 8px 15px !important; 
-        display: block !important; 
-        font-size: 0.65rem !important; 
-        letter-spacing: 3px !important; 
-        text-shadow: 0 0 5px rgba(255,255,255,0.8) !important; 
-    }
-
-    /* BANNER BİNME HASSASİYETİ */
-    .series-hero, .page-banner {
-        margin-top: 0 !important;
-        padding-top: 80px !important;
+        /* Hamburger Tıklanınca Çarpıya Dönüşme Efekti */
+        .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .hamburger.active .bar:nth-child(2) { opacity: 0; }
+        .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     }
 </style>
+
+<script>
+    // MOBİL MENÜ AÇ/KAPA İŞLEVİ
+    function toggleMobileMenu() {
+        const hamburger = document.getElementById("hamburger-icon");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const navBar = document.querySelector(".main-museum-nav");
+
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+
+        // Menü açıkken arkadaki kaydırmayı engelleme (opsiyonel)
+        if(mobileMenu.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }
+</script>
