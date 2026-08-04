@@ -16,10 +16,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <title> Selections & Awards | Dilara Altınkepçe Arslan </title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; scroll-behavior: smooth; }
@@ -77,18 +77,19 @@
         .highlight-text .specs { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 2px; color: #333; font-weight: 500; text-transform: uppercase; margin-bottom: 20px; }
         .highlight-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: #555; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
-        /* FUARLAR İÇİN ZARİF İKİLİ/ÜÇLÜ GRID KARTLARI */
-        .fairs-grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-        .fair-card { background: #fff; border: 1px solid #eee; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease; }
+        /* FUARLAR İÇİN GENİŞ VE ALT ALTA LİSTE KARTLARI */
+        .fairs-list-container { display: flex; flex-direction: column; gap: 80px; }
+        .fair-card { background: #fff; border: 1px solid #eee; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease; display: flex; flex-direction: column; }
         .fair-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        .fair-card-img { width: 100%; height: 320px; overflow: hidden; }
-        .fair-card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); transition: transform 0.8s ease, filter 0.8s ease; }
-        .fair-card:hover .fair-card-img img { transform: scale(1.05); filter: grayscale(0%); }
-        .fair-card-body { padding: 30px; }
-        .fair-card-body h4 { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-bottom: 10px; }
-        .fair-card-body h3 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 10px; color: #111; }
-        .fair-card-body .location { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 1px; color: #333; font-weight: 500; margin-bottom: 15px; text-transform: uppercase; }
-        .fair-card-body p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: #555; line-height: 1.6; }
+        .fair-card-img { width: 100%; height: 550px; overflow: hidden; position: relative; }
+        .fair-card-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%); transition: transform 0.8s ease, filter 0.8s ease; display: block; }
+        .fair-card:hover .fair-card-img img { transform: scale(1.03); filter: grayscale(0%); }
+        
+        .fair-card-body { padding: 50px 30px; text-align: center; }
+        .fair-card-body h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 4px; color: #888; text-transform: uppercase; margin-bottom: 15px; }
+        .fair-card-body h3 { font-size: 3rem; line-height: 1.2; margin-bottom: 15px; color: #111; }
+        .fair-card-body .location { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 2px; color: #333; font-weight: 500; margin-bottom: 20px; text-transform: uppercase; }
+        .fair-card-body p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: #555; line-height: 1.6; max-width: 900px; margin: 0 auto; }
 
         @media (max-width: 900px) { 
             .nav-left, .nav-right { display: none; }
@@ -99,6 +100,11 @@
             .highlight-card { flex-direction: column !important; gap: 30px; text-align: center; }
             .highlight-image img { height: 350px; }
             .highlight-text p { border-left: none; padding-left: 0; }
+            
+            /* Fuarlar Mobil Düzeltmesi */
+            .fair-card-img { height: 350px; }
+            .fair-card-body { padding: 30px 20px; }
+            .fair-card-body h3 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -182,7 +188,8 @@
                 <h2>Art Fairs & Curated Shows</h2>
             </div>
             
-            <div class="fairs-grid-container">
+            <!-- YENİ DÜZEN: GENİŞ VE ALT ALTA -->
+            <div class="fairs-list-container">
                 
                 <!-- NOISE Media Art -->
                 <div class="fair-card">
