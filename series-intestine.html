@@ -16,10 +16,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <title>Intestine War Series | Dilara Altınkepçe Arslan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
@@ -46,10 +46,12 @@
         .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
+        /* GALERİ VE POP-UP UYUMLU LİNK (A) AYARLARI */
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; }
-        .artwork-gallery:hover img { filter: grayscale(0%); }
-        .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .artwork-gallery a { display: block; overflow: hidden; position: relative; cursor: zoom-in; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
+        .artwork-gallery a:hover img { filter: grayscale(0%); transform: scale(1.02); }
+        .artwork-gallery a:hover { z-index: 5; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
         .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
         .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
@@ -63,6 +65,7 @@
         @media (max-width: 900px) { 
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .artwork-gallery a { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
             .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
@@ -81,7 +84,7 @@
             <h1>Intestine War Series</h1>
         </div>
         <p class="editorial-text">
-            his series approaches humans and animals not as separate beings, but as two opposing forces within the same world. In the tension between good and evil, right and left, reason and instinct, neither side prevails. The works present this encounter as a constantly shifting and continually renewed state of balance, with neither a winner nor a loser.
+            This series approaches humans and animals not as separate beings, but as two opposing forces within the same world. In the tension between good and evil, right and left, reason and instinct, neither side prevails. The works present this encounter as a constantly shifting and continually renewed state of balance, with neither a winner nor a loser.
         </p>
     </main>
 
@@ -98,9 +101,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/daa-artworks-intestine-01.jpg" class="img-main" alt="Intestine War I Main">
-                <img src="images/daa-artworks-intestine-02.jpg" class="img-sub1" alt="War Detail 1">
-                <img src="images/daa-artworks-intestine-03.jpg" class="img-sub2" alt="War Detail 2">
+                <a href="images/daa-artworks-intestine-01.jpg" class="img-main" data-lightbox="intestine-1">
+                    <img src="images/daa-artworks-intestine-01.jpg" alt="Intestine War I Main">
+                </a>
+                <a href="images/daa-artworks-intestine-02.jpg" class="img-sub1" data-lightbox="intestine-1">
+                    <img src="images/daa-artworks-intestine-02.jpg" alt="War Detail 1">
+                </a>
+                <a href="images/daa-artworks-intestine-03.jpg" class="img-sub2" data-lightbox="intestine-1">
+                    <img src="images/daa-artworks-intestine-03.jpg" alt="War Detail 2">
+                </a>
             </div>
         </div>
 
@@ -115,9 +124,16 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-Intestine-II-01.jpg" class="img-main" alt="Intestine War II Main">
-                <img src="images/DAA-2024-Intestine-II-02.jpg" class="img-sub1" alt="War Detail 1">
-                <img src="images/DAA-2024-Intestine-II-02.jpg" class="img-sub2" alt="War Detail 2">
+                <a href="images/DAA-2024-Intestine-II-01.jpg" class="img-main" data-lightbox="intestine-2">
+                    <img src="images/DAA-2024-Intestine-II-01.jpg" alt="Intestine War II Main">
+                </a>
+                <a href="images/DAA-2024-Intestine-II-02.jpg" class="img-sub1" data-lightbox="intestine-2">
+                    <img src="images/DAA-2024-Intestine-II-02.jpg" alt="War Detail 1">
+                </a>
+                <a href="images/DAA-2024-Intestine-II-02.jpg" class="img-sub2" data-lightbox="intestine-2">
+                    <!-- Sanırım görsel adı aynı yazılmış, eğer farklı bir görselse adını düzeltebilirsiniz -->
+                    <img src="images/DAA-2024-Intestine-II-02.jpg" alt="War Detail 2">
+                </a>
             </div>
         </div>
 
