@@ -16,17 +16,17 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <title>RE- Solo Exhibition | Dilara Altınkepçe Arslan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
         
-        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
+        /* STANDART MÜZE MENÜSÜ CSS */
         nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
         .nav-left { flex: 1; display: flex; align-items: center; }
         .nav-left img { height: 35px; width: auto; object-fit: contain; }
@@ -47,7 +47,7 @@
         
         .content-container { max-width: 950px; margin: -80px auto 80px auto; padding: 40px; position: relative; z-index: 2; text-align: center; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
         .content-container h4 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
-        .content-container h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; } /* STANDART BOYUT */
+        .content-container h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; letter-spacing: 5px; }
         
         .info-details { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: #333; font-weight: 500; margin-bottom: 50px; display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; }
         
@@ -70,15 +70,17 @@
         .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 1px; color: #555; margin-bottom: 25px; font-weight: 500; text-transform: uppercase; }
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
+        /* GALERİ VE POP-UP UYUMLU LİNK (A) AYARLARI */
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: pointer; }
-        .artwork-gallery:hover img { filter: grayscale(0%); }
-        .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .artwork-gallery a { display: block; overflow: hidden; position: relative; cursor: zoom-in; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
+        .artwork-gallery a:hover img { filter: grayscale(0%); transform: scale(1.02); }
+        .artwork-gallery a:hover { z-index: 5; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
         .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
-        .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
-        .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+        .grid-3 .link-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
+        .grid-3 .link-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .grid-3 .link-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
 
         .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
@@ -92,43 +94,15 @@
             .info-details { flex-direction: column; gap: 10px; }
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .artwork-gallery a { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
             .artwork-text h2 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-left">
-            <a href="index.html"><img src="images/daa-Logo.png" alt="Logo"></a>
-        </div>
-        <div class="nav-center">
-            <a href="index.html">DİLARA ALTINKEPÇE ARSLAN</a>
-        </div>
-        <div class="nav-right">
-            <div class="dropdown">
-                <a href="exhibitions.html" style="opacity: 0.5;">Exhibitions</a>
-                <div class="dropdown-content">
-                    <a href="exhibitions-re.html">RE- Solo Exhibition</a>
-                    <a href="exhibitions.html">All Exhibitions</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="artworks.html">Artworks</a>
-                <div class="dropdown-content">
-                    <a href="artworks-series.html">Series</a>
-                    <a href="artworks-installations.html">Installations</a>
-                    <a href="artworks-newmedia.html">New Media</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="selections.html">Selections</a>
-            </div>
-            <div class="dropdown">
-                <a href="about.html">About</a>
-            </div>
-        </div>
-    </nav>
+    <!-- DİNAMİK HEADER YÜKLEYİCİ -->
+    <div id="header-placeholder"></div>
 
     <header class="page-hero">
         <div class="hero-overlay"></div>
@@ -146,7 +120,7 @@
         </div>
         
         <div class="curatorial-text">
-            <p>“She had always thought that things were certain. Everything about her life, her place in the world, the people she met, her everyday routine, seemed predetermined, like the plot of a story she already knew. She would get up at the same time every morning, walk the dogs, and say hello to the same people. As the seasons changed, everything appeared to be in its proper place. But gradually things started to change.”</p>
+            <p>“She had always thought that things were certain. Everything about her life, her place in the world, the people she met, her everyday routine, seemed predetermined, like the plot of a story she already knew. She would get up at the same time every morning, walk the dogs, and say hello to the same people. As the seasons changed, everything appeared to be in proper place. But gradually things started to change.”</p>
             <p>At first, hardly noticeable changes. Occasionally, she would find herself mid-conversation, abruptly overcome with the realization that she had been here before. Not in a blurry kind of déjà vu, but as though this same moment has happened countless times before. She started to see echoes of things she couldn't quite place—patterns where none should have existed. Time seemed to be folding back on itself in odd and surprising ways, instead of moving forward.</p>
             <p>She began to wonder. What if? What if these parallels are expressions of a deeper consciousness rather than coincidences? What if the story, — or better yet, history is not behind but all around her: living, breathing, changing. A continuous cycle of repeated actions and moments spiraling endlessly.</p>
             <p>In RE-, time doesn’t move forward or back; it loops and refracts, shifting shape like a continuous echo. Here, moments return not as identical repetitions, but as layered reflections of everything that has come before. History isn’t something behind us—it’s interwoven with the present, resonating through actions, thoughts, and memories that ripple through each moment. Every moment has echoes that pulse and replay throughout our lives, recalling us of all the times it has happened before while also seeming oddly familiar and brand-new.</p>
@@ -161,6 +135,8 @@
     </div>
 
     <section class="artwork-flow-container">
+        
+        <!-- 1. OVERCOME -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Suspended Installation</div>
@@ -169,12 +145,19 @@
                 <div class="artwork-poem">"How many more days can I remain silent? The more I remain silent, the quieter my voice becomes... My hands are no longer enough to keep my eyes shut."</div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-Overcome-01.jpg" class="img-main" alt="Overcome Main">
-                <img src="images/DAA-2024-RE-Overcome-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-Overcome-05.jpg" class="img-sub2" alt="Detail 2">
+                <a href="images/DAA-2024-RE-Overcome-01.jpg" class="link-main" data-lightbox="re-overcome">
+                    <img src="images/DAA-2024-RE-Overcome-01.jpg" alt="Overcome Main">
+                </a>
+                <a href="images/DAA-2024-RE-Overcome-02.jpg" class="link-sub1" data-lightbox="re-overcome">
+                    <img src="images/DAA-2024-RE-Overcome-02.jpg" alt="Detail 1">
+                </a>
+                <a href="images/DAA-2024-RE-Overcome-05.jpg" class="link-sub2" data-lightbox="re-overcome">
+                    <img src="images/DAA-2024-RE-Overcome-05.jpg" alt="Detail 2">
+                </a>
             </div>
         </div>
 
+        <!-- 2. BALLAD OF THE ROAD -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Fiber Art</div>
@@ -183,12 +166,19 @@
                 <div class="artwork-poem">"A timeless journey mapped in thread, reflecting the cyclical repetition of history where every step echoes an ancient, unforgotten rhythm."</div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" class="img-main" alt="Ballad of the Road Main">
-                <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" alt="Detail 2">
+                <a href="images/DAA-2024-RE-BalladofRoad-01.jpg" class="link-main" data-lightbox="re-ballad">
+                    <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" alt="Ballad of the Road Main">
+                </a>
+                <a href="images/DAA-2024-RE-BalladofRoad-02.jpg" class="link-sub1" data-lightbox="re-ballad">
+                    <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" alt="Detail 1">
+                </a>
+                <a href="images/DAA-2024-RE-BalladofRoad-03.jpg" class="link-sub2" data-lightbox="re-ballad">
+                    <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" alt="Detail 2">
+                </a>
             </div>
         </div>
 
+        <!-- 3. ASCENSION -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Wall Installation</div>
@@ -197,12 +187,19 @@
                 <div class="artwork-poem">"All the pain and disharmony in my life converges into a single and sweet harmony, and my worship unfolds like a blissful bird flying over the sea."</div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension Main">
-                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Detail 2">
+                <a href="images/DAA-2024-RE-Ascension-01.jpg" class="link-main" data-lightbox="re-ascension">
+                    <img src="images/DAA-2024-RE-Ascension-01.jpg" alt="Ascension Main">
+                </a>
+                <a href="images/DAA-2024-RE-Ascension-02.jpg" class="link-sub1" data-lightbox="re-ascension">
+                    <img src="images/DAA-2024-RE-Ascension-02.jpg" alt="Detail 1">
+                </a>
+                <a href="images/DAA-2024-RE-Ascension-03.jpg" class="link-sub2" data-lightbox="re-ascension">
+                    <img src="images/DAA-2024-RE-Ascension-03.jpg" alt="Detail 2">
+                </a>
             </div>
         </div>
 
+        <!-- 4. ID -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">New Media & Augmented Reality</div>
@@ -211,16 +208,31 @@
                 <div class="artwork-poem">"Each year in our village, a census is taken before the ritual. We determine the form of the ritual based on our losses. This census is from the Year of Ud."</div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-ID-01.jpg" class="img-main" alt="ID Vesika Main">
-                <img src="images/DAA-2024-RE-ID-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-ID-03.jpg" class="img-sub2" alt="Detail 2">
+                <a href="images/DAA-2024-RE-ID-01.jpg" class="link-main" data-lightbox="re-id">
+                    <img src="images/DAA-2024-RE-ID-01.jpg" alt="ID Vesika Main">
+                </a>
+                <a href="images/DAA-2024-RE-ID-02.jpg" class="link-sub1" data-lightbox="re-id">
+                    <img src="images/DAA-2024-RE-ID-02.jpg" alt="Detail 1">
+                </a>
+                <a href="images/DAA-2024-RE-ID-03.jpg" class="link-sub2" data-lightbox="re-id">
+                    <img src="images/DAA-2024-RE-ID-03.jpg" alt="Detail 2">
+                </a>
             </div>
         </div>
     </section>
 
- <div class="back-nav">
-    <a href="javascript:history.back()" class="btn-outline">Return to Previous Page</a>
-</div>
+    <div class="back-nav">
+        <a href="javascript:history.back()" class="btn-outline">Return to Previous Page</a>
+    </div>
 
+    <!-- SCRIPTS -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    </script>
+    <script src="lightbox.js"></script>
 </body>
 </html>
