@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/daa-Logo-red.png">
 
@@ -16,10 +16,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <title>Exhibitions | Dilara Altınkepçe Arslan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
@@ -54,8 +54,10 @@
         .highlight-item { display: flex; align-items: center; gap: 50px; margin: 100px 0; }
         .highlight-item.reverse { flex-direction: row-reverse; }
         
-        .highlight-image { flex: 1.2; overflow: hidden; }
-        .highlight-image img { width: 100%; height: 60vh; object-fit: cover; filter: grayscale(10%) contrast(95%); transition: transform 1s ease; display: block; cursor: zoom-in; }
+        /* POP-UP İÇİN YENİ A ETİKETİ DÜZENİ */
+        .highlight-image { flex: 1.2; overflow: hidden; position: relative; }
+        .highlight-image a { display: block; height: 100%; overflow: hidden; cursor: zoom-in; }
+        .highlight-image img { width: 100%; height: 60vh; object-fit: cover; filter: grayscale(10%) contrast(95%); transition: transform 1s ease; display: block; }
         .highlight-item:hover .highlight-image img { transform: scale(1.03); filter: grayscale(0%) contrast(100%); }
         
         .highlight-text { flex: 1; padding: 20px; }
@@ -107,7 +109,9 @@
         <!-- HIGHLIGHT 1: AKBANK SANAT -->
         <section class="highlight-item">
             <div class="highlight-image">
-                <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="43rd Contemporary Artists Award - Shaman Village">
+                <a href="images/daa-2025-gss-samankoyu-bozkirda-01.webp" data-lightbox="exh-akbank">
+                    <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="43rd Contemporary Artists Award - Shaman Village">
+                </a>
             </div>
             <div class="highlight-text">
                 <h4>Award Exhibition | 2025</h4>
@@ -137,7 +141,9 @@
         <!-- HIGHLIGHT 2: THE EXIT -->
         <section class="highlight-item reverse">
             <div class="highlight-image">
-                <img src="images/daa-the-Exit-emphaty-01.jpg" alt="The Exit Group Exhibition - Empathy">
+                <a href="images/daa-the-Exit-emphaty-01.jpg" data-lightbox="exh-exit">
+                    <img src="images/daa-the-Exit-emphaty-01.jpg" alt="The Exit Group Exhibition - Empathy">
+                </a>
             </div>
             <div class="highlight-text">
                 <h4>Group Exhibition | 2025</h4>
@@ -175,7 +181,9 @@
         <!-- HIGHLIGHT 3: EART -->
         <section class="highlight-item">
             <div class="highlight-image">
-                <img src="images/daa-eart-today-01.jpg" alt="Today - The Probability of Exceptions">
+                <a href="images/daa-eart-today-01.jpg" data-lightbox="exh-eart">
+                    <img src="images/daa-eart-today-01.jpg" alt="Today - The Probability of Exceptions">
+                </a>
             </div>
             <div class="highlight-text">
                 <h4>Group Exhibition | 2025</h4>
@@ -221,7 +229,9 @@
         <!-- HIGHLIGHT 4: RE- SOLO -->
         <section class="highlight-item reverse">
             <div class="highlight-image">
-                <img src="images/DAA-2024-RE-Overcome-01.jpg" alt="RE- Solo Exhibition">
+                <a href="images/DAA-2024-RE-Overcome-01.jpg" data-lightbox="exh-re">
+                    <img src="images/DAA-2024-RE-Overcome-01.jpg" alt="RE- Solo Exhibition">
+                </a>
             </div>
             <div class="highlight-text">
                 <h4>Solo Exhibition | 2024</h4>
@@ -259,7 +269,9 @@
         <!-- HIGHLIGHT 5: ORTAK MEKİK -->
         <section class="highlight-item">
             <div class="highlight-image">
-                <img src="images/daa-ortak-mekik-verbasci-01.jpg" alt="Ortak Mekik - Verbasci">
+                <a href="images/daa-ortak-mekik-verbasci-01.jpg" data-lightbox="exh-ortakmekik">
+                    <img src="images/daa-ortak-mekik-verbasci-01.jpg" alt="Ortak Mekik - Verbasci">
+                </a>
             </div>
             <div class="highlight-text">
                 <h4>Interactive Exhibition | 2023</h4>
