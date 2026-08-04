@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/daa-Logo-red.png">
 
@@ -16,10 +16,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
-  
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">
+    
     <title>Griffin Narratives | Dilara Altınkepçe Arslan</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
@@ -47,14 +49,18 @@
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; display: block; }
         .artwork-gallery:hover img { filter: grayscale(0%); }
         .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
-        .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
-        .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
-        .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+        /* YENİ "GENİŞ KAPAK + KÜÇÜK DETAYLAR" DÜZENİ */
+        .grid-3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+        .grid-3 .link-main { grid-column: 1 / 3; } /* Ana fotoğraf tüm üst satırı kaplar */
+        .grid-3 .link-sub1 { grid-column: 1 / 2; } /* Detay 1 alt sol */
+        .grid-3 .link-sub2 { grid-column: 2 / 3; } /* Detay 2 alt sağ */
+        
+        .grid-3 .img-main { aspect-ratio: 16/9; } /* Geniş yatay kadraj oranı */
+        .grid-3 .img-sub1, .grid-3 .img-sub2 { aspect-ratio: 4/3; } /* Küçük fotoğraflar için standart oran */
 
         .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
@@ -63,6 +69,8 @@
         @media (max-width: 900px) { 
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .grid-3 .link-main, .grid-3 .link-sub1, .grid-3 .link-sub2 { grid-column: 1 / -1; } /* Mobilde hepsi alt alta */
+            .grid-3 .img-main, .grid-3 .img-sub1, .grid-3 .img-sub2 { aspect-ratio: auto; min-height: 250px; }
             .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
@@ -87,24 +95,31 @@
 
     <section class="artwork-flow-container">
  
-     <!-- GRIFFIN -->
+        <!-- GRIFFIN 1 -->
         <div class="artwork-block">
             <div class="artwork-text">
-                <div class="artwork-meta">""Burada" Off Grid Art Project</div>
+                <div class="artwork-meta">"Burada" Off Grid Art Project</div>
                 <h2> Modern Age Griffin: Between Two Worlds, 2025 </h2>
                 <div class="artwork-specs">2025 | 120x90 cm | Thread on raw cotton fabric, Video, Installation </div>
                 <div class="artwork-poem">
                  The dual imagery carried by the wings reveals the simultaneity of disaster and utopia: the left wing bears traces of drought, collapse, radiation density, and sensory erosion; while the right wing reflects peace, love, and collective healing. Rather than creating opposing poles, this duality exists side by side on the same plane of existence. It defines the fundamental structure of the composition by highlighting the griffin's role in maintaining balance and guarding the boundary between these two directions.
                 </div>
             </div>
+            <!-- Fotoğraflar Lightbox yapısına uygun olarak A etiketleriyle sarıldı -->
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2025-Grifon-01.jpg" class="img-main" alt="Grifon Main">
-                <img src="images/DAA-2025-Grifon-02.jpg" class="img-sub1" alt="Grifon Detail 1">
-                <img src="images/DAA-2025-Grifon-03.jpg" class="img-sub2" alt="Grifon Detail 2">
+                <a href="images/DAA-2025-Grifon-01.jpg" class="link-main" data-lightbox="griffin-1">
+                    <img src="images/DAA-2025-Grifon-01.jpg" class="img-main" alt="Grifon Main">
+                </a>
+                <a href="images/DAA-2025-Grifon-02.jpg" class="link-sub1" data-lightbox="griffin-1">
+                    <img src="images/DAA-2025-Grifon-02.jpg" class="img-sub1" alt="Grifon Detail 1">
+                </a>
+                <a href="images/DAA-2025-Grifon-03.jpg" class="link-sub2" data-lightbox="griffin-1">
+                    <img src="images/DAA-2025-Grifon-03.jpg" class="img-sub2" alt="Grifon Detail 2">
+                </a>
             </div>
         </div>
      
-        <!-- 1. ALARM GRIFFIN -->
+        <!-- ALARM GRIFFIN -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">NOISE Media Art Selection</div>
@@ -112,18 +127,24 @@
                 <div class="artwork-specs">2025 | Multi-Channel Interactive Installation</div>
                 <div class="artwork-poem">
                     "Rooted in mythological memory as a blend of power, wisdom, and intuition, the griffin has long been a guardian of the sacred and the unknown. Standing at the gates of ancient civilizations, it symbolizes both celestial authority and earthly strength. Today, it redefines its historical symbolism through digital means, becoming an alarm sensitive to the unseen signals of global crises, linking past archetypes to today’s fragile ecosystems.
-Ignorance, drought, radiation, rapid consumption, and the loss of human values appear in the symbolic limbs of the cheetah, gorilla, raven, molok, and cockroach. Each animal carries meanings inherited over thousands of years and translates them into a language shaped by real-time data.
-No longer just a mythological figure, the griffin folds layers of time, acting as both a warning of collapse and a symbol of solidarity, continuing to exist as a living alarm that calls humanity to awareness."
+                    Ignorance, drought, radiation, rapid consumption, and the loss of human values appear in the symbolic limbs of the cheetah, gorilla, raven, molok, and cockroach. Each animal carries meanings inherited over thousands of years and translates them into a language shaped by real-time data.
+                    No longer just a mythological figure, the griffin folds layers of time, acting as both a warning of collapse and a symbol of solidarity, continuing to exist as a living alarm that calls humanity to awareness."
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/03-banner-daa-noise-alarm-01.jpg" class="img-main" alt="Alarm Main">
-                <img src="images/daa-newmedia-alarm-grifon-01.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/daa-newmedia-alarm-grifon-02.jpg" class="img-sub2" alt="Detail 2">
+                <a href="images/03-banner-daa-noise-alarm-01.jpg" class="link-main" data-lightbox="griffin-alarm">
+                    <img src="images/03-banner-daa-noise-alarm-01.jpg" class="img-main" alt="Alarm Main">
+                </a>
+                <a href="images/daa-newmedia-alarm-grifon-01.jpg" class="link-sub1" data-lightbox="griffin-alarm">
+                    <img src="images/daa-newmedia-alarm-grifon-01.jpg" class="img-sub1" alt="Detail 1">
+                </a>
+                <a href="images/daa-newmedia-alarm-grifon-02.jpg" class="link-sub2" data-lightbox="griffin-alarm">
+                    <img src="images/daa-newmedia-alarm-grifon-02.jpg" class="img-sub2" alt="Detail 2">
+                </a>
             </div>
         </div>
 
-        <!-- 2. GRIFON -->
+        <!-- GRIFON 3 -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Fiber Art</div>
@@ -134,12 +155,19 @@ No longer just a mythological figure, the griffin folds layers of time, acting a
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2023-Grifon-01.jpg" class="img-main" alt="Grifon Main">
-                <img src="images/DAA-2023-Grifon-02.jpg" class="img-sub1" alt="Grifon Detail 1">
-                <img src="images/DAA-2023-Grifon-03.jpg" class="img-sub2" alt="Grifon Detail 2">
+                <a href="images/DAA-2023-Grifon-01.jpg" class="link-main" data-lightbox="griffin-3">
+                    <img src="images/DAA-2023-Grifon-01.jpg" class="img-main" alt="Grifon Main">
+                </a>
+                <a href="images/DAA-2023-Grifon-02.jpg" class="link-sub1" data-lightbox="griffin-3">
+                    <img src="images/DAA-2023-Grifon-02.jpg" class="img-sub1" alt="Grifon Detail 1">
+                </a>
+                <a href="images/DAA-2023-Grifon-03.jpg" class="link-sub2" data-lightbox="griffin-3">
+                    <img src="images/DAA-2023-Grifon-03.jpg" class="img-sub2" alt="Grifon Detail 2">
+                </a>
             </div>
         </div>
- <!-- 3. GRIFON -->
+        
+        <!-- GRIFON 4 -->
         <div class="artwork-block">
             <div class="artwork-text">
                 <div class="artwork-meta">Fiber Art</div>
@@ -147,14 +175,20 @@ No longer just a mythological figure, the griffin folds layers of time, acting a
                 <div class="artwork-specs">2022 | 105x93 cm | Thread on raw cotton fabric </div>
                 <div class="artwork-poem">
                     "Contrary to the past, the frightening elements of today's world have been situations that directly affect our lives, such as drought and radiation.
-Drought, ignorance, loss of humanity and robotization, which are among the greatest fears of our age, inability to resist radiation and the progress of speed and laziness in direct proportion gave birth to the griffin of the 2000s.
-This surreal motif, consisting of cheetah, gorilla, crow, molok and cockroach, reflects humanity's future perception of divinity due to the unique survival abilities of the five animals.”"
+                    Drought, ignorance, loss of humanity and robotization, which are among the greatest fears of our age, inability to resist radiation and the progress of speed and laziness in direct proportion gave birth to the griffin of the 2000s.
+                    This surreal motif, consisting of cheetah, gorilla, crow, molok and cockroach, reflects humanity's future perception of divinity due to the unique survival abilities of the five animals.”"
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2022-Grifon-01.jpg" class="img-main" alt="Grifon Main">
-                <img src="images/DAA-2022-Grifon-02.jpg" class="img-sub1" alt="Grifon Detail 1">
-                <img src="images/DAA-2022-Grifon-03.jpg" class="img-sub2" alt="Grifon Detail 2">
+                <a href="images/DAA-2022-Grifon-01.jpg" class="link-main" data-lightbox="griffin-4">
+                    <img src="images/DAA-2022-Grifon-01.jpg" class="img-main" alt="Grifon Main">
+                </a>
+                <a href="images/DAA-2022-Grifon-02.jpg" class="link-sub1" data-lightbox="griffin-4">
+                    <img src="images/DAA-2022-Grifon-02.jpg" class="img-sub1" alt="Grifon Detail 1">
+                </a>
+                <a href="images/DAA-2022-Grifon-03.jpg" class="link-sub2" data-lightbox="griffin-4">
+                    <img src="images/DAA-2022-Grifon-03.jpg" class="img-sub2" alt="Grifon Detail 2">
+                </a>
             </div>
         </div>
      
