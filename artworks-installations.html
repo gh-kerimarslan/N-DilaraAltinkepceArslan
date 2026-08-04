@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/daa-Logo-red.png">
 
@@ -16,10 +16,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <title>Installations | Dilara Altınkepçe Arslan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
@@ -61,15 +61,17 @@
         .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
+        /* GALERİ VE POP-UP UYUMLU LİNK (A) AYARLARI */
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; }
-        .artwork-gallery:hover img { filter: grayscale(0%); }
-        .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .artwork-gallery a { display: block; overflow: hidden; position: relative; cursor: zoom-in; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
+        .artwork-gallery a:hover img { filter: grayscale(0%); transform: scale(1.02); }
+        .artwork-gallery a:hover { z-index: 5; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
         .grid-3 { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-3 .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
-        .grid-3 .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
-        .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
+        .grid-3 .link-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 4/5; }
+        .grid-3 .link-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .grid-3 .link-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
 
         .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
@@ -80,6 +82,7 @@
             .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
+            .artwork-gallery a { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
             .artwork-text h2 { font-size: 2.8rem; }
         }
     </style>
@@ -117,9 +120,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/03-banner-daa-noise-alarm-01.jpg" class="img-main" alt="Alarm Main">
-                <img src="images/daa-newmedia-alarm-grifon-01.jpg" class="img-sub1" alt="Alarm Installation 1">
-                <img src="images/daa-newmedia-alarm-grifon-02.jpg" class="img-sub2" alt="Alarm Installation 2">
+                <a href="images/03-banner-daa-noise-alarm-01.jpg" class="link-main" data-lightbox="inst-alarm">
+                    <img src="images/03-banner-daa-noise-alarm-01.jpg" alt="Alarm Main">
+                </a>
+                <a href="images/daa-newmedia-alarm-grifon-01.jpg" class="link-sub1" data-lightbox="inst-alarm">
+                    <img src="images/daa-newmedia-alarm-grifon-01.jpg" alt="Alarm Installation 1">
+                </a>
+                <a href="images/daa-newmedia-alarm-grifon-02.jpg" class="link-sub2" data-lightbox="inst-alarm">
+                    <img src="images/daa-newmedia-alarm-grifon-02.jpg" alt="Alarm Installation 2">
+                </a>
             </div>
         </div>
 
@@ -134,9 +143,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-Overcome-01.jpg" class="img-main" alt="Overcome Main">
-                <img src="images/DAA-2024-RE-Overcome-02.jpg" class="img-sub1" alt="Detail 1">
-                <img src="images/DAA-2024-RE-Overcome-05.jpg" class="img-sub2" alt="Detail 2">
+                <a href="images/DAA-2024-RE-Overcome-01.jpg" class="link-main" data-lightbox="inst-overcome">
+                    <img src="images/DAA-2024-RE-Overcome-01.jpg" alt="Overcome Main">
+                </a>
+                <a href="images/DAA-2024-RE-Overcome-02.jpg" class="link-sub1" data-lightbox="inst-overcome">
+                    <img src="images/DAA-2024-RE-Overcome-02.jpg" alt="Detail 1">
+                </a>
+                <a href="images/DAA-2024-RE-Overcome-05.jpg" class="link-sub2" data-lightbox="inst-overcome">
+                    <img src="images/DAA-2024-RE-Overcome-05.jpg" alt="Detail 2">
+                </a>
             </div>
         </div>
 
@@ -151,9 +166,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/daa-the-Exit-emphaty-02.jpg" class="img-main" alt="Empathy Main">
-                <img src="images/daa-the-Exit-emphaty-01.jpg" class="img-sub1" alt="Empathy Detail 1">
-                <img src="images/daa-the-Exit-emphaty-03.jpg" class="img-sub2" alt="Empathy Detail 2">
+                <a href="images/daa-the-Exit-emphaty-02.jpg" class="link-main" data-lightbox="inst-empathy">
+                    <img src="images/daa-the-Exit-emphaty-02.jpg" alt="Empathy Main">
+                </a>
+                <a href="images/daa-the-Exit-emphaty-01.jpg" class="link-sub1" data-lightbox="inst-empathy">
+                    <img src="images/daa-the-Exit-emphaty-01.jpg" alt="Empathy Detail 1">
+                </a>
+                <a href="images/daa-the-Exit-emphaty-03.jpg" class="link-sub2" data-lightbox="inst-empathy">
+                    <img src="images/daa-the-Exit-emphaty-03.jpg" alt="Empathy Detail 2">
+                </a>
             </div>
         </div>
 
@@ -168,9 +189,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension Main">
-                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Ascension Detail 1">
-                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Ascension Detail 2">
+                <a href="images/DAA-2024-RE-Ascension-01.jpg" class="link-main" data-lightbox="inst-ascension">
+                    <img src="images/DAA-2024-RE-Ascension-01.jpg" alt="Ascension Main">
+                </a>
+                <a href="images/DAA-2024-RE-Ascension-02.jpg" class="link-sub1" data-lightbox="inst-ascension">
+                    <img src="images/DAA-2024-RE-Ascension-02.jpg" alt="Ascension Detail 1">
+                </a>
+                <a href="images/DAA-2024-RE-Ascension-03.jpg" class="link-sub2" data-lightbox="inst-ascension">
+                    <img src="images/DAA-2024-RE-Ascension-03.jpg" alt="Ascension Detail 2">
+                </a>
             </div>
         </div>
 
@@ -185,9 +212,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2022-Secure-Network-01.jpg" class="img-main" alt="Secure Network Main">
-                <img src="images/DAA-2022-Secure-Network-01.jpg" class="img-sub1" alt="Detail 1" style="opacity: 0.8;">
-                <img src="images/DAA-2022-Secure-Network-01.jpg" class="img-sub2" alt="Detail 2" style="opacity: 0.8;">
+                <a href="images/DAA-2022-Secure-Network-01.jpg" class="link-main" data-lightbox="inst-network">
+                    <img src="images/DAA-2022-Secure-Network-01.jpg" alt="Secure Network Main">
+                </a>
+                <a href="images/DAA-2022-Secure-Network-01.jpg" class="link-sub1" data-lightbox="inst-network" style="opacity: 0.8;">
+                    <img src="images/DAA-2022-Secure-Network-01.jpg" alt="Detail 1">
+                </a>
+                <a href="images/DAA-2022-Secure-Network-01.jpg" class="link-sub2" data-lightbox="inst-network" style="opacity: 0.8;">
+                    <img src="images/DAA-2022-Secure-Network-01.jpg" alt="Detail 2">
+                </a>
             </div>
         </div>
 
