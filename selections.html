@@ -77,6 +77,11 @@
         .highlight-text .specs { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 2px; color: #333; font-weight: 500; text-transform: uppercase; margin-bottom: 20px; }
         .highlight-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: #555; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
+        /* WTA GİBİLER İÇİN ÖZEL "KARE VE KÜÇÜK" KART DÜZENİ */
+        .highlight-card.square-layout .highlight-image { flex: 0 0 400px; } /* Görseli 400px'e sabitler */
+        .highlight-card.square-layout .highlight-image img { height: 400px; width: 100%; aspect-ratio: 1/1; }
+        .highlight-card.square-layout .highlight-text { flex: 1; }
+
         /* FUARLAR İÇİN GENİŞ VE ALT ALTA LİSTE KARTLARI */
         .fairs-list-container { display: flex; flex-direction: column; gap: 80px; }
         .fair-card { background: #fff; border: 1px solid #eee; overflow: hidden; transition: transform 0.5s ease, box-shadow 0.5s ease; display: flex; flex-direction: column; }
@@ -101,6 +106,10 @@
             .highlight-image img { height: 350px; }
             .highlight-text p { border-left: none; padding-left: 0; }
             
+            /* Kare düzenin mobilde bozulmaması için */
+            .highlight-card.square-layout .highlight-image { flex: auto; width: 100%; }
+            .highlight-card.square-layout .highlight-image img { width: 100%; height: auto; max-width: 400px; margin: 0 auto; }
+
             /* Fuarlar Mobil Düzeltmesi */
             .fair-card-img { height: 350px; }
             .fair-card-body { padding: 30px 20px; }
@@ -149,8 +158,8 @@
                 </div>
             </div>
 
-            <!-- WTA Biennial -->
-            <div class="highlight-card">
+            <!-- WTA Biennial (SQUARE-LAYOUT EKLENDİ) -->
+            <div class="highlight-card square-layout">
                 <div class="highlight-image">
                     <img src="images/DAA-2022-Holistic-01.jpg" alt="Holistic Map of Sense">
                 </div>
@@ -169,6 +178,7 @@
                 <h2>Awards</h2>
             </div>
             
+            <!-- (Bu kısımda değişiklik istenmediği için geniş bırakıldı, isterseniz buna da square-layout ekleyebilirsiniz) -->
             <div class="highlight-card">
                 <div class="highlight-image">
                     <img src="images/daa-2025-gss-samankoyu-bozkirda-01.webp" alt="A Shaman Village on the Steppe">
