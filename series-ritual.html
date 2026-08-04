@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/daa-Logo-red.png">
 
@@ -16,10 +16,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dilara Altınkepçe Arslan">
     <meta name="twitter:description" content="Fiber Art & Installations">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/02-banner-daa-grand-ritual-01.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
   
     <title>The Ritual Series | Dilara Altınkepçe Arslan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
@@ -46,19 +46,23 @@
         .artwork-specs { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 1px; color: #555; margin-bottom: 30px; font-weight: 500; text-transform: uppercase; }
         .artwork-poem { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: #444; line-height: 1.8; border-left: 1px solid #ccc; padding-left: 20px; }
 
+        /* GALERİ VE POP-UP UYUMLU LİNK (A) AYARLARI */
         .artwork-gallery { flex: 1.2; display: grid; gap: 15px; width: 100%; }
-        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; cursor: zoom-in; }
-        .artwork-gallery:hover img { filter: grayscale(0%); }
-        .artwork-gallery img:hover { transform: scale(1.02); z-index: 5; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .artwork-gallery a { display: block; overflow: hidden; position: relative; cursor: zoom-in; }
+        .artwork-gallery img { width: 100%; height: 100%; object-fit: cover; background: #eaeaea; filter: grayscale(10%); transition: transform 0.6s ease, filter 0.6s ease; display: block; }
+        .artwork-gallery a:hover img { filter: grayscale(0%); transform: scale(1.02); }
+        .artwork-gallery a:hover { z-index: 5; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
+        /* GRID YAPILARI (Artık IMG yerine A etiketlerine atanıyor) */
         .grid-wide-top-2 { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
-        .grid-wide-top-2 .img-main { grid-column: 1 / 3; aspect-ratio: 21/9; object-fit: cover; }
+        .grid-wide-top-2 .img-main { grid-column: 1 / 3; aspect-ratio: 21/9; }
         .grid-wide-top-2 .img-sub1, .grid-wide-top-2 .img-sub2 { aspect-ratio: 4/3; }
 
         .grid-square-main { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-        .grid-square-main .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 1/1; object-fit: contain; background: #fafafa; padding: 15px; border: 1px solid #f0f0f0; }
-        .grid-square-main .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; aspect-ratio: 1/1; object-fit: cover; }
-        .grid-square-main .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; aspect-ratio: 1/1; object-fit: cover; }
+        .grid-square-main .img-main { grid-row: 1 / 3; grid-column: 1 / 2; aspect-ratio: 1/1; background: #fafafa; padding: 15px; border: 1px solid #f0f0f0; }
+        .grid-square-main .img-main img { object-fit: contain; } /* Kare içindeki görsel kesilmesin diye */
+        .grid-square-main .img-sub1 { grid-row: 1 / 2; grid-column: 2 / 3; aspect-ratio: 1/1; }
+        .grid-square-main .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; aspect-ratio: 1/1; }
 
         .grid-wide-top-3 { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: auto auto; }
         .grid-wide-top-3 .img-main { grid-column: 1 / 4; aspect-ratio: 16/9; }
@@ -70,7 +74,7 @@
         .grid-3 .img-sub2 { grid-row: 2 / 3; grid-column: 2 / 3; }
 
         .grid-2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
-        .grid-2 img { aspect-ratio: 1/1; }
+        .grid-2 a { aspect-ratio: 1/1; }
 
         .back-nav { text-align: center; margin: 50px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
@@ -79,7 +83,7 @@
         @media (max-width: 900px) { 
             .artwork-block { flex-direction: column !important; min-height: auto; padding: 40px 0; gap: 30px; }
             .artwork-gallery { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
-            .artwork-gallery img { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
+            .artwork-gallery a { grid-column: auto !important; grid-row: auto !important; aspect-ratio: auto !important; height: 35vh; }
             .grid-square-main .img-main { height: auto !important; aspect-ratio: 1/1 !important; padding: 5px; }
             .artwork-text h2 { font-size: 2.8rem; }
         }
@@ -120,9 +124,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" class="img-main" alt="Ballad of the Road 1">
-                <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" alt="Ballad of the Road 2">
-                <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" alt="Ballad of the Road 3">
+                <a href="images/DAA-2024-RE-BalladofRoad-01.jpg" class="img-main" data-lightbox="ballad-road">
+                    <img src="images/DAA-2024-RE-BalladofRoad-01.jpg" alt="Ballad of the Road 1">
+                </a>
+                <a href="images/DAA-2024-RE-BalladofRoad-02.jpg" class="img-sub1" data-lightbox="ballad-road">
+                    <img src="images/DAA-2024-RE-BalladofRoad-02.jpg" alt="Ballad of the Road 2">
+                </a>
+                <a href="images/DAA-2024-RE-BalladofRoad-03.jpg" class="img-sub2" data-lightbox="ballad-road">
+                    <img src="images/DAA-2024-RE-BalladofRoad-03.jpg" alt="Ballad of the Road 3">
+                </a>
             </div>
         </div>
 
@@ -139,9 +149,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-wide-top-2">
-                <img src="images/DAA-2024-Tunnel-01.jpg" class="img-main" alt="Tunnel of Time 1">
-                <img src="images/DAA-2024-Tunnel-02.jpg" class="img-sub1" alt="Tunnel of Time 2">
-                <img src="images/DAA-2024-Tunnel-03.jpg" class="img-sub2" alt="Tunnel of Time 3">
+                <a href="images/DAA-2024-Tunnel-01.jpg" class="img-main" data-lightbox="tunnel-time">
+                    <img src="images/DAA-2024-Tunnel-01.jpg" alt="Tunnel of Time 1">
+                </a>
+                <a href="images/DAA-2024-Tunnel-02.jpg" class="img-sub1" data-lightbox="tunnel-time">
+                    <img src="images/DAA-2024-Tunnel-02.jpg" alt="Tunnel of Time 2">
+                </a>
+                <a href="images/DAA-2024-Tunnel-03.jpg" class="img-sub2" data-lightbox="tunnel-time">
+                    <img src="images/DAA-2024-Tunnel-03.jpg" alt="Tunnel of Time 3">
+                </a>
             </div>
         </div>
 
@@ -161,9 +177,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2023-TheGrandRitual-01.jpg" class="img-main" alt="The Grand Ritual 1">
-                <img src="images/DAA-2023-TheGrandRitual-02.jpg" class="img-sub1" alt="The Grand Ritual 2">
-                <img src="images/DAA-2023-TheGrandRitual-03.jpg" class="img-sub2" alt="The Grand Ritual 3">
+                <a href="images/DAA-2023-TheGrandRitual-01.jpg" class="img-main" data-lightbox="grand-ritual">
+                    <img src="images/DAA-2023-TheGrandRitual-01.jpg" alt="The Grand Ritual 1">
+                </a>
+                <a href="images/DAA-2023-TheGrandRitual-02.jpg" class="img-sub1" data-lightbox="grand-ritual">
+                    <img src="images/DAA-2023-TheGrandRitual-02.jpg" alt="The Grand Ritual 2">
+                </a>
+                <a href="images/DAA-2023-TheGrandRitual-03.jpg" class="img-sub2" data-lightbox="grand-ritual">
+                    <img src="images/DAA-2023-TheGrandRitual-03.jpg" alt="The Grand Ritual 3">
+                </a>
             </div>
         </div>
 
@@ -179,9 +201,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-square-main">
-                <img src="images/DAA-2022-Rituel-01.jpg" class="img-main" alt="The Ritual I 1">
-                <img src="images/DAA-2022-Rituel-02.jpg" class="img-sub1" alt="The Ritual I 2">
-                <img src="images/DAA-2022-Rituel-03.jpg" class="img-sub2" alt="The Ritual I 3">
+                <a href="images/DAA-2022-Rituel-01.jpg" class="img-main" data-lightbox="ritual-1">
+                    <img src="images/DAA-2022-Rituel-01.jpg" alt="The Ritual I 1">
+                </a>
+                <a href="images/DAA-2022-Rituel-02.jpg" class="img-sub1" data-lightbox="ritual-1">
+                    <img src="images/DAA-2022-Rituel-02.jpg" alt="The Ritual I 2">
+                </a>
+                <a href="images/DAA-2022-Rituel-03.jpg" class="img-sub2" data-lightbox="ritual-1">
+                    <img src="images/DAA-2022-Rituel-03.jpg" alt="The Ritual I 3">
+                </a>
             </div>
         </div>
 
@@ -198,9 +226,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-square-main">
-                <img src="images/DAA-2024-Ritual-II-01.jpg" class="img-main" alt="The Ritual II 1">
-                <img src="images/DAA-2024-Ritual-II-02.jpg" class="img-sub1" alt="The Ritual II 2">
-                <img src="images/DAA-2024-Ritual-II-03.jpg" class="img-sub2" alt="The Ritual II 3">
+                <a href="images/DAA-2024-Ritual-II-01.jpg" class="img-main" data-lightbox="ritual-2">
+                    <img src="images/DAA-2024-Ritual-II-01.jpg" alt="The Ritual II 1">
+                </a>
+                <a href="images/DAA-2024-Ritual-II-02.jpg" class="img-sub1" data-lightbox="ritual-2">
+                    <img src="images/DAA-2024-Ritual-II-02.jpg" alt="The Ritual II 2">
+                </a>
+                <a href="images/DAA-2024-Ritual-II-03.jpg" class="img-sub2" data-lightbox="ritual-2">
+                    <img src="images/DAA-2024-Ritual-II-03.jpg" alt="The Ritual II 3">
+                </a>
             </div>
         </div>
 
@@ -215,10 +249,18 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-wide-top-3">
-                <img src="images/daa-artworks-toy.jpg" class="img-main" alt="Toy Main">
-                <img src="images/daa-artworks-toy1-1.jpg" class="img-sub1" alt="Toy Detail 1">
-                <img src="images/daa-artworks-toy2-1.jpg" class="img-sub2" alt="Toy Detail 2">
-                <img src="images/daa-artworks-toy3-1.jpg" class="img-sub3" alt="Toy Detail 3">
+                <a href="images/daa-artworks-toy.jpg" class="img-main" data-lightbox="toy">
+                    <img src="images/daa-artworks-toy.jpg" alt="Toy Main">
+                </a>
+                <a href="images/daa-artworks-toy1-1.jpg" class="img-sub1" data-lightbox="toy">
+                    <img src="images/daa-artworks-toy1-1.jpg" alt="Toy Detail 1">
+                </a>
+                <a href="images/daa-artworks-toy2-1.jpg" class="img-sub2" data-lightbox="toy">
+                    <img src="images/daa-artworks-toy2-1.jpg" alt="Toy Detail 2">
+                </a>
+                <a href="images/daa-artworks-toy3-1.jpg" class="img-sub3" data-lightbox="toy">
+                    <img src="images/daa-artworks-toy3-1.jpg" alt="Toy Detail 3">
+                </a>
             </div>
         </div>
 
@@ -228,13 +270,17 @@
                 <div class="artwork-meta">"The Exit" Exhibition • Artweeks</div>
                 <h2>We</h2>
                 <div class="artwork-specs">2024 | 75x75 cm | Thread on raw cotton fabric</div>
-            </div>
-          <div class="artwork-poem">
+                <div class="artwork-poem">
                     "One ‘we’ consists of how many you?"
                 </div>
+            </div>
             <div class="artwork-gallery grid-2">
-                <img src="images/DAA-2024-WE-01.jpg" alt="We 1">
-                <img src="images/DAA-2024-WE-03.jpg" alt="We 2">
+                <a href="images/DAA-2024-WE-01.jpg" data-lightbox="we">
+                    <img src="images/DAA-2024-WE-01.jpg" alt="We 1">
+                </a>
+                <a href="images/DAA-2024-WE-03.jpg" data-lightbox="we">
+                    <img src="images/DAA-2024-WE-03.jpg" alt="We 2">
+                </a>
             </div>
         </div>
 
@@ -246,9 +292,15 @@
                 <div class="artwork-specs">2024 | 30x60 cm | Thread on raw cotton fabric</div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-Portal-Beyond-01.jpg" class="img-main" alt="Portal II 1">
-                <img src="images/DAA-2024-Portal-Beyond-02.jpg" class="img-sub1" alt="Portal II 2">
-                <img src="images/DAA-2024-Portal-Beyond-03.jpg" class="img-sub2" alt="Portal II 3">
+                <a href="images/DAA-2024-Portal-Beyond-01.jpg" class="img-main" data-lightbox="portal">
+                    <img src="images/DAA-2024-Portal-Beyond-01.jpg" alt="Portal II 1">
+                </a>
+                <a href="images/DAA-2024-Portal-Beyond-02.jpg" class="img-sub1" data-lightbox="portal">
+                    <img src="images/DAA-2024-Portal-Beyond-02.jpg" alt="Portal II 2">
+                </a>
+                <a href="images/DAA-2024-Portal-Beyond-03.jpg" class="img-sub2" data-lightbox="portal">
+                    <img src="images/DAA-2024-Portal-Beyond-03.jpg" alt="Portal II 3">
+                </a>
             </div>
         </div>
 
@@ -264,9 +316,15 @@
                 </div>
             </div>
             <div class="artwork-gallery grid-3">
-                <img src="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" alt="Ascension 1">
-                <img src="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" alt="Ascension 2">
-                <img src="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" alt="Ascension 3">
+                <a href="images/DAA-2024-RE-Ascension-01.jpg" class="img-main" data-lightbox="ascension">
+                    <img src="images/DAA-2024-RE-Ascension-01.jpg" alt="Ascension 1">
+                </a>
+                <a href="images/DAA-2024-RE-Ascension-02.jpg" class="img-sub1" data-lightbox="ascension">
+                    <img src="images/DAA-2024-RE-Ascension-02.jpg" alt="Ascension 2">
+                </a>
+                <a href="images/DAA-2024-RE-Ascension-03.jpg" class="img-sub2" data-lightbox="ascension">
+                    <img src="images/DAA-2024-RE-Ascension-03.jpg" alt="Ascension 3">
+                </a>
             </div>
         </div>
 
