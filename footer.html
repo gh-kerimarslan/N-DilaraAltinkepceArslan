@@ -9,16 +9,16 @@
         margin-top: 80px;
     }
 
-    /* --- SÜTUNLU DİZİLİM (SITE HARİTASI) --- */
+    /* --- 5 SÜTUNLU DİZİLİM (SITE HARİTASI) --- */
     .sitemap-grid {
         display: grid;
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        gap: 40px;
-        max-width: 1200px;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; /* Intro sütunu biraz daha geniş, diğerleri eşit */
+        gap: 30px;
+        max-width: 1350px; /* 5 Sütun rahat sığsın diye biraz genişletildi */
         margin: 0 auto;
     }
 
-    /* Başlıklar (Ekran görüntüsündeki gibi küçük ve zarif) */
+    /* Başlıklar */
     .sitemap-col h4 {
         font-size: 0.7rem;
         text-transform: uppercase;
@@ -56,7 +56,7 @@
 
     /* --- ALT BİLGİ (SOSYAL MEDYA VE LOGO) --- */
     .footer-bottom {
-        max-width: 1200px;
+        max-width: 1350px;
         margin: 80px auto 0 auto;
         padding-top: 30px;
         border-top: 1px solid #ddd;
@@ -94,7 +94,7 @@
     .footer-logo img {
         height: 35px; /* Logonun zarafetini korumak için ideal boyut */
         width: auto;
-        filter: brightness(0); /* Bu kod logoyu tamamen simsiyah yapar */
+        filter: brightness(0); /* Logoyu tamamen simsiyah yapar */
         opacity: 0.85; /* Siyaha çok hafif bir yumuşaklık katar */
         transition: opacity 0.3s ease;
     }
@@ -103,8 +103,12 @@
     }
 
     /* --- MOBİL UYUMLULUK --- */
-    @media (max-width: 900px) {
-        .sitemap-grid { grid-template-columns: 1fr; gap: 50px; }
+    @media (max-width: 1000px) {
+        .sitemap-grid { grid-template-columns: 1fr 1fr; gap: 40px; } /* Tablette 2 sütunlu yapı */
+    }
+
+    @media (max-width: 700px) {
+        .sitemap-grid { grid-template-columns: 1fr; gap: 50px; } /* Telefonda tek sütunlu yapı */
         .sitemap-footer { padding: 60px 20px 30px 20px; }
         .footer-bottom { flex-direction: column; align-items: center; gap: 30px; text-align: center; }
         .sitemap-col a:hover { padding-left: 0; }
@@ -114,14 +118,14 @@
 <footer class="sitemap-footer">
     <div class="sitemap-grid">
         
-       <!-- SÜTUN 1: Şiirsel Karşılama -->
+        <!-- SÜTUN 1: Şiirsel Karşılama -->
         <div class="sitemap-col intro">
             <h4>"What if...?"</h4>
             <p>What if history is not behind us, but all around us: living, breathing, and changing.</p>
             <p>Viewing the present from a different angle through threads, spaces, and collective memory.</p>
         </div>
 
-        <!-- SÜTUN 2: Sergiler Haritası -->
+        <!-- SÜTUN 2: Exhibitions -->
         <div class="sitemap-col">
             <h4>Exhibitions</h4>
             <a href="exhibitions-re.html">RE- Solo Exhibition</a>
@@ -129,10 +133,10 @@
             <a href="exhibition-exit.html">The Exit, Group Exhibition</a>
             <a href="exhibition-eart.html">The Probability of Exceptions</a>
             <a href="exhibition-ortakmekik.html">Ortak Mekik (Interactive)</a>
-            <a href="exhibitions.html">View All Exhibitions</a>
+            <a href="exhibitions.html" style="margin-top: 15px; font-weight: 500;">View All Exhibitions</a>
         </div>
 
-        <!-- SÜTUN 3: Eserler Haritası -->
+        <!-- SÜTUN 3: Artworks -->
         <div class="sitemap-col">
             <h4>Artworks</h4>
             <a href="series-ritual.html">The Ritual Series</a>
@@ -144,15 +148,24 @@
             <a href="artworks-newmedia.html">New Media Archives</a>
         </div>
 
-        <!-- SÜTUN 4: İletişim -->
+        <!-- SÜTUN 4: Selections -->
         <div class="sitemap-col">
-            <h4>Connection</h4>
-            <a href="about.html">About the Artist</a>
-            <a href="selections.html">Selections & Awards</a>
-            <div style="margin-top: 20px;">
-                <a href="https://nelumbostudios.com/" target="_blank">Nelumbo Studios</a>
-                <p style="margin-bottom: 20px;">Istanbul, Turkey</p>
-                <a href="mailto:mail@nelumbostudios.com">mail@nelumbostudios.com</a>
+            <h4>Selections</h4>
+            <a href="selections.html#biennials">Biennials</a>
+            <a href="selections.html#awards">Awards</a>
+            <a href="selections.html#fairs">Art Fairs & Shows</a>
+            <a href="selections.html" style="margin-top: 15px; font-weight: 500;">View All Selections</a>
+        </div>
+
+        <!-- SÜTUN 5: About & Contact -->
+        <div class="sitemap-col">
+            <h4>About / Contact</h4>
+            <a href="about.html" style="margin-bottom: 25px;">About the Artist</a>
+            
+            <div>
+                <a href="https://nelumbostudios.com/" target="_blank" style="margin-bottom: 2px; font-weight: 500; color: #111;">Nelumbo Studios</a>
+                <p style="margin-bottom: 15px;">Istanbul, Turkey</p>
+                <a href="mailto:mail@nelumbostudios.com" style="color: #111;">mail@nelumbostudios.com</a>
             </div>
         </div>
 
