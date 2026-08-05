@@ -1,105 +1,178 @@
 <style>
-    .site-footer {
-        background-color: #111;
-        color: #fafafa;
+    /* --- FOOTER GENEL YAPISI --- */
+    .sitemap-footer {
+        background-color: #f7f7f7; /* Sitenin beyazına çok yakın, çok hafif gri bir zemin */
+        padding: 80px 50px 40px 50px;
         font-family: 'Montserrat', sans-serif;
-        padding: 70px 50px 30px 50px;
-        margin-top: 60px;
+        color: #111;
+        border-top: 1px solid #eaeaea;
+        margin-top: 80px;
     }
-    .footer-container {
+
+    /* --- SÜTUNLU DİZİLİM (SITE HARİTASI) --- */
+    .sitemap-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
         gap: 40px;
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
     }
-    .footer-col h4 {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.5rem;
-        margin-bottom: 25px;
-        font-weight: 400;
-        letter-spacing: 2px;
-        color: #fff;
+
+    /* Başlıklar (Ekran görüntüsündeki gibi küçük ve zarif) */
+    .sitemap-col h4 {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: #111;
     }
-    .footer-col p, .footer-col a {
-        font-size: 0.85rem;
-        color: #999;
+
+    /* Linkler ve Metinler */
+    .sitemap-col p, .sitemap-col a {
+        font-size: 0.8rem;
+        color: #666;
         line-height: 1.8;
         text-decoration: none;
-        transition: color 0.3s ease;
+        display: block;
+        margin-bottom: 12px;
+        font-weight: 300;
+        transition: color 0.3s ease, padding-left 0.3s ease;
     }
-    .footer-col a:hover {
-        color: #fff;
-    }
-    .footer-col.contact p { margin-bottom: 8px; }
-    
-    /* Haritanın sitenin dark temasına uyması için özel filtre */
-    .footer-map iframe {
-        width: 100%;
-        height: 160px;
-        border: 0;
-        filter: grayscale(100%) invert(90%) contrast(80%);
+    .sitemap-col a:hover { 
+        color: #111; 
+        padding-left: 5px; /* Üzerine gelince zarifçe sağa kayma efekti */
     }
 
+    /* İlk Sütun (Naif Şiirsel Giriş) */
+    .sitemap-col.intro p {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 15px;
+        line-height: 1.7;
+    }
+
+    /* --- ALT BİLGİ (SOSYAL MEDYA VE LOGO) --- */
     .footer-bottom {
-        border-top: 1px solid #333;
-        margin-top: 60px;
-        padding-top: 25px;
-        text-align: center;
+        max-width: 1200px;
+        margin: 80px auto 0 auto;
+        padding-top: 30px;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .footer-bottom-left {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .social-links {
+        display: flex;
+        gap: 20px;
+    }
+    .social-links a {
         font-size: 0.75rem;
-        color: #666;
-        letter-spacing: 2px;
         text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #111;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .social-links a:hover {
+        opacity: 0.6;
+    }
+    .copyright {
+        font-size: 0.7rem;
+        color: #888;
+        letter-spacing: 1px;
     }
 
-    /* Mobil Uyumluluk */
+    /* SAĞ ALT KÖŞEDEKİ SİYAH LOGO */
+    .footer-logo img {
+        height: 35px; /* Logonun zarafetini korumak için ideal boyut */
+        width: auto;
+        filter: brightness(0); /* Bu kod logoyu tamamen simsiyah yapar */
+        opacity: 0.85; /* Siyaha çok hafif bir yumuşaklık katar */
+        transition: opacity 0.3s ease;
+    }
+    .footer-logo img:hover {
+        opacity: 1;
+    }
+
+    /* --- MOBİL UYUMLULUK --- */
     @media (max-width: 900px) {
-        .footer-container {
-            grid-template-columns: 1fr;
-            text-align: center;
-            gap: 50px;
-        }
-        .site-footer {
-            padding: 50px 20px 20px 20px;
-        }
+        .sitemap-grid { grid-template-columns: 1fr; gap: 50px; }
+        .sitemap-footer { padding: 60px 20px 30px 20px; }
+        .footer-bottom { flex-direction: column; align-items: center; gap: 30px; text-align: center; }
+        .sitemap-col a:hover { padding-left: 0; }
     }
 </style>
 
-<footer class="site-footer">
-    <div class="footer-container">
+<footer class="sitemap-footer">
+    <div class="sitemap-grid">
         
-        <!-- Sol: İletişim & Stüdyo Bilgileri -->
-        <div class="footer-col contact">
-            <h4>Contact & Studio</h4>
-            <p><strong>Nelumbo Studios</strong></p>
-            <p>Istanbul, Turkey</p> <!-- Buraya tam adresi girebilirsiniz -->
-            <p><a href="mailto:info@dilaraaltinkepcearslan.com">info@dilaraaltinkepcearslan.com</a></p>
-            <br>
-            <p>
-                <a href="https://www.instagram.com/dilaraaltinkepcearslan/" target="_blank">Instagram</a> &nbsp;|&nbsp; 
-                <a href="https://www.linkedin.com/in/dilara-altınkepçe-arslan/" target="_blank">LinkedIn</a>
-            </p>
+        <!-- SÜTUN 1: Şiirsel Karşılama -->
+        <div class="sitemap-col intro">
+            <h4>A Gentle Journey</h4>
+            <p>Weaving memories, archaic rituals, and ecological echoes into tangible forms.</p>
+            <p>Thank you for walking through this artistic landscape with me.</p>
         </div>
 
-        <!-- Orta: Lokasyon Haritası -->
-        <div class="footer-col footer-map">
-            <h4>Location</h4>
-            <!-- Google Maps Embed Kodu (İstanbul merkezli örnek, kendi stüdyonuzun embed kodunu koyabilirsiniz) -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.79327429188!2d28.871754020948924!3d41.0054958091873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1716301234567!5m2!1str!2str" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- SÜTUN 2: Sergiler Haritası -->
+        <div class="sitemap-col">
+            <h4>Spaces / Exhibitions</h4>
+            <a href="exhibitions-re.html">RE- Solo Exhibition</a>
+            <a href="exhibition-akbank.html">43rd Contemporary Artists Award</a>
+            <a href="exhibition-exit.html">The Exit, Group Exhibition</a>
+            <a href="exhibition-eart.html">The Probability of Exceptions</a>
+            <a href="exhibition-ortakmekik.html">Ortak Mekik (Interactive)</a>
+            <a href="exhibitions.html">View All Exhibitions</a>
         </div>
 
-        <!-- Sağ: Hızlı Linkler -->
-        <div class="footer-col links">
-            <h4>Explore</h4>
-            <p><a href="exhibitions.html">Exhibitions</a></p>
-            <p><a href="artworks.html">Artworks & Series</a></p>
-            <p><a href="selections.html">Selections & Awards</a></p>
-            <p><a href="about.html">About the Artist</a></p>
+        <!-- SÜTUN 3: Eserler Haritası -->
+        <div class="sitemap-col">
+            <h4>Threads / Artworks</h4>
+            <a href="series-ritual.html">The Ritual Series</a>
+            <a href="series-polaroid.html">Polaroid Series</a>
+            <a href="series-koy.html">Village Series</a>
+            <a href="series-griffin.html">Griffin Narratives</a>
+            <a href="series-intestine.html">Intestine War Series</a>
+            <a href="artworks-installations.html">Spatial Installations</a>
+            <a href="artworks-newmedia.html">New Media Archives</a>
         </div>
+
+        <!-- SÜTUN 4: İletişim -->
+        <div class="sitemap-col">
+            <h4>Studio / Connection</h4>
+            <a href="about.html">About the Artist</a>
+            <a href="selections.html">Selections & Awards</a>
+            <div style="margin-top: 20px;">
+                <p style="margin-bottom: 2px;"><strong>Nelumbo Studios</strong></p>
+                <p style="margin-bottom: 20px;">Istanbul, Turkey</p>
+                <a href="mailto:info@dilaraaltinkepcearslan.com">info@dilaraaltinkepcearslan.com</a>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Alt Bilgi ve Telif (Copyright) -->
+    <!-- ALT BANT: Sosyal Medya, Telif ve Siyah Logo -->
     <div class="footer-bottom">
-        &copy; 2026 Dilara Altınkepçe Arslan. All Rights Reserved.
+        <div class="footer-bottom-left">
+            <div class="social-links">
+                <a href="https://www.instagram.com/dilaraaltinkepcearslan/" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/dilara-altınkepçe-arslan/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Dilara Altınkepçe Arslan. All Rights Reserved.
+            </div>
+        </div>
+        
+        <!-- SAĞ ALT KÖŞE SİYAH LOGO -->
+        <a href="index.html" class="footer-logo">
+            <img src="images/daa-Logo.png" alt="Dilara Altınkepçe Arslan Logo">
+        </a>
     </div>
 </footer>
