@@ -1,0 +1,105 @@
+<style>
+    .site-footer {
+        background-color: #111;
+        color: #fafafa;
+        font-family: 'Montserrat', sans-serif;
+        padding: 70px 50px 30px 50px;
+        margin-top: 60px;
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .footer-col h4 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+    .footer-col p, .footer-col a {
+        font-size: 0.85rem;
+        color: #999;
+        line-height: 1.8;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .footer-col a:hover {
+        color: #fff;
+    }
+    .footer-col.contact p { margin-bottom: 8px; }
+    
+    /* Haritanın sitenin dark temasına uyması için özel filtre */
+    .footer-map iframe {
+        width: 100%;
+        height: 160px;
+        border: 0;
+        filter: grayscale(100%) invert(90%) contrast(80%);
+    }
+
+    .footer-bottom {
+        border-top: 1px solid #333;
+        margin-top: 60px;
+        padding-top: 25px;
+        text-align: center;
+        font-size: 0.75rem;
+        color: #666;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* Mobil Uyumluluk */
+    @media (max-width: 900px) {
+        .footer-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 50px;
+        }
+        .site-footer {
+            padding: 50px 20px 20px 20px;
+        }
+    }
+</style>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        
+        <!-- Sol: İletişim & Stüdyo Bilgileri -->
+        <div class="footer-col contact">
+            <h4>Contact & Studio</h4>
+            <p><strong>Nelumbo Studios</strong></p>
+            <p>Istanbul, Turkey</p> <!-- Buraya tam adresi girebilirsiniz -->
+            <p><a href="mailto:info@dilaraaltinkepcearslan.com">info@dilaraaltinkepcearslan.com</a></p>
+            <br>
+            <p>
+                <a href="https://www.instagram.com/dilaraaltinkepcearslan/" target="_blank">Instagram</a> &nbsp;|&nbsp; 
+                <a href="https://www.linkedin.com/in/dilara-altınkepçe-arslan/" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+
+        <!-- Orta: Lokasyon Haritası -->
+        <div class="footer-col footer-map">
+            <h4>Location</h4>
+            <!-- Google Maps Embed Kodu (İstanbul merkezli örnek, kendi stüdyonuzun embed kodunu koyabilirsiniz) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192697.79327429188!2d28.871754020948924!3d41.0054958091873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1716301234567!5m2!1str!2str" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Sağ: Hızlı Linkler -->
+        <div class="footer-col links">
+            <h4>Explore</h4>
+            <p><a href="exhibitions.html">Exhibitions</a></p>
+            <p><a href="artworks.html">Artworks & Series</a></p>
+            <p><a href="selections.html">Selections & Awards</a></p>
+            <p><a href="about.html">About the Artist</a></p>
+        </div>
+    </div>
+
+    <!-- Alt Bilgi ve Telif (Copyright) -->
+    <div class="footer-bottom">
+        &copy; 2026 Dilara Altınkepçe Arslan. All Rights Reserved.
+    </div>
+</footer>
