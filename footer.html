@@ -1,7 +1,7 @@
 <style>
     /* --- FOOTER GENEL YAPISI --- */
     .sitemap-footer {
-        background-color: #f7f7f7; /* Sitenin beyazına çok yakın, çok hafif gri bir zemin */
+        background-color: #f7f7f7;
         padding: 80px 50px 40px 50px;
         font-family: 'Montserrat', sans-serif;
         color: #111;
@@ -12,9 +12,9 @@
     /* --- 5 SÜTUNLU DİZİLİM (SITE HARİTASI) --- */
     .sitemap-grid {
         display: grid;
-        grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; /* Intro sütunu biraz daha geniş, diğerleri eşit */
+        grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
         gap: 30px;
-        max-width: 1350px; /* 5 Sütun rahat sığsın diye biraz genişletildi */
+        max-width: 1350px;
         margin: 0 auto;
     }
 
@@ -41,7 +41,7 @@
     }
     .sitemap-col a:hover { 
         color: #111; 
-        padding-left: 5px; /* Üzerine gelince zarifçe sağa kayma efekti */
+        padding-left: 5px;
     }
 
     /* İlk Sütun (Naif Şiirsel Giriş) */
@@ -92,10 +92,10 @@
 
     /* SAĞ ALT KÖŞEDEKİ SİYAH LOGO */
     .footer-logo img {
-        height: 35px; /* Logonun zarafetini korumak için ideal boyut */
+        height: 35px;
         width: auto;
-        filter: brightness(0); /* Logoyu tamamen simsiyah yapar */
-        opacity: 0.85; /* Siyaha çok hafif bir yumuşaklık katar */
+        filter: brightness(0);
+        opacity: 0.85;
         transition: opacity 0.3s ease;
     }
     .footer-logo img:hover {
@@ -104,11 +104,11 @@
 
     /* --- MOBİL UYUMLU --- */
     @media (max-width: 1000px) {
-        .sitemap-grid { grid-template-columns: 1fr 1fr; gap: 40px; } /* Tablette 2 sütunlu yapı */
+        .sitemap-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
     }
 
     @media (max-width: 700px) {
-        .sitemap-grid { grid-template-columns: 1fr; gap: 50px; } /* Telefonda tek sütunlu yapı */
+        .sitemap-grid { grid-template-columns: 1fr; gap: 50px; }
         .sitemap-footer { padding: 60px 20px 30px 20px; }
         .footer-bottom { flex-direction: column; align-items: center; gap: 30px; text-align: center; }
         .sitemap-col a:hover { padding-left: 0; }
@@ -128,6 +128,7 @@
         <!-- SÜTUN 2: Exhibitions -->
         <div class="sitemap-col">
             <h4>Exhibitions</h4>
+            <a href="exhibition-upcoming.html" style="font-weight: 500; color: #111;">Upcoming Solo Exhibition</a>
             <a href="exhibition-re.html">RE- Solo Exhibition</a>
             <a href="exhibition-akbank.html">43rd Contemporary Artists Award</a>
             <a href="exhibition-exit.html">The Exit, Group Exhibition</a>
