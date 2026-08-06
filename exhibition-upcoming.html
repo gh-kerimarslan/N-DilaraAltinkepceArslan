@@ -25,9 +25,15 @@
     <!-- SOSYAL MEDYA PAYLAŞIM KARTI -->
     <meta property="og:title" content="Upcoming Solo Exhibition | Dilara Altınkepçe Arslan">
     <meta property="og:description" content="Second solo exhibition coming soon. Curated by Nil Nuhoğlu. Exhibition Design by Aygen İncel.">
-    <meta property="og:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/01-banner-daa-re-overcome-01.jpg">
+    <meta property="og:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/daa-upcoming-cover.jpg">
     <meta property="og:url" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/">
     <meta property="og:type" content="website">
+
+    <!-- TWITTER / X PAYLAŞIM KARTI -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Upcoming Solo Exhibition | Dilara Altınkepçe Arslan">
+    <meta name="twitter:description" content="Second solo exhibition coming soon. Curated by Nil Nuhoğlu. Exhibition Design by Aygen İncel.">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/daa-upcoming-cover.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 
@@ -37,8 +43,10 @@
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
 
-        .page-hero { width: 100%; height: 60vh; position: relative; background: #111; display: flex; align-items: center; justify-content: center; color: #fff; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(30,30,30,0.5) 0%, rgba(10,10,10,0.95) 100%); }
+        /* ARKA PLAN KAPAK FOTOĞRAFI VE KARARTMA EFFECTİ */
+        .page-hero { width: 100%; height: 60vh; position: relative; background: url('images/daa-upcoming-cover.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; color: #fff; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(17,17,17,0.3), rgba(17,17,17,0.85)); }
+        
         .hero-title { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
         .hero-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: #aaa; margin-bottom: 20px; }
         .hero-title h1 { font-size: 4rem; letter-spacing: 6px; line-height: 1.1; color: #fff; }
