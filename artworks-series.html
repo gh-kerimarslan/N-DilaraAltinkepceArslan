@@ -153,7 +153,8 @@
         </a>
 
         <div class="back-nav">
-           <a href="javascript:history.back()" class="btn-outline">← Return to Artworks</a>
+           <!-- BURASI GÜNCELLENDİ -->
+           <a href="#" onclick="goBackToArtworks(event)" class="btn-outline">← Return to Artworks</a>
         </div>
 
     </main>
@@ -176,6 +177,18 @@
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
+            
+        // BURASI EKLENDİ: Geri dön veya Ana sayfaya git mantığı
+        function goBackToArtworks(e) {
+            e.preventDefault(); 
+            // Eğer referans sitemizin kendi içindense geri git
+            if (document.referrer && document.referrer.includes(window.location.hostname)) {
+                window.history.back();
+            } else {
+                // Eğer dışarıdan bir linkle gelindiyse ana sayfaya yönlendir
+                window.location.href = 'index.html'; 
+            }
+        }
     </script>
     
     <script src="lightbox.js"></script>
