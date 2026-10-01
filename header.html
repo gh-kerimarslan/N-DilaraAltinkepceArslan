@@ -163,7 +163,9 @@
         .mobile-name { 
             display: block !important; 
             font-family: 'Montserrat', sans-serif !important; 
-            font-size: 0.65rem !important; 
+            /* DÜZELTME: Mobilde ismin parçalanmaması için esnek boyut ve nowrap eklendi */
+            font-size: clamp(10px, 3.5vw, 14px) !important; 
+            white-space: nowrap !important;
             letter-spacing: 2px !important; 
             font-weight: 500 !important; 
             text-transform: uppercase !important; 
