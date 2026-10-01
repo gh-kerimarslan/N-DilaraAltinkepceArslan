@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,60 +16,81 @@
     </script> 
 
     <!-- SEO META TAGS -->
-    <title>Upcoming Solo Exhibition | Dilara Altınkepçe Arslan</title>
-    <meta name="description" content="Announcement of Dilara Altınkepçe Arslan's second solo exhibition. Curated by Nil Nuhoğlu with graphic design by Aygen İncel.">
-    <meta name="keywords" content="Dilara Altınkepçe Arslan, second solo exhibition, Nil Nuhoğlu, Aygen İncel, contemporary art Istanbul">
-    <meta name="author" content="Dilara Altınkepçe Arslan">
+    <title>ENV.NO.26.004.511 | DİLARA ALTINKEPÇE ARSLAN</title>
+    <meta name="description" content="DİLARA ALTINKEPÇE ARSLAN'ın ikinci kişisel sergisi ENV.NO.26.004.511, 22 Ekim'de Nelumbo Studios'ta açılıyor. Küratör: Nil Nuhoğlu. Basın Danışmanı: Burcu Dimili.">
+    <meta name="keywords" content="DİLARA ALTINKEPÇE ARSLAN, ENV.NO.26.004.511, Nil Nuhoğlu, Burcu Dimili, güncel sanat İstanbul, Nelumbo Studios">
+    <meta name="author" content="DİLARA ALTINKEPÇE ARSLAN">
 
     <!-- SOSYAL MEDYA PAYLAŞIM KARTI -->
-    <meta property="og:title" content="Upcoming Solo Exhibition | Dilara Altınkepçe Arslan">
-    <meta property="og:description" content="Second solo exhibition coming soon. Curated by Nil Nuhoğlu. Graphic Design by  İncel.">
-    <meta property="og:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/daa-upcoming-cover.jpg">
+    <meta property="og:title" content="ENV.NO.26.004.511 | DİLARA ALTINKEPÇE ARSLAN">
+    <meta property="og:description" content="Kişisel arşiv, hafıza ve unutma kavramları etrafında şekillenen ikinci kişisel sergi. Küratör: Nil Nuhoğlu.">
+    <meta property="og:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/DAA-ENV-POSTER.jpg">
     <meta property="og:url" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/">
     <meta property="og:type" content="website">
 
     <!-- TWITTER / X PAYLAŞIM KARTI -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Upcoming Solo Exhibition | Dilara Altınkepçe Arslan">
-    <meta name="twitter:description" content="Second solo exhibition coming soon. Curated by Nil Nuhoğlu. Graphic Design by Aygen İncel.">
-    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/daa-upcoming-cover.jpg">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:title" content="ENV.NO.26.004.511 | DİLARA ALTINKEPÇE ARSLAN">
+    <meta name="twitter:description" content="Kişisel arşiv, hafıza ve unutma kavramları etrafında şekillenen ikinci kişisel sergi. Küratör: Nil Nuhoğlu.">
+    <meta name="twitter:image" content="https://gh-kerimarslan.github.io/N-DilaraAltinkepceArslan/images/DAA-ENV-POSTER.jpg">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #fafafa; color: #111; font-family: 'Montserrat', sans-serif; overflow-x: hidden; line-height: 1.8; }
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+        
+        /* FUTURA FONT AİLESİ SEÇİMİ (Bulunamazsa benzer karakterli Trebuchet veya sans-serif kullanılır) */
+        body { background-color: #f5f3ec; color: #111; font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif; overflow-x: hidden; line-height: 1.8; }
+        h1, h2, h3, h4, label, span { font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif; font-weight: 500; text-transform: uppercase; }
         a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
 
-        /* ARKA PLAN KAPAK FOTOĞRAFI VE KARARTMA EFEKTİ */
-        .page-hero { width: 100%; height: 60vh; position: relative; background: url('images/daa-upcoming-cover.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; color: #fff; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(17,17,17,0.3), rgba(17,17,17,0.85)); }
+        /* ARKA PLAN BANNER GÖRSELİ - MASAÜSTÜ */
+        .page-hero { 
+            width: 100%; 
+            height: 65vh; 
+            position: relative; 
+            /* Masaüstü yatay banner'ın dosya yolu: */
+            background: url('images/DAA-ENV-POSTER.jpg') center/cover no-repeat; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #fff; 
+        }
+
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.35); }
         
         .hero-title { position: relative; z-index: 2; text-align: center; padding: 0 20px; }
-        .hero-title h4 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 6px; text-transform: uppercase; color: #ccc; margin-bottom: 15px; font-weight: 400; }
-        .hero-title h1 { font-size: 5rem; letter-spacing: 12px; text-transform: uppercase; line-height: 1; color: #fff; margin-bottom: 0; }
+        .hero-title h4 { font-size: 1.1rem; letter-spacing: 6px; color: #f5f3ec; margin-bottom: 15px; }
+        .hero-title h1 { font-size: 4.5rem; letter-spacing: 8px; line-height: 1.2; color: #fff; margin-bottom: 0; }
 
         .content-container { max-width: 850px; margin: -50px auto 100px auto; padding: 60px 40px; position: relative; z-index: 3; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.06); text-align: center; }
         
-        .credits-grid { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; border-bottom: 1px solid #eee; padding-bottom: 30px; flex-wrap: wrap; }
+        .credits-grid { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 30px; flex-wrap: wrap; }
         .credit-item { text-align: center; }
-        .credit-item label { font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: #888; display: block; margin-bottom: 5px; }
-        .credit-item span { font-size: 1.1rem; color: #111; font-weight: 500; }
+        .credit-item label { font-size: 0.65rem; letter-spacing: 3px; color: #888; display: block; margin-bottom: 5px; }
+        .credit-item span { font-size: 1.1rem; color: #111; font-weight: 600; }
+        
+        .supporters-grid { display: flex; justify-content: center; gap: 40px; margin-bottom: 50px; border-bottom: 1px solid #eee; padding-bottom: 30px; flex-wrap: wrap; }
+        .supporters-grid .supporters-title { width: 100%; font-size: 0.65rem; letter-spacing: 3px; color: #888; display: block; margin-bottom: 5px; }
+        .supporters-grid span { font-size: 1rem; color: #111; font-weight: 500; }
 
-        .teaser-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: #333; line-height: 1.9; margin-bottom: 50px; }
+        .teaser-text { font-size: 1.15rem; color: #333; line-height: 1.9; margin-bottom: 30px; padding: 0 20px; text-transform: none; }
+        
+        .exhibition-dates { font-size: 1.1rem; font-weight: 600; color: #111; margin-bottom: 40px; }
 
-        .announcement-footer { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #888; border-top: 1px solid #eee; padding-top: 30px; }
+        .announcement-footer { font-size: 0.85rem; letter-spacing: 3px; color: #d32f2f; font-weight: 600; padding-top: 10px; }
 
         .back-nav { text-align: center; margin: 60px 0 100px 0; }
         .btn-outline { display: inline-block; padding: 12px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s ease; }
         .btn-outline:hover { background: #111; color: #fff; }
 
-        @media (max-width: 700px) {
-            .hero-title h4 { font-size: 0.7rem; letter-spacing: 3px; }
-            .hero-title h1 { font-size: 2.8rem; letter-spacing: 6px; }
+        @media (max-width: 768px) {
+            /* ARKA PLAN BANNER GÖRSELİ - MOBİL */
+            /* Mobil dikey banner'ın dosya yolu: */
+            .page-hero { background: url('images/DAA-ENV-POSTER-Banner.jpg') center/cover no-repeat; height: 70vh; }
+            .hero-title h4 { font-size: 0.8rem; letter-spacing: 4px; }
+            .hero-title h1 { font-size: 2.5rem; letter-spacing: 4px; }
             .content-container { padding: 40px 20px; margin-top: -30px; }
             .credits-grid { flex-direction: column; gap: 20px; }
+            .supporters-grid { flex-direction: column; gap: 15px; margin-bottom: 30px; }
         }
     </style>
 </head>
@@ -81,8 +102,8 @@
     <header class="page-hero">
         <div class="hero-overlay"></div>
         <div class="hero-title">
-            <h4>Second Solo Exhibition</h4>
-            <h1>Upcoming</h1>
+            <h4>DİLARA ALTINKEPÇE ARSLAN</h4>
+            <h1>ENV.NO.26.004.511</h1>
         </div>
     </header>
 
@@ -90,31 +111,41 @@
         
         <div class="credits-grid">
             <div class="credit-item">
-                <label>Artist</label>
-                <span>Dilara Altınkepçe Arslan</span>
+                <label>Sanatçı</label>
+                <span>DİLARA ALTINKEPÇE ARSLAN</span>
             </div>
             <div class="credit-item">
-                <label>Curator</label>
-                <span>Nil Nuhoğlu</span>
+                <label>Küratör</label>
+                <span>NİL NUHOĞLU</span>
             </div>
             <div class="credit-item">
-                <label>Graphic Design</label>
-                <span>Aygen İncel</span>
+                <label>Basın Danışmanı</label>
+                <span>BURCU DİMİLİ</span>
             </div>
+        </div>
+
+        <div class="supporters-grid">
+            <div class="supporters-title">Destekçiler</div>
+            <span>MONTAG COFFEE</span>
+            <span>JOTUN TÜRKİYE</span>
         </div>
 
         <div class="teaser-text">
-            "A new spatial inquiry expanding the boundaries of tactile memory, time's continuous echoes, and material presence."
+            “Kişisel arşiv, hafıza ve unutma kavramları etrafında şekillenen, sanatçının biriktirme pratiğini bir tür kazı ve arşivleme süreci olarak ele aldığı yeni bir araştırma alanı.”
+        </div>
+        
+        <div class="exhibition-dates">
+            22 EKİM – 20 ARALIK 2026<br>NELUMBO STUDIOS
         </div>
 
         <div class="announcement-footer">
-            Full Exhibition Manifesto & Dates to be Announced
+            DETAYLI BİLGİLER YAKINDA EKLENECEKTİR
         </div>
 
     </main>
 
     <div class="back-nav">
-        <a href="exhibitions.html" class="btn-outline">← Back to Exhibitions</a>
+        <a href="exhibitions.html" class="btn-outline">← Sergilere Dön</a>
     </div>
 
     <!-- DİNAMİK FOOTER PLACEHOLDER -->
