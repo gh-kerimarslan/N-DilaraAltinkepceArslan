@@ -82,16 +82,45 @@
         .btn-outline:hover { background: #111; color: #fff; }
 
         /* MOBİL UYUMLULUK SORGUSU - EKSİK OLAN KISIM */
+    /* MOBİL UYUMLULUK SORGUSU */
         @media (max-width: 768px) {
             /* ARKA PLAN BANNER GÖRSELİ - MOBİL */
-            .page-hero { background: url('images/DAA_ENV-NO-Banner-3.jpg') center/cover no-repeat; height: 70vh; }
-            .hero-title h4 { font-size: 0.8rem; letter-spacing: 4px; }
+            .page-hero { 
+                height: 50vh; /* Yüksekliği biraz azalttık ki görsel daha dengeli dursun */
+                background-position: center; /* Görseli tam ortala */
+                background-size: cover; /* Görseli ekrana sığacak şekilde kapla */
+            }
             
-            /* DÜZELTME: MOBİLDE BAŞLIK FONTUNU VE HARF ARALIĞINI DAHA DA KÜÇÜLTTÜK */
-            .hero-title h1 { font-size: 1.8rem; letter-spacing: 2px; }
+            /* DÜZELTME: MOBİLDE BAŞLIK FONTUNU VE HARF ARALIĞINI DAHA DA KÜÇÜLTTÜK VE METNİ ORTALADIK */
+            .hero-title {
+                padding: 0 10px; /* Kenar boşluklarını azalttık */
+                width: 100%; /* Metnin ekran genişliğini aşmasını engelle */
+                word-wrap: break-word; /* Gerekirse kelimeleri böl */
+            }
+            .hero-title h4 { 
+                font-size: 0.7rem; /* Fontu daha da küçülttük */
+                letter-spacing: 2px; /* Harf aralığını azalttık */
+                margin-bottom: 10px;
+            }
+            .hero-title h1 { 
+                font-size: 1.5rem; /* Fontu önemli ölçüde küçülttük */
+                letter-spacing: 1px; /* Harf aralığını daha da azalttık */
+                white-space: nowrap; /* Metnin tek satırda kalmasını sağlar, sığmazsa taşar. İsterseniz bu satırı silebilirsiniz */
+            }
             
-            .content-container { padding: 40px 20px; margin-top: -30px; }
-            .credits-grid { flex-direction: column; gap: 20px; }
+            /* METİN TAŞMASINI KESİN OLARAK ENGELLEMEK İÇİN ALTERNATİF */
+            /* Eğer üstteki .hero-title h1 hala taşıyorsa, white-space: nowrap; satırını silip aşağıdaki gibi kullanın: */
+            /*
+            .hero-title h1 { 
+                font-size: 1.5rem; 
+                letter-spacing: 1px; 
+                word-wrap: break-word; 
+                overflow-wrap: break-word;
+            }
+            */
+
+            .content-container { padding: 30px 15px; margin-top: -20px; }
+            .credits-grid { flex-direction: column; gap: 15px; }
             .supporters-grid { flex-direction: column; gap: 15px; margin-bottom: 30px; }
         }
     </style>
