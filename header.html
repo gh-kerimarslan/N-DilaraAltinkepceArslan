@@ -161,13 +161,12 @@
         .mobile-logo .brand-logo { height: 26px !important; } 
 
         .mobile-name { 
-            display: block !important; 
+            display: inline-block !important; 
             font-family: 'Montserrat', sans-serif !important; 
-            /* DÜZELTME: Mobilde ismin parçalanmaması için esnek boyut ve nowrap eklendi */
-            font-size: clamp(10px, 3.5vw, 14px) !important; 
-            white-space: nowrap !important;
-            letter-spacing: 2px !important; 
-            font-weight: 500 !important; 
+            font-size: 11px !important; /* Fontu sabit ve güvenli bir boyuta çektik */
+            white-space: nowrap !important; /* Kesinlikle alt satıra inmeyi yasaklar */
+            letter-spacing: 1px !important; /* Harf aralığını daralttık ki tek satıra sığsın */
+            font-weight: 600 !important; 
             text-transform: uppercase !important; 
             color: #111 !important; 
             text-decoration: none !important; 
@@ -176,8 +175,9 @@
         
         .hamburger { display: flex !important; }
 
+        /* ORTA ALANA ÇOK DAHA FAZLA YER VERİP SIKIŞMAYI ÖNLÜYORUZ */
         .main-museum-nav .nav-left { flex: 1 !important; justify-content: flex-start !important; }
-        .main-museum-nav .nav-center { flex: 2 !important; justify-content: center !important; } 
+        .main-museum-nav .nav-center { flex: 5 !important; justify-content: center !important; overflow: visible !important; } 
         .main-museum-nav .nav-right { flex: 1 !important; justify-content: flex-end !important; }
     }
 </style>
