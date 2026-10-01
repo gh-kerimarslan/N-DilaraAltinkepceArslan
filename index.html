@@ -207,5 +207,38 @@
     </script>
     
     <script src="lightbox.js"></script>
+<!-- CİHAZA DUYARLI (RESPONSIVE) SERGİ POP-UP BAŞLANGICI -->
+<div id="exhibition-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:99999; background:transparent;">
+    <iframe id="popup-iframe" src="" style="width:100%; height:100%; border:none; background:transparent;"></iframe>
+</div>
+
+<script>
+    // İframe içinden (pop-up'tan) çarpıya basıldığında bu ana div'i gizleyecek fonksiyon
+    function closePopup() {
+        document.getElementById("exhibition-popup").style.display = "none";
+    }
+
+    // Sayfa yüklendiğinde cihaz boyutunu ölç ve doğru HTML'i iframe içine yükle
+    document.addEventListener("DOMContentLoaded", function() {
+        // Pop-up bu oturumda daha önce gösterilmediyse çalışsın
+        if (!sessionStorage.getItem("popupShown")) {
+            var popupDiv = document.getElementById("exhibition-popup");
+            var popupIframe = document.getElementById("popup-iframe");
+
+            // Ekran genişliği 768px ve altındaysa mobil versiyonu, büyükse masaüstü versiyonu yükle
+            if (window.innerWidth <= 768) {
+                popupIframe.src = "ENV_Popup_Mobil_Linkli.html";
+            } else {
+                popupIframe.src = "ENV_Popup_Masaustu_Linkli_2.html";
+            }
+
+            popupDiv.style.display = "block";
+            
+            // Pop-up'ın tekrar çıkmaması için gösterildi olarak işaretle
+            sessionStorage.setItem("popupShown", "true");
+        }
+    });
+</script>
+<!-- CİHAZA DUYARLI SERGİ POP-UP BİTİŞİ -->
 </body>
 </html>
