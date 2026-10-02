@@ -208,36 +208,127 @@
     
     <script src="lightbox.js"></script>
 <!-- CİHAZA DUYARLI (RESPONSIVE) SERGİ POP-UP BAŞLANGICI -->
-<div id="exhibition-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:99999; background:transparent;">
-    <iframe id="popup-iframe" src="" style="width:100%; height:100%; border:none; background:transparent;"></iframe>
+<style>
+  #envInvite, #envInvite * { box-sizing: border-box; }
+  #envInvite[hidden] { display: none !important; }
+  #envInvite { position: fixed; inset: 0; z-index: 2147483647; display: grid;
+    place-items: center; padding: 12px; }
+  #envInvite .envShade { position: absolute; inset: 0; background: rgba(0,0,0,.76); }
+  #envInvite .envCard { position: relative; z-index: 1; display: flex; flex-direction: column;
+    width: min(60vw, calc(106.667vh - 78.23px));
+    width: min(60vw, calc(106.667dvh - 78.23px));
+    max-height: 60vh; max-height: 60dvh; overflow: hidden;
+    background: #f5f3ec; box-shadow: 0 22px 75px rgba(0,0,0,.3); }
+  #envInvite .envBar { flex: none; height: 44px; display: flex; justify-content: flex-end;
+    align-items: center; padding: 0 4px; }
+  #envInvite .envClose { appearance: none; border: 0; background: transparent;
+    color: #111112; width: 40px; height: 40px; padding: 0;
+    font: 32px/1 Arial,sans-serif; cursor: pointer; }
+  #envInvite .envScroll { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+  #envInvite .envArt { position: relative; width: 100%; aspect-ratio: 16 / 9; }
+  #envInvite picture, #envInvite img { display: block; width: 100%; height: 100%; }
+  #envInvite img { object-fit: fill; border: 0; }
+  #envInvite .envHit { position: absolute; display: block; z-index: 1; }
+  #envInvite .envHit:hover { background: rgba(255,235,0,.14); }
+  #envInvite .envHit:focus-visible, #envInvite .envClose:focus-visible {
+    outline: 3px solid #0d3924; outline-offset: 2px; }
+  #envInvite .envCalendar { left: 57.35%; top: 77.4%; width: 18.8%; height: 5%; }
+  #envInvite .envMaps { left: 57.35%; top: 82.6%; width: 13.5%; height: 5%; }
+  #envInvite .envMail { left: 57.35%; top: 88.5%; width: 20.5%; height: 4.2%; }
+  #envInvite .envSite { left: 57.35%; top: 93%; width: 20.5%; height: 4.2%; }
+
+  @media (max-width: 720px) {
+    #envInvite .envCard { width: min(90vw, 430px); height: 60vh; height: 60dvh; }
+    #envInvite .envScroll { flex: 1; }
+    #envInvite .envArt { aspect-ratio: 9 / 16; }
+    #envInvite .envCalendar { left: 5.3%; top: 79.7%; width: 47%; height: 3.5%; }
+    #envInvite .envMaps { left: 5.3%; top: 83.9%; width: 30%; height: 3.5%; }
+    #envInvite .envMail { left: 5.3%; top: 91.7%; width: 39%; height: 3%; }
+    #envInvite .envSite { left: 5.3%; top: 94.8%; width: 40%; height: 3%; }
+  }
+</style>
+
+<div id="envInvite" role="dialog" aria-modal="true" aria-label="Sergi daveti" hidden>
+  <div class="envShade" data-env-close></div>
+  <div class="envCard">
+    <div class="envBar">
+      <button class="envClose" type="button" data-env-close aria-label="Davetiyeyi kapat">×</button>
+    </div>
+    <div class="envScroll">
+      <div class="envArt">
+        <picture>
+          <source media="(max-width: 720px)" srcset="images/ENV_Acilis_Davetiyesi_Dijital.jpg">
+          <img src="images/ENV_Acilis_Davetiyesi_Web_Popup_Yatay.jpg"
+               alt="ENV.NO.26.004.511 — Dilara Altınkepçe Arslan sergi daveti, 22 Ekim 2026 saat 17.00–21.00, Nelumbo Studios.">
+        </picture>
+
+        <a class="envHit envCalendar" aria-label="Google Takvime Ekle"
+           target="_blank" rel="noopener noreferrer"
+           href="https://calendar.google.com/calendar/r/eventedit?action=TEMPLATE&amp;dates=20261022T140000Z%2F20261022T180000Z&amp;stz=Europe%2FIstanbul&amp;etz=Europe%2FIstanbul&amp;text=ENV.NO.26.004.511%20%7C%20Dilara%20Alt%C4%B1nkep%C3%A7e%20Arslan%20-%20Sergi%20A%C3%A7%C4%B1l%C4%B1%C5%9F%C4%B1&amp;details=K%C3%BCrat%C3%B6r%3A%20Nil%20Nuho%C4%9Flu.%20Sergi%3A%2022%20Ekim%20-%2020%20Aral%C4%B1k%202026.%20www.nelumbostudios.com&amp;location=Nelumbo%20Studios%2C%20%C5%9Eevki%20Bey%20Sokak%20No%3A%201B%2C%20Cafera%C4%9Fa%2C%20Kad%C4%B1k%C3%B6y%2C%20%C4%B0stanbul"></a>
+
+        <a class="envHit envMaps" aria-label="Yol Tarifi Al"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.google.com/maps/dir/?api=1&amp;destination=Nelumbo%20Studios%2C%20%C5%9Eevki%20Bey%20Sokak%20No%3A%201B%2C%20Cafera%C4%9Fa%2C%20Kad%C4%B1k%C3%B6y%2C%20%C4%B0stanbul"></a>
+
+        <a class="envHit envMail" aria-label="mail@nelumbostudios.com"
+           href="mailto:mail@nelumbostudios.com"></a>
+
+        <a class="envHit envSite" aria-label="www.nelumbostudios.com"
+           target="_blank" rel="noopener noreferrer"
+           href="https://www.nelumbostudios.com"></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-    // İframe içinden (pop-up'tan) çarpıya basıldığında bu ana div'i gizleyecek fonksiyon
-    function closePopup() {
-        document.getElementById("exhibition-popup").style.display = "none";
-    }
+  (() => {
+    const popup = document.getElementById('envInvite');
+    if (!popup) return;
 
-    // Sayfa yüklendiğinde cihaz boyutunu ölç ve doğru HTML'i iframe içine yükle
-    document.addEventListener("DOMContentLoaded", function() {
-        // Pop-up bu oturumda daha önce gösterilmediyse çalışsın
-        if (!sessionStorage.getItem("popupShown")) {
-            var popupDiv = document.getElementById("exhibition-popup");
-            var popupIframe = document.getElementById("popup-iframe");
+    const closeButton = popup.querySelector('.envClose');
+    const key = 'envInviteDismissed2026v4';
+    let previousFocus, previousOverflow;
 
-            // Ekran genişliği 768px ve altındaysa mobil versiyonu, büyükse masaüstü versiyonu yükle
-            if (window.innerWidth <= 768) {
-                popupIframe.src = "ENV_Popup_Mobil_Linkli.html";
-            } else {
-                popupIframe.src = "ENV_Popup_Masaustu_Linkli.html"; // _2 kısmı kaldırıldı
-            }
+    const dismissed = () => {
+      try { return sessionStorage.getItem(key) === '1'; }
+      catch { return false; }
+    };
 
-            popupDiv.style.display = "block";
-            
-            // Pop-up'ın tekrar çıkmaması için gösterildi olarak işaretle
-            sessionStorage.setItem("popupShown", "true");
-        }
+    const close = () => {
+      popup.hidden = true;
+      document.body.style.overflow = previousOverflow || '';
+      try { sessionStorage.setItem(key, '1'); } catch {}
+      previousFocus?.focus?.();
+    };
+
+    const open = () => {
+      if (dismissed() || Date.now() >= Date.parse('2026-10-22T21:00:00+03:00')) return;
+      previousFocus = document.activeElement;
+      previousOverflow = document.body.style.overflow;
+      popup.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    };
+
+    popup.addEventListener('click', e => {
+      if (e.target.closest('[data-env-close]')) close();
     });
+
+    document.addEventListener('keydown', e => {
+      if (popup.hidden) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key !== 'Tab') return;
+      const items = [...popup.querySelectorAll('button, a[href]')];
+      if (e.shiftKey && document.activeElement === items[0]) {
+        e.preventDefault(); items.at(-1).focus();
+      } else if (!e.shiftKey && document.activeElement === items.at(-1)) {
+        e.preventDefault(); items[0].focus();
+      }
+    });
+
+    setTimeout(open, 900);
+  })();
 </script>
 <!-- CİHAZA DUYARLI SERGİ POP-UP BİTİŞİ -->
 </body>
