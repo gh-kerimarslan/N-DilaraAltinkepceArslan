@@ -1,6 +1,7 @@
 import * as THREE from './vendor/three.module.min.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
 import { MarchingCubes } from './vendor/MarchingCubes.js';
+import { RoomEnvironment } from './vendor/RoomEnvironment.js';
 
 // ALARM / 2076 — a procedural sculptural study. No external model or tracking.
 const host = document.querySelector('[data-scene]');
@@ -17,15 +18,20 @@ try {
 }
 renderer.setPixelRatio(Math.min(devicePixelRatio, 1.6));
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.type = THREE.PCFShadowMap;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.3;
+renderer.toneMappingExposure = 1.05;
 host.appendChild(renderer.domElement);
 renderer.domElement.setAttribute('aria-label', '2076 grifon heykeli. Sürükleyerek 360 derece inceleyin.');
 renderer.domElement.setAttribute('role', 'img');
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#101b19');
 scene.fog = new THREE.FogExp2('#15211e', .027);
+const pmrem=new THREE.PMREMGenerator(renderer);
+const studio=new RoomEnvironment();
+scene.environment=pmrem.fromScene(studio,.08).texture;
+scene.environmentIntensity=.55;
+studio.dispose();pmrem.dispose();
 const camera = new THREE.PerspectiveCamera(36, 1, .1, 180);
 const home = new THREE.Vector3(-8.7, 4.5, 10.4);
 camera.position.copy(home);
@@ -36,8 +42,8 @@ controls.minDistance = 7; controls.maxDistance = 19;
 controls.minPolarAngle = .45; controls.maxPolarAngle = Math.PI / 2.08;
 controls.enablePan = false; controls.rotateSpeed = .42;
 controls.autoRotateSpeed = .2;
-const hemi = new THREE.HemisphereLight('#e6ebdf', '#35372b', 2.3); scene.add(hemi);
-const key = new THREE.DirectionalLight('#fff1cc', 4.5);
+const hemi = new THREE.HemisphereLight('#dce6e0', '#24291f', 1.25); scene.add(hemi);
+const key = new THREE.DirectionalLight('#fff1d7', 3.4);
 key.position.set(-7, 11, 6); key.castShadow = true;
 key.shadow.mapSize.set(2048, 2048); key.shadow.camera.left = -7; key.shadow.camera.right = 7;
 key.shadow.camera.top = 8; key.shadow.camera.bottom = -6; key.shadow.normalBias = .035;
@@ -49,7 +55,7 @@ let seed = 2076;
 function random() { seed = (1664525 * seed + 1013904223) >>> 0; return seed / 4294967296; }
 function stoneTexture() {
   const c = document.createElement('canvas'); c.width = c.height = 512;
-  const ctx = c.getContext('2d'); ctx.fillStyle = '#b9ae91'; ctx.fillRect(0, 0, 512, 512);
+  const ctx = c.getContext('2d'); ctx.fillStyle = '#e1d4b8'; ctx.fillRect(0, 0, 512, 512);
   for (let i = 0; i < 26000; i++) {
     const shade = 130 + random() * 95;
     ctx.fillStyle = `rgba(${shade},${shade - 5},${shade - 13},${random() * .24})`;
@@ -64,7 +70,7 @@ function stoneTexture() {
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
 }
 const texture = stoneTexture();
-const ivory = new THREE.MeshPhysicalMaterial({color:'#e6d7b4', roughness:.48, metalness:.12, bumpMap:texture, bumpScale:.022, clearcoat:.18, clearcoatRoughness:.7});
+const ivory = new THREE.MeshPhysicalMaterial({color:'#e9e2ca', map:texture, roughness:.38, metalness:.17, bumpMap:texture, bumpScale:.045, clearcoat:.13, clearcoatRoughness:.65});
 const gold = new THREE.MeshStandardMaterial({color:'#bba36e', metalness:.65, roughness:.45});
 const vein = new THREE.LineBasicMaterial({color:'#d3c494', transparent:true, opacity:.47});
 const dark = new THREE.MeshStandardMaterial({color:'#1f2925', roughness:.96, bumpMap:texture, bumpScale:.07});
@@ -84,24 +90,29 @@ function tube(parent, points, radius, material = ivory) {
 }
 // Blended volumes merge the torso and limbs into a continuous carved form.
 const volumes = [
-  [0,2.48,0,1.55,.59,.48],[-1.03,2.52,0,.62,.75,.56],[1.02,2.5,0,.65,.65,.5],
+  [0,2.48,0,1.55,.52,.43],[-1.03,2.52,0,.5,.66,.46],[1.02,2.5,0,.57,.58,.43],
   [-1.0,1.95,.39,.22,.58,.21],[-1.0,1.14,.4,.135,.65,.14],[-1.03,.49,.43,.14,.44,.15],[-1.17,.17,.45,.28,.15,.22],
   [-.78,1.95,-.39,.22,.57,.21],[-.79,1.14,-.4,.135,.66,.14],[-.83,.49,-.43,.14,.44,.15],[-.96,.17,-.45,.28,.15,.22],
   [1.02,2.05,.37,.34,.52,.26],[1.25,1.59,.4,.22,.35,.19],[1.09,1.1,.4,.14,.43,.14],[1.17,.52,.4,.13,.38,.14],[1.0,.17,.44,.28,.15,.22],
   [1.0,2.05,-.37,.34,.52,.26],[1.21,1.59,-.4,.22,.35,.19],[1.01,1.1,-.4,.14,.43,.14],[1.09,.52,-.4,.13,.38,.14],[.92,.17,-.44,.28,.15,.22],
-  [-1.3,2.93,0,.42,.7,.38],[-1.42,3.35,0,.31,.52,.3]
+  [-1.3,2.93,0,.31,.66,.3],[-1.42,3.35,0,.255,.52,.24]
 ];
-const mc = new MarchingCubes(62, ivory, false, false, 160000);
-mc.isolation = .55;
+const mc = new MarchingCubes(88, ivory, true, false, 160000);
+mc.isolation = 0;
 const res = mc.resolution;
 for (let z = 0; z < res; z++) for (let y = 0; y < res; y++) for (let x = 0; x < res; x++) {
   const px = (x / res * 2 - 1) * 3.7, py = (y / res * 2 - 1) * 3.7 + 2.3, pz = (z / res * 2 - 1) * 3.7;
-  let f = 0;
+  let distance = 100;
   for (const v of volumes) {
-    const q = ((px-v[0])/v[3])**2 + ((py-v[1])/v[4])**2 + ((pz-v[2])/v[5])**2;
-    if (q < 16) f += Math.exp(-q * .8);
+    const dx=px-v[0],dy=py-v[1],dz=pz-v[2];
+    const k0=Math.sqrt((dx/v[3])**2+(dy/v[4])**2+(dz/v[5])**2);
+    const k1=Math.sqrt((dx/(v[3]*v[3]))**2+(dy/(v[4]*v[4]))**2+(dz/(v[5]*v[5]))**2);
+    const d=k1>1e-8?k0*(k0-1)/k1:-Math.min(v[3],v[4],v[5]);
+    const blend=Math.max(.18-Math.abs(distance-d),0)/.18;
+    distance=Math.min(distance,d)-blend*blend*.18*.25;
   }
-  mc.field[x + y * res + z * res * res] = f;
+  distance+=Math.sin(px*37+py*13)*Math.sin(pz*41+py*17)*.003;
+  mc.field[x + y * res + z * res * res] = -distance;
 }
 mc.update();
 mc.scale.setScalar(3.7); mc.position.y = 2.3; mc.castShadow = true; mc.receiveShadow = true; griffin.add(mc);
@@ -111,19 +122,18 @@ for (const z of [-.4,.4]) for (let j = 0; j < 3; j++) {
   line(griffin,[[.78+j*.08,.19,z+.06],[.88+j*.08,.27,z+.08],[1.02+j*.06,.3,z+.06]],vein);
 }
 const head = new THREE.Group(); head.position.set(-1.42,3.42,0); griffin.add(head);
-ellipsoid(head,[-.1,.35,0],[.43,.45,.32]);
-ellipsoid(head,[-.4,.24,0],[.34,.24,.25]);
-// A tapering raven beak, with a separately carved lower mandible.
-function beak(parent, y, length, radius) {
-  const g = new THREE.ConeGeometry(radius, length, 32);
-  const m = new THREE.Mesh(g, ivory); m.rotation.z = Math.PI / 2 + .16;
-  m.position.set(-.69, y, 0); m.scale.z = .77; m.castShadow = true; parent.add(m);
-}
-beak(head,.23,.82,.19); beak(head,.1,.71,.105);
+ellipsoid(head,[-.12,.28,0],[.36,.355,.255]);
+// An elongated closed bill, lofted through elliptical sections rather than cones.
+const billProfile=[[-.31,.21,.145,.18],[-.48,.205,.13,.17],[-.72,.16,.095,.12],[-.98,.095,.035,.045],[-1.06,.07,.004,.004]],bp=[],bi=[];
+for(let i=0;i<billProfile.length;i++)for(let j=0;j<32;j++){const p=billProfile[i],a=j/32*Math.PI*2;bp.push(p[0],p[1]+Math.sin(a)*p[2],Math.cos(a)*p[3]);}
+for(let i=0;i<billProfile.length-1;i++)for(let j=0;j<32;j++){const a=i*32+j,b=i*32+(j+1)%32;bi.push(a,a+32,b,b,a+32,b+32);}
+const bg=new THREE.BufferGeometry();bg.setAttribute('position',new THREE.Float32BufferAttribute(bp,3));bg.setIndex(bi);bg.computeVertexNormals();const bill=new THREE.Mesh(bg,ivory);bill.castShadow=true;head.add(bill);
+const mouthMaterial=new THREE.LineBasicMaterial({color:'#6f6853',transparent:true,opacity:.6});
 for (const side of [-1,1]) {
-  ellipsoid(head,[-.25,.43,side*.275],[.18,.15,.06],ivory);
-  ellipsoid(head,[-.29,.435,side*.322],[.085,.077,.025],gold);
-  ellipsoid(head,[-.31,.44,side*.345],[.027,.046,.012],new THREE.MeshPhysicalMaterial({color:'#20382b',roughness:.12,metalness:.5}));
+  ellipsoid(head,[-.24,.365,side*.215],[.105,.075,.037],ivory);
+  ellipsoid(head,[-.265,.354,side*.246],[.05,.043,.014],gold);
+  ellipsoid(head,[-.277,.354,side*.258],[.028,.03,.008],new THREE.MeshPhysicalMaterial({color:'#263b2b',roughness:.12,metalness:.5}));
+  line(head,[[-.43,.12,side*.154],[-.68,.102,side*.12],[-.98,.077,side*.04]],mouthMaterial);
   for (let i=0;i<11;i++) {
     const a=i/11*Math.PI*1.4;
     line(head,[[-.05,.6-i*.025,side*.28],[.17,.4-i*.045,side*.31],[.12,.06-i*.018,side*.24]]);
@@ -180,10 +190,14 @@ const groundG=new THREE.PlaneGeometry(160,160,110,110);groundG.rotateX(-Math.PI/
 const ga=groundG.attributes.position;
 for(let i=0;i<ga.count;i++){const x=ga.getX(i),z=ga.getZ(i),d=Math.hypot(x,z);ga.setY(i,-.35+Math.max(0,Math.min(1,(d-4)/10))*(Math.sin(x*.18+z*.09)*.8+Math.sin(z*.3)*.4));}
 groundG.computeVertexNormals();
-const ground=new THREE.Mesh(groundG,new THREE.MeshStandardMaterial({color:'#30362c',roughness:1,bumpMap:texture,bumpScale:.13}));ground.receiveShadow=true;scene.add(ground);
+const ground=new THREE.Mesh(groundG,new THREE.MeshStandardMaterial({color:'#252c26',roughness:1,bumpMap:texture,bumpScale:.22}));ground.receiveShadow=true;scene.add(ground);
 for(let i=0;i<22;i++){
   const angle=random()*Math.PI*2,d=13+random()*25,h=1.8+random()*6;
-  const pillar=new THREE.Mesh(new THREE.CylinderGeometry(.4+random()*.4,.7,h,7),dark);
+  const rockGeometry=new THREE.CylinderGeometry(.4+random()*.4,.7,h,7,5);
+  const rockPoints=rockGeometry.attributes.position;
+  for(let j=0;j<rockPoints.count;j++){rockPoints.setX(j,rockPoints.getX(j)+(random()-.5)*.22);rockPoints.setZ(j,rockPoints.getZ(j)+(random()-.5)*.22);if(rockPoints.getY(j)>h*.3)rockPoints.setY(j,rockPoints.getY(j)-random()*.65);}
+  rockGeometry.computeVertexNormals();
+  const pillar=new THREE.Mesh(rockGeometry,dark);
   pillar.position.set(Math.cos(angle)*d,h/2-.4,Math.sin(angle)*d);pillar.rotation.z=(random()-.5)*.28;scene.add(pillar);
 }
 const dustG=new THREE.BufferGeometry(),dustP=new Float32Array(600*3),dustOriginal=[];
