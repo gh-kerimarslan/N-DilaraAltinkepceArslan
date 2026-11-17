@@ -1,0 +1,51 @@
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fafafa; color: #111; font-family: var(--font-sans); overflow-x: hidden; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: var(--font-sans); font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        
+        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { height: 35px; width: auto; object-fit: contain; }
+        .nav-center { flex: 2; text-align: center; }
+        .nav-center a { font-family: var(--font-sans); font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+        .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
+        .nav-right a:hover { opacity: 0.5; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
+
+        /* MAIN SLIDER */
+        .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 2s ease-in-out; }
+        .slide.active { opacity: 1; }
+        .bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease, filter 1s ease; z-index: 1; filter: grayscale(15%); }
+        .white-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.65); z-index: 2; transition: background 0.8s ease; }
+        .slider-container:hover .white-overlay { background: rgba(255, 255, 255, 0.85); }
+        .slider-container:hover .slide.active .bg-image { transform: scale(1.02); filter: grayscale(0%); }
+        .slide-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #111; z-index: 10; font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 500; text-align: center; }
+
+        /* GATEWAY BANNERS */
+        .gateway-section { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #ebebeb; }
+        .gateway-section:hover .bg-image { transform: scale(1.03); filter: grayscale(0%); }
+        .gateway-section:hover .white-overlay { background: rgba(255, 255, 255, 0.88); }
+        .gateway-content { position: relative; z-index: 3; max-width: 950px; padding: 0 20px; color: #111; }
+        .gateway-content h2 { font-size: 4.5rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; } /* 4.5rem STANDARDI */
+        .gateway-content h3 { font-family: var(--font-sans); font-size: 2rem; color: #333; margin-bottom: 15px; font-style: italic; }
+        .gateway-content p { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; font-weight: 500; }
+        .btn-outline { display: inline-block; padding: 15px 40px; border: 1px solid #111; color: #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; background: transparent; cursor: pointer; }
+        .btn-outline:hover { background: #111; color: #fff; }
+
+        @media (max-width: 900px) { 
+            .nav-left, .nav-right { display: none; }
+            .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
+            .slide-caption { font-size: 0.7rem; letter-spacing: 3px; width: 90%; }
+            .gateway-content h2 { font-size: clamp(1.7rem, 6.5vw, 2.5rem); letter-spacing: 4px; } 
+            .gateway-content h3 { font-size: 1.5rem; }
+            .gateway-content p { font-size: 0.75rem; letter-spacing: 2px; }
+        }
+    

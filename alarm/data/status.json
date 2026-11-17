@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": null,
+  "channels": {
+    "moloch": {
+      "state": "unknown",
+      "value": null,
+      "observedAt": null,
+      "sourceLabel": "",
+      "metricLabel": "",
+      "maxAgeSeconds": 3600,
+      "reason": ""
+    },
+    "cheetah": {
+      "state": "unknown",
+      "value": null,
+      "observedAt": null,
+      "sourceLabel": "",
+      "metricLabel": "",
+      "maxAgeSeconds": 3600,
+      "reason": ""
+    },
+    "cockroach": {
+      "state": "unknown",
+      "value": null,
+      "observedAt": null,
+      "sourceLabel": "",
+      "metricLabel": "",
+      "maxAgeSeconds": 3600,
+      "reason": ""
+    },
+    "raven": {
+      "state": "unknown",
+      "value": null,
+      "observedAt": null,
+      "sourceLabel": "",
+      "metricLabel": "",
+      "maxAgeSeconds": 3600,
+      "reason": ""
+    },
+    "gorilla": {
+      "state": "unknown",
+      "value": null,
+      "observedAt": null,
+      "sourceLabel": "",
+      "metricLabel": "",
+      "maxAgeSeconds": 3600,
+      "reason": ""
+    }
+  }
+}

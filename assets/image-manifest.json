@@ -1,0 +1,1442 @@
+{
+  "images/DAA-2024-RE-BalladofRoad-03.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-BalladofRoad-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-BalladofRoad-03-960.webp"
+    }
+  },
+  "images/DilaraAltınkepceArslan-3.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DilaraAltınkepceArslan-3-480.webp",
+      "960": "images/previews/DilaraAltınkepceArslan-3-960.webp"
+    }
+  },
+  "images/05-banner-daa-artweeks-01.jpg": {
+    "width": 1920,
+    "height": 1012,
+    "variants": {
+      "480": "images/previews/05-banner-daa-artweeks-01-480.webp",
+      "960": "images/previews/05-banner-daa-artweeks-01-960.webp"
+    }
+  },
+  "images/daa-base-verbasci-08.jpg": {
+    "width": 1620,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-base-verbasci-08-480.webp",
+      "960": "images/previews/daa-base-verbasci-08-960.webp"
+    }
+  },
+  "images/DAA-2024-Portal-Beyond-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Portal-Beyond-03-480.webp",
+      "960": "images/previews/DAA-2024-Portal-Beyond-03-960.webp"
+    }
+  },
+  "images/daa-artworks-Awakened-Anew.-02.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-Awakened-Anew.-02-480.webp",
+      "960": "images/previews/daa-artworks-Awakened-Anew.-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Overcome-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Overcome-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-Overcome-03-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-09.jpg": {
+    "width": 794,
+    "height": 1416,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-09-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-09-960.webp"
+    }
+  },
+  "images/invitation-ENV_Popup_Masaustu_Linkli.jpg": {
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "images/previews/invitation-ENV_Popup_Masaustu_Linkli-480.webp",
+      "960": "images/previews/invitation-ENV_Popup_Masaustu_Linkli-960.webp"
+    }
+  },
+  "images/daa-the-Exit-emphaty-01.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-the-Exit-emphaty-01-480.webp",
+      "960": "images/previews/daa-the-Exit-emphaty-01-960.webp"
+    }
+  },
+  "images/env-view-01.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/env-view-01-480.webp",
+      "960": "images/previews/env-view-01-960.webp"
+    }
+  },
+  "images/daa-artworks-intestine-01.jpg": {
+    "width": 1620,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-intestine-01-480.webp",
+      "960": "images/previews/daa-artworks-intestine-01-960.webp"
+    }
+  },
+  "images/DAA-2023-TheGrandRitual-02.jpg": {
+    "width": 2000,
+    "height": 1125,
+    "variants": {
+      "480": "images/previews/DAA-2023-TheGrandRitual-02-480.webp",
+      "960": "images/previews/DAA-2023-TheGrandRitual-02-960.webp"
+    }
+  },
+  "images/DAA-2022-Grifon-04.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Grifon-04-480.webp",
+      "960": "images/previews/DAA-2022-Grifon-04-960.webp"
+    }
+  },
+  "images/daa-bienal-budun-03.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-bienal-budun-03-480.webp",
+      "960": "images/previews/daa-bienal-budun-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Ascension-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Ascension-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-Ascension-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Ascension-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Ascension-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-Ascension-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Muted-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Muted-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-Muted-03-960.webp"
+    }
+  },
+  "images/DAA-2025-Grifon-03.jpg": {
+    "width": 1920,
+    "height": 1536,
+    "variants": {
+      "480": "images/previews/DAA-2025-Grifon-03-480.webp",
+      "960": "images/previews/DAA-2025-Grifon-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-DurgasVisit-04.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-DurgasVisit-04-480.webp",
+      "960": "images/previews/DAA-2024-RE-DurgasVisit-04-960.webp"
+    }
+  },
+  "images/DAA-2024-WE-03.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-WE-03-480.webp",
+      "960": "images/previews/DAA-2024-WE-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-FlagUprising-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-FlagUprising-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-FlagUprising-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Muted-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Muted-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-Muted-02-960.webp"
+    }
+  },
+  "images/DAA-2023-TheGrandRitual-01.jpg": {
+    "width": 1125,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-TheGrandRitual-01-480.webp",
+      "960": "images/previews/DAA-2023-TheGrandRitual-01-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-04.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-04-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-04-960.webp"
+    }
+  },
+  "images/DAA-2025-ShamanVillage-II-03.jpg": {
+    "width": 1482,
+    "height": 1852,
+    "variants": {
+      "480": "images/previews/DAA-2025-ShamanVillage-II-03-480.webp",
+      "960": "images/previews/DAA-2025-ShamanVillage-II-03-960.webp"
+    }
+  },
+  "images/DAA-2024-Ritual-II-02.jpg": {
+    "width": 2000,
+    "height": 1999,
+    "variants": {
+      "480": "images/previews/DAA-2024-Ritual-II-02-480.webp",
+      "960": "images/previews/DAA-2024-Ritual-II-02-960.webp"
+    }
+  },
+  "images/env-notebook-02.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/env-notebook-02-480.webp",
+      "960": "images/previews/env-notebook-02-960.webp"
+    }
+  },
+  "images/daa-eart-today-02.jpg": {
+    "width": 1080,
+    "height": 1350,
+    "variants": {
+      "480": "images/previews/daa-eart-today-02-480.webp",
+      "960": "images/previews/daa-eart-today-02-960.webp"
+    }
+  },
+  "images/daa-artworks-toy2-1.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-toy2-1-480.webp",
+      "960": "images/previews/daa-artworks-toy2-1-960.webp"
+    }
+  },
+  "images/daa-artworks-intestine-04.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-intestine-04-480.webp",
+      "960": "images/previews/daa-artworks-intestine-04-960.webp"
+    }
+  },
+  "images/env-cover.jpg": {
+    "width": 2000,
+    "height": 500,
+    "variants": {
+      "480": "images/previews/env-cover-480.webp",
+      "960": "images/previews/env-cover-960.webp"
+    }
+  },
+  "images/daa-base-verbasci-09.jpg": {
+    "width": 1620,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-base-verbasci-09-480.webp",
+      "960": "images/previews/daa-base-verbasci-09-960.webp"
+    }
+  },
+  "images/DilaraAltınkepceArslan-1.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/DilaraAltınkepceArslan-1-480.webp",
+      "960": "images/previews/DilaraAltınkepceArslan-1-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Overcome-06.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Overcome-06-480.webp",
+      "960": "images/previews/DAA-2024-RE-Overcome-06-960.webp"
+    }
+  },
+  "images/DAA-2023-Verbasci-01.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/DAA-2023-Verbasci-01-480.webp",
+      "960": "images/previews/DAA-2023-Verbasci-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-FlagUprising-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-FlagUprising-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-FlagUprising-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-improbable-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-improbable-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-improbable-02-960.webp"
+    }
+  },
+  "images/DAA-2023-PazarykMaidan-VR-07.jpg": {
+    "width": 2000,
+    "height": 1179,
+    "variants": {
+      "480": "images/previews/DAA-2023-PazarykMaidan-VR-07-480.webp",
+      "960": "images/previews/DAA-2023-PazarykMaidan-VR-07-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-FlagUprising-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-FlagUprising-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-FlagUprising-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-BalladofRoad-04.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-BalladofRoad-04-480.webp",
+      "960": "images/previews/DAA-2024-RE-BalladofRoad-04-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-inquiry-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-inquiry-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-inquiry-01-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-07.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-07-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-07-960.webp"
+    }
+  },
+  "images/DAA-2025-Grifon-02.jpg": {
+    "width": 1920,
+    "height": 1536,
+    "variants": {
+      "480": "images/previews/DAA-2025-Grifon-02-480.webp",
+      "960": "images/previews/DAA-2025-Grifon-02-960.webp"
+    }
+  },
+  "images/DilaraAltınkepceArslan-2.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/DilaraAltınkepceArslan-2-480.webp",
+      "960": "images/previews/DilaraAltınkepceArslan-2-960.webp"
+    }
+  },
+  "images/DAA-2024-BASE.jpg": {
+    "width": 2000,
+    "height": 1000,
+    "variants": {
+      "480": "images/previews/DAA-2024-BASE-480.webp",
+      "960": "images/previews/DAA-2024-BASE-960.webp"
+    }
+  },
+  "images/03-banner-daa-noise-alarm-01.jpg": {
+    "width": 2000,
+    "height": 1055,
+    "variants": {
+      "480": "images/previews/03-banner-daa-noise-alarm-01-480.webp",
+      "960": "images/previews/03-banner-daa-noise-alarm-01-960.webp"
+    }
+  },
+  "images/DAA-2023-TheGrandRitual-03.jpg": {
+    "width": 2000,
+    "height": 1131,
+    "variants": {
+      "480": "images/previews/DAA-2023-TheGrandRitual-03-480.webp",
+      "960": "images/previews/DAA-2023-TheGrandRitual-03-960.webp"
+    }
+  },
+  "images/daa-2025-gss-samankoyu-bozkirda-01.webp": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/daa-2025-gss-samankoyu-bozkirda-01-480.webp",
+      "960": "images/previews/daa-2025-gss-samankoyu-bozkirda-01-960.webp"
+    }
+  },
+  "images/01-banner-daa-re-overcome-01.jpg": {
+    "width": 2000,
+    "height": 1055,
+    "variants": {
+      "480": "images/previews/01-banner-daa-re-overcome-01-480.webp",
+      "960": "images/previews/01-banner-daa-re-overcome-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-improbable-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-improbable-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-improbable-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-improbable-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-improbable-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-improbable-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Ascension-01.jpg": {
+    "width": 1198,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Ascension-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-Ascension-01-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-05.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-05-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-05-960.webp"
+    }
+  },
+  "images/DAA-2023-PazarykMaidan-VR-03.jpg": {
+    "width": 1851,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-PazarykMaidan-VR-03-480.webp",
+      "960": "images/previews/DAA-2023-PazarykMaidan-VR-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-TheUprising-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-TheUprising-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-TheUprising-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Muted-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Muted-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-Muted-01-960.webp"
+    }
+  },
+  "images/daa-ortak-mekik-verbasci-03.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-ortak-mekik-verbasci-03-480.webp",
+      "960": "images/previews/daa-ortak-mekik-verbasci-03-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-08.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-08-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-08-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-ShamanVillage-02.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-ShamanVillage-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-ShamanVillage-02-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-00.jpg": {
+    "width": 2000,
+    "height": 1055,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-00-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-00-960.webp"
+    }
+  },
+  "images/daa-eart-today-03.jpg": {
+    "width": 1080,
+    "height": 1350,
+    "variants": {
+      "480": "images/previews/daa-eart-today-03-480.webp",
+      "960": "images/previews/daa-eart-today-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Unanswered-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Unanswered-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-Unanswered-01-960.webp"
+    }
+  },
+  "images/daa-ortak-mekik-verbasci-01.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "480": "images/previews/daa-ortak-mekik-verbasci-01-480.webp",
+      "960": "images/previews/daa-ortak-mekik-verbasci-01-960.webp"
+    }
+  },
+  "images/DAA-2022-Secure-Network-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Secure-Network-01-480.webp",
+      "960": "images/previews/DAA-2022-Secure-Network-01-960.webp"
+    }
+  },
+  "images/DAA-2022-Rituel-03.jpg": {
+    "width": 1125,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Rituel-03-480.webp",
+      "960": "images/previews/DAA-2022-Rituel-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Unanswered-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Unanswered-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-Unanswered-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-MessageFrom-04.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-MessageFrom-04-480.webp",
+      "960": "images/previews/DAA-2024-RE-MessageFrom-04-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Overcome-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Overcome-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-Overcome-01-960.webp"
+    }
+  },
+  "images/DAA-2022-Loop-03.jpg": {
+    "width": 2000,
+    "height": 1125,
+    "variants": {
+      "480": "images/previews/DAA-2022-Loop-03-480.webp",
+      "960": "images/previews/DAA-2022-Loop-03-960.webp"
+    }
+  },
+  "images/daa-2025-gss-samankoyu-bozkirda-04.webp": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/daa-2025-gss-samankoyu-bozkirda-04-480.webp",
+      "960": "images/previews/daa-2025-gss-samankoyu-bozkirda-04-960.webp"
+    }
+  },
+  "images/DAA-2024-Portal-02.jpg": {
+    "width": 1687,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Portal-02-480.webp",
+      "960": "images/previews/DAA-2024-Portal-02-960.webp"
+    }
+  },
+  "images/daa-artworks-Awakened-Anew.-01.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-Awakened-Anew.-01-480.webp",
+      "960": "images/previews/daa-artworks-Awakened-Anew.-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Unanswered-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Unanswered-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-Unanswered-03-960.webp"
+    }
+  },
+  "images/daa-bienal-budun-00.jpg": {
+    "width": 2000,
+    "height": 1125,
+    "variants": {
+      "480": "images/previews/daa-bienal-budun-00-480.webp",
+      "960": "images/previews/daa-bienal-budun-00-960.webp"
+    }
+  },
+  "images/daa-artworks-intestine-02.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-intestine-02-480.webp",
+      "960": "images/previews/daa-artworks-intestine-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-MessageFrom-01.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-MessageFrom-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-MessageFrom-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-MessageFrom-03.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-MessageFrom-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-MessageFrom-03-960.webp"
+    }
+  },
+  "images/daa-ortak-mekik-verbasci-02.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/daa-ortak-mekik-verbasci-02-480.webp",
+      "960": "images/previews/daa-ortak-mekik-verbasci-02-960.webp"
+    }
+  },
+  "images/DAA-ENV-POSTER.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-ENV-POSTER-480.webp",
+      "960": "images/previews/DAA-ENV-POSTER-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-ID-03.jpg": {
+    "width": 1710,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-ID-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-ID-03-960.webp"
+    }
+  },
+  "images/daa-artworks-toy1-1.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-toy1-1-480.webp",
+      "960": "images/previews/daa-artworks-toy1-1-960.webp"
+    }
+  },
+  "images/DAA-2025-ShamanVillage-II-02.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/DAA-2025-ShamanVillage-II-02-480.webp",
+      "960": "images/previews/DAA-2025-ShamanVillage-II-02-960.webp"
+    }
+  },
+  "images/daa-upcoming-cover.jpg": {
+    "width": 1920,
+    "height": 1152,
+    "variants": {
+      "480": "images/previews/daa-upcoming-cover-480.webp",
+      "960": "images/previews/daa-upcoming-cover-960.webp"
+    }
+  },
+  "images/DAA_ENV-NO-Banner-3.jpg": {
+    "width": 2000,
+    "height": 500,
+    "variants": {
+      "480": "images/previews/DAA_ENV-NO-Banner-3-480.webp",
+      "960": "images/previews/DAA_ENV-NO-Banner-3-960.webp"
+    }
+  },
+  "images/daa-the-Exit-emphaty-02.jpg": {
+    "width": 1920,
+    "height": 1280,
+    "variants": {
+      "480": "images/previews/daa-the-Exit-emphaty-02-480.webp",
+      "960": "images/previews/daa-the-Exit-emphaty-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-ShamanVillage-01.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-ShamanVillage-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-ShamanVillage-01-960.webp"
+    }
+  },
+  "images/daa-artworks-toy3-1.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-toy3-1-480.webp",
+      "960": "images/previews/daa-artworks-toy3-1-960.webp"
+    }
+  },
+  "images/DAA-2023-Grifon-03.jpg": {
+    "width": 1688,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Grifon-03-480.webp",
+      "960": "images/previews/DAA-2023-Grifon-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Overcome-04.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Overcome-04-480.webp",
+      "960": "images/previews/DAA-2024-RE-Overcome-04-960.webp"
+    }
+  },
+  "images/DAA-2023-Grifon-01.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Grifon-01-480.webp",
+      "960": "images/previews/DAA-2023-Grifon-01-960.webp"
+    }
+  },
+  "images/env-notebook-01.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/env-notebook-01-480.webp",
+      "960": "images/previews/env-notebook-01-960.webp"
+    }
+  },
+  "images/DAA-2024-Portal-01.jpg": {
+    "width": 1687,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Portal-01-480.webp",
+      "960": "images/previews/DAA-2024-Portal-01-960.webp"
+    }
+  },
+  "images/DAA-2023-TheGrandRitual-04.jpg": {
+    "width": 2000,
+    "height": 1130,
+    "variants": {
+      "480": "images/previews/DAA-2023-TheGrandRitual-04-480.webp",
+      "960": "images/previews/DAA-2023-TheGrandRitual-04-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-02.jpg": {
+    "width": 1890,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-02-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-02-960.webp"
+    }
+  },
+  "images/daa-ortak-mekik-verbasci-05.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-ortak-mekik-verbasci-05-480.webp",
+      "960": "images/previews/daa-ortak-mekik-verbasci-05-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-01.jpg": {
+    "width": 1890,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-01-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-01-960.webp"
+    }
+  },
+  "images/DAA-2024-Tunnel-02.jpg": {
+    "width": 2000,
+    "height": 606,
+    "variants": {
+      "480": "images/previews/DAA-2024-Tunnel-02-480.webp",
+      "960": "images/previews/DAA-2024-Tunnel-02-960.webp"
+    }
+  },
+  "images/DAA-2023-Verbasci-03.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Verbasci-03-480.webp",
+      "960": "images/previews/DAA-2023-Verbasci-03-960.webp"
+    }
+  },
+  "images/DAA-2023-Intestine-01.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Intestine-01-480.webp",
+      "960": "images/previews/DAA-2023-Intestine-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-BalladofRoad-01.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-BalladofRoad-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-BalladofRoad-01-960.webp"
+    }
+  },
+  "images/DAA-2024-Ritual-II-01.jpg": {
+    "width": 2000,
+    "height": 1999,
+    "variants": {
+      "480": "images/previews/DAA-2024-Ritual-II-01-480.webp",
+      "960": "images/previews/DAA-2024-Ritual-II-01-960.webp"
+    }
+  },
+  "images/DAA-2022-Loop-04.jpg": {
+    "width": 2000,
+    "height": 1125,
+    "variants": {
+      "480": "images/previews/DAA-2022-Loop-04-480.webp",
+      "960": "images/previews/DAA-2022-Loop-04-960.webp"
+    }
+  },
+  "images/daa-base-verbasci-10.jpg": {
+    "width": 1920,
+    "height": 920,
+    "variants": {
+      "480": "images/previews/daa-base-verbasci-10-480.webp",
+      "960": "images/previews/daa-base-verbasci-10-960.webp"
+    }
+  },
+  "images/daa-eart-today-04.jpg": {
+    "width": 1280,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-eart-today-04-480.webp",
+      "960": "images/previews/daa-eart-today-04-960.webp"
+    }
+  },
+  "images/daa-artworks-toy.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": {
+      "480": "images/previews/daa-artworks-toy-480.webp",
+      "960": "images/previews/daa-artworks-toy-960.webp"
+    }
+  },
+  "images/DAA-2024-Portal-Beyond-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Portal-Beyond-02-480.webp",
+      "960": "images/previews/DAA-2024-Portal-Beyond-02-960.webp"
+    }
+  },
+  "images/DAA-2024-Intestine-II-02.jpg": {
+    "width": 2000,
+    "height": 1490,
+    "variants": {
+      "480": "images/previews/DAA-2024-Intestine-II-02-480.webp",
+      "960": "images/previews/DAA-2024-Intestine-II-02-960.webp"
+    }
+  },
+  "images/DAA-2024-Tunnel-01.jpg": {
+    "width": 2000,
+    "height": 889,
+    "variants": {
+      "480": "images/previews/DAA-2024-Tunnel-01-480.webp",
+      "960": "images/previews/DAA-2024-Tunnel-01-960.webp"
+    }
+  },
+  "images/DAA-2021-Wish-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2021-Wish-01-480.webp",
+      "960": "images/previews/DAA-2021-Wish-01-960.webp"
+    }
+  },
+  "images/DAA-2022-Grifon-01.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": {
+      "480": "images/previews/DAA-2022-Grifon-01-480.webp",
+      "960": "images/previews/DAA-2022-Grifon-01-960.webp"
+    }
+  },
+  "images/daa-bienal-budun-cover.jpg": {
+    "width": 2000,
+    "height": 1125,
+    "variants": {
+      "480": "images/previews/daa-bienal-budun-cover-480.webp",
+      "960": "images/previews/daa-bienal-budun-cover-960.webp"
+    }
+  },
+  "images/DAA-2024-Ritual-II-03.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Ritual-II-03-480.webp",
+      "960": "images/previews/DAA-2024-Ritual-II-03-960.webp"
+    }
+  },
+  "images/daa-2025-gss-samankoyu-bozkirda-02.webp": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/daa-2025-gss-samankoyu-bozkirda-02-480.webp",
+      "960": "images/previews/daa-2025-gss-samankoyu-bozkirda-02-960.webp"
+    }
+  },
+  "images/daa-artworks-Awakened-Anew.-03.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-Awakened-Anew.-03-480.webp",
+      "960": "images/previews/daa-artworks-Awakened-Anew.-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-BalladofRoad-05.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-BalladofRoad-05-480.webp",
+      "960": "images/previews/DAA-2024-RE-BalladofRoad-05-960.webp"
+    }
+  },
+  "images/02-banner-daa-grand-ritual-01.jpg": {
+    "width": 1999,
+    "height": 1054,
+    "variants": {
+      "480": "images/previews/02-banner-daa-grand-ritual-01-480.webp",
+      "960": "images/previews/02-banner-daa-grand-ritual-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-MessageFrom-02.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-MessageFrom-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-MessageFrom-02-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-06.jpg": {
+    "width": 1920,
+    "height": 1080,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-06-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-06-960.webp"
+    }
+  },
+  "images/DAA-2025-NoiseMedaiArt-Alarm-01.jpg": {
+    "width": 1535,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-01-480.webp",
+      "960": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-01-960.webp"
+    }
+  },
+  "images/DAA-ENV-BANNER.jpg": {
+    "width": 2000,
+    "height": 1016,
+    "variants": {
+      "480": "images/previews/DAA-ENV-BANNER-480.webp",
+      "960": "images/previews/DAA-ENV-BANNER-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Hidirellez-02.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Hidirellez-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-Hidirellez-02-960.webp"
+    }
+  },
+  "images/DAA-2022-Grifon-02.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": {
+      "480": "images/previews/DAA-2022-Grifon-02-480.webp",
+      "960": "images/previews/DAA-2022-Grifon-02-960.webp"
+    }
+  },
+  "images/DAA-2022-Secure-Network-02.jpg": {
+    "width": 1482,
+    "height": 1976,
+    "variants": {
+      "480": "images/previews/DAA-2022-Secure-Network-02-480.webp",
+      "960": "images/previews/DAA-2022-Secure-Network-02-960.webp"
+    }
+  },
+  "images/DAA-2023-Echo-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Echo-02-480.webp",
+      "960": "images/previews/DAA-2023-Echo-02-960.webp"
+    }
+  },
+  "images/DAA-2023-PazarykMaidan-VR-01.jpg": {
+    "width": 2000,
+    "height": 1179,
+    "variants": {
+      "480": "images/previews/DAA-2023-PazarykMaidan-VR-01-480.webp",
+      "960": "images/previews/DAA-2023-PazarykMaidan-VR-01-960.webp"
+    }
+  },
+  "images/daa-ortak-mekik-verbasci-04.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/daa-ortak-mekik-verbasci-04-480.webp",
+      "960": "images/previews/daa-ortak-mekik-verbasci-04-960.webp"
+    }
+  },
+  "images/daa-newmedia-alarm-grifon-03.jpg": {
+    "width": 1920,
+    "height": 1079,
+    "variants": {
+      "480": "images/previews/daa-newmedia-alarm-grifon-03-480.webp",
+      "960": "images/previews/daa-newmedia-alarm-grifon-03-960.webp"
+    }
+  },
+  "images/daa-bienal-budun-01.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-bienal-budun-01-480.webp",
+      "960": "images/previews/daa-bienal-budun-01-960.webp"
+    }
+  },
+  "images/DAA-2024-WE-01.jpg": {
+    "width": 1697,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-WE-01-480.webp",
+      "960": "images/previews/DAA-2024-WE-01-960.webp"
+    }
+  },
+  "images/DAA-2025-Grifon-01.jpg": {
+    "width": 2000,
+    "height": 1600,
+    "variants": {
+      "480": "images/previews/DAA-2025-Grifon-01-480.webp",
+      "960": "images/previews/DAA-2025-Grifon-01-960.webp"
+    }
+  },
+  "images/daa-artworks-intestine-03.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-artworks-intestine-03-480.webp",
+      "960": "images/previews/daa-artworks-intestine-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-DurgasVisit-01.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-DurgasVisit-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-DurgasVisit-01-960.webp"
+    }
+  },
+  "images/env-view-02.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/env-view-02-480.webp",
+      "960": "images/previews/env-view-02-960.webp"
+    }
+  },
+  "images/daa-bienal-budun-02.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/daa-bienal-budun-02-480.webp",
+      "960": "images/previews/daa-bienal-budun-02-960.webp"
+    }
+  },
+  "images/daa-eart-today-01.jpg": {
+    "width": 1080,
+    "height": 1350,
+    "variants": {
+      "480": "images/previews/daa-eart-today-01-480.webp",
+      "960": "images/previews/daa-eart-today-01-960.webp"
+    }
+  },
+  "images/DAA-2024-Intestine-II-01.jpg": {
+    "width": 2000,
+    "height": 889,
+    "variants": {
+      "480": "images/previews/DAA-2024-Intestine-II-01-480.webp",
+      "960": "images/previews/DAA-2024-Intestine-II-01-960.webp"
+    }
+  },
+  "images/DAA-2022-Secure-Network-03.jpg": {
+    "width": 1482,
+    "height": 1976,
+    "variants": {
+      "480": "images/previews/DAA-2022-Secure-Network-03-480.webp",
+      "960": "images/previews/DAA-2022-Secure-Network-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-TheUprising-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-TheUprising-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-TheUprising-01-960.webp"
+    }
+  },
+  "images/DAA-2025-ShamanVillage-II-01.jpg": {
+    "width": 1536,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/DAA-2025-ShamanVillage-II-01-480.webp",
+      "960": "images/previews/DAA-2025-ShamanVillage-II-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-ID-01.jpg": {
+    "width": 1253,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-ID-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-ID-01-960.webp"
+    }
+  },
+  "images/ENV_Acilis_Davetiyesi_Web_Popup_Yatay.jpg": {
+    "width": 1600,
+    "height": 900,
+    "variants": {
+      "480": "images/previews/ENV_Acilis_Davetiyesi_Web_Popup_Yatay-480.webp",
+      "960": "images/previews/ENV_Acilis_Davetiyesi_Web_Popup_Yatay-960.webp"
+    }
+  },
+  "images/04-banner-daa-ortakmekik-verbasci-01.jpg": {
+    "width": 1999,
+    "height": 1054,
+    "variants": {
+      "480": "images/previews/04-banner-daa-ortakmekik-verbasci-01-480.webp",
+      "960": "images/previews/04-banner-daa-ortakmekik-verbasci-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-BalladofRoad-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-BalladofRoad-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-BalladofRoad-02-960.webp"
+    }
+  },
+  "images/daa-ortak-mekik-verbasci-06.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "480": "images/previews/daa-ortak-mekik-verbasci-06-480.webp",
+      "960": "images/previews/daa-ortak-mekik-verbasci-06-960.webp"
+    }
+  },
+  "images/DAA-2022-Rituel-01.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Rituel-01-480.webp",
+      "960": "images/previews/DAA-2022-Rituel-01-960.webp"
+    }
+  },
+  "images/daa-2025-gss-samankoyu-bozkirda-03.webp": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/daa-2025-gss-samankoyu-bozkirda-03-480.webp",
+      "960": "images/previews/daa-2025-gss-samankoyu-bozkirda-03-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Overcome-02.jpg": {
+    "width": 1628,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Overcome-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-Overcome-02-960.webp"
+    }
+  },
+  "images/env-notebook-03.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/env-notebook-03-480.webp",
+      "960": "images/previews/env-notebook-03-960.webp"
+    }
+  },
+  "images/DAA-2022-Holistic-02.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Holistic-02-480.webp",
+      "960": "images/previews/DAA-2022-Holistic-02-960.webp"
+    }
+  },
+  "images/env-view-03.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": {
+      "480": "images/previews/env-view-03-480.webp",
+      "960": "images/previews/env-view-03-960.webp"
+    }
+  },
+  "images/daa-the-Exit-emphaty-03.jpg": {
+    "width": 1280,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-the-Exit-emphaty-03-480.webp",
+      "960": "images/previews/daa-the-Exit-emphaty-03-960.webp"
+    }
+  },
+  "images/DAA-2022-Loop-01.jpg": {
+    "width": 2000,
+    "height": 1124,
+    "variants": {
+      "480": "images/previews/DAA-2022-Loop-01-480.webp",
+      "960": "images/previews/DAA-2022-Loop-01-960.webp"
+    }
+  },
+  "images/daa-base-verbasci-07.jpg": {
+    "width": 1620,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/daa-base-verbasci-07-480.webp",
+      "960": "images/previews/daa-base-verbasci-07-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Overcome-05.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Overcome-05-480.webp",
+      "960": "images/previews/DAA-2024-RE-Overcome-05-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-TheUprising-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-TheUprising-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-TheUprising-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-ID-02.jpg": {
+    "width": 1599,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-ID-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-ID-02-960.webp"
+    }
+  },
+  "images/DAA-2022-Loop-02.jpg": {
+    "width": 2000,
+    "height": 1126,
+    "variants": {
+      "480": "images/previews/DAA-2022-Loop-02-480.webp",
+      "960": "images/previews/DAA-2022-Loop-02-960.webp"
+    }
+  },
+  "images/DAA-2025-NoiseMedaiArt-Alarm-banner.jpg": {
+    "width": 2000,
+    "height": 1000,
+    "variants": {
+      "480": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-banner-480.webp",
+      "960": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-banner-960.webp"
+    }
+  },
+  "images/06-banner-daa-nevmekan-01.jpg": {
+    "width": 1999,
+    "height": 1054,
+    "variants": {
+      "480": "images/previews/06-banner-daa-nevmekan-01-480.webp",
+      "960": "images/previews/06-banner-daa-nevmekan-01-960.webp"
+    }
+  },
+  "images/DAA-2024-Tunnel-03.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Tunnel-03-480.webp",
+      "960": "images/previews/DAA-2024-Tunnel-03-960.webp"
+    }
+  },
+  "images/daa-the-Exit-emphaty-04.jpg": {
+    "width": 1920,
+    "height": 1280,
+    "variants": {
+      "480": "images/previews/daa-the-Exit-emphaty-04-480.webp",
+      "960": "images/previews/daa-the-Exit-emphaty-04-960.webp"
+    }
+  },
+  "images/DAA-2023-Intestine-02.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Intestine-02-480.webp",
+      "960": "images/previews/DAA-2023-Intestine-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-inquiry-02.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-inquiry-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-inquiry-02-960.webp"
+    }
+  },
+  "images/DAA-2023-Echo-01.jpg": {
+    "width": 2000,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Echo-01-480.webp",
+      "960": "images/previews/DAA-2023-Echo-01-960.webp"
+    }
+  },
+  "images/invitation-ENV_Popup_Mobil_Linkli.jpg": {
+    "width": 1080,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/invitation-ENV_Popup_Mobil_Linkli-480.webp",
+      "960": "images/previews/invitation-ENV_Popup_Mobil_Linkli-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-DurgasVisit-02.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-DurgasVisit-02-480.webp",
+      "960": "images/previews/DAA-2024-RE-DurgasVisit-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Hidirellez-05.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Hidirellez-05-480.webp",
+      "960": "images/previews/DAA-2024-RE-Hidirellez-05-960.webp"
+    }
+  },
+  "images/DAA-2023-Verbasci-02.jpg": {
+    "width": 2000,
+    "height": 1500,
+    "variants": {
+      "480": "images/previews/DAA-2023-Verbasci-02-480.webp",
+      "960": "images/previews/DAA-2023-Verbasci-02-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-Hidirellez-01.jpg": {
+    "width": 1799,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-Hidirellez-01-480.webp",
+      "960": "images/previews/DAA-2024-RE-Hidirellez-01-960.webp"
+    }
+  },
+  "images/DAA-2024-RE-ShamanVillage-03.jpg": {
+    "width": 1600,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-RE-ShamanVillage-03-480.webp",
+      "960": "images/previews/DAA-2024-RE-ShamanVillage-03-960.webp"
+    }
+  },
+  "images/DAA-2022-Grifon-03.jpg": {
+    "width": 2000,
+    "height": 1333,
+    "variants": {
+      "480": "images/previews/DAA-2022-Grifon-03-480.webp",
+      "960": "images/previews/DAA-2022-Grifon-03-960.webp"
+    }
+  },
+  "images/DAA-2022-Holistic-01.jpg": {
+    "width": 1945,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Holistic-01-480.webp",
+      "960": "images/previews/DAA-2022-Holistic-01-960.webp"
+    }
+  },
+  "images/DAA-2023-PazarykMaidan-VR-04.jpg": {
+    "width": 2000,
+    "height": 1179,
+    "variants": {
+      "480": "images/previews/DAA-2023-PazarykMaidan-VR-04-480.webp",
+      "960": "images/previews/DAA-2023-PazarykMaidan-VR-04-960.webp"
+    }
+  },
+  "images/DAA-2024-Portal-Beyond-01.jpg": {
+    "width": 1333,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2024-Portal-Beyond-01-480.webp",
+      "960": "images/previews/DAA-2024-Portal-Beyond-01-960.webp"
+    }
+  },
+  "images/ENV_Acilis_Davetiyesi_Dijital.jpg": {
+    "width": 1080,
+    "height": 1920,
+    "variants": {
+      "480": "images/previews/ENV_Acilis_Davetiyesi_Dijital-480.webp",
+      "960": "images/previews/ENV_Acilis_Davetiyesi_Dijital-960.webp"
+    }
+  },
+  "images/DAA-2023-Grifon-02.jpg": {
+    "width": 1688,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2023-Grifon-02-480.webp",
+      "960": "images/previews/DAA-2023-Grifon-02-960.webp"
+    }
+  },
+  "images/DAA-2022-Rituel-02.jpg": {
+    "width": 1500,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2022-Rituel-02-480.webp",
+      "960": "images/previews/DAA-2022-Rituel-02-960.webp"
+    }
+  },
+  "images/DAA-2023-PazarykMaidan-VR-02.jpg": {
+    "width": 2000,
+    "height": 1288,
+    "variants": {
+      "480": "images/previews/DAA-2023-PazarykMaidan-VR-02-480.webp",
+      "960": "images/previews/DAA-2023-PazarykMaidan-VR-02-960.webp"
+    }
+  },
+  "images/DAA-2021-Wish-02.jpg": {
+    "width": 1334,
+    "height": 2000,
+    "variants": {
+      "480": "images/previews/DAA-2021-Wish-02-480.webp",
+      "960": "images/previews/DAA-2021-Wish-02-960.webp"
+    }
+  }
+}

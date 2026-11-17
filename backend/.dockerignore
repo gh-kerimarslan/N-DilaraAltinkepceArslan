@@ -1,0 +1,5 @@
+__pycache__
+*.pyc
+.env*
+channels.local.json
+test_server.py

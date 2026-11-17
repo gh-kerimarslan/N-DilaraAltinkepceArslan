@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /backend/
+Disallow: /assets/pages/
+Sitemap: https://dilaraaltinkepcearslan.com/sitemap.xml

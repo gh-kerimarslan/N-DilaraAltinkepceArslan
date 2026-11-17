@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-17",
+  "html_pages_checked": 30,
+  "backend_tests_passed": 12,
+  "javascript_syntax": "passed",
+  "secret_pattern_scan": [],
+  "source_bytes": 93372262,
+  "browser_checked": [
+    "homepage",
+    "ENV Futura typography",
+    "About restored",
+    "image viewer and next image",
+    "five ALARM images and unknown state",
+    "simulation state and language switch",
+    "analytics opt-out"
+  ],
+  "limits": [
+    "not deployed to GitHub",
+    "Cloud Run not deployed",
+    "live source adapters and thresholds not configured",
+    "anatomical animations and central 3D control not included",
+    "Android hardware and fullscreen require device validation",
+    "account security and HTTP response headers require hosting configuration",
+    "Futura web embedding license not confirmed"
+  ],
+  "revision": "R02",
+  "hourly_snapshot_tests_passed": 3,
+  "workflow_yaml": "parsed successfully",
+  "hourly_execution": "prepared, not installed or executed on GitHub",
+  "publication": "awaiting GitHub connection"
+}

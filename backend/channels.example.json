@@ -1,0 +1,84 @@
+{
+  "channels": {
+    "moloch": {
+      "enabled": false,
+      "url": "",
+      "value_path": [
+        "value"
+      ],
+      "time_path": [
+        "observedAt"
+      ],
+      "source_label": "Open-Meteo / NASA SMAP / GDO",
+      "metric_label": "",
+      "direction": null,
+      "watch_threshold": null,
+      "alarm_threshold": null,
+      "max_age_seconds": 3600
+    },
+    "cheetah": {
+      "enabled": false,
+      "url": "",
+      "value_path": [
+        "value"
+      ],
+      "time_path": [
+        "observedAt"
+      ],
+      "source_label": "FAO food loss and waste data",
+      "metric_label": "",
+      "direction": null,
+      "watch_threshold": null,
+      "alarm_threshold": null,
+      "max_age_seconds": 3600
+    },
+    "cockroach": {
+      "enabled": false,
+      "url": "",
+      "value_path": [
+        "value"
+      ],
+      "time_path": [
+        "observedAt"
+      ],
+      "source_label": "Safecast measurement archive",
+      "metric_label": "",
+      "direction": null,
+      "watch_threshold": null,
+      "alarm_threshold": null,
+      "max_age_seconds": 3600
+    },
+    "raven": {
+      "enabled": false,
+      "url": "",
+      "value_path": [
+        "value"
+      ],
+      "time_path": [
+        "observedAt"
+      ],
+      "source_label": "GDELT / verified misinformation sources",
+      "metric_label": "",
+      "direction": null,
+      "watch_threshold": null,
+      "alarm_threshold": null,
+      "max_age_seconds": 3600
+    },
+    "gorilla": {
+      "enabled": false,
+      "url": "",
+      "value_path": [
+        "value"
+      ],
+      "time_path": [
+        "observedAt"
+      ],
+      "source_label": "GDELT event data",
+      "metric_label": "",
+      "direction": null,
+      "watch_threshold": null,
+      "alarm_threshold": null,
+      "max_age_seconds": 3600
+    }
+  }
+}
