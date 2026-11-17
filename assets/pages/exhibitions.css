@@ -1,0 +1,54 @@
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fafafa; color: #111; font-family: var(--font-sans); overflow-x: hidden; line-height: 1.8; }
+        h1, h2, h3, h4 { font-family: var(--font-sans); font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+
+        /* PAGE BANNER */
+        .page-banner { width: 100%; height: 50vh; position: relative; background: url('../../images/05-banner-daa-artweeks-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.5), rgba(250,250,250,1)); }
+        .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
+        .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
+
+        /* CONTAINER */
+        .timeline-container { max-width: 1100px; margin: 0 auto; padding: 60px 20px 150px 20px; }
+
+        /* CATEGORY HEADERS */
+        .category-header { text-align: center; margin: 80px 0 50px 0; border-bottom: 1px solid #111; padding-bottom: 15px; }
+        .category-header h2 { font-size: 2.8rem; letter-spacing: 6px; text-transform: uppercase; color: #111; }
+        .category-header p { font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 3px; color: #888; text-transform: uppercase; margin-top: 5px; }
+
+        /* HIGHLIGHT BLOCKS */
+        .highlight-item { display: flex; align-items: center; gap: 50px; margin: 80px 0; }
+        .highlight-item.reverse { flex-direction: row-reverse; }
+        .highlight-image { flex: 1.2; overflow: hidden; position: relative; }
+        .highlight-image a { display: block; height: 100%; overflow: hidden; cursor: zoom-in; }
+        .highlight-image img { width: 100%; height: 55vh; object-fit: cover; filter: grayscale(10%) contrast(95%); transition: transform 1s ease; display: block; }
+        .highlight-item:hover .highlight-image img { transform: scale(1.03); filter: grayscale(0%) contrast(100%); }
+        .highlight-text { flex: 1; padding: 20px; }
+        .highlight-text h4 { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .highlight-text h2 { font-size: 3rem; margin-bottom: 15px; line-height: 1.1; }
+        .highlight-text p { font-family: var(--font-sans); font-size: 1.1rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 30px; border-left: 1px solid #ccc; padding-left: 20px; }
+        
+        .btn-outline { display: inline-block; padding: 12px 35px; border: 1px solid #111; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-outline:hover { background: #111; color: #fff; }
+
+        /* LIST ROWS */
+        .exhibition-row { border-bottom: 1px solid #ddd; padding: 25px 0; transition: background 0.4s; overflow: hidden; }
+        .exhibition-row:hover { background-color: #f5f5f5; padding-left: 15px; padding-right: 15px; cursor: pointer; }
+        .exh-visible-row { display: flex; justify-content: space-between; align-items: baseline; }
+        .exh-year { flex: 0.15; font-size: 1rem; color: #888; font-weight: 300; }
+        .exh-title { flex: 0.6; font-family: var(--font-sans); font-size: 1.5rem; font-weight: 600; color: #111; }
+        .exh-location { flex: 0.25; text-align: right; font-size: 0.75rem; letter-spacing: 1px; color: #666; text-transform: uppercase; }
+        .exh-details { max-height: 0; opacity: 0; transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease; font-family: var(--font-sans); font-style: italic; color: #555; font-size: 1.1rem; padding-left: 15%; margin-top: 0; }
+        .exhibition-row:hover .exh-details { max-height: 100px; opacity: 1; margin-top: 15px; }
+
+        @media (max-width: 900px) { 
+            .banner-title h1 { font-size: 2.5rem; letter-spacing: 5px; }
+            .highlight-item { flex-direction: column !important; text-align: center; margin: 60px 0; } 
+            .highlight-text p { border-left: none; padding-left: 0; }
+            .exh-visible-row { flex-direction: column; gap: 5px; text-align: left; } 
+            .exh-location { text-align: left; } 
+            .exh-details { padding-left: 0; } 
+        }
+    

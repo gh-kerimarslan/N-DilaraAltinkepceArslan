@@ -1,0 +1,55 @@
+name: Publish artist website
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: artist-website-publication
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Build optimized images from the original photo archive
+        run: |
+          python3 -m venv "$RUNNER_TEMP/image-build-venv"
+          "$RUNNER_TEMP/image-build-venv/bin/pip" install --disable-pip-version-check Pillow==13.0.0
+          "$RUNNER_TEMP/image-build-venv/bin/python" scripts/build_images.py
+      - name: Check website integrity
+        run: python3 scripts/check_site.py
+      - name: Check signal rules
+        run: python3 -m unittest discover -s backend -v
+      - name: Check hourly snapshot processing
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Stage public website
+        env:
+          ALARM_HOURLY_ENABLED: ${{ vars.ALARM_HOURLY_ENABLED }}
+          REPOSITORY_PRIVATE: ${{ github.event.repository.private }}
+        run: python3 scripts/prepare_publish.py --output "$RUNNER_TEMP/artist-site"
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ${{ runner.temp }}/artist-site
+          retention-days: 1
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

@@ -1,0 +1,62 @@
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #fafafa; color: #111; font-family: var(--font-sans); overflow-x: hidden; }
+        h1, h2, h3 { font-family: var(--font-sans); font-weight: 400; }
+        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+        
+        /* STANDART MÜZE MENÜSÜ CSS */
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { height: 35px; width: auto; object-fit: contain; }
+        .nav-center { flex: 2; text-align: center; }
+        .nav-center a { font-family: var(--font-sans); font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
+        .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
+        .nav-right a:hover { opacity: 0.5; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
+
+        /* HERO BANNER */
+        .page-banner { width: 100%; height: 60vh; position: relative; background: url('../../images/06-banner-daa-nevmekan-01.jpg') center/cover no-repeat; background-attachment: fixed; display: flex; align-items: center; justify-content: center; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(250,250,250,0.3), rgba(250,250,250,1)); }
+        .banner-title { position: relative; z-index: 2; text-align: center; margin-top: 50px; }
+        .banner-title h1 { font-size: 4rem; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 10px; }
+
+        /* COLLECTIONS CONTAINER */
+        .collections-wrapper { padding: 80px 5% 150px 5%; display: flex; flex-direction: column; gap: 160px; max-width: 1400px; margin: 0 auto; }
+        
+        .collection-item { display: flex; align-items: center; gap: 80px; }
+        .collection-item:nth-child(even) { flex-direction: row-reverse; }
+        
+        /* KARE VE GENİŞ KOLAJ EFEKTİ */
+        .collection-collage { flex: 1.4; position: relative; height: 50vh; min-height: 450px; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
+        
+        .collage-main { width: 55%; aspect-ratio: 1/1; object-fit: cover; position: relative; z-index: 3; box-shadow: 0 20px 40px rgba(0,0,0,0.2); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: grayscale(10%); }
+        .collage-sub { position: absolute; width: 45%; aspect-ratio: 1/1; object-fit: cover; z-index: 2; box-shadow: 0 15px 30px rgba(0,0,0,0.15); transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); filter: grayscale(30%); }
+        
+        .collage-left { top: 12%; left: 2%; transform: rotate(-15deg); }
+        .collage-right { bottom: 12%; right: 2%; transform: rotate(15deg); z-index: 1; }
+        
+        .collection-item:hover .collage-main { transform: scale(1.05) translateY(-15px); filter: grayscale(0%); z-index: 4; box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+        .collection-item:hover .collage-left { transform: rotate(-25deg) translate(-80px, -20px); filter: grayscale(5%); z-index: 3; }
+        .collection-item:hover .collage-right { transform: rotate(25deg) translate(80px, 20px); filter: grayscale(5%); z-index: 3; }
+
+        .collection-text { flex: 1; padding: 20px; }
+        .collection-text h4 { font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .collection-text h2 { font-size: 3.8rem; margin-bottom: 20px; line-height: 1.1; }
+        .collection-text p { font-family: var(--font-sans); font-size: 1.3rem; font-style: italic; color: #555; line-height: 1.8; margin-bottom: 30px; border-left: 1px solid #ccc; padding-left: 20px; }
+        
+        .btn-outline { display: inline-block; padding: 14px 40px; border: 1px solid #111; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; }
+        .btn-outline:hover { background: #111; color: #fff; }
+
+        @media (max-width: 900px) { 
+            .nav-left, .nav-right { display: none; }
+            .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
+            .collection-item { flex-direction: column !important; text-align: center; gap: 60px; } 
+            .collection-collage { height: 40vh; width: 100%; min-height: 350px; }
+            .collection-text p { border-left: none; padding-left: 0; }
+        }
+    

@@ -1,0 +1,30 @@
+name: Hourly ALARM observations
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: alarm-observation-snapshot
+  cancel-in-progress: false
+jobs:
+  observe:
+    if: vars.ALARM_HOURLY_ENABLED == 'true' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            backend
+      - name: Collect and publish only the signal JSON
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ALARM_CHANNELS_JSON: ${{ secrets.ALARM_CHANNELS_JSON }}
+          ALARM_FEED_HOSTS: ${{ vars.ALARM_FEED_HOSTS }}
+        run: python3 scripts/hourly_snapshot.py --publish
