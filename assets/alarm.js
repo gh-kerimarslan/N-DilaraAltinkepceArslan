@@ -15,13 +15,13 @@
     if(languageButton)languageButton.textContent=language==='en'?'TR':'EN';
     if(!screen)return;
     const state=demo?demoState:current.state;screen.dataset.state=state;
-    text('[data-state-label]',t(state));text('[data-value]',demo?'—':Number.isFinite(current.value)?current.value.toLocaleString(language==='tr'?'tr-TR':'en-GB',{maximumFractionDigits:3}):'—');
+    text('[data-state-label]',!demo&&state==='unknown'&&Number.isFinite(current.value)?(language==='tr'?'Kayıt alındı · eşikler bekleniyor':'Record received · thresholds pending'):t(state));text('[data-value]',demo?'—':Number.isFinite(current.value)?current.value.toLocaleString(language==='tr'?'tr-TR':'en-GB',{maximumFractionDigits:3}):'—');
     text('[data-source]',demo?t('simulation'):(current.sourceLabel||t('notConfigured')));text('[data-measurement-label]',demo?t('units'):current.metricLabel||'—');text('[data-updated]',demo?'—':displayDate(current.observedAt));
-    text('[data-signal-message]',demo?t('demoMessage'):networkError?t('network'):current.state==='unknown'?t('missing'):current.reason||'');
+    text('[data-signal-message]',demo?t('demoMessage'):networkError?t('network'):current.reason||(current.state==='unknown'?t('missing'):''));
     text('[data-demo-toggle]',t(demo?'endDemo':'demo'));text('[data-presentation]',t(document.fullscreenElement?'stop':'start'));
     document.querySelector('[data-demo-controls]').hidden=!demo;document.querySelector('[data-simulation]').hidden=!demo;text('[data-simulation]',t('simulation'));
     document.querySelectorAll('[data-demo-state]').forEach(button=>button.setAttribute('aria-pressed',String(demoState===button.dataset.demoState)));
-    window.dispatchEvent(new CustomEvent('alarm-state',{detail:{channel:screen.dataset.channel,state,simulation:demo,observedAt:demo?null:current.observedAt}}));
+    window.dispatchEvent(new CustomEvent('alarm-state',{detail:{channel:screen.dataset.channel,state,simulation:demo,observedAt:demo?null:current.observedAt,value:demo?null:current.value,sourceLabel:current.sourceLabel,unit:current.unit,scope:current.scope,reason:current.reason}}));
   }
   languageButton?.addEventListener('click',()=>{language=language==='en'?'tr':'en';try{localStorage.setItem('alarm-language',language);}catch{}render();});
   if(!screen){render();return;}
@@ -38,13 +38,13 @@
     const generated=Date.parse(payload.generatedAt);
     if(state!=='unknown' && (!Number.isFinite(generated) || generated>Date.now()+300000))state='unknown';
     else if(state!=='unknown' && Date.now()-generated>9000000)state='stale';
-    return{state,value:typeof channel.value==='number'&&Number.isFinite(channel.value)?channel.value:null,observedAt:Number.isFinite(observed)?channel.observedAt:null,maxAgeSeconds,sourceLabel:String(channel.sourceLabel||'').slice(0,160),metricLabel:String(channel.metricLabel||'').slice(0,160),reason:String(channel.reason||'').slice(0,300)};
+    return{state,value:typeof channel.value==='number'&&Number.isFinite(channel.value)?channel.value:null,observedAt:Number.isFinite(observed)?channel.observedAt:null,maxAgeSeconds,sourceLabel:String(channel.sourceLabel||'').slice(0,160),metricLabel:String(channel.metricLabel||'').slice(0,160),reason:String(channel.reason||'').slice(0,300),unit:String(channel.unit||'').slice(0,30),scope:String(channel.scope||'').slice(0,160)};
   }
   async function refresh(){
     if(inflight||document.hidden)return;inflight=true;
     const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),8000);
     try{const endpoint=document.querySelector('meta[name=alarm-endpoint]')?.content||'data/status.json';const url=new URL(endpoint,location.href);if(url.origin!==location.origin&&url.protocol!=='https:')throw new Error('HTTPS required');const response=await fetch(url,{cache:'no-store',credentials:'omit',signal:controller.signal,referrerPolicy:'no-referrer'});if(!response.ok)throw new Error('Unavailable');const raw=await response.text();if(raw.length>100000)throw new Error('Oversized status');current=validate(JSON.parse(raw));networkError=false;}
-    catch{current={...current,state:'unknown'};networkError=true;}finally{clearTimeout(timer);inflight=false;if(!demo)render();}
+    catch{try{const saved=await fetch('data/status.json',{cache:'no-store',credentials:'omit',signal:controller.signal});if(!saved.ok)throw new Error();current=validate(await saved.json());current.reason=(current.reason||'')+' Son kaydedilmiş kaynak kopyası gösteriliyor.';networkError=false;}catch{current={...current,state:'unknown'};networkError=true;}}finally{clearTimeout(timer);inflight=false;if(!demo)render();}
   }
   const present=document.querySelector('[data-presentation]');
   async function acquireWake(){if(!document.fullscreenElement||document.hidden)return;try{if(!wake && navigator.wakeLock){wake=await navigator.wakeLock.request('screen');wake.addEventListener('release',()=>{wake=null;});}else if(!navigator.wakeLock)text('[data-device-message]',t('wakeFailed'));}catch{text('[data-device-message]',t('wakeFailed'));}}
@@ -55,5 +55,5 @@
   document.querySelector('[data-demo-toggle]').addEventListener('click',()=>{demo=!demo;demoState='normal';render();});
   document.querySelectorAll('[data-demo-state]').forEach(button=>button.addEventListener('click',()=>{demoState=button.dataset.demoState;render();}));
   if(new URLSearchParams(location.search).get('demo')==='1')demo=true;
-  render();refresh();setInterval(()=>{if(!document.hidden)refresh();},30000);
+  render();refresh();setInterval(()=>{if(!document.hidden)refresh();},1200000);
 })();

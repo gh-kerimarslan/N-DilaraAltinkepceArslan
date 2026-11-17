@@ -1,0 +1,72 @@
+{
+  "moloch": {
+    "source": "Open-Meteo",
+    "url": "https://open-meteo.com/en/docs",
+    "license": "CC BY 4.0 · Open-Meteo ve model sağlayıcıları",
+    "scope": "İstanbul · 41.0082° N, 28.9784° E",
+    "metric": "0–1 cm yüzey toprak nemi · m³/m³",
+    "kind": "Meteorolojik model çıktısı",
+    "notes": [
+      "Toprakta tutulan su, kuraklığın birçok göstergesinden biridir.",
+      "Bu kanal tüm dünyanın kuraklığını ölçmez. İstanbul için bir model değerini izler.",
+      "Saatlik model zamanı, kaynağın alındığı zamandan ayrı gösterilir.",
+      "Kuyruk, kıtlığa uyumun bedendeki karşılığıdır."
+    ]
+  },
+  "cheetah": {
+    "source": "Fraunhofer ISE · Energy-Charts",
+    "url": "https://api.energy-charts.info/",
+    "license": "CC BY 4.0 · energy-charts.info",
+    "scope": "Almanya elektrik sistemi",
+    "metric": "Elektrik yükü · MW",
+    "kind": "Tüketimin sınırlı bir göstergesi",
+    "notes": [
+      "Bu kanal elektrik talebini izler. Toplam tüketim veya atık miktarı değildir.",
+      "Tek bir ülkenin elektrik yükü, küresel tüketim yerine geçmez.",
+      "Kaynağın ölçüm aralığı ile ekranın yenileme aralığı farklı olabilir.",
+      "Çitanın gövdesi, hız ile tüketim arasındaki ilişkiyi taşır."
+    ]
+  },
+  "cockroach": {
+    "source": "Safecast",
+    "url": "https://safecast.org/data/",
+    "license": "CC0 · Safecast açık ölçüm verisi",
+    "scope": "Katılımcı sensör ağı · tek kayıt",
+    "metric": "Sensör kaydı · kaynağın kendi birimi",
+    "kind": "Topluluk tarafından üretilen ölçüm",
+    "notes": [
+      "Gösterilen kayıt belirli bir cihazın, belirli bir yerdeki ölçümüdür.",
+      "CPM cihazın dakika başına sayımıdır. Evrensel bir doz birimi değildir.",
+      "Cihazlar arası değerler doğrudan karşılaştırılmaz; sağlık veya güvenlik kararı üretilmez.",
+      "Kanatlar, dayanıklılığın ve dönüşümün bedendeki karşılığıdır."
+    ]
+  },
+  "raven": {
+    "source": "Wikimedia · İngilizce Wikipedia",
+    "url": "https://www.mediawiki.org/wiki/API:RecentChanges",
+    "license": "Wikimedia açık API · kayıt metadatası",
+    "scope": "İngilizce Wikipedia · son 50 düzenleme örneklemi",
+    "metric": "Son 50 düzenleme örnekleminin temposu · kayıt/dk",
+    "kind": "Bilginin dolaşımı için sınırlı bir gösterge",
+    "notes": [
+      "Bu kanal bilginin değişimini izler; haberlerin doğruluğunu belirlemez.",
+      "Düzenleme sayısı, yanlış bilgi veya cehalet puanı değildir.",
+      "Örneklem en fazla 50 kayıttır. Kullanıcı adları ve IP adresleri alınmaz.",
+      "Baş, alınan bilginin nasıl anlamlandırıldığı sorusunu taşır."
+    ]
+  },
+  "gorilla": {
+    "source": "GDELT 2.0 Events",
+    "url": "https://www.gdeltproject.org/",
+    "license": "GDELT açık olay metadatası · kaynak belirtilmiştir",
+    "scope": "Son yayımlanan küresel olay dosyası · yaklaşık 15 dakika",
+    "metric": "Çatışma / kitlesel şiddet olarak kodlanan olay kayıtları",
+    "kind": "Haberlerden türetilmiş, sınırlı bir gösterge",
+    "notes": [
+      "Bu kanal GDELT olay kodları 19 ve 20 olan kayıtları sayar.",
+      "Kayıt sayısı benzersiz olay, mağdur veya insanlık değeri ölçümü değildir.",
+      "Haber kapsamı, diller ve olay kodlaması sonuca etki eder.",
+      "Gözler, güç ile özenin aynı bedendeki gerilimini taşır."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+name: Collect public ALARM observations
+on:
+  schedule:
+    - cron: '7,27,47 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/collect_public_feeds.py'
+      - 'alarm/data/sources.json'
+      - '.github/workflows/public-alarm-feeds.yml'
+permissions:
+  contents: read
+concurrency:
+  group: alarm-public-observations
+  cancel-in-progress: false
+jobs:
+  collect:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts
+            alarm/data/sources.json
+          sparse-checkout-cone-mode: false
+      - name: Retrieve and publish bounded source records
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/collect_public_feeds.py --output "$RUNNER_TEMP/alarm-status.json" --publish
