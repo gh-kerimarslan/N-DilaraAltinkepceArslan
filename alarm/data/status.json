@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-17T16:34:26.265541Z",
+  "refreshSeconds": 1200,
+  "thresholdsEnabled": false,
+  "channels": {
+    "moloch": {
+      "state": "unknown",
+      "value": 0.317,
+      "observedAt": "2026-11-17T16:00:00Z",
+      "collectedAt": "2026-11-17T16:34:25.807228Z",
+      "sourceLabel": "Open-Meteo",
+      "metricLabel": "0–1 cm yüzey toprak nemi · m³/m³",
+      "sourceUrl": "https://open-meteo.com/en/docs",
+      "unit": "m³/m³",
+      "scope": "İstanbul · 41.0082° N, 28.9784° E",
+      "maxAgeSeconds": 7200,
+      "reason": "Saatlik meteorolojik model çıktısı; bir sensör ölçümü veya küresel kuraklık endeksi değildir. Alarm eşikleri henüz tanımlanmadı.",
+      "thresholdsEnabled": false
+    },
+    "cheetah": {
+      "state": "unknown",
+      "value": 68859.5,
+      "observedAt": "2026-11-17T14:30:00Z",
+      "collectedAt": "2026-11-17T16:34:26.265048Z",
+      "sourceLabel": "Fraunhofer ISE · Energy-Charts",
+      "metricLabel": "Elektrik yükü · MW",
+      "sourceUrl": "https://api.energy-charts.info/",
+      "unit": "MW",
+      "scope": "Almanya elektrik sistemi",
+      "maxAgeSeconds": 14400,
+      "reason": "Almanya elektrik yükü; küresel veya toplam tüketim ölçümü değildir. Alarm eşikleri henüz tanımlanmadı.",
+      "thresholdsEnabled": false
+    },
+    "cockroach": {
+      "state": "unknown",
+      "value": 24.0,
+      "observedAt": "2026-11-17T14:45:12Z",
+      "collectedAt": "2026-11-17T16:34:26.205471Z",
+      "sourceLabel": "Safecast",
+      "metricLabel": "Sensör kaydı · kaynağın kendi birimi",
+      "sourceUrl": "https://safecast.org/data/",
+      "unit": "CPM",
+      "scope": "Örneklemdeki tek sensör kaydı · 53.85°, 10.69°",
+      "maxAgeSeconds": 7200,
+      "reason": "Son iki saatteki en fazla 100 kaynak kaydından seçilen örnek. Cihazlar karşılaştırılmaz; sağlık veya güvenlik kararı üretilmez. Alarm eşikleri henüz tanımlanmadı.",
+      "thresholdsEnabled": false
+    },
+    "raven": {
+      "state": "unknown",
+      "value": 127.83,
+      "observedAt": "2026-11-17T16:34:24Z",
+      "collectedAt": "2026-11-17T16:34:25.711737Z",
+      "sourceLabel": "Wikimedia · İngilizce Wikipedia",
+      "metricLabel": "Son 50 düzenleme örnekleminin temposu · kayıt/dk",
+      "sourceUrl": "https://www.mediawiki.org/wiki/API:RecentChanges",
+      "unit": "kayıt/dk",
+      "scope": "İngilizce Wikipedia · 50 kayıt / 23 saniyelik örneklem",
+      "maxAgeSeconds": 7200,
+      "reason": "Son düzenlemelerin örneklem temposu. Yanlış bilgi, doğruluk veya cehalet puanı değildir. Alarm eşikleri henüz tanımlanmadı.",
+      "thresholdsEnabled": false
+    },
+    "gorilla": {
+      "state": "unknown",
+      "value": null,
+      "observedAt": null,
+      "collectedAt": "2026-11-17T16:34:25.863158Z",
+      "sourceLabel": "GDELT 2.0 Events",
+      "sourceUrl": "https://www.gdeltproject.org/",
+      "metricLabel": "Çatışma / kitlesel şiddet olarak kodlanan olay kayıtları",
+      "unit": "",
+      "scope": "Son yayımlanan küresel olay dosyası · yaklaşık 15 dakika",
+      "maxAgeSeconds": 7200,
+      "thresholdsEnabled": false,
+      "reason": "Bu çağrıda geçerli bir kaynak kaydı alınamadı. Bir sonraki çevrimde yeniden denenecek.",
+      "errorType": "HTTPError"
+    }
+  }
+}
