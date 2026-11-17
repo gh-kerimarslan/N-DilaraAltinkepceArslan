@@ -1,51 +1,25 @@
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #fafafa; color: #111; font-family: var(--font-sans); overflow-x: hidden; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: var(--font-sans); font-weight: 400; }
-        a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
-        
-        /* ---------------- YENİ STANDART MÜZE MENÜSÜ ---------------- */
-        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0)); }
-        .nav-left { flex: 1; display: flex; align-items: center; }
-        .nav-left img { height: 35px; width: auto; object-fit: contain; }
-        .nav-center { flex: 2; text-align: center; }
-        .nav-center a { font-family: var(--font-sans); font-size: 1.1rem; letter-spacing: 7px; font-weight: 300; text-transform: uppercase; color: #111; }
-        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 30px; align-items: center; }
-        .nav-right > .dropdown > a { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; padding: 10px 0; }
-        .nav-right a:hover { opacity: 0.5; }
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: transparent; padding-top: 10px; text-align: center; min-width: max-content; }
-        .dropdown:hover .dropdown-content { display: block; }
-        .dropdown-content a { color: #111; padding: 8px 15px; text-decoration: none; display: block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
-        .dropdown-content a:hover { background-color: transparent; opacity: 0.5; }
-
-        /* MAIN SLIDER */
-        .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 2s ease-in-out; }
-        .slide.active { opacity: 1; }
-        .bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 2s ease, filter 1s ease; z-index: 1; filter: grayscale(15%); }
-        .white-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.65); z-index: 2; transition: background 0.8s ease; }
-        .slider-container:hover .white-overlay { background: rgba(255, 255, 255, 0.85); }
-        .slider-container:hover .slide.active .bg-image { transform: scale(1.02); filter: grayscale(0%); }
-        .slide-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #111; z-index: 10; font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 500; text-align: center; }
-
-        /* GATEWAY BANNERS */
-        .gateway-section { position: relative; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #ebebeb; }
-        .gateway-section:hover .bg-image { transform: scale(1.03); filter: grayscale(0%); }
-        .gateway-section:hover .white-overlay { background: rgba(255, 255, 255, 0.88); }
-        .gateway-content { position: relative; z-index: 3; max-width: 950px; padding: 0 20px; color: #111; }
-        .gateway-content h2 { font-size: 4.5rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 5px; } /* 4.5rem STANDARDI */
-        .gateway-content h3 { font-family: var(--font-sans); font-size: 2rem; color: #333; margin-bottom: 15px; font-style: italic; }
-        .gateway-content p { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; color: #555; margin-bottom: 40px; font-weight: 500; }
-        .btn-outline { display: inline-block; padding: 15px 40px; border: 1px solid #111; color: #111; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; background: transparent; cursor: pointer; }
-        .btn-outline:hover { background: #111; color: #fff; }
-
-        @media (max-width: 900px) { 
-            .nav-left, .nav-right { display: none; }
-            .nav-center a { font-size: 0.9rem; letter-spacing: 4px; }
-            .slide-caption { font-size: 0.7rem; letter-spacing: 3px; width: 90%; }
-            .gateway-content h2 { font-size: clamp(1.7rem, 6.5vw, 2.5rem); letter-spacing: 4px; } 
-            .gateway-content h3 { font-size: 1.5rem; }
-            .gateway-content p { font-size: 0.75rem; letter-spacing: 2px; }
-        }
-    
+/* Photographic opening: the original site's quiet, full-width banners. */
+.home-page .site-header{position:absolute;width:100%;background:linear-gradient(#fafafaf5,#fafafae0,transparent);border:0}
+.home-page .site-nav{padding-top:25px;padding-bottom:30px}
+.home-page .site-brand{font-weight:400;letter-spacing:.15em}
+.home-page .site-links>a,.home-page .site-links summary{font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.slider-container,.gateway-section{position:relative;width:100%;height:100vh;height:100svh;min-height:540px;overflow:hidden;background:#eee}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.8s ease,visibility 1.8s;pointer-events:none}
+.slide.active{opacity:1;visibility:visible;pointer-events:auto}
+.bg-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%)}
+.white-overlay{position:absolute;inset:0;background:rgba(255,255,255,.65);pointer-events:none}
+.slide-caption{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(90%,900px);text-align:center;font-size:14px;line-height:1.8;font-weight:400;letter-spacing:.27em;text-transform:uppercase;text-wrap:balance}
+.slide-caption.env-label{letter-spacing:.17em!important;font-weight:400!important}
+.slider-pause{position:absolute;bottom:25px;right:var(--gutter);background:none;border:0;border-bottom:1px solid #20211e55;padding:5px 0;color:var(--ink);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.gateway-section{display:flex;align-items:center;justify-content:center;text-align:center;border-bottom:1px solid #ebebeb}
+.gateway-content{position:relative;width:min(100%,1000px);padding:60px 24px;color:#111}
+.gateway-content h2{font-size:clamp(30px,5vw,70px);font-weight:400;line-height:1.2;letter-spacing:.12em;text-transform:uppercase;margin:0 0 18px;text-wrap:balance}
+.gateway-content h3{font-size:clamp(16px,2vw,24px);font-weight:400;line-height:1.5;margin:0 0 12px}
+.gateway-content p{max-width:none;font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.8;margin:0 0 32px}
+.gateway-content .btn-outline{border:1px solid #111;background:transparent;color:#111;padding:13px 30px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:background .2s,color .2s}
+.gateway-content .btn-outline:hover{background:#111;color:#fff}
+.home-page .site-footer{margin-top:0}
+@media(max-width:1050px){.home-page .site-brand{letter-spacing:.06em}.home-page .site-links{gap:16px}}
+@media(max-width:760px){.home-page .site-nav{padding:18px 20px}.home-page .site-brand span{letter-spacing:.06em}.home-page .site-links{background:var(--paper)}.home-page .site-links>a,.home-page .site-links summary{font-size:16px}.slider-container,.gateway-section{min-height:500px}.slide-caption{font-size:11px;letter-spacing:.18em}.gateway-content h2{font-size:clamp(25px,6.8vw,43px);letter-spacing:.06em}.gateway-content h3{font-size:16px}.gateway-content p{font-size:10px;letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}.slider-pause{display:none}}
