@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-18T13:29:55.721481Z",
+  "generatedAt": "2026-11-18T21:37:04.473961Z",
   "refreshSeconds": 1200,
   "thresholdsEnabled": false,
   "channels": {
     "moloch": {
       "state": "unknown",
-      "value": 0.306,
-      "observedAt": "2026-11-18T13:00:00Z",
-      "collectedAt": "2026-11-18T13:29:54.917887Z",
+      "value": 0.298,
+      "observedAt": "2026-11-18T21:00:00Z",
+      "collectedAt": "2026-11-18T21:37:01.880560Z",
       "sourceLabel": "Open-Meteo",
       "metricLabel": "0–1 cm yüzey toprak nemi · m³/m³",
       "sourceUrl": "https://open-meteo.com/en/docs",
@@ -20,9 +20,9 @@
     },
     "cheetah": {
       "state": "unknown",
-      "value": 66219.5,
-      "observedAt": "2026-11-18T11:30:00Z",
-      "collectedAt": "2026-11-18T13:29:55.721006Z",
+      "value": 59901.4,
+      "observedAt": "2026-11-18T20:00:00Z",
+      "collectedAt": "2026-11-18T21:37:04.473569Z",
       "sourceLabel": "Fraunhofer ISE · Energy-Charts",
       "metricLabel": "Elektrik yükü · MW",
       "sourceUrl": "https://api.energy-charts.info/",
@@ -34,28 +34,28 @@
     },
     "cockroach": {
       "state": "unknown",
-      "value": 0.084,
-      "observedAt": "2026-11-18T11:46:18Z",
-      "collectedAt": "2026-11-18T13:29:55.441969Z",
+      "value": 0.143,
+      "observedAt": "2026-11-18T19:48:50Z",
+      "collectedAt": "2026-11-18T21:37:01.905110Z",
       "sourceLabel": "Safecast",
       "metricLabel": "Sensör kaydı · kaynağın kendi birimi",
       "sourceUrl": "https://safecast.org/data/",
       "unit": "µSv/h",
-      "scope": "Örneklemdeki tek sensör kaydı · 39.03°, -76.58°",
+      "scope": "Örneklemdeki tek sensör kaydı · 35.79°, -78.35°",
       "maxAgeSeconds": 7200,
       "reason": "Son iki saatteki en fazla 100 kaynak kaydından seçilen örnek. Cihazlar karşılaştırılmaz; sağlık veya güvenlik kararı üretilmez. Alarm eşikleri henüz tanımlanmadı.",
       "thresholdsEnabled": false
     },
     "raven": {
       "state": "unknown",
-      "value": 89.09,
-      "observedAt": "2026-11-18T13:29:54Z",
-      "collectedAt": "2026-11-18T13:29:54.897773Z",
+      "value": 117.6,
+      "observedAt": "2026-11-18T21:37:00Z",
+      "collectedAt": "2026-11-18T21:37:01.685423Z",
       "sourceLabel": "Wikimedia · İngilizce Wikipedia",
       "metricLabel": "Son 50 düzenleme örnekleminin temposu · kayıt/dk",
       "sourceUrl": "https://www.mediawiki.org/wiki/API:RecentChanges",
       "unit": "kayıt/dk",
-      "scope": "İngilizce Wikipedia · 50 kayıt / 33 saniyelik örneklem",
+      "scope": "İngilizce Wikipedia · 50 kayıt / 25 saniyelik örneklem",
       "maxAgeSeconds": 7200,
       "reason": "Son düzenlemelerin örneklem temposu. Yanlış bilgi, doğruluk veya cehalet puanı değildir. Alarm eşikleri henüz tanımlanmadı.",
       "thresholdsEnabled": false
@@ -64,7 +64,7 @@
       "state": "unknown",
       "value": null,
       "observedAt": null,
-      "collectedAt": "2026-11-18T13:29:54.909569Z",
+      "collectedAt": "2026-11-18T21:37:01.854547Z",
       "sourceLabel": "GDELT 2.0 Events",
       "sourceUrl": "https://www.gdeltproject.org/",
       "metricLabel": "Çatışma / kitlesel şiddet olarak kodlanan olay kayıtları",
@@ -73,7 +73,7 @@
       "maxAgeSeconds": 7200,
       "thresholdsEnabled": false,
       "reason": "Bu çağrıda geçerli bir kaynak kaydı alınamadı. Bir sonraki çevrimde yeniden denenecek.",
-      "errorType": "HTTPError"
+      "errorType": "ValueError"
     }
   }
 }
