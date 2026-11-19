@@ -11,7 +11,7 @@
  const maxScroll=()=>Math.max(0,view.scrollHeight-view.clientHeight);
  const displayScale=()=>innerHeight>innerWidth?Math.max(.6,Math.min(2.5,innerWidth/1080)):1;
  function status(){pauseButton.textContent=paused?'RESUME FLOW':'PAUSE FLOW';pauseButton.setAttribute('aria-pressed',String(paused));mode.textContent=paused?'FLOW PAUSED':performance.now()<manualUntil?'MANUAL READING':phase==='end'?'END OF REGISTER':'VERTICAL FLOW';}
- function updateRecord(){const at=view.getBoundingClientRect().top+view.clientHeight*.48;let selected=0;for(const r of records){if(r.getBoundingClientRect().top<=at)selected=Number(r.dataset.record);else break;}recordNumber.textContent=selected?String(selected).padStart(2,'0')+' / 39':'GRIFFIN REGISTER';}
+ function updateRecord(){const at=view.getBoundingClientRect().top+view.clientHeight*.48;let selected=0;for(const r of records){if(r.getBoundingClientRect().top<=at)selected=Number(r.dataset.record);else break;}recordNumber.textContent=selected?String(selected).padStart(2,'0')+' / 39':'GRIFFIN HISTORY';}
  function stop(){cancelAnimationFrame(raf);raf=0;previous=0;}
  function start(){previous=0;if(!paused&&!document.hidden&&!raf)raf=requestAnimationFrame(frame);}
  function setPaused(value){paused=value;if(phase==='fade'){track.classList.remove('is-looping');phase='end';remaining=20;}if(paused)stop();else start();status();}

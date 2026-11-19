@@ -38,3 +38,11 @@ ALARM imagery belongs to the artist's existing archive. The 2076 register entry 
 ## Software
 
 Three.js 0.187.0, OrbitControls, GLTFLoader, BufferGeometryUtils, SkeletonUtils and RoomEnvironment are vendored locally from the official npm package. MIT license: `assets/vendor/THREE-LICENSE.txt`. Core/module bundles were minified with Terser 5.44.1. No CDN, third-party embed, tracking or remotely executing script is required for the installation screens. Existing site CSP is retained and only the public raw GitHub data origin is allowed for feed requests.
+
+## R09 scene revision
+
+The index now follows the artwork's three sections: I — Griffin History, II — Animals, III — Griffin. All 39 history figures show the existing object title below the image, above the museum and inventory number.
+
+The scene's portrait display renders the same 39 records and images from `history.html` into a slow scrolling canvas texture. Only two record canvases are cached. The flow pauses with the scene motion control, when the page is hidden, and for reduced motion. Clicking the display still opens the full readable history page. Tablet textures rotate 180 degrees to face inward toward the main sculpture.
+
+`scripts/refine_griffin_wings.py` builds `models/griffin-r09.glb` from the retained R06 rig. The mineral forewings have rounded tips, camber and raised longitudinal veins; the membranous hindwings use radial folds and a scalloped edge. New vertices inherit the nearest original skin weights; the skeleton, eyes, body, transforms and all 16 animation clips remain in the asset. The publication workflow generates the GLB before staging. For a local preview, install numpy 2.3.5 and scipy 1.17.0 and run `python3 scripts/refine_griffin_wings.py` before serving the repository. The generated GLB is ignored by Git.
