@@ -9,6 +9,8 @@ export function createHistoryScreen(onRecord = () => {}) {
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.flipY = false;
+  // The authored portrait screen faces outward; make it readable from inside.
+  texture.repeat.x = -1; texture.offset.x = 1;
   texture.minFilter = THREE.LinearFilter;
   texture.generateMipmaps = false;
   let records = [], index = 0, offset = 0, tick = 0, hold = 4, disposed = false;

@@ -1,7 +1,7 @@
 import * as THREE from '../assets/vendor/three.module.min.js';
 import { OrbitControls } from '../assets/vendor/OrbitControls.js';
 import { GLTFLoader } from '../assets/vendor/GLTFLoader.js';
-import { createHistoryScreen } from './history-screen-r09.js';
+import { createHistoryScreen } from './history-screen-r09.js?v=r09a';
 
 const root=document.querySelector('[data-display]'),host=document.querySelector('[data-scene]');
 const loading=document.querySelector('[data-scene-loading]'),errorBox=document.querySelector('[data-scene-error]'),poster=document.querySelector('[data-scene-poster]'),status=document.querySelector('[data-model-status]');
