@@ -188,7 +188,10 @@ renderer.domElement.addEventListener('pointerup',event=>{
   const bounds=renderer.domElement.getBoundingClientRect();
   pointer.set((event.clientX-bounds.left)/bounds.width*2-1,-(event.clientY-bounds.top)/bounds.height*2+1);
   raycaster.setFromCamera(pointer,camera);
-  const hit=raycaster.intersectObjects([world.root,sculpture],true)[0];
+  const hit=raycaster.intersectObjects([world.root,sculpture],true).find(intersection=>{
+    const object=intersection.object;
+    return object.isMesh&&object.visible&&!object.material.transparent;
+  });
   if(hit?.object.userData.href)location.assign(hit.object.userData.href);
 });
 
