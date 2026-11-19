@@ -37,6 +37,9 @@ for p in pages:
     if parsed.canonical!=1:errors.append(f'{p.name}: expected one canonical URL')
     for fragment in parsed.local:
         if fragment not in parsed.ids:errors.append(f'{p.name}: missing #{fragment}')
+    header=re.search(r'<!-- SITE-HEADER -->(.*?)<!-- /SITE-HEADER -->',s,re.S)
+    if header and re.search(r'href=[\"\'](?:\.\./)?alarm/',header.group(1)):
+        errors.append(f'{p.name}: ALARM must be reached through Artworks / New Media, not the global header')
     for m in re.finditer(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',s,re.S):
         try:json.loads(m.group(1))
         except ValueError:errors.append(f'{p.name}: invalid JSON-LD')
@@ -44,6 +47,15 @@ for p in (root/'assets').rglob('*.css'):
     for url in re.findall(r'url\([\'"]?([^\)\'\"]+)',p.read_text()):
         if urlsplit(url).scheme:continue
         if not (p.parent/unquote(url)).exists():errors.append(f'{p.relative_to(root)}: missing CSS resource {url}')
+# ES modules can fail before the scene runs when a transitive import is absent.
+for p in (root/'assets').rglob('*.js'):
+    for url in re.findall(r"\b(?:import|export)\s+(?:[^;\"']*?\s+from\s*)?[\"'](\.{1,2}/[^\"']+)[\"']",p.read_text()):
+        if not (p.parent/unquote(urlsplit(url).path)).is_file():
+            errors.append(f'{p.relative_to(root)}: missing module {url}')
+scene=root/'assets/griffin-scene.js'
+for url in re.findall(r"\.load\(['\"]([^'\"]+\.glb)['\"]",scene.read_text()):
+    if not (root/'alarm'/url).is_file():
+        errors.append(f'griffin-scene.js: missing original model {url}')
 if errors:
     print('\n'.join(errors));sys.exit(1)
 print(f'PASS: {len(pages)} HTML pages; local links, assets, fonts, CSP, metadata and image labels.')
