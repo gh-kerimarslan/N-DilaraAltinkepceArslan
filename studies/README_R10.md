@@ -14,3 +14,5 @@ blender -b --python scripts/render_reference_study.py -- final
 The first command needs numpy and scipy. The second uses Blender 4.3.2 and CPU Cycles. All inputs are existing assets in the repository. No image-generation service or paid model-generation request is used. The original body rig and its 16 clips are retained in the intermediate GLB; the extra relief plates in this still study have not yet been skinned. Procedural material detail and offline lighting need baking and performance validation before any website integration.
 
 The output blend and PNG are generated into studies/. Do not commit generated binaries to this source branch. The final PNG is delivered separately for visual review.
+
+Optional render finishing uses Intel Open Image Denoise 2.5.1, downloaded from the official RenderKit/oidn release. `scripts/denoise_reference_study.py --oidn /path/to/oidnDenoise` writes a separate Clean PNG; the original Cycles render is retained. Final output here used 1280 × 720 pixels and 384 maximum adaptive samples. This denoising step filters Monte Carlo noise and does not replace or synthesize the scene geometry.
