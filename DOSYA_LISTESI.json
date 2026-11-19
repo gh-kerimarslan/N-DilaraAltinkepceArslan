@@ -1,0 +1,3371 @@
+{
+  "version": "R03",
+  "date": "2026-11-19",
+  "files": [
+    {
+      "path": ".github/workflows/hourly-alarm.yml",
+      "bytes": 908,
+      "sha256": "5eb38367c88a750cd778c72c29aab1b06b36e4c863f40accfdb1b1e6884f076e"
+    },
+    {
+      "path": ".github/workflows/public-alarm-feeds.yml",
+      "bytes": 1034,
+      "sha256": "fadd8ba447909737b16091ae2094c0a58635932cfed0a555a52dbd770988f7a1"
+    },
+    {
+      "path": ".github/workflows/publish-site.yml",
+      "bytes": 1915,
+      "sha256": "f2a1457db5db718f6317d5d7d5fda9f8ba7c7e2c627e68d238adb67d3ffd25f7"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 114,
+      "sha256": "6425e0e88d6351305de90ec1db9c20807e6d11cfb9f27bf5c838310c6b701b3f"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "404.html",
+      "bytes": 4088,
+      "sha256": "0128c4c16d2e081d88fb7455a42e7d1fe60b9a2df8ae04c1f56174fb3d565f34"
+    },
+    {
+      "path": "BASLAT.bat",
+      "bytes": 50,
+      "sha256": "e652f3a04569e2f836de4704770b789d95f6023ec2f1af43c00b24d178c4ec86"
+    },
+    {
+      "path": "BASLAT.command",
+      "bytes": 237,
+      "sha256": "115cd4c61a3bdd11c1d5932fab181d41b84f9ce389c8bd150e18f4993caa132a"
+    },
+    {
+      "path": "BASLAT.py",
+      "bytes": 938,
+      "sha256": "50db8fe4502ba6e999b58c6a63b2e9222be92fdc196506553c170e42104e8c22"
+    },
+    {
+      "path": "CNAME",
+      "bytes": 26,
+      "sha256": "bfb7388c38b731ae6da8d5bad7b50fbc5cab00aa2c32eec5ddc45f9c6b0edecb"
+    },
+    {
+      "path": "ENV_Popup_Masaustu_Linkli.html",
+      "bytes": 3438,
+      "sha256": "4df945c1d43d5cf18231d9f6815ec2bd052a96f2576d1151228c9c55ffbf4e3d"
+    },
+    {
+      "path": "ENV_Popup_Mobil_Linkli.html",
+      "bytes": 3193,
+      "sha256": "53e4e76121fd1f26fce5287b817880e1aefaf85a014ce75fbab27994e8775f6e"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 1427,
+      "sha256": "78efd662dda210211a8c63fcfa251777a0dec68f1cf3f1a9924c3bac75f0bd82"
+    },
+    {
+      "path": "ONCE_OKU.txt",
+      "bytes": 2413,
+      "sha256": "b0834e64c07d3b9f3f99cd5a315cda38e0f3c824663221f6f977bdae4b1f3880"
+    },
+    {
+      "path": "PAKET_ICERIGI.txt",
+      "bytes": 284,
+      "sha256": "bcc0ecb07e1fc7e477143e4898153d5c9ac4ebb8874ea5de796a96cf03741510"
+    },
+    {
+      "path": "README_TR.md",
+      "bytes": 12829,
+      "sha256": "53c0b2ffc3e5ce5f35fba43451aa4596bcb08b82efb65f1752d912171f894905"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 2470,
+      "sha256": "52259aaa8625fa8ea7da5f5a67f81bdb4a0a30e128cbaf373df1ae0ef93d1157"
+    },
+    {
+      "path": "VALIDATION.json",
+      "bytes": 1029,
+      "sha256": "5e6a3f76dadcebfa5645dab09bae64da4518d41dda04ad91043d0086c560409b"
+    },
+    {
+      "path": "about.html",
+      "bytes": 7977,
+      "sha256": "063839e568a1e19b16bbf6067fa2fba476033d59b664448b1112c5747922ca8b"
+    },
+    {
+      "path": "alarm/INSTALLATION.md",
+      "bytes": 4981,
+      "sha256": "8eac32f04efadd59444679562e82f2ed8326c8201188bc93aaf0deb296fd2364"
+    },
+    {
+      "path": "alarm/channels.json",
+      "bytes": 2761,
+      "sha256": "043fd13dd8fb333f0a31aa05d47692e0e843dedff43823e1f6db3a9f284b2866"
+    },
+    {
+      "path": "alarm/cheetah.html",
+      "bytes": 4951,
+      "sha256": "ebb47e149fe2bbd319d9daadbc75325f2185ef6cee4683da464bc692826cb46a"
+    },
+    {
+      "path": "alarm/cockroach.html",
+      "bytes": 4953,
+      "sha256": "469a6edc60b059588cc71b3d0c33fb7858fb2f89d9c6582faa3bc0b58acfe927"
+    },
+    {
+      "path": "alarm/data/sources.json",
+      "bytes": 3502,
+      "sha256": "f3290d7af3d77ab34eb498ed1298efb25095b84b97968dcce0eac485a718b412"
+    },
+    {
+      "path": "alarm/data/status.json",
+      "bytes": 3377,
+      "sha256": "10e852238ee93c73a0009e2fbb683c120a3d83715d88b2c47f3084b8aa09d08b"
+    },
+    {
+      "path": "alarm/gorilla.html",
+      "bytes": 4998,
+      "sha256": "615251652a703ae58d4d014a4599d7d13d246902ea5218f86cb1069462d3dc89"
+    },
+    {
+      "path": "alarm/griffin.html",
+      "bytes": 2974,
+      "sha256": "ddcd24e66a695b65f49d5e7a389b343694b1010579a65d81b43650c529e24fd5"
+    },
+    {
+      "path": "alarm/history.html",
+      "bytes": 6532,
+      "sha256": "4a8916ccab9becbc083851e1f442be0875c2a97c7423dc234b3a39838e243e91"
+    },
+    {
+      "path": "alarm/images/cheetah.webp",
+      "bytes": 119938,
+      "sha256": "e52cc57c872db54c0176e8372e7485771c73550341dcf1caa06f19262ae753d5"
+    },
+    {
+      "path": "alarm/images/cockroach.webp",
+      "bytes": 117240,
+      "sha256": "4824600db04f1bb399d3b599566be26a27d23ab5e728e7536cb0d332fefa068a"
+    },
+    {
+      "path": "alarm/images/gorilla.webp",
+      "bytes": 139122,
+      "sha256": "e049f0aa0dbf168a05807920da4ffbf5ff4bcb0171e0048e7f10e7063428a9fe"
+    },
+    {
+      "path": "alarm/images/history/met-248696.webp",
+      "bytes": 19026,
+      "sha256": "9acadd16f2597369edb0aadd3aef709bc99a462c2f817e84448f4b3b7686b886"
+    },
+    {
+      "path": "alarm/images/history/met-324290.webp",
+      "bytes": 57450,
+      "sha256": "f8634c52556ca36b23433006d363b3e99f915011e9d9701f93db941106f08686"
+    },
+    {
+      "path": "alarm/images/moloch.webp",
+      "bytes": 127596,
+      "sha256": "98d444ca857d2ad40ed38676861ccf0268e15c5e41a7228b400f3f38924704cf"
+    },
+    {
+      "path": "alarm/images/raven.webp",
+      "bytes": 112420,
+      "sha256": "d45c9579c117b1cf07092a2797d5ea3b2902eee481b9840116a99770e420218a"
+    },
+    {
+      "path": "alarm/index.html",
+      "bytes": 8944,
+      "sha256": "cefaf525ea68c87d23dc48c48c07d04e976a10892811108f5d04b3378e7edde5"
+    },
+    {
+      "path": "alarm/models/griffin-original.glb",
+      "bytes": 3588316,
+      "sha256": "8ee1a20e00475147d060d19cb229b14405554007ba37e254eeba2481590fc2a5"
+    },
+    {
+      "path": "alarm/moloch.html",
+      "bytes": 4843,
+      "sha256": "c0dcdeea11eb8785054c39b4d60e6e46ca0a26639d504875f73ae4e3141a56cc"
+    },
+    {
+      "path": "alarm/raven.html",
+      "bytes": 4948,
+      "sha256": "711cb987d2abc5e5159bdace211d2d92064c7bfe187980215c6f6e95b0cf9f3a"
+    },
+    {
+      "path": "artworks-installations.html",
+      "bytes": 18185,
+      "sha256": "3d9c374060674895ecee3cb157c2ffe15311cdff9d0ac06333c9c3e2cb7e7291"
+    },
+    {
+      "path": "artworks-newmedia.html",
+      "bytes": 16617,
+      "sha256": "541b6e59d80f4e81371827547a69de89949238e6ad42db5fccf757a6ec543b08"
+    },
+    {
+      "path": "artworks-series.html",
+      "bytes": 7901,
+      "sha256": "26baf981780bb72f2f5a760f12f66082758c395617763558f3a7ba9b3e633dcb"
+    },
+    {
+      "path": "artworks.html",
+      "bytes": 10761,
+      "sha256": "0ffd30cd335180f3fc6e1e41b78ae0e99bf236da219637cd3041c40b248887c4"
+    },
+    {
+      "path": "assets/alarm.css",
+      "bytes": 8066,
+      "sha256": "2e11fe7d9da51f93f4d03c0be36d0a75d4765619c896cd401b95f53459a45f87"
+    },
+    {
+      "path": "assets/alarm.js",
+      "bytes": 9539,
+      "sha256": "b2bf5f9cb3c10e42f10853a1e4d9068b46c77943363a266870f78b5885495050"
+    },
+    {
+      "path": "assets/ambient-sound.js",
+      "bytes": 2501,
+      "sha256": "f11b6427691f078223f42e651bede6a56f07ac9a16b94cd1e5b778a49051e640"
+    },
+    {
+      "path": "assets/display.js",
+      "bytes": 1550,
+      "sha256": "afc8ddfa3ced8bad39ac9a911b56827a4d66c2ca64132476c9e7d257c611a122"
+    },
+    {
+      "path": "assets/exhibition.css",
+      "bytes": 9435,
+      "sha256": "b7a7a83f4e17c6ac596c6f0e6f035f44d1eb9261773b6811e55ec6fafb872487"
+    },
+    {
+      "path": "assets/fonts/FUTURA-NOTICE.txt",
+      "bytes": 263,
+      "sha256": "620be11c0a81f052c68af9f90eb8e452cc0a33c7e230c985bb46746b2f0300db"
+    },
+    {
+      "path": "assets/fonts/NIMBUS-LICENSE.txt",
+      "bytes": 52517,
+      "sha256": "1315a62758a603a3e6e87a79b8389563789c59c1740b9db8bc2b20e2e2145458"
+    },
+    {
+      "path": "assets/fonts/futura-bold.woff",
+      "bytes": 30936,
+      "sha256": "ac337452b6288ef6159d2c0ec71984ea3016ea97214d4f9b94fa1eafbec73480"
+    },
+    {
+      "path": "assets/fonts/futura-book.woff",
+      "bytes": 30164,
+      "sha256": "b88ef5fed2e66509e2c152bf7b79fcf23d26a57c9d7b2298d9e65b83ba55e87d"
+    },
+    {
+      "path": "assets/fonts/nimbus-bold.woff",
+      "bytes": 61092,
+      "sha256": "09de1c9ad816c7525013e4e097ba9fcbca5e3cf1856cbd9d9bb1a3953fae6574"
+    },
+    {
+      "path": "assets/fonts/nimbus-italic.woff",
+      "bytes": 72448,
+      "sha256": "88226c6c0385917a641fc72ee0af70285feeea56ea721f73d9f1a2c3a9a6ca3e"
+    },
+    {
+      "path": "assets/fonts/nimbus-regular.woff",
+      "bytes": 60912,
+      "sha256": "a2488f7c62be74852bf51d7d5517c091e2e2de246f5ce3dc6e78e463f5aa2d4a"
+    },
+    {
+      "path": "assets/griffin-scene.js",
+      "bytes": 9356,
+      "sha256": "346eeaf5c27d03af64236976e8263b41653a11f5a23aabbf94022f6c546dadba"
+    },
+    {
+      "path": "assets/history-scroll.js",
+      "bytes": 1464,
+      "sha256": "e817cde1175c49697e00792f025acf6c2c63c204dcc006871d3f9c48b2e5e493"
+    },
+    {
+      "path": "assets/home.js",
+      "bytes": 2028,
+      "sha256": "65b907581b224f959e7cccb0056ffe3848eca0d9314b8fd7410b3450c6de57bc"
+    },
+    {
+      "path": "assets/image-manifest.json",
+      "bytes": 43062,
+      "sha256": "c5860971e7b7a42f36d4fb8e4d26ae030d0dcd4d3839caa90ab533e99d27b68c"
+    },
+    {
+      "path": "assets/observation-feed.js",
+      "bytes": 2474,
+      "sha256": "58192677f24dc04b3db68aebd5f94f6b0b833acd7ec961d6e36bb568568829bd"
+    },
+    {
+      "path": "assets/pages/ENV_Popup_Masaustu_Linkli.css",
+      "bytes": 2363,
+      "sha256": "bd80b43701a614f9ebcc8df9631ca581fc5dad5fd4890b512f3081f6cb1e74f9"
+    },
+    {
+      "path": "assets/pages/ENV_Popup_Mobil_Linkli.css",
+      "bytes": 2655,
+      "sha256": "15c2809e28e0678b68ab1ba0d4b4136b6fa14f753759454959df3fa24d48ddb2"
+    },
+    {
+      "path": "assets/pages/about.css",
+      "bytes": 5787,
+      "sha256": "29ad1984e8397ad96268f289906507acc0ce1f7cd27829cd01b7fe2c88aada8f"
+    },
+    {
+      "path": "assets/pages/artworks-installations.css",
+      "bytes": 5790,
+      "sha256": "fb68767fad264e70c3ca45092a246321f4eadf3bd0d4a5a80b352722ee781602"
+    },
+    {
+      "path": "assets/pages/artworks-newmedia.css",
+      "bytes": 5790,
+      "sha256": "f1853f9760bbc40367496954e28b7db547aa13d466e35eef8eca77f7232a906d"
+    },
+    {
+      "path": "assets/pages/artworks-series.css",
+      "bytes": 4239,
+      "sha256": "40730d9212431dc245dba8e574b375b3f1a10cc943ec0afb119b56c6da88f79e"
+    },
+    {
+      "path": "assets/pages/artworks.css",
+      "bytes": 5346,
+      "sha256": "f1be8673b6dbabc18957e51b9439c72daa6896f8ba560205b0b68fe0985de80b"
+    },
+    {
+      "path": "assets/pages/exhibition-akbank.css",
+      "bytes": 4874,
+      "sha256": "acb1da75173ee28eb67b2772a62f9e850f850d15a9e533d0c39d3b6d309b8572"
+    },
+    {
+      "path": "assets/pages/exhibition-eart.css",
+      "bytes": 4872,
+      "sha256": "18b128cf0c48feb6bdc2a38ec4dedc367938089aabb7f54a602b26cc52d4964b"
+    },
+    {
+      "path": "assets/pages/exhibition-env.css",
+      "bytes": 5021,
+      "sha256": "7421a60c7a1b1cfb19fed82874aa96098fd0f951955c75f0d02a184e972436d3"
+    },
+    {
+      "path": "assets/pages/exhibition-exit.css",
+      "bytes": 4819,
+      "sha256": "fedfe13f27e4f1ecd0d19ee232ce56f32bafbe4a93247aee42a55bf7bafcd2a9"
+    },
+    {
+      "path": "assets/pages/exhibition-ortakmekik.css",
+      "bytes": 4832,
+      "sha256": "3d9aaf6d69db15026896776e7334e496b75c04f9c5fe3412a4ee44954beac180"
+    },
+    {
+      "path": "assets/pages/exhibition-re.css",
+      "bytes": 6880,
+      "sha256": "c134b6fe36f055c77e212cc3e8c8b0cce5ee6d8e7517163e7260a54870a66893"
+    },
+    {
+      "path": "assets/pages/exhibition-upcoming.css",
+      "bytes": 5276,
+      "sha256": "a84c561bba01ae88256214c5d197767dd15ac001e494079acf79d0cf2758c414"
+    },
+    {
+      "path": "assets/pages/exhibitions.css",
+      "bytes": 4439,
+      "sha256": "0933ad12c62ec5c658309d7f1f7688202ac04ee0f9fb6f641d417b261b7d86aa"
+    },
+    {
+      "path": "assets/pages/index.css",
+      "bytes": 3250,
+      "sha256": "06881af36f327620463b63e43614fe229fe29b31681af3001866046a11b77488"
+    },
+    {
+      "path": "assets/pages/selections.css",
+      "bytes": 8478,
+      "sha256": "4ac7930db240b279702389e3cad8eb36511fb648209d6c74b78f834f1d45d739"
+    },
+    {
+      "path": "assets/pages/series-griffin.css",
+      "bytes": 4282,
+      "sha256": "5397fecaf35eec2f90a333be67487c6d6902d1b7d7d4e9ebafd7de68eab189d0"
+    },
+    {
+      "path": "assets/pages/series-intestine.css",
+      "bytes": 4101,
+      "sha256": "266575a6b3dce3990b83e1d8783b7ae4a6cefc1af62c3bdd739eeaebaf59329b"
+    },
+    {
+      "path": "assets/pages/series-koy.css",
+      "bytes": 4270,
+      "sha256": "bc2ce29d8ecb97abf84f197f9b98e1aa86a8866dbdc97d767c40f69da6271282"
+    },
+    {
+      "path": "assets/pages/series-polaroid.css",
+      "bytes": 4102,
+      "sha256": "75b2e9bc2a9e3d1c2ff0900ec6c5ee1f145315b027478cff194ce604fb0844aa"
+    },
+    {
+      "path": "assets/pages/series-ritual.css",
+      "bytes": 5535,
+      "sha256": "4e58464695230cd8b2e55acee77728d59a25eb7ca82b79ab9f9e50424d430b2c"
+    },
+    {
+      "path": "assets/site-config.json",
+      "bytes": 109,
+      "sha256": "1556ece82143362b431f6b1c7aab4c41892907f959037300957c3ab67b62f25e"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 10885,
+      "sha256": "42df630833ebee470dab4744a47a6052e318558f444174ede65ab3625e5f7732"
+    },
+    {
+      "path": "assets/site.js",
+      "bytes": 3440,
+      "sha256": "17541b285a7e6173ebe1f8edc330071a4751e8fd7a9fa051d3976e672df51fac"
+    },
+    {
+      "path": "assets/vendor/BufferGeometryUtils.js",
+      "bytes": 14135,
+      "sha256": "dcb4f6c0c28a8fe9c8456ea085c41599d56c04e9f647dac3caa1f4c516dcebfe"
+    },
+    {
+      "path": "assets/vendor/GLTFLoader.js",
+      "bytes": 46555,
+      "sha256": "536defcb48f5b56643d72ede58b868acd61491dfabcc1b1b4c579936bd08c2ea"
+    },
+    {
+      "path": "assets/vendor/MarchingCubes.js",
+      "bytes": 40424,
+      "sha256": "f22973b54d1476a9d5e423a3e58ec33f03d2a720cf371f8efc9cd6ecbdee8a8a"
+    },
+    {
+      "path": "assets/vendor/OrbitControls.js",
+      "bytes": 40934,
+      "sha256": "d942d2dab8dd5237e05ea5809fd0ecd309077f0b98d3498908b4366d26107bc1"
+    },
+    {
+      "path": "assets/vendor/RoomEnvironment.js",
+      "bytes": 4976,
+      "sha256": "b0b99e33f989c48392d1dbc1d4272d22937bc17949299ffbad6c38b1c427a1f0"
+    },
+    {
+      "path": "assets/vendor/SkeletonUtils.js",
+      "bytes": 11551,
+      "sha256": "d5fc069c345d2eb93b5f93da485c75135000e50965e71ed12d4bdc3cfe9c9144"
+    },
+    {
+      "path": "assets/vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "assets/vendor/three.core.min.js",
+      "bytes": 395485,
+      "sha256": "b9c27899329d4733334570329d070e93cbbb1aadbabd05075726c7c886c88739"
+    },
+    {
+      "path": "assets/vendor/three.module.min.js",
+      "bytes": 374559,
+      "sha256": "6b5c92fa827ec21fc9cbcd0a54ff5fd153bd90e86d7ce9bbea9bd9c29ec95468"
+    },
+    {
+      "path": "backend/.dockerignore",
+      "bytes": 59,
+      "sha256": "5ba1e5858869c8d20cc6c7dabeb695a78e268ddbe23712b0ec26f541401790c0"
+    },
+    {
+      "path": "backend/Dockerfile",
+      "bytes": 319,
+      "sha256": "07e781a35545a7ad121c1b7342abebb1ae375a19d293a5221a918e340a016b00"
+    },
+    {
+      "path": "backend/channels.example.json",
+      "bytes": 1820,
+      "sha256": "675d78cf628798b11fad8c3fbf4c42702a0c210491f5ee7d8e5b2ee7627d93c3"
+    },
+    {
+      "path": "backend/gunicorn.conf.py",
+      "bytes": 285,
+      "sha256": "28c5a48d280bf473562442fb12fa311bdb1df3a3fddc65c656e3392c1a8f9273"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "bytes": 17,
+      "sha256": "f0962c42e3f87f0d4e77779c4c06314b9018f81f93d70e475f39842ea6667696"
+    },
+    {
+      "path": "backend/server.py",
+      "bytes": 7774,
+      "sha256": "1d81b050be16cef9cd9eb299f24823894e8aed6617088ec756bb65fc3536ad81"
+    },
+    {
+      "path": "backend/test_server.py",
+      "bytes": 3737,
+      "sha256": "9877f61f66e9251aa4c8896d0bdd9964d3c4b426f860421157773c0251087126"
+    },
+    {
+      "path": "exhibition-akbank.html",
+      "bytes": 8671,
+      "sha256": "8bb198e0782e42e8a3e84d5da0829e6d07474a129c3d3d93c7f03dfd26a2b99e"
+    },
+    {
+      "path": "exhibition-eart.html",
+      "bytes": 7859,
+      "sha256": "699f922051ba571bbaae5e96fdfda13c0e0c4b084a82128786f800b72a9ae2be"
+    },
+    {
+      "path": "exhibition-env.html",
+      "bytes": 13258,
+      "sha256": "f862ef8edbe42c03374402084598e24b9b155044650aada799862c0a3dc7fe4e"
+    },
+    {
+      "path": "exhibition-exit.html",
+      "bytes": 7940,
+      "sha256": "8a633ac7f1d1b1f85f95a4bc010e91f761b80c32d3c1e8a2d968fb20662200ec"
+    },
+    {
+      "path": "exhibition-ortakmekik.html",
+      "bytes": 8148,
+      "sha256": "419d65881e935f29ae70698f7751fdcdd8946973ed03dcce5068f33c4dbfa4e2"
+    },
+    {
+      "path": "exhibition-re.html",
+      "bytes": 17124,
+      "sha256": "eb6fcd018233679e39db97a0b4cbd4f9dbf3dc37fd151789d078ba8876381ccf"
+    },
+    {
+      "path": "exhibition-upcoming.html",
+      "bytes": 6960,
+      "sha256": "043534fff53a91730fd4ba02678e80c2ab9502f16ba00ea4754292e9ad4fcc64"
+    },
+    {
+      "path": "exhibitions.html",
+      "bytes": 21951,
+      "sha256": "ccfefa87f792882c7f2d5ea33002067226292c7e78f462b46b9b85ce10164d31"
+    },
+    {
+      "path": "footer.html",
+      "bytes": 1492,
+      "sha256": "e9e9d0cde493ba3140c3f805e2089431bebbcae75a60c52e5b6d3c4718fa62ad"
+    },
+    {
+      "path": "header.html",
+      "bytes": 927,
+      "sha256": "f16b9f8cc91c7085a512a581ee2e646ac0eacb69ed5b67c327670bdb5ee1a5c4"
+    },
+    {
+      "path": "images/01-banner-daa-re-overcome-01.jpg",
+      "bytes": 865166,
+      "sha256": "6868c5aabc63834b801fc748bf48f91cd2a8dfcdeb794ac043e5f5ed242a54f6"
+    },
+    {
+      "path": "images/02-banner-daa-grand-ritual-01.jpg",
+      "bytes": 1087263,
+      "sha256": "e649ca20b68919a00926d6af72422af5e9dc37cc89809c7b3dcc09c3b611e8c7"
+    },
+    {
+      "path": "images/03-banner-daa-noise-alarm-01.jpg",
+      "bytes": 1096904,
+      "sha256": "35729dd5682052e630ff87b8094ba7cf3b5a0bd707d4d569a0479cf5ef1285d4"
+    },
+    {
+      "path": "images/04-banner-daa-ortakmekik-verbasci-01.jpg",
+      "bytes": 1344251,
+      "sha256": "0c488570e87e0d80b6b644c53ae464bb31bc1bd43eca8643ee8de0e9ba7c8680"
+    },
+    {
+      "path": "images/05-banner-daa-artweeks-01.jpg",
+      "bytes": 806085,
+      "sha256": "c8af57011b7497707a1327358539c5ef22330b470fbbd97dc34ccd4ac316fa5e"
+    },
+    {
+      "path": "images/06-banner-daa-nevmekan-01.jpg",
+      "bytes": 930864,
+      "sha256": "ce784e9a843aea99cc48bdd0992917ffcb4b1614a0d1aaaa0dedb5a1b77ec737"
+    },
+    {
+      "path": "images/DAA-2021-Wish-01.jpg",
+      "bytes": 3189108,
+      "sha256": "ee4ed39afce9fe28af91e70d98286cc6f059cce01a5aaf477b52643020983b2f"
+    },
+    {
+      "path": "images/DAA-2021-Wish-02.jpg",
+      "bytes": 2372417,
+      "sha256": "3def99bb883e499f5ba05a8bdb0c2c20ef77eeb3c13e40b79db71dc4a410dc18"
+    },
+    {
+      "path": "images/DAA-2022-Grifon-01.jpg",
+      "bytes": 1455142,
+      "sha256": "49fbc6e5909ba4fb2f24a73603be4e9ae2d62601902e40729f02e8d215854109"
+    },
+    {
+      "path": "images/DAA-2022-Grifon-02.jpg",
+      "bytes": 2119741,
+      "sha256": "770e095777aebbfcabd489814cb3e40f6abe83d90d2832f1b7c5961336c1c236"
+    },
+    {
+      "path": "images/DAA-2022-Grifon-03.jpg",
+      "bytes": 1694594,
+      "sha256": "2666bd95f64caf048fdd8ffcc7f8d75ff44f673d9cb2bf9d51b9cb5120a784c2"
+    },
+    {
+      "path": "images/DAA-2022-Grifon-04.jpg",
+      "bytes": 5246279,
+      "sha256": "20f40df9f306066f11996f3c9b418b35a59624c267c0569d6102c0d999281e7c"
+    },
+    {
+      "path": "images/DAA-2022-Holistic-01.jpg",
+      "bytes": 2033741,
+      "sha256": "46cd617d61ad76cda7fb13d8a71208fac9b6b64a742613b593d78fe8a17ccfa3"
+    },
+    {
+      "path": "images/DAA-2022-Holistic-02.jpg",
+      "bytes": 1413541,
+      "sha256": "a622aaa3eec1ca08065dbb1595bfafb2a6f56ae9396c958b0325494bf49e34ae"
+    },
+    {
+      "path": "images/DAA-2022-Loop-01.jpg",
+      "bytes": 301760,
+      "sha256": "d08ffb56e6c66d65f9e23485214e046d70626a3b29ca311878c82c9052c82c55"
+    },
+    {
+      "path": "images/DAA-2022-Loop-02.jpg",
+      "bytes": 381318,
+      "sha256": "ba0236ffdc4cbe53443dc8301344af17647dea8281a51be51c5951f2a5ab312c"
+    },
+    {
+      "path": "images/DAA-2022-Loop-03.jpg",
+      "bytes": 775556,
+      "sha256": "0dee3621abd4618436dbdea6ace15095c979a10dce9c8d67cd761ffde32cdae5"
+    },
+    {
+      "path": "images/DAA-2022-Loop-04.jpg",
+      "bytes": 473562,
+      "sha256": "0e44b6f99576d7cae8b4741ac09484d388e04409d5d315c2bc0d24f70ed3c4c1"
+    },
+    {
+      "path": "images/DAA-2022-Rituel-01.jpg",
+      "bytes": 1502368,
+      "sha256": "473adff646281cac14742606a7b0fdbe50f8350e0ede3bacfbe25a43a23fb84e"
+    },
+    {
+      "path": "images/DAA-2022-Rituel-02.jpg",
+      "bytes": 2220202,
+      "sha256": "9f56f1b93231893ee2da6a15025c2ae504957a94d3317c3fc34cea00e5f4b108"
+    },
+    {
+      "path": "images/DAA-2022-Rituel-03.jpg",
+      "bytes": 2094919,
+      "sha256": "8f5d167e86bd180c93212c072451a89ef4c2f9b3b2eff6771c3e2d3dc8202600"
+    },
+    {
+      "path": "images/DAA-2022-Secure-Network-01.jpg",
+      "bytes": 1633498,
+      "sha256": "68b16a1520f2968d4dc9693ad83c691e86b400c2216861f7aaf2d8bb39fe7940"
+    },
+    {
+      "path": "images/DAA-2022-Secure-Network-02.jpg",
+      "bytes": 1514428,
+      "sha256": "223c431b037a1a001e96a80bb73070bd14ec26b2a937da00eba4759cc64a7e4a"
+    },
+    {
+      "path": "images/DAA-2022-Secure-Network-03.jpg",
+      "bytes": 1241143,
+      "sha256": "5540f7b12908bda8f1453bf88b87f8532236eb3f3f8b16cd261f10bfa6247644"
+    },
+    {
+      "path": "images/DAA-2023-Echo-01.jpg",
+      "bytes": 2998876,
+      "sha256": "f86bf7b31c2b33a0df5497f6adb2066316179cf1393e8785d9eb81248706ab2e"
+    },
+    {
+      "path": "images/DAA-2023-Echo-02.jpg",
+      "bytes": 2874559,
+      "sha256": "338076c2bbd05ed8c801e7a51f3c0b82d460b2cb63158ec387509190685a33ae"
+    },
+    {
+      "path": "images/DAA-2023-Grifon-01.jpg",
+      "bytes": 1195709,
+      "sha256": "6e252bbe7a9e756785c34d569bbc8564eafa1987b4968ce73e4b47e12099a836"
+    },
+    {
+      "path": "images/DAA-2023-Grifon-02.jpg",
+      "bytes": 1451489,
+      "sha256": "b946a9e84b65f7aa49525b99a99efb13d8888618e3bd328ade22554c7e5b0b74"
+    },
+    {
+      "path": "images/DAA-2023-Grifon-03.jpg",
+      "bytes": 3609042,
+      "sha256": "194ecc31fe0ebdd4d6bfafe03c2dcb04327951809643d051cfd2e36e479d7b21"
+    },
+    {
+      "path": "images/DAA-2023-Intestine-01.jpg",
+      "bytes": 779826,
+      "sha256": "cac68c2de1de6c78be5e876d742299f71b34812808fc644fc56a46df03f14cb1"
+    },
+    {
+      "path": "images/DAA-2023-Intestine-02.jpg",
+      "bytes": 1100638,
+      "sha256": "355233c5a0432ac7337c3c79125c55a7985044d55cf58f5f1885186f4df14957"
+    },
+    {
+      "path": "images/DAA-2023-PazarykMaidan-VR-01.jpg",
+      "bytes": 684018,
+      "sha256": "91ff759f7a0a4fa1a51155be9617a8dfc35591508b2634db587b8468d5561a41"
+    },
+    {
+      "path": "images/DAA-2023-PazarykMaidan-VR-02.jpg",
+      "bytes": 745773,
+      "sha256": "96fd76a2d7a1ae011ca631fcfcfca7bd3ae3e43ab0e8407f798f5699ceb3976e"
+    },
+    {
+      "path": "images/DAA-2023-PazarykMaidan-VR-03.jpg",
+      "bytes": 2470861,
+      "sha256": "7e1df308791a3bd9546e87771bc10eb30e63edb6eb7d421f9e1be4399d06b5a1"
+    },
+    {
+      "path": "images/DAA-2023-PazarykMaidan-VR-04.jpg",
+      "bytes": 1085471,
+      "sha256": "e1f4b45447c71fd085c4e2eb7c4bd62df0ac67f0b30f268ed8a7e0139ac6ae99"
+    },
+    {
+      "path": "images/DAA-2023-PazarykMaidan-VR-07.jpg",
+      "bytes": 752397,
+      "sha256": "f4738452e1ff472656e87ba551c3fea61e3f1e639996d7aa78cf2540518f61aa"
+    },
+    {
+      "path": "images/DAA-2023-TheGrandRitual-01.jpg",
+      "bytes": 2420384,
+      "sha256": "3ff335f4e7bcf6b9781d21ec5b48b7fc8b333456eae3b8121841a4946e1aa9ab"
+    },
+    {
+      "path": "images/DAA-2023-TheGrandRitual-02.jpg",
+      "bytes": 578072,
+      "sha256": "6ca6e048cf0ab291509b97ee03a661ff1890f905eb5639cbfebbe5fdc1897779"
+    },
+    {
+      "path": "images/DAA-2023-TheGrandRitual-03.jpg",
+      "bytes": 679443,
+      "sha256": "b2bbabcda8930052622390c0d9894da3f54dfe53bc1f8d0bb2bf46d5e47f7d3c"
+    },
+    {
+      "path": "images/DAA-2023-TheGrandRitual-04.jpg",
+      "bytes": 596689,
+      "sha256": "de0be5ded47065cbd769c0b5f0dc74210b76191add4c012a7618d2640837686d"
+    },
+    {
+      "path": "images/DAA-2023-Verbasci-01.jpg",
+      "bytes": 1418630,
+      "sha256": "c377ca924deb6c000df5ecf53915324945a3fffab1feaf7ff988eb5d2a23be26"
+    },
+    {
+      "path": "images/DAA-2023-Verbasci-02.jpg",
+      "bytes": 984228,
+      "sha256": "bf60cb462591b154b34d09f32dcd66e7e743e09ec1b451414a2b77316976619a"
+    },
+    {
+      "path": "images/DAA-2023-Verbasci-03.jpg",
+      "bytes": 1730465,
+      "sha256": "63c23513a79b9203b2ddf5fd774a20fc139b695ac161f32704e32cd3188d639b"
+    },
+    {
+      "path": "images/DAA-2024-BASE.jpg",
+      "bytes": 1710092,
+      "sha256": "ebe023531a35f39dd3f724350f990fa44ea8fb77cd93679d05a138f3bde4d918"
+    },
+    {
+      "path": "images/DAA-2024-Intestine-II-01.jpg",
+      "bytes": 810665,
+      "sha256": "043e9457998427478f630bd4a103efdfc94de92443c81e1188c6f6a22cfe73a1"
+    },
+    {
+      "path": "images/DAA-2024-Intestine-II-02.jpg",
+      "bytes": 1823564,
+      "sha256": "b511a041d32e4ae9d858cf215c75d5c5aeafc6fcdc4006d499c6fa755d4c42d1"
+    },
+    {
+      "path": "images/DAA-2024-Portal-01.jpg",
+      "bytes": 1673196,
+      "sha256": "a72df5e81647f5e5047837b1988967920b3ab83de6e7502053beb826c6a5e9cd"
+    },
+    {
+      "path": "images/DAA-2024-Portal-02.jpg",
+      "bytes": 3514970,
+      "sha256": "00ee852675a126cccf219ed107dbb6987521dbeb4ecb1885d888b2e449cbc3c5"
+    },
+    {
+      "path": "images/DAA-2024-Portal-Beyond-01.jpg",
+      "bytes": 2869014,
+      "sha256": "16707256b9eef73df01222a338a105d9f21b69702d5ae21b020d14c16767e5c0"
+    },
+    {
+      "path": "images/DAA-2024-Portal-Beyond-02.jpg",
+      "bytes": 5166036,
+      "sha256": "056662c838aad176788a4769f39ae194c51bb3392f53dbecd215dc61aef1b707"
+    },
+    {
+      "path": "images/DAA-2024-Portal-Beyond-03.jpg",
+      "bytes": 2907290,
+      "sha256": "f38bce1fbaba57c834391486dbdf1d6560c3d0e38580010101ed9b79e05d928e"
+    },
+    {
+      "path": "images/DAA-2024-RE-Ascension-01.jpg",
+      "bytes": 3562914,
+      "sha256": "913312ba283fb5d81b8dc29ca162140decd021e493e1b43c0478397a0313d0f5"
+    },
+    {
+      "path": "images/DAA-2024-RE-Ascension-02.jpg",
+      "bytes": 2386231,
+      "sha256": "18258b2a47128473b598237fce4dd0486edba838d6be365748c9e239e532a8f2"
+    },
+    {
+      "path": "images/DAA-2024-RE-Ascension-03.jpg",
+      "bytes": 1842832,
+      "sha256": "2d7162c45f86afe54373459817272660255a2c6cad568aa214789c957042d0d9"
+    },
+    {
+      "path": "images/DAA-2024-RE-BalladofRoad-01.jpg",
+      "bytes": 2132846,
+      "sha256": "6ffdcf4eef50e42236aa978a7794aa4e1972fc8a379ce4489fbd68c4aadab306"
+    },
+    {
+      "path": "images/DAA-2024-RE-BalladofRoad-02.jpg",
+      "bytes": 3230248,
+      "sha256": "76b40b65bc7df67764bd390127e2b20ea40c38b0e157defb8ad342e25b80bd33"
+    },
+    {
+      "path": "images/DAA-2024-RE-BalladofRoad-03.jpg",
+      "bytes": 2046032,
+      "sha256": "a68ddbaff2c93668d6dbaff9e466f8eac2c6fb2c43baf721e52b900917807fe2"
+    },
+    {
+      "path": "images/DAA-2024-RE-BalladofRoad-04.jpg",
+      "bytes": 1863226,
+      "sha256": "124efd873626e63542ca020dee0e93c66453d0bd0bef7527797826e7a82bb482"
+    },
+    {
+      "path": "images/DAA-2024-RE-BalladofRoad-05.jpg",
+      "bytes": 2822837,
+      "sha256": "a1eb5519c670ccd7a141b65219fa98c90cc4c8e52a535049d34078cee7f70151"
+    },
+    {
+      "path": "images/DAA-2024-RE-DurgasVisit-01.jpg",
+      "bytes": 1480972,
+      "sha256": "d39a72881695fbdfd496fb42c00037197a4ef532b466610c3404a528ca02bd83"
+    },
+    {
+      "path": "images/DAA-2024-RE-DurgasVisit-02.jpg",
+      "bytes": 2455464,
+      "sha256": "b70230bd487f1b914fd393b84ac95f03e0f17d4a57a8e41110eb76d756b93cf2"
+    },
+    {
+      "path": "images/DAA-2024-RE-DurgasVisit-04.jpg",
+      "bytes": 2503566,
+      "sha256": "6dd27669d34530bde27d7e47c507ed76af6a2c042e41df4343b4e028285c82e3"
+    },
+    {
+      "path": "images/DAA-2024-RE-FlagUprising-01.jpg",
+      "bytes": 2768847,
+      "sha256": "438932c2359195189ea19ddfa4575e389fe08ab6fd9a6bc2a6e01ec76638ae5b"
+    },
+    {
+      "path": "images/DAA-2024-RE-FlagUprising-02.jpg",
+      "bytes": 2197800,
+      "sha256": "ca4218e9f37983f33b6457905bf160bc4ac6fcf6922a355eed5a1fb92e2b5d04"
+    },
+    {
+      "path": "images/DAA-2024-RE-FlagUprising-03.jpg",
+      "bytes": 2886732,
+      "sha256": "e5153b10b3b0938858ed1a261f9d382a67a8499bc301612725f5e8880b45a3a9"
+    },
+    {
+      "path": "images/DAA-2024-RE-Hidirellez-01.jpg",
+      "bytes": 1355474,
+      "sha256": "7a0d5f392b39c8279a1988ddf167537f3fc5a947c6ca70799dac5c7fbc8f62ea"
+    },
+    {
+      "path": "images/DAA-2024-RE-Hidirellez-02.jpg",
+      "bytes": 2022476,
+      "sha256": "8d2c6e553d9f8e398dd47ca02352375e3ee2e233fac7e8d8f94d49f36b99d2e9"
+    },
+    {
+      "path": "images/DAA-2024-RE-Hidirellez-05.jpg",
+      "bytes": 2431431,
+      "sha256": "12b9a30b8527f4db70f206e88160a3a341944f78206d1c6625ae973d3affd83f"
+    },
+    {
+      "path": "images/DAA-2024-RE-ID-01.jpg",
+      "bytes": 3809015,
+      "sha256": "6628da6d2da3dbdb65f7feff253b33be2a4644a5cab1cd334fa084649bb9db38"
+    },
+    {
+      "path": "images/DAA-2024-RE-ID-02.jpg",
+      "bytes": 1181430,
+      "sha256": "62f15861143f35c015fc7458fb2013e0343e622579b574754360acc36350ef78"
+    },
+    {
+      "path": "images/DAA-2024-RE-ID-03.jpg",
+      "bytes": 771856,
+      "sha256": "38d1bb1735d3cf74a06a5abd178a7c17f632275d7590b4ec55ef5563db49dc64"
+    },
+    {
+      "path": "images/DAA-2024-RE-MessageFrom-01.jpg",
+      "bytes": 1059190,
+      "sha256": "a1281c7211b5605bb2765e35ffdd93fda96e6f88711de3dd1f185b69a0c12394"
+    },
+    {
+      "path": "images/DAA-2024-RE-MessageFrom-02.jpg",
+      "bytes": 2323504,
+      "sha256": "5c0f6d4a19d07f5953ba27773544126a378b154bd596befe22e2c1ba42496f06"
+    },
+    {
+      "path": "images/DAA-2024-RE-MessageFrom-03.jpg",
+      "bytes": 2092142,
+      "sha256": "b0080e302a591fadd440e42675fb674c055d1ffdd125aa00282ff07174d76e6e"
+    },
+    {
+      "path": "images/DAA-2024-RE-MessageFrom-04.jpg",
+      "bytes": 1117529,
+      "sha256": "8028e52070fb91e8d977657f46c413441ed966f7c8ffc9d4e31b109ffa0f02ff"
+    },
+    {
+      "path": "images/DAA-2024-RE-Muted-01.jpg",
+      "bytes": 2776542,
+      "sha256": "7cbe2f25e624dd47e6a64626c36b74d26cc52e928cb5778e05c320a720d60fce"
+    },
+    {
+      "path": "images/DAA-2024-RE-Muted-02.jpg",
+      "bytes": 2085386,
+      "sha256": "a6674e0851cabb52c0582f3c5ed76615ed376e6d3d5ba0b93b80f05216ac581d"
+    },
+    {
+      "path": "images/DAA-2024-RE-Muted-03.jpg",
+      "bytes": 2886732,
+      "sha256": "09be80a1552f0310a618a24e594bb6af69192432e9af7a41c7cdb23321094ebb"
+    },
+    {
+      "path": "images/DAA-2024-RE-Overcome-01.jpg",
+      "bytes": 2764353,
+      "sha256": "0284addf8f3695b3dbdfac7181f8145668e4eab3bde08964435ab66dfdc078a6"
+    },
+    {
+      "path": "images/DAA-2024-RE-Overcome-02.jpg",
+      "bytes": 2111335,
+      "sha256": "5f5e9d73ae8cb780be6a9f87363292299d4dd2b4139ba14399a4e9ad7a983046"
+    },
+    {
+      "path": "images/DAA-2024-RE-Overcome-03.jpg",
+      "bytes": 2250311,
+      "sha256": "b506600538b59539fc34f82959e61f4d15bab035572559edd15904d5c42758fc"
+    },
+    {
+      "path": "images/DAA-2024-RE-Overcome-04.jpg",
+      "bytes": 2346929,
+      "sha256": "723ae4a68be9918cf24132b27915c76aa3a4b7f74f287e6c8fea55bebad88737"
+    },
+    {
+      "path": "images/DAA-2024-RE-Overcome-05.jpg",
+      "bytes": 2504455,
+      "sha256": "d76be819ad65d7d2ca2ff52637f4a2ec89f312b6612b257d82a3ddcdb087dc1f"
+    },
+    {
+      "path": "images/DAA-2024-RE-Overcome-06.jpg",
+      "bytes": 2072648,
+      "sha256": "0c631d95e53f04ac63e47bded3ecd9f0f727acc6b585d0cbfd5120bc1e4bef87"
+    },
+    {
+      "path": "images/DAA-2024-RE-ShamanVillage-01.jpg",
+      "bytes": 1837500,
+      "sha256": "5b68dd94ee430ddda43e84b7adde841a35516793b6c7b17cdd01ea3c8c2d837d"
+    },
+    {
+      "path": "images/DAA-2024-RE-ShamanVillage-02.jpg",
+      "bytes": 2096088,
+      "sha256": "5ff2adef57efdea1d78edc8d09548fd80c4438c3c1b9ec2f5f5ead9f07f26ade"
+    },
+    {
+      "path": "images/DAA-2024-RE-ShamanVillage-03.jpg",
+      "bytes": 3698563,
+      "sha256": "e2d8a137e008f33f2119ac11d65ac3b10349f1853dd511ae74ff343671108216"
+    },
+    {
+      "path": "images/DAA-2024-RE-TheUprising-01.jpg",
+      "bytes": 2612705,
+      "sha256": "29c1b89b200a323472f45809125820623f900acca84d3261b4368baac27d275e"
+    },
+    {
+      "path": "images/DAA-2024-RE-TheUprising-02.jpg",
+      "bytes": 2224966,
+      "sha256": "435a6d521ee7e8e5502278d6dad1d7124f022987df17cb3f35971fe9b291d67e"
+    },
+    {
+      "path": "images/DAA-2024-RE-TheUprising-03.jpg",
+      "bytes": 2886732,
+      "sha256": "96fed81ccd3e31978af4bd61cd173df88760a2c3b6bf9ea80030055312028aff"
+    },
+    {
+      "path": "images/DAA-2024-RE-Unanswered-01.jpg",
+      "bytes": 2508522,
+      "sha256": "f75827e0d3f7b03c28afd0180ca2dd35d487a644f33464b36028dec6d2def780"
+    },
+    {
+      "path": "images/DAA-2024-RE-Unanswered-02.jpg",
+      "bytes": 2377817,
+      "sha256": "fac7d0c6cea5a7d0b2d520ae26edc58486e1241713db9ddefeaa78d20b7e0d38"
+    },
+    {
+      "path": "images/DAA-2024-RE-Unanswered-03.jpg",
+      "bytes": 2403978,
+      "sha256": "1a25e578de0602e8528e4860a6ca151d4a168f489de31dca39bfaed4a4faa833"
+    },
+    {
+      "path": "images/DAA-2024-RE-improbable-01.jpg",
+      "bytes": 2188165,
+      "sha256": "61af31e6a32ac6105fbf1c74b9de2d144a3e57f5fa5881be9530fbc11fc02968"
+    },
+    {
+      "path": "images/DAA-2024-RE-improbable-02.jpg",
+      "bytes": 2207581,
+      "sha256": "89c902de15caa4e8ae4e25df1f099b0560f7eda861de07b3c719a9b08cad0e25"
+    },
+    {
+      "path": "images/DAA-2024-RE-improbable-03.jpg",
+      "bytes": 2886732,
+      "sha256": "c2ab944e293a7513ff153cc19d658007e765fb3a3794ab3035fe0b29e0ca666b"
+    },
+    {
+      "path": "images/DAA-2024-RE-inquiry-01.jpg",
+      "bytes": 2737839,
+      "sha256": "fc94e9177e25c8774693232d25ef673102fcbdd45c5bc3f6741810246026b303"
+    },
+    {
+      "path": "images/DAA-2024-RE-inquiry-02.jpg",
+      "bytes": 2886732,
+      "sha256": "ff50fdf6afd5674c30918c3063cb8fb3a04cef414b40bd5ca5ff26e80bf779a4"
+    },
+    {
+      "path": "images/DAA-2024-Ritual-II-01.jpg",
+      "bytes": 1990529,
+      "sha256": "f2fad429304483470febcdf24567afa97b9345a403d69f8bbc5303c53647b024"
+    },
+    {
+      "path": "images/DAA-2024-Ritual-II-02.jpg",
+      "bytes": 2417329,
+      "sha256": "13d9a8c2badb2a0548960240c82e979ad2d880b63f09256a7f2cff148bba138d"
+    },
+    {
+      "path": "images/DAA-2024-Ritual-II-03.jpg",
+      "bytes": 1852765,
+      "sha256": "2830dd8a74a22210875574a050856be8988ae57c6acdf900735bd8e792646611"
+    },
+    {
+      "path": "images/DAA-2024-Tunnel-01.jpg",
+      "bytes": 1005359,
+      "sha256": "6be2179e2743b0682f129f326730fe125254d70dbe1397096c0199f382fbae01"
+    },
+    {
+      "path": "images/DAA-2024-Tunnel-02.jpg",
+      "bytes": 950909,
+      "sha256": "d99623b8d2c52b25e950eddc4d37a36320d87f006e3f00823b58c9b57d6304b2"
+    },
+    {
+      "path": "images/DAA-2024-Tunnel-03.jpg",
+      "bytes": 2157812,
+      "sha256": "b60784aa1f52b59d583b0bf2fb8e1e64b9827c61d738d7f59fb9cb8de6cb0079"
+    },
+    {
+      "path": "images/DAA-2024-WE-01.jpg",
+      "bytes": 1993172,
+      "sha256": "abbe79f9c91917c552caa1ad81cc6cb17b946ca443fd6ef241b6d835c4009b08"
+    },
+    {
+      "path": "images/DAA-2024-WE-03.jpg",
+      "bytes": 1323992,
+      "sha256": "fe26e7bfb7b14ce4adc308c857eb7d982e6f7ba71a73de976642ef43f72989ca"
+    },
+    {
+      "path": "images/DAA-2025-Grifon-01.jpg",
+      "bytes": 4333194,
+      "sha256": "37a2c741b7ea2aed55c1e1298f36be87fc3a3c3cee0e62e23bf16cd43e3ce82f"
+    },
+    {
+      "path": "images/DAA-2025-Grifon-02.jpg",
+      "bytes": 1595987,
+      "sha256": "9a144d5e698343bc1fb6aa01d811319aaa02684bb84be3494d68949b841a9ebb"
+    },
+    {
+      "path": "images/DAA-2025-Grifon-03.jpg",
+      "bytes": 1846524,
+      "sha256": "3ec6c1dbde64fda9db9a91e24b76749fa8299fe46585a705300f396a95bbe77f"
+    },
+    {
+      "path": "images/DAA-2025-NoiseMedaiArt-Alarm-01.jpg",
+      "bytes": 2958583,
+      "sha256": "f13818133caa256fb43a1ee0fe6df1004e2243d0874b4bc76163991a38674c9c"
+    },
+    {
+      "path": "images/DAA-2025-NoiseMedaiArt-Alarm-banner.jpg",
+      "bytes": 2087616,
+      "sha256": "a2429b31c82deb844e3181ca0ecdad83ad8a8a8810ad919c118b18552237c5ff"
+    },
+    {
+      "path": "images/DAA-2025-ShamanVillage-II-01.jpg",
+      "bytes": 1692928,
+      "sha256": "736c277f7caa7cbe4a679cbfbbd695e7880e0b90423ff109ef10bbc99ca03c99"
+    },
+    {
+      "path": "images/DAA-2025-ShamanVillage-II-02.jpg",
+      "bytes": 2431973,
+      "sha256": "e777d35feb702344c06a33fe06ab7184bb2a4d81b54d8719b6369d0878f29b60"
+    },
+    {
+      "path": "images/DAA-2025-ShamanVillage-II-03.jpg",
+      "bytes": 1718910,
+      "sha256": "4a50a9a5a7dba7aac23da8e5e2429629d858fb6ca073dc93aa4747e6d8e874c2"
+    },
+    {
+      "path": "images/DAA-ENV-BANNER.jpg",
+      "bytes": 1112403,
+      "sha256": "0f5954e37db00a2c4ea1b62a7cb7c0dc1bd20dcf17665a24b1b65a29daedb90a"
+    },
+    {
+      "path": "images/DAA-ENV-POSTER.jpg",
+      "bytes": 2161124,
+      "sha256": "0cfbcb4dab9ee65bff2413900d88bbe6b803431f6fed10dc7d055833e5c877c2"
+    },
+    {
+      "path": "images/DAA_ENV-NO-Banner-3.jpg",
+      "bytes": 373474,
+      "sha256": "dadefefcbd2e65e052dfedc565ef24ef042b38d5fc7ea7d21623cb9836e6fa66"
+    },
+    {
+      "path": "images/DilaraAltınkepceArslan-1.jpg",
+      "bytes": 3807226,
+      "sha256": "9bc68e947f149d6b2bb85b483524967c9b5b8d2f9cd8b4222665fb791e8eb64a"
+    },
+    {
+      "path": "images/DilaraAltınkepceArslan-2.jpg",
+      "bytes": 8650603,
+      "sha256": "1c76302ec6998efc5e4c6a04da8cc8fbc24c1eadd85629653bdcf3ea5dd35bba"
+    },
+    {
+      "path": "images/DilaraAltınkepceArslan-3.jpg",
+      "bytes": 4637744,
+      "sha256": "ab93994d9e52f2b3ae8e400b625a576088838190ec9236a1b8c76ba38edad372"
+    },
+    {
+      "path": "images/ENV_Acilis_Davetiyesi_Dijital.jpg",
+      "bytes": 370103,
+      "sha256": "bd3533e39bec7fd41932ec22fab868ededd0ba51517db93dd15b93fcbf3d9348"
+    },
+    {
+      "path": "images/ENV_Acilis_Davetiyesi_Web_Popup_Yatay.jpg",
+      "bytes": 281512,
+      "sha256": "2472d8bd732f4fa27dbff11d16997e162202f5d9a7432557aa1340faa5c901b0"
+    },
+    {
+      "path": "images/daa-2025-gss-samankoyu-bozkirda-01.webp",
+      "bytes": 157062,
+      "sha256": "d1451afdb3c07efc07918aac502150c07a9e7a355bc68596488c15d4ef1db059"
+    },
+    {
+      "path": "images/daa-2025-gss-samankoyu-bozkirda-02.webp",
+      "bytes": 394954,
+      "sha256": "842920af57fe4b476a78a83479b7a241a4d11a421bc433595de5b2126894b0a8"
+    },
+    {
+      "path": "images/daa-2025-gss-samankoyu-bozkirda-03.webp",
+      "bytes": 193594,
+      "sha256": "9ca573481aba253fe253514f1c658dd24658c14f14b315c7d6ef80d281c8d55b"
+    },
+    {
+      "path": "images/daa-2025-gss-samankoyu-bozkirda-04.webp",
+      "bytes": 324466,
+      "sha256": "bccefb556568525b6d7c321b6bc131b4c5569b211f0daacbabba547f39e7360c"
+    },
+    {
+      "path": "images/daa-Logo-red.png",
+      "bytes": 48136,
+      "sha256": "cf08bf6312740d8a6f871970ce72782f8669de3f0688dfcfd0442ef2bf84f7df"
+    },
+    {
+      "path": "images/daa-Logo.png",
+      "bytes": 201728,
+      "sha256": "a1be7b16ad90a2898946ad7904d40c2544447d09b764cd86c088a1d91d2290f6"
+    },
+    {
+      "path": "images/daa-artworks-Awakened-Anew.-01.jpg",
+      "bytes": 755770,
+      "sha256": "07b2bab91bf7c720cb010ee8be27caac7ded6b5d173504277f3a35fe357e0069"
+    },
+    {
+      "path": "images/daa-artworks-Awakened-Anew.-02.jpg",
+      "bytes": 1136018,
+      "sha256": "c9fb1056e5012c053cfcd113a300d07a0733d16460825d47796d777808a041e3"
+    },
+    {
+      "path": "images/daa-artworks-Awakened-Anew.-03.jpg",
+      "bytes": 975804,
+      "sha256": "117bdbf79a65dd9582e0be2149585795cfde087ef0e6115c595e5b5ab337631e"
+    },
+    {
+      "path": "images/daa-artworks-intestine-01.jpg",
+      "bytes": 1601667,
+      "sha256": "f63f1c15514553e5f27e5c9126d7d9e6abbcc8cc29a4b02f9f5f92f5a79369c9"
+    },
+    {
+      "path": "images/daa-artworks-intestine-02.jpg",
+      "bytes": 1591979,
+      "sha256": "44ac66651640483bcf3b5f3d3075339f9fa6b10a6ef1e4e8f1bb9ed8bab578ca"
+    },
+    {
+      "path": "images/daa-artworks-intestine-03.jpg",
+      "bytes": 1740317,
+      "sha256": "3ee6b430236f0c9952bcb6a6524287fe1cee30b11297194ef9fa18c9f9216488"
+    },
+    {
+      "path": "images/daa-artworks-intestine-04.jpg",
+      "bytes": 1573384,
+      "sha256": "6488ffe71f425c75754a381bf7470ca46b7a26da6d30123ad21a318826391496"
+    },
+    {
+      "path": "images/daa-artworks-toy.jpg",
+      "bytes": 778885,
+      "sha256": "86c14a518e6ff7608c129113946d600340c1f51192b591aee3f960bf4e924e53"
+    },
+    {
+      "path": "images/daa-artworks-toy1-1.jpg",
+      "bytes": 837133,
+      "sha256": "b28a7be0cdb39d24dfd1fe319d37221169c3498e1d9b875619513c2fabeee5e3"
+    },
+    {
+      "path": "images/daa-artworks-toy2-1.jpg",
+      "bytes": 919492,
+      "sha256": "cc92ccc0df33c0c1faba863b5931d12115adc01bbf6e48494b13c0df2a367a43"
+    },
+    {
+      "path": "images/daa-artworks-toy3-1.jpg",
+      "bytes": 816309,
+      "sha256": "aa48befacfc938c114ac49e98a830612fff5bdbee2619f05d31ae3229c5f93bd"
+    },
+    {
+      "path": "images/daa-base-verbasci-07.jpg",
+      "bytes": 2417118,
+      "sha256": "658d812f381d20527367f833a4f534837d04557186a81a4070567c50887097af"
+    },
+    {
+      "path": "images/daa-base-verbasci-08.jpg",
+      "bytes": 2035089,
+      "sha256": "b0059449c52903a334deb71eaa7bc8212d0736ce7607202f5c308c8c82453d93"
+    },
+    {
+      "path": "images/daa-base-verbasci-09.jpg",
+      "bytes": 1525169,
+      "sha256": "348b205eb134e9fd54885deb2597455192cfb32ffa65adfd84a2365570985d77"
+    },
+    {
+      "path": "images/daa-base-verbasci-10.jpg",
+      "bytes": 1115737,
+      "sha256": "d0e1539e88d6db72de08140d72c483d4c0ad6e3b188d5e3b0523326355ddffbb"
+    },
+    {
+      "path": "images/daa-bienal-budun-00.jpg",
+      "bytes": 1390204,
+      "sha256": "ea0e32ed41563a40c2026b70bfe569e6827221715b16b83ada53ac812adf873d"
+    },
+    {
+      "path": "images/daa-bienal-budun-01.jpg",
+      "bytes": 1467528,
+      "sha256": "def10e0cfe2bdb6f7f97327a4a9b768c09f8fb6a2ab5612db6771a969f2a4f73"
+    },
+    {
+      "path": "images/daa-bienal-budun-02.jpg",
+      "bytes": 1834810,
+      "sha256": "876a8a66f01f39c6aac734ca567a2ccbcad66a09c68e65f91ebc1e5a18fe087a"
+    },
+    {
+      "path": "images/daa-bienal-budun-03.jpg",
+      "bytes": 1844460,
+      "sha256": "69c91ca842576f68e612868f3c4c93d0b3cfbffe616523c0eb5089036144fbc5"
+    },
+    {
+      "path": "images/daa-bienal-budun-cover.jpg",
+      "bytes": 1420074,
+      "sha256": "6a1230878aa02bc989879d14fc27841cd0235d8cede788e05bf9299cca7d46e8"
+    },
+    {
+      "path": "images/daa-eart-today-01.jpg",
+      "bytes": 560864,
+      "sha256": "617cc3366fd5661a5f899edeae04442ee6c91cb1bcaaae16fa518aa51aff18f0"
+    },
+    {
+      "path": "images/daa-eart-today-02.jpg",
+      "bytes": 538040,
+      "sha256": "9c56044544bc5c905cd15afe279f9a764154677414518964c77319686222076b"
+    },
+    {
+      "path": "images/daa-eart-today-03.jpg",
+      "bytes": 701486,
+      "sha256": "b78e4cede6dbef86f2c055756011a5c7ed07e053cee2706da91aec08e6699226"
+    },
+    {
+      "path": "images/daa-eart-today-04.jpg",
+      "bytes": 720707,
+      "sha256": "e4a8b460159ab0ba5549d921e3484e708593b8b00769aa51a35958327f255ea3"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-00.jpg",
+      "bytes": 1096904,
+      "sha256": "35729dd5682052e630ff87b8094ba7cf3b5a0bd707d4d569a0479cf5ef1285d4"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-01.jpg",
+      "bytes": 787268,
+      "sha256": "255cba96f071098e598fc6c43321aa9efce55c7453b7bba2dabdbc7f0b9fdbb5"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-02.jpg",
+      "bytes": 1117162,
+      "sha256": "187cb570307246da448a2a99aaef6653361b085575500690f137e072cf5fc8aa"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-03.jpg",
+      "bytes": 822990,
+      "sha256": "8ac48276a7d88afc9f604f987f878deb75d13072a944a477da7b62bfb74a532a"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-04.jpg",
+      "bytes": 1058805,
+      "sha256": "8132a5e3b3e36ed659c4253eb792a05c622b2bc925bd197fc147750bd9445e09"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-05.jpg",
+      "bytes": 1096516,
+      "sha256": "851dad708b19804afa0c15adc9066948868b25b2ff5251bf4887074c07b3200c"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-06.jpg",
+      "bytes": 1111154,
+      "sha256": "1ba507c7e78269e82067fd637f36688a10baf68c3f0b5039a241f3a2f6126a43"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-07.jpg",
+      "bytes": 1099401,
+      "sha256": "a7897b79723b497da1331f3254f0781762863aebfe1fc0e5f794f95ed8e58ec1"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-08.jpg",
+      "bytes": 1069437,
+      "sha256": "92686edd7eb553730ad4595cbd5c46a98eeb2d3d58f052a46c7ac5ea48160b39"
+    },
+    {
+      "path": "images/daa-newmedia-alarm-grifon-09.jpg",
+      "bytes": 237628,
+      "sha256": "0a5e45d8bb12476eba224fb8e15f01b6de64a4b40eec1601e765539b7ee47068"
+    },
+    {
+      "path": "images/daa-ortak-mekik-verbasci-01.jpg",
+      "bytes": 1578479,
+      "sha256": "e313fa871ec9838e4f22ac8c282ed09e68f500b8bb4077a81384fb48b3188013"
+    },
+    {
+      "path": "images/daa-ortak-mekik-verbasci-02.jpg",
+      "bytes": 7096315,
+      "sha256": "852c63d0d206d58669a3da2ea7a274fe446178ecc4a4d6d3ec5a6b4fcffdd7c3"
+    },
+    {
+      "path": "images/daa-ortak-mekik-verbasci-03.jpg",
+      "bytes": 1158808,
+      "sha256": "3dc1f424dca66e8c1e3708e74750bdc52e2ed6e78b883235de0f173cc085bf0b"
+    },
+    {
+      "path": "images/daa-ortak-mekik-verbasci-04.jpg",
+      "bytes": 6620727,
+      "sha256": "fa708aaf93389f4f573ea9da5f7de45f1b2bce9d453521a5ee2b7bfc5e5ede4a"
+    },
+    {
+      "path": "images/daa-ortak-mekik-verbasci-05.jpg",
+      "bytes": 1206367,
+      "sha256": "99f2ccb67ca329091c010f95ed631193fcc34d6eecbe1f6e87b7b183341b12ea"
+    },
+    {
+      "path": "images/daa-ortak-mekik-verbasci-06.jpg",
+      "bytes": 1685460,
+      "sha256": "e6331e32f2953bb2bf755a65cd0a64dcdd2e257aa94359e33709a24f97d72945"
+    },
+    {
+      "path": "images/daa-the-Exit-emphaty-01.jpg",
+      "bytes": 990230,
+      "sha256": "00d3d50b72fe262fdbad02b2143b8fbfb453231c55d35b6c3332afd6ff3aeec1"
+    },
+    {
+      "path": "images/daa-the-Exit-emphaty-02.jpg",
+      "bytes": 896199,
+      "sha256": "16af35b467da88c00072810ee70b296a016892fe4c1c12947e2535ebfbfbf4af"
+    },
+    {
+      "path": "images/daa-the-Exit-emphaty-03.jpg",
+      "bytes": 852547,
+      "sha256": "6bb71d3b6e927b907937c4a9b31188ec3a51af16ea6f52cc22ee5aa797e1e943"
+    },
+    {
+      "path": "images/daa-the-Exit-emphaty-04.jpg",
+      "bytes": 1010115,
+      "sha256": "e2f16b544e12da3321f4ad2390c4b24496dcfaf506050766c2c76d3e23cae1e4"
+    },
+    {
+      "path": "images/daa-upcoming-cover.jpg",
+      "bytes": 1846409,
+      "sha256": "02d8c543fb1a67252f30782fad65af1cf92bf30a9c361f826ea244ef980b0129"
+    },
+    {
+      "path": "images/env-cover.jpg",
+      "bytes": 373474,
+      "sha256": "dadefefcbd2e65e052dfedc565ef24ef042b38d5fc7ea7d21623cb9836e6fa66"
+    },
+    {
+      "path": "images/env-notebook-01.jpg",
+      "bytes": 1128094,
+      "sha256": "f5bf4c8afae96b7ff6d8881fa99fa131d2b21522d16a74dc241b226a794fbc5e"
+    },
+    {
+      "path": "images/env-notebook-02.jpg",
+      "bytes": 916621,
+      "sha256": "45fceb68f170771efa0d790ccce7b3efb859bb96b92a5017204a1e61f4f69eb0"
+    },
+    {
+      "path": "images/env-notebook-03.jpg",
+      "bytes": 2171788,
+      "sha256": "0a8bec81e654744cb17e5693dc5cf193c06e2902446cb600a41349b62c7155fc"
+    },
+    {
+      "path": "images/env-view-01.jpg",
+      "bytes": 6740490,
+      "sha256": "a1eff63eea40179b954708c830f7d656321df6daf1c602ac8db13afc5b24444e"
+    },
+    {
+      "path": "images/env-view-02.jpg",
+      "bytes": 3550484,
+      "sha256": "c66c99dd261b9b30dcb735e40f82854eb3197ce3413d21b1d248b86912d537d0"
+    },
+    {
+      "path": "images/env-view-03.jpg",
+      "bytes": 10261246,
+      "sha256": "4fb509b06e47b29f15ead0caff4faa5eb1cf66dc3943f47ec0043b755744cdd4"
+    },
+    {
+      "path": "images/invitation-ENV_Popup_Masaustu_Linkli.jpg",
+      "bytes": 10350,
+      "sha256": "b007e19d35513b73a777eb47de6e003d640523707089aa088833cd4d9e8e7837"
+    },
+    {
+      "path": "images/invitation-ENV_Popup_Mobil_Linkli.jpg",
+      "bytes": 184108,
+      "sha256": "8ea2bc412dd4833d6b32273ce7d251e6bbcf5b985b3bd89f1ac2481ff1b46c61"
+    },
+    {
+      "path": "images/previews/01-banner-daa-re-overcome-01-480.webp",
+      "bytes": 6748,
+      "sha256": "226edf744dc029eb7c18509c26bfcad3391b14e02d2d98edaf6183557d1e3fb3"
+    },
+    {
+      "path": "images/previews/01-banner-daa-re-overcome-01-960.webp",
+      "bytes": 16864,
+      "sha256": "a2c94d9a2960d277bb6ac58037009d60ec54cff8e2d6042d4b339961c6c3df38"
+    },
+    {
+      "path": "images/previews/02-banner-daa-grand-ritual-01-480.webp",
+      "bytes": 26378,
+      "sha256": "ac6300b7351fc381a447169130f32f57ad1d393adefb46f2cb48fce2909c4dbf"
+    },
+    {
+      "path": "images/previews/02-banner-daa-grand-ritual-01-960.webp",
+      "bytes": 96200,
+      "sha256": "f17ed7b30b91d193f00c6bfb312e3c8e1bddb424982c1d62afffafd25cfa9dae"
+    },
+    {
+      "path": "images/previews/03-banner-daa-noise-alarm-01-480.webp",
+      "bytes": 22784,
+      "sha256": "86b39e9c302998f5ef6467ddd78ff5ba2160fb36f48ea86b347a1aa9b01276b7"
+    },
+    {
+      "path": "images/previews/03-banner-daa-noise-alarm-01-960.webp",
+      "bytes": 76070,
+      "sha256": "3d264d80a368e68c39b233665bbcec67206ebf889168b07d21796e63455bc0ad"
+    },
+    {
+      "path": "images/previews/04-banner-daa-ortakmekik-verbasci-01-480.webp",
+      "bytes": 35206,
+      "sha256": "77be8b516ac5b5f44cf9b46259da234ac2846c0e40852e5201cc201bbebdf74e"
+    },
+    {
+      "path": "images/previews/04-banner-daa-ortakmekik-verbasci-01-960.webp",
+      "bytes": 123864,
+      "sha256": "2108578ed634c3ffd56130f761f5dd30ba462123bf78e4845b4c1ef0adb2b05f"
+    },
+    {
+      "path": "images/previews/05-banner-daa-artweeks-01-480.webp",
+      "bytes": 11724,
+      "sha256": "d5e319b3ebcfb100fe0ec1337d3da18cfae6c39cefebb7133831952244e4768a"
+    },
+    {
+      "path": "images/previews/05-banner-daa-artweeks-01-960.webp",
+      "bytes": 35624,
+      "sha256": "2ef7b7c78eaf4996a4c40be5b5d91858ec6751c00c74e928ec454e68f91c6714"
+    },
+    {
+      "path": "images/previews/06-banner-daa-nevmekan-01-480.webp",
+      "bytes": 15002,
+      "sha256": "542650fd37cb9b332e7a85ffd6dd3297aef81d69b698dbab02b4be045484cdcc"
+    },
+    {
+      "path": "images/previews/06-banner-daa-nevmekan-01-960.webp",
+      "bytes": 57394,
+      "sha256": "d7ce8e6f727815aa6c207eac3239b6fee16c1bcf93b495d3a2a0aca82aebfd4c"
+    },
+    {
+      "path": "images/previews/DAA-2021-Wish-01-480.webp",
+      "bytes": 37514,
+      "sha256": "245abf218718e7ee6afad8f1de75896afd185796cfa4857e44ea0eb0380d591d"
+    },
+    {
+      "path": "images/previews/DAA-2021-Wish-01-960.webp",
+      "bytes": 132490,
+      "sha256": "14f97cd927577ab368abcf562f0a45bedcad602c01112c48fa65382a7189a921"
+    },
+    {
+      "path": "images/previews/DAA-2021-Wish-02-480.webp",
+      "bytes": 23928,
+      "sha256": "9d48e53e44103e5d77ef6fe497276cd711aaf428238a435f46e6b16a9c36696c"
+    },
+    {
+      "path": "images/previews/DAA-2021-Wish-02-960.webp",
+      "bytes": 78918,
+      "sha256": "91ec67957c0f5f04d6840f1001afeb681e1a27e099bc8e9eb07535f72e55f79b"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-01-480.webp",
+      "bytes": 19610,
+      "sha256": "08e759f24edb3a3c7611c7894fe517c01bd4249fc9cf19871181301c1c2eeb5e"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-01-960.webp",
+      "bytes": 71516,
+      "sha256": "a8c4714984bbb3246ef69d2032aee61da7152665451b4ae9a2eaa715c163ef4d"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-02-480.webp",
+      "bytes": 42482,
+      "sha256": "36575a27d575310ab02d401f43c6221c1c1938a0b56d1146c214887e76917c65"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-02-960.webp",
+      "bytes": 160640,
+      "sha256": "262b38e27a804a939ae2e6c9549518ca20993423fdcf05fd46d759a04d4f002d"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-03-480.webp",
+      "bytes": 53520,
+      "sha256": "0bf170068e13d3f47eee73d3b389732f9034ea46ee665ac299120634b742ab40"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-03-960.webp",
+      "bytes": 208386,
+      "sha256": "24ea0be14e3854a80c10badc54f5505a0d6b8aae70e983af38efcf76f7f619bb"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-04-480.webp",
+      "bytes": 33722,
+      "sha256": "6d131a7a950d7fc3be2571a06f2480c3f383272fe5226b9438e40b092ed71e32"
+    },
+    {
+      "path": "images/previews/DAA-2022-Grifon-04-960.webp",
+      "bytes": 136674,
+      "sha256": "91d9cd1a12da8e253d556f379a4a3110679dc216318888e98c2f71a00f521147"
+    },
+    {
+      "path": "images/previews/DAA-2022-Holistic-01-480.webp",
+      "bytes": 54242,
+      "sha256": "1102511bb2ec34e73522a0deb7d75569647f288f87d0ea74e75ea0d64dd95803"
+    },
+    {
+      "path": "images/previews/DAA-2022-Holistic-01-960.webp",
+      "bytes": 173866,
+      "sha256": "a4169fd009f3dc12ca2100b5c862358d09c77ff2c21586e576596e30ac34084a"
+    },
+    {
+      "path": "images/previews/DAA-2022-Holistic-02-480.webp",
+      "bytes": 27988,
+      "sha256": "936c06ea64017a79e8793529fa07b74ced2aaa60642c232d8c4d747c0232dc40"
+    },
+    {
+      "path": "images/previews/DAA-2022-Holistic-02-960.webp",
+      "bytes": 81536,
+      "sha256": "82239582b85df760e766fd86921618f285d0bfdf52a698bcce4b3336cbefdc61"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-01-480.webp",
+      "bytes": 8056,
+      "sha256": "4ad331ccdf26034eba8591ce4fb5fb1df2b1833503695cb7660a3fd95278d717"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-01-960.webp",
+      "bytes": 24390,
+      "sha256": "aa0376267eb7f0f52cb0057d5c54def2a310a42dbb3ed5d377e4a55cccc79cb2"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-02-480.webp",
+      "bytes": 10338,
+      "sha256": "38d8f2423f144a0728536e7f5449c15630fd55399ff34c645b55325ce55748be"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-02-960.webp",
+      "bytes": 31846,
+      "sha256": "a074f9615dd9c3e6915ff96b19600e9b75147c6ea84fead08984c5772bdceb57"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-03-480.webp",
+      "bytes": 17996,
+      "sha256": "5ed4160f7ae090741961f6f73a91c1259e30b40ca10b3eb1725ffd716e1b85e2"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-03-960.webp",
+      "bytes": 56508,
+      "sha256": "6a8bc1d3460d1518b4682581d03d8e2eb61dad6c60e68089cbd82cbcec9d4ef7"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-04-480.webp",
+      "bytes": 8508,
+      "sha256": "6091552f2880c870e174671f191fb10783b916a4d3290a30dce019503d515259"
+    },
+    {
+      "path": "images/previews/DAA-2022-Loop-04-960.webp",
+      "bytes": 25188,
+      "sha256": "8a61eabc74e466902b32ce504a43e5d7347cbc426e87b704547af209412703ed"
+    },
+    {
+      "path": "images/previews/DAA-2022-Rituel-01-480.webp",
+      "bytes": 34040,
+      "sha256": "6f522f355b8e5035072625f63542efdebed5d64b8bf284c8a44a535b3e73d103"
+    },
+    {
+      "path": "images/previews/DAA-2022-Rituel-01-960.webp",
+      "bytes": 109144,
+      "sha256": "55f6e156990332614a035559892e525e26bd65c67ec3cbf913d6393460bb55f1"
+    },
+    {
+      "path": "images/previews/DAA-2022-Rituel-02-480.webp",
+      "bytes": 27142,
+      "sha256": "ebcc34358506bfe83d61a695241fac983b3bfdca40bb29d4d3c553ac3b61f4d8"
+    },
+    {
+      "path": "images/previews/DAA-2022-Rituel-02-960.webp",
+      "bytes": 94502,
+      "sha256": "2d3746da49345546ab177b86e3ee23096f26ef4d938a2bf1cd124ee70b1d4d46"
+    },
+    {
+      "path": "images/previews/DAA-2022-Rituel-03-480.webp",
+      "bytes": 14526,
+      "sha256": "7cf7f4210071cdb91a62e256ddfefde8674a803ed92c49ad2d4f1b086178c534"
+    },
+    {
+      "path": "images/previews/DAA-2022-Rituel-03-960.webp",
+      "bytes": 48530,
+      "sha256": "77650dfdcdd98bbc217835ba578d6eb1e6f12708d095ecc06fa31615744323bb"
+    },
+    {
+      "path": "images/previews/DAA-2022-Secure-Network-01-480.webp",
+      "bytes": 10340,
+      "sha256": "a18aaa24edbac6f715cd5e950375f6852e9296089a83054219cd92703cfc6859"
+    },
+    {
+      "path": "images/previews/DAA-2022-Secure-Network-01-960.webp",
+      "bytes": 45016,
+      "sha256": "6f6bc29956cf0409be94b4355645bce5ed5d259f0d0677d35570c443c69da5c2"
+    },
+    {
+      "path": "images/previews/DAA-2022-Secure-Network-02-480.webp",
+      "bytes": 37524,
+      "sha256": "49f45680500e08ccf3a1dc6284a7bf1fddde062d3327db81041561d2508d6fa1"
+    },
+    {
+      "path": "images/previews/DAA-2022-Secure-Network-02-960.webp",
+      "bytes": 101342,
+      "sha256": "80668b68638b8e8a443aeb027aa6801d550a882072cacd09807ea814237dcf7c"
+    },
+    {
+      "path": "images/previews/DAA-2022-Secure-Network-03-480.webp",
+      "bytes": 19666,
+      "sha256": "aa82eb104c2fde8433e543c63034c469c6c6c570e43d0acf2bf7130fbac8324e"
+    },
+    {
+      "path": "images/previews/DAA-2022-Secure-Network-03-960.webp",
+      "bytes": 52954,
+      "sha256": "640a727e10fbb7ab6ffa3563dc1317d3db30e0a81d54ed486dec8af5777b0521"
+    },
+    {
+      "path": "images/previews/DAA-2023-Echo-01-480.webp",
+      "bytes": 31254,
+      "sha256": "dbc09407cfd211dd9e26766868125ac3d4da915344358e37a96d51fc8a46032a"
+    },
+    {
+      "path": "images/previews/DAA-2023-Echo-01-960.webp",
+      "bytes": 149624,
+      "sha256": "2f0f6c26fc91d9386946e4e3c306cc8a478529df11dc0678d83b8480b80c5e20"
+    },
+    {
+      "path": "images/previews/DAA-2023-Echo-02-480.webp",
+      "bytes": 25774,
+      "sha256": "9e11b527b819f0aae5229060626be1c84a473fb1065c31794a46540e432604af"
+    },
+    {
+      "path": "images/previews/DAA-2023-Echo-02-960.webp",
+      "bytes": 75102,
+      "sha256": "cbc22d2e060f5c92f590b76d96f5dc67f168d7840d7308ba46b66389063bde6b"
+    },
+    {
+      "path": "images/previews/DAA-2023-Grifon-01-480.webp",
+      "bytes": 16454,
+      "sha256": "ecaa879633a747a19b586d45689dc66232e52e5a84ff36723f3bbd347f81ebff"
+    },
+    {
+      "path": "images/previews/DAA-2023-Grifon-01-960.webp",
+      "bytes": 74404,
+      "sha256": "35b43fa11073f8c800249b5debe03e778bf0f8c212fa3e0c5eca8a683c152e68"
+    },
+    {
+      "path": "images/previews/DAA-2023-Grifon-02-480.webp",
+      "bytes": 13958,
+      "sha256": "2923f201dfd09fc9150e7d9fefa9fbab3f06920cd48f3ee52f7b0842b1a1c9c3"
+    },
+    {
+      "path": "images/previews/DAA-2023-Grifon-02-960.webp",
+      "bytes": 53532,
+      "sha256": "bdfe26e7dcdeb971a11816b7f2fca851e63e99d39429b0b6b327afbdd4f3984d"
+    },
+    {
+      "path": "images/previews/DAA-2023-Grifon-03-480.webp",
+      "bytes": 77292,
+      "sha256": "c7262a51529a585b4ec13e971a57f9a202f92fad19e9735d642837c6ad516149"
+    },
+    {
+      "path": "images/previews/DAA-2023-Grifon-03-960.webp",
+      "bytes": 292684,
+      "sha256": "212fc6cc03462cd60ab9752a6fd2408a81d4d026801cd1f6766c8ad92227c9b6"
+    },
+    {
+      "path": "images/previews/DAA-2023-Intestine-01-480.webp",
+      "bytes": 17408,
+      "sha256": "adf432a81457ddb61ea169b88879ac38de918be2f8760b6fa312345be0c6e9c6"
+    },
+    {
+      "path": "images/previews/DAA-2023-Intestine-01-960.webp",
+      "bytes": 56568,
+      "sha256": "f0f8987a7a7c75d48af2c3d5cadc78b246be85a845e5492d63a9164c38804003"
+    },
+    {
+      "path": "images/previews/DAA-2023-Intestine-02-480.webp",
+      "bytes": 31912,
+      "sha256": "2949d34a6d268e9a4ca096f4a36dd8a1902e36dc0985225d070ec48049a51a04"
+    },
+    {
+      "path": "images/previews/DAA-2023-Intestine-02-960.webp",
+      "bytes": 100554,
+      "sha256": "64a8b71b889c7cec90b548d2b658cc8df0ed94f8df3707b2d9f2d902db01da1f"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-01-480.webp",
+      "bytes": 14502,
+      "sha256": "3f9155fb044c76203aedffdbba49b9bb80489f3456a0631a8210bd9441d0ed0e"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-01-960.webp",
+      "bytes": 40838,
+      "sha256": "ef26b6c6e8b2dbfb2f58eb13d05cc93057ff9f3d273ae99c4cb9152dc80f931e"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-02-480.webp",
+      "bytes": 9558,
+      "sha256": "1cf378dd0d3b14434a343e4883f93056bc501a75404e822b00f5bd8132ab5c5f"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-02-960.webp",
+      "bytes": 25030,
+      "sha256": "70138a4ff4a837d005af8b7ed6b4bbafd5a955c4b7860e6b8c4a8c45dc441bdc"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-03-480.webp",
+      "bytes": 55888,
+      "sha256": "16f1d6e1c69d87b94981b0e6e9af161e0e59e6aa38eb2084cdf562ff4d81b59e"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-03-960.webp",
+      "bytes": 196220,
+      "sha256": "67f124e298921dbbf3600835e0f3c14fc390cd43b30b26daa286229f492bdf8e"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-04-480.webp",
+      "bytes": 18416,
+      "sha256": "756aec892ab760388f8e126ed8c178bcee3f8ccb94a01251f3071557a278227f"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-04-960.webp",
+      "bytes": 78700,
+      "sha256": "cb1cc7a705c259e5a3d88d71300ac5e8c9b50da94957ff94371254421bb6a7a3"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-07-480.webp",
+      "bytes": 16252,
+      "sha256": "5da44e4d5e7b3280c765d47cec6381eccb7c6cb4755e2181149726054c3af438"
+    },
+    {
+      "path": "images/previews/DAA-2023-PazarykMaidan-VR-07-960.webp",
+      "bytes": 55946,
+      "sha256": "b1196195eea8c52c64b3d145eb8e895d6fd64f916bbec85b2498aed0ac8d4f47"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-01-480.webp",
+      "bytes": 19130,
+      "sha256": "2c8d1475bd4132e5426d443fa2aa0435723e77c5a8577fdf4b9ae047bc3fc530"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-01-960.webp",
+      "bytes": 61340,
+      "sha256": "aecce2542d1451d244af1a3a49cc66f1c23149b2384d2d2612c33277ad406cad"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-02-480.webp",
+      "bytes": 14226,
+      "sha256": "0e9b633072cd400ec1a633f8eca3d7492db92d6a7967752850e68fa61b162f62"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-02-960.webp",
+      "bytes": 45752,
+      "sha256": "eb8f1739da657e1e39b22ce722a4d04c7e9a4dcb57d2c353a4e2948487294ff7"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-03-480.webp",
+      "bytes": 15208,
+      "sha256": "e1277d1d4051d9a498dded42f7b78b2ccc8a81d2c25b366cb8d4b78ba873dba9"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-03-960.webp",
+      "bytes": 56904,
+      "sha256": "7b608682941ef407da3ebc26d20cdab7986e6c5d933fcb3284480fcd912fba21"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-04-480.webp",
+      "bytes": 14956,
+      "sha256": "8a280c3fc9114b190f2160c620af1bfe1a48f9f82a332126bac1e5ceb42c9cd2"
+    },
+    {
+      "path": "images/previews/DAA-2023-TheGrandRitual-04-960.webp",
+      "bytes": 47370,
+      "sha256": "3e56beddfbde626d89d8b7bb8e1749fac717fc4dd74ffe382892d1bfaf85cda7"
+    },
+    {
+      "path": "images/previews/DAA-2023-Verbasci-01-480.webp",
+      "bytes": 37910,
+      "sha256": "c9058db03247ec18856ab586bece18de98d901129d750bac6b49b00e6d134033"
+    },
+    {
+      "path": "images/previews/DAA-2023-Verbasci-01-960.webp",
+      "bytes": 122936,
+      "sha256": "17a5487faa85f7b10418e88a5eaac5c0a82388b94d67a6054f29947604a2abc1"
+    },
+    {
+      "path": "images/previews/DAA-2023-Verbasci-02-480.webp",
+      "bytes": 33674,
+      "sha256": "4da2fc3368db2dd149e646bd8d1b261b7772d51aab62f7e6b2c1d084f8e2a909"
+    },
+    {
+      "path": "images/previews/DAA-2023-Verbasci-02-960.webp",
+      "bytes": 86942,
+      "sha256": "512522848e2d9049f198af45f62e10fe373ca92298215edfc63943facaa6f815"
+    },
+    {
+      "path": "images/previews/DAA-2023-Verbasci-03-480.webp",
+      "bytes": 38636,
+      "sha256": "c23223b41bc0f677982d3a70a7c3f8fe648dc8e0ce99ceb1916f0b396824a3d5"
+    },
+    {
+      "path": "images/previews/DAA-2023-Verbasci-03-960.webp",
+      "bytes": 130240,
+      "sha256": "4de8ac21ea64ef9c506728550a673509968014d30b7256e015f56157c984742b"
+    },
+    {
+      "path": "images/previews/DAA-2024-BASE-480.webp",
+      "bytes": 10898,
+      "sha256": "33715732831e12ba89c9cf458213183943758b2d8efdd35a19c28b51f37e1713"
+    },
+    {
+      "path": "images/previews/DAA-2024-BASE-960.webp",
+      "bytes": 37732,
+      "sha256": "f44af5edc311866b50af8fcb8fe552fc8f1df3fa41849a44d25441e0b19eeab6"
+    },
+    {
+      "path": "images/previews/DAA-2024-Intestine-II-01-480.webp",
+      "bytes": 16116,
+      "sha256": "933652abc58a9ea222f6b4840c21f55d2490c0ef296a17c99cea1fe6ad516d2e"
+    },
+    {
+      "path": "images/previews/DAA-2024-Intestine-II-01-960.webp",
+      "bytes": 50820,
+      "sha256": "5da3546332ca191e750a166c9ed5bb98da3f9146c1a624ee72e71bea500dd5c9"
+    },
+    {
+      "path": "images/previews/DAA-2024-Intestine-II-02-480.webp",
+      "bytes": 34522,
+      "sha256": "8a74657a243bedaae1b39e5aab40cb51954b6366d407ad16f121dcabb9b10584"
+    },
+    {
+      "path": "images/previews/DAA-2024-Intestine-II-02-960.webp",
+      "bytes": 119632,
+      "sha256": "fc4426195ec2e2c5fadc8f29a06a107769850160af2963a2d93f37cdc95c9d58"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-01-480.webp",
+      "bytes": 21194,
+      "sha256": "42454641e89fd29fb57d60bc71530c28c2a784cfed000d7e8c65e5d75a2405c3"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-01-960.webp",
+      "bytes": 90466,
+      "sha256": "ac74c92f0419f10953168a8b913b571d547de78cdf6be93b9a475e3175f835a1"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-02-480.webp",
+      "bytes": 74670,
+      "sha256": "3103fe5432a3d408ebeabd05d58d83dea3bbfed754885285682b193fa528cf61"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-02-960.webp",
+      "bytes": 322794,
+      "sha256": "75b0ee18c41c0943bd768adbb7babcd77c19c2b756a8e1791d17fa5a619d6000"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-Beyond-01-480.webp",
+      "bytes": 18222,
+      "sha256": "f4dec7e3d87721371d5f80c37c19199c7242b5ecd7c81163131a1671e1c50a0e"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-Beyond-01-960.webp",
+      "bytes": 56926,
+      "sha256": "9c4f49899b3d868de02805d00b39af0eae6683e637abc4295ec0d81922a4bfbe"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-Beyond-02-480.webp",
+      "bytes": 43684,
+      "sha256": "70da9fedeeaaf5cbb5cadf4bacaf321b540e5eeb5a401c332cec3e2d7efd52b0"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-Beyond-02-960.webp",
+      "bytes": 148298,
+      "sha256": "89022e2e0a74ea516f4fa9ca42343119dfaff6526c0c06b6ef94395ff6db8d1a"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-Beyond-03-480.webp",
+      "bytes": 20128,
+      "sha256": "58f2416e337debc2cb9e5284eb09363189d8f154e72eb15ea37d54794d50c393"
+    },
+    {
+      "path": "images/previews/DAA-2024-Portal-Beyond-03-960.webp",
+      "bytes": 62394,
+      "sha256": "3a343e291c15625e48cc444d272268768c8705be96ed342eb9a2945f14343df5"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Ascension-01-480.webp",
+      "bytes": 22866,
+      "sha256": "d32f1f09e103f1c03dd8bddc7dd4900927062f50d0d91015b2f3d4b7a2931426"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Ascension-01-960.webp",
+      "bytes": 75920,
+      "sha256": "7935f9ed078d61eedb8bb0c6af38eee1de401e2c5be6440e2a5e9046f6d1ae93"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Ascension-02-480.webp",
+      "bytes": 21740,
+      "sha256": "7765174dcffe493ff59a94f6d78fb09cd9a389e4dfda2045292088e255cbfd1b"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Ascension-02-960.webp",
+      "bytes": 61986,
+      "sha256": "03650f21490d631ffb9dd9e88558ad5d0c2a44255794e18e68f407ebc1df0281"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Ascension-03-480.webp",
+      "bytes": 18422,
+      "sha256": "d496245ec86d740d1b037c197dac136187747794ff7fb6c250db9593719c968f"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Ascension-03-960.webp",
+      "bytes": 42030,
+      "sha256": "c3a7b128e36267413f2377c1e6f1a8295a0ec9a575c4e9faa8734af087c88399"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-01-480.webp",
+      "bytes": 27844,
+      "sha256": "27ed908d40b1a416599d4622b46844186f20fa4ca11bd1412dc40df2db02302c"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-01-960.webp",
+      "bytes": 101464,
+      "sha256": "293588663a916b04f41f9cb378466a4fb6e6373a7362233795e335e798170eb0"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-02-480.webp",
+      "bytes": 26180,
+      "sha256": "794bb3ad9cb572591076568fb102c978ef9e1fe70911b38ba8900caf1b3a8b74"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-02-960.webp",
+      "bytes": 103990,
+      "sha256": "6ccbd889ac5d9a7c6785638ee820ea91731114a9812eab6bce54ae503912164f"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-03-480.webp",
+      "bytes": 49970,
+      "sha256": "d7439c2596365a127ffaa4fb8fb00c39fa33e8510c1ed7cb18876db9d1a71240"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-03-960.webp",
+      "bytes": 153684,
+      "sha256": "1956620086f205f3f58b480466aed7143afa970e34cdd88d61e4450cd8a54f65"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-04-480.webp",
+      "bytes": 37360,
+      "sha256": "5f67bbe11c56cf76a2355333c018fc9f9f21248d818bf4ce443113173781b897"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-04-960.webp",
+      "bytes": 118664,
+      "sha256": "72d6ef231702789e662fbec5bbffd63e13e7ff4a4402b921e1cc9fec4b102b10"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-05-480.webp",
+      "bytes": 19640,
+      "sha256": "d214271646f5b4fe9fa8050a1324d9c5294bdf0803d0dc7146cf2d4352cf79c6"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-BalladofRoad-05-960.webp",
+      "bytes": 65596,
+      "sha256": "074ebcebcd4e8056bdacd249912a97ce02af3922d0dd7fd5e7fc850bdeb00e7d"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-DurgasVisit-01-480.webp",
+      "bytes": 16814,
+      "sha256": "6c29154a7e8b1415b6f2554274ea68e70279943d21047eecd14d86b444066cd3"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-DurgasVisit-01-960.webp",
+      "bytes": 54286,
+      "sha256": "7557a5cb670a456f3198fae8da61681cfba007523056ce914f733d7e0d900026"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-DurgasVisit-02-480.webp",
+      "bytes": 29560,
+      "sha256": "4d05a0805c871eb6f1dc96538c00e19670159b64677b3e3a7d0581c71238ba90"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-DurgasVisit-02-960.webp",
+      "bytes": 114650,
+      "sha256": "cab2e5872ba3f3704ce3a0dae5a30bc9e0f4ce2b9945bf517d48c07111b2a582"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-DurgasVisit-04-480.webp",
+      "bytes": 25436,
+      "sha256": "d2146b7ae01610cae43429d0ad61b9347427620466712ebca8258e57f9f42d4a"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-DurgasVisit-04-960.webp",
+      "bytes": 75772,
+      "sha256": "11358a3cced64061a95e31cec02ef06263d43c47b89d9f1dc623fafde01a9ee4"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-FlagUprising-01-480.webp",
+      "bytes": 17396,
+      "sha256": "02e9a87ef0e2bbab0a8912d148de5cc02cdd223f277bd4dd8da785eb2d484719"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-FlagUprising-01-960.webp",
+      "bytes": 51136,
+      "sha256": "1b7f9625eaa0959918ba68ec69cc37b90a3ae459ae9b6402b97241a3960a9583"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-FlagUprising-02-480.webp",
+      "bytes": 14068,
+      "sha256": "b115f45cfa58162cbd403a841b42eaeaf9fd7763dcf5e37f102ef65d2cff8448"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-FlagUprising-02-960.webp",
+      "bytes": 38124,
+      "sha256": "a049f7d639043c0fd80bff966cc7153b67521fdf00df35b39786d992d3cb9749"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-FlagUprising-03-480.webp",
+      "bytes": 19684,
+      "sha256": "1dfccfd1c31129a8a850b3dd634a11e656f2f21d0370dee27bd8427e08e7a045"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-FlagUprising-03-960.webp",
+      "bytes": 52952,
+      "sha256": "736b62e09db4b5c9e370f749b237977f28f31e26e711bf2ebd26e054ba1a1b95"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Hidirellez-01-480.webp",
+      "bytes": 15230,
+      "sha256": "07cd0ba4f16f1fffd05609543afa8be85d7a3036db44cfc9ed736f8f84eadea9"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Hidirellez-01-960.webp",
+      "bytes": 60788,
+      "sha256": "b575585f7258719de5457a91469b7c91c49a7435f7bba8ac05eea7da324c0db9"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Hidirellez-02-480.webp",
+      "bytes": 19270,
+      "sha256": "9915d52b0a444f191fe4d20c75512d1131c01c1f676d79a3c6c9565f9034348a"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Hidirellez-02-960.webp",
+      "bytes": 75908,
+      "sha256": "8d9e637f0e46ee0be9d257724a7a1b28efb48d55da428e89124311ee9d258f04"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Hidirellez-05-480.webp",
+      "bytes": 60592,
+      "sha256": "c153cf520e3170b2521adaeee65c32d6f5aa9c93152d8b514f8bc1296a844dea"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Hidirellez-05-960.webp",
+      "bytes": 216724,
+      "sha256": "3044728ebd3b886bd63825c59c97a756c70aec2363dada2e09f66dc803d9b48a"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ID-01-480.webp",
+      "bytes": 15472,
+      "sha256": "48a65d912ba84f9d55416294a6811bc53f51326fcbdf7d87899bf17c221e77c4"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ID-01-960.webp",
+      "bytes": 49394,
+      "sha256": "de4024cf02b0db859f7b54e98abdbcd50ec52b148792d6cdf4db1c6656f21a16"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ID-02-480.webp",
+      "bytes": 24208,
+      "sha256": "42a901e374eb6ef94e2ef1d7c1da8113d8e2023bad66e459520bb003bdccbacd"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ID-02-960.webp",
+      "bytes": 73952,
+      "sha256": "d901b7e31d5703e61d16b26ca3ac1f10b8c5a51393641e7f56beb9017e3188fe"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ID-03-480.webp",
+      "bytes": 17684,
+      "sha256": "02363e97b7900f5c27a5f1a902a4731992bb1c15b7ed823483a5beaec6eba8b1"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ID-03-960.webp",
+      "bytes": 44560,
+      "sha256": "22e41df5d1fedc70cc13237862026ec8233e753c04805cf5052a4b9ea49e74e6"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-01-480.webp",
+      "bytes": 19920,
+      "sha256": "412e48157387d04b923f6b7dd15dd8ad1276cfa876e94711caac2d5f256d23a1"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-01-960.webp",
+      "bytes": 61408,
+      "sha256": "341426c7f3dfcac02a3b194cf03c5b6b0e988d974481d55ba2b3b253c559e430"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-02-480.webp",
+      "bytes": 25598,
+      "sha256": "e236412414fe1a94494700bc7cb8acf8ba670731bb796cc7d33088352208450f"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-02-960.webp",
+      "bytes": 100064,
+      "sha256": "279e2dd3814d0a1801ffcf2396c870d2539b9ab38d81f6a083cc088abc0e6767"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-03-480.webp",
+      "bytes": 17914,
+      "sha256": "643969c37cb7e48ac4701c9c47a309db28d996fffe5ca4daf3dc16f65cd97d87"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-03-960.webp",
+      "bytes": 55256,
+      "sha256": "2e4acc76a81edd7c28566ad81d54727231b6abc3508a5dcb1ffe57deed350035"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-04-480.webp",
+      "bytes": 15884,
+      "sha256": "59640c84792dde97e9bf949b6fcd739771607eddd86f3256953cb6a6bdbf7a8c"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-MessageFrom-04-960.webp",
+      "bytes": 45162,
+      "sha256": "e7e89d45f26f13fdb03e28119072cfd9433a1491e21c9d3260fa903baabfe5c7"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Muted-01-480.webp",
+      "bytes": 14646,
+      "sha256": "2be95dfa0d346d053af243a0904adedb2d013291d9112a2ca700e0f1e215a9ae"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Muted-01-960.webp",
+      "bytes": 51588,
+      "sha256": "2dd4885bf5544f6c66300d299fc27432682fc14a4f1108d987f0a22da7304856"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Muted-02-480.webp",
+      "bytes": 9782,
+      "sha256": "048af978d69efe751b93567bac23eecbf448782d76aa0914cbbf54e3fc38268f"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Muted-02-960.webp",
+      "bytes": 26332,
+      "sha256": "7eeead997188b6cc997212bbaedc4edb833d227100399ea3b54f6a50c196a8ab"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Muted-03-480.webp",
+      "bytes": 19684,
+      "sha256": "1dfccfd1c31129a8a850b3dd634a11e656f2f21d0370dee27bd8427e08e7a045"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Muted-03-960.webp",
+      "bytes": 52952,
+      "sha256": "736b62e09db4b5c9e370f749b237977f28f31e26e711bf2ebd26e054ba1a1b95"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-01-480.webp",
+      "bytes": 10326,
+      "sha256": "cdbd01a6ad702ab1bb01038bf0c611ac2557939becb867a970a3da4e5ad02703"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-01-960.webp",
+      "bytes": 28110,
+      "sha256": "c589eba41bd4adf61601b87ecec3bc684a0e3267a5590cd908d8e25f6ebecf07"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-02-480.webp",
+      "bytes": 24100,
+      "sha256": "fa3cabcfa9528e005e693aa062de958f49f88f4d5df075dae1976080f4bd88cb"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-02-960.webp",
+      "bytes": 71588,
+      "sha256": "e6f7b918aee3f89cb45219f64a22e54478bbd792e3a60b3b3eca5315574f2ffd"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-03-480.webp",
+      "bytes": 9824,
+      "sha256": "4c3c7f33e05e2dd7f87de4d10a9dd8338efffbbeeee54765bc4e990346742c46"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-03-960.webp",
+      "bytes": 24978,
+      "sha256": "0b5aba2da213b5aca83f9384804936f235b9d1ce0c2a3d06b9ebaa2a1b1188dd"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-04-480.webp",
+      "bytes": 11654,
+      "sha256": "6b8be37b14e3416c8d2a0cfd718b8bf820e04b860541f6ad35137f38c0666c07"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-04-960.webp",
+      "bytes": 27804,
+      "sha256": "a07f14e8c1d6281c12d6c59b7d42bde4c96485369956ed3a3fac572ff4294098"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-05-480.webp",
+      "bytes": 9024,
+      "sha256": "7d409da136a5078fd811cdfe8ddcd4f7f51952a3429726f4da35cb8101342d41"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-05-960.webp",
+      "bytes": 21338,
+      "sha256": "3b94b9baffab63fca8c2a2fde78237b267418512df7ca7441e44025073c1a13c"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-06-480.webp",
+      "bytes": 6600,
+      "sha256": "9280af9dcd6add3156577aa717fa0fa306b03a8bae8a857341fd71b11102f5d0"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Overcome-06-960.webp",
+      "bytes": 15174,
+      "sha256": "d0c934a2d859f90a8310fad02ac01b8f9582519e6cec223aeceb57b5a3820909"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ShamanVillage-01-480.webp",
+      "bytes": 26844,
+      "sha256": "628b3085a54c6edf329a19ae7007018917f12e908de2cd4bfa249afc196e4cfd"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ShamanVillage-01-960.webp",
+      "bytes": 87482,
+      "sha256": "99759164ce2e1c87966dbccbc12e27d1cb7d822753736bcb27bcfc161dde5649"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ShamanVillage-02-480.webp",
+      "bytes": 28696,
+      "sha256": "e74815b5b10a945e94cadc1e9ac24b7d71d2e3b285e1d6d61442340df1cf08ca"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ShamanVillage-02-960.webp",
+      "bytes": 94792,
+      "sha256": "2a487f5681f58fcb5bc2ea7f6051ada709a71206a1519f1b28010deb78077bcf"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ShamanVillage-03-480.webp",
+      "bytes": 53760,
+      "sha256": "5be685d6afb9298428630c11487b53b5706bd22d909fb99d6e8fbc1d7a438f25"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-ShamanVillage-03-960.webp",
+      "bytes": 304058,
+      "sha256": "e5400777161ca40dd6ee1673bac3ffab25f1af23c96ff06b19186bd2a98ad010"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-TheUprising-01-480.webp",
+      "bytes": 19284,
+      "sha256": "8c9a29136f6261efd8834fc5463253221927af9ee06a45f27a159ceb3c24ac0d"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-TheUprising-01-960.webp",
+      "bytes": 68146,
+      "sha256": "5611d7ccfc2238084411c232b09144f365863c0d92e3f6b58689a064f1472eca"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-TheUprising-02-480.webp",
+      "bytes": 16408,
+      "sha256": "f1b51d78faa97612bf564f105756cee070f9c66bc982aaf6e8ffbf85625d59f5"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-TheUprising-02-960.webp",
+      "bytes": 43710,
+      "sha256": "3294948e0fc5d1f1e4f123dba0c4089ad873413c36190ac833a3e9a5bccd07fe"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-TheUprising-03-480.webp",
+      "bytes": 19684,
+      "sha256": "1dfccfd1c31129a8a850b3dd634a11e656f2f21d0370dee27bd8427e08e7a045"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-TheUprising-03-960.webp",
+      "bytes": 52952,
+      "sha256": "736b62e09db4b5c9e370f749b237977f28f31e26e711bf2ebd26e054ba1a1b95"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Unanswered-01-480.webp",
+      "bytes": 16574,
+      "sha256": "8035a6af63abe8cc7eedaa3ed7db74c128806ab02d13ed2e92e3a039f03acc13"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Unanswered-01-960.webp",
+      "bytes": 43936,
+      "sha256": "af1dc8a513b5adc78afccc5ef98d331213ec58110579d08b167d0d888e329d11"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Unanswered-02-480.webp",
+      "bytes": 13434,
+      "sha256": "75707f3eeabb2d136f9c87e447abdd48feca186e6a1127281f17f72f23ec371f"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Unanswered-02-960.webp",
+      "bytes": 41586,
+      "sha256": "e2f95d16ac9fe1a44ababdb5a360a69f56f0e97a13166f9333dc59fe8d0b5a4d"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Unanswered-03-480.webp",
+      "bytes": 14880,
+      "sha256": "ea6b98162a61e66494a152aaa18146cc417976d6d2bcde38c6c3bd2fb4c0b185"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-Unanswered-03-960.webp",
+      "bytes": 44116,
+      "sha256": "a98a1e4c6c92d1b7220883096e6492cbbadd5f0d7deae4fa97931318b011ec55"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-improbable-01-480.webp",
+      "bytes": 16146,
+      "sha256": "c3bad37c4616fd982c45305e2e10af7254728d032bbdfce25e6f58ce7dfbc477"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-improbable-01-960.webp",
+      "bytes": 43158,
+      "sha256": "ae5c1a5c6d1d2aacd6172aa39e848bea7e742e4a10504710a696f48ba9f1cee2"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-improbable-02-480.webp",
+      "bytes": 18910,
+      "sha256": "17b74144cd366a9df18d35eb78deb406a1cd751a154416e0513bb3d2c164330f"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-improbable-02-960.webp",
+      "bytes": 46904,
+      "sha256": "39ddf4fb7dd16e246221a9d237395022fa1d25eb04205df8282db963d6cae930"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-improbable-03-480.webp",
+      "bytes": 19684,
+      "sha256": "1dfccfd1c31129a8a850b3dd634a11e656f2f21d0370dee27bd8427e08e7a045"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-improbable-03-960.webp",
+      "bytes": 52952,
+      "sha256": "736b62e09db4b5c9e370f749b237977f28f31e26e711bf2ebd26e054ba1a1b95"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-inquiry-01-480.webp",
+      "bytes": 17444,
+      "sha256": "447c097e7ac83434632aa649ec8127782c9e79c84975f6f8ed38f3cca148de25"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-inquiry-01-960.webp",
+      "bytes": 44392,
+      "sha256": "f6463675622544f2a91c244e4ec2e961e7fca206c58ab964e349778514dabd6e"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-inquiry-02-480.webp",
+      "bytes": 19684,
+      "sha256": "1dfccfd1c31129a8a850b3dd634a11e656f2f21d0370dee27bd8427e08e7a045"
+    },
+    {
+      "path": "images/previews/DAA-2024-RE-inquiry-02-960.webp",
+      "bytes": 52952,
+      "sha256": "736b62e09db4b5c9e370f749b237977f28f31e26e711bf2ebd26e054ba1a1b95"
+    },
+    {
+      "path": "images/previews/DAA-2024-Ritual-II-01-480.webp",
+      "bytes": 24760,
+      "sha256": "03d71a6937ba786ed123a522630c775578c9ad877b15a21abca073a16a5af745"
+    },
+    {
+      "path": "images/previews/DAA-2024-Ritual-II-01-960.webp",
+      "bytes": 83402,
+      "sha256": "c2609376bba925ab8292a2e759d7b3b9ac67701a60209f3c440810c1cf9f9f31"
+    },
+    {
+      "path": "images/previews/DAA-2024-Ritual-II-02-480.webp",
+      "bytes": 55124,
+      "sha256": "619d259d28b61ab82648feae8f3ed630abc03eb835caaa7724998fdb558ffab9"
+    },
+    {
+      "path": "images/previews/DAA-2024-Ritual-II-02-960.webp",
+      "bytes": 172638,
+      "sha256": "9b31d4f0e5569071d4cdf4ed4374c8f65ea4adfefe884fda080c7053bfccbab5"
+    },
+    {
+      "path": "images/previews/DAA-2024-Ritual-II-03-480.webp",
+      "bytes": 49498,
+      "sha256": "4f894aee66612cc992660cc21eca1812643644d82c5c72e1c6ac26c9ca0cbf97"
+    },
+    {
+      "path": "images/previews/DAA-2024-Ritual-II-03-960.webp",
+      "bytes": 214620,
+      "sha256": "9055d0e1260dab55f71877f11c55e503f6cdd5bde881e0e16fc73589b51fe667"
+    },
+    {
+      "path": "images/previews/DAA-2024-Tunnel-01-480.webp",
+      "bytes": 14482,
+      "sha256": "f41559d1d50f79e49f0f1a47f7dce1462bd2b505ce696e406dd1444ea2ffba34"
+    },
+    {
+      "path": "images/previews/DAA-2024-Tunnel-01-960.webp",
+      "bytes": 49850,
+      "sha256": "62917f36c8a1675e5ac85e706a3058e53cf85e3ec8cdacc06f57bd436888821e"
+    },
+    {
+      "path": "images/previews/DAA-2024-Tunnel-02-480.webp",
+      "bytes": 19160,
+      "sha256": "997f260788742eaf73ec9cfe3002c5d30a5c6d40ac437118c9499dd399a28b1e"
+    },
+    {
+      "path": "images/previews/DAA-2024-Tunnel-02-960.webp",
+      "bytes": 65722,
+      "sha256": "2dd14be56d5204efd403d232c5a3f86b513d6857927931898939adc5d0f30c8b"
+    },
+    {
+      "path": "images/previews/DAA-2024-Tunnel-03-480.webp",
+      "bytes": 38628,
+      "sha256": "190ebd29fee0ee90773cb9caa397c367a1d50a12c9bfc7ccd6d7abbca6475bdd"
+    },
+    {
+      "path": "images/previews/DAA-2024-Tunnel-03-960.webp",
+      "bytes": 158596,
+      "sha256": "aa84d9df807f56f5069312106ae20004436685569abc459edf07fcec05d722d2"
+    },
+    {
+      "path": "images/previews/DAA-2024-WE-01-480.webp",
+      "bytes": 8954,
+      "sha256": "b42501960ee069cea8cacc39d0d4a0909e897548757d4dcccdb2e3312dce9a33"
+    },
+    {
+      "path": "images/previews/DAA-2024-WE-01-960.webp",
+      "bytes": 30146,
+      "sha256": "d807726dcc03be3810175f4dc931b431d5163fc3506cc8f60b00ddfc4f005f28"
+    },
+    {
+      "path": "images/previews/DAA-2024-WE-03-480.webp",
+      "bytes": 14212,
+      "sha256": "cd49d042c393c12cb29086640f3e7b0434d88889ba6a4d9841d1915354ce795d"
+    },
+    {
+      "path": "images/previews/DAA-2024-WE-03-960.webp",
+      "bytes": 36946,
+      "sha256": "c668bdc3e7e3ecd6cc6f1fd0161dfeed3e3cafdade271fb1b0d167cbbf77c20d"
+    },
+    {
+      "path": "images/previews/DAA-2025-Grifon-01-480.webp",
+      "bytes": 29494,
+      "sha256": "ae5adc2c3632c9f734ee0127db41af353c6ed4c9484aa803843cd9e62c250608"
+    },
+    {
+      "path": "images/previews/DAA-2025-Grifon-01-960.webp",
+      "bytes": 102152,
+      "sha256": "8892cc45548525be69526e7d6662440a83a8adc65945b7b7cd185d1401da9915"
+    },
+    {
+      "path": "images/previews/DAA-2025-Grifon-02-480.webp",
+      "bytes": 21792,
+      "sha256": "2b035c6a1db38397b5f0139aa63161cf2d6914b765eab24b7d7cebc98b878706"
+    },
+    {
+      "path": "images/previews/DAA-2025-Grifon-02-960.webp",
+      "bytes": 73756,
+      "sha256": "6fd1746886d53cab31831c95ee5b3f15f26199c72541b9a9b448f528e54f4937"
+    },
+    {
+      "path": "images/previews/DAA-2025-Grifon-03-480.webp",
+      "bytes": 28934,
+      "sha256": "6b0c6521853f696c2b5216894cd9eaa3c8e023043900f6771add3f8579cf0d1a"
+    },
+    {
+      "path": "images/previews/DAA-2025-Grifon-03-960.webp",
+      "bytes": 81462,
+      "sha256": "47f7559a86a832c9106f8da4821b02cf6538212c08a2f2ce305a38f960b942a9"
+    },
+    {
+      "path": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-01-480.webp",
+      "bytes": 44640,
+      "sha256": "48a6715823f87614e2257612db85eb96857fc5d9a4a36d2759f068cfcb1b52e2"
+    },
+    {
+      "path": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-01-960.webp",
+      "bytes": 159986,
+      "sha256": "a1e610eb1c95bfec6e0f42345b963d38d074841c6d669dda5eb3337b43fac006"
+    },
+    {
+      "path": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-banner-480.webp",
+      "bytes": 27196,
+      "sha256": "788b0fbe91284a5c726ee247810e1b6e29d62ea5f36ef31fe989bd9de4fec7d2"
+    },
+    {
+      "path": "images/previews/DAA-2025-NoiseMedaiArt-Alarm-banner-960.webp",
+      "bytes": 88020,
+      "sha256": "748c9d39915875de832e82058ac9e6d004f921e6ae7e3079d2e1fad242aef335"
+    },
+    {
+      "path": "images/previews/DAA-2025-ShamanVillage-II-01-480.webp",
+      "bytes": 17554,
+      "sha256": "ccb4277a3554c2bcc3b4192be71043a4081d252888b26dd94943a35d76e2dc69"
+    },
+    {
+      "path": "images/previews/DAA-2025-ShamanVillage-II-01-960.webp",
+      "bytes": 60208,
+      "sha256": "a4654194f88a0261a7ea17ed15e2dafd13670df01c85cf861bbd84aa6910feec"
+    },
+    {
+      "path": "images/previews/DAA-2025-ShamanVillage-II-02-480.webp",
+      "bytes": 27124,
+      "sha256": "406048eb0c2f4bc966fb7096ac7ea588f7063a9d5cf2d99c7716de2f7f9939c5"
+    },
+    {
+      "path": "images/previews/DAA-2025-ShamanVillage-II-02-960.webp",
+      "bytes": 90852,
+      "sha256": "fa5632b44c524225eb9d332eedf7ec3215fe1e175460dfcd70292ae7948d321b"
+    },
+    {
+      "path": "images/previews/DAA-2025-ShamanVillage-II-03-480.webp",
+      "bytes": 18102,
+      "sha256": "318ee2a73a9a46e0d618f2000d8308d5845f0503af09b8a7f62e8ddc27203287"
+    },
+    {
+      "path": "images/previews/DAA-2025-ShamanVillage-II-03-960.webp",
+      "bytes": 66902,
+      "sha256": "757c56bbb37c3c410042209865c63f7b68d4a5482c21ed43dc459a88b220a79c"
+    },
+    {
+      "path": "images/previews/DAA-ENV-BANNER-480.webp",
+      "bytes": 18870,
+      "sha256": "8de73153d2cd83fcd59e216926d6c040f84fb1b891e4b0be7e15da5f8d6ed53a"
+    },
+    {
+      "path": "images/previews/DAA-ENV-BANNER-960.webp",
+      "bytes": 68010,
+      "sha256": "43ff27ae9b634f28b808065ce10c9d6078ce15581b5958cecd42981b562243a2"
+    },
+    {
+      "path": "images/previews/DAA-ENV-POSTER-480.webp",
+      "bytes": 21796,
+      "sha256": "c7c01d0785e748d7e5a4b035df7d9d4f4c4525bc971db91b4ab606c7c43cb268"
+    },
+    {
+      "path": "images/previews/DAA-ENV-POSTER-960.webp",
+      "bytes": 69792,
+      "sha256": "ee6635aabee75318e5852ec940bb7e30a104ca08e32adb6128c86a78967edec7"
+    },
+    {
+      "path": "images/previews/DAA_ENV-NO-Banner-3-480.webp",
+      "bytes": 5278,
+      "sha256": "8c7460e2cb35d4173f7e5d845ac5f73c1e2394a525663dbb6138b254daa5ccb0"
+    },
+    {
+      "path": "images/previews/DAA_ENV-NO-Banner-3-960.webp",
+      "bytes": 18838,
+      "sha256": "0e403653738173dddf9552ad7709feb98c07693e38f83aae3445675cf2cae6d2"
+    },
+    {
+      "path": "images/previews/DilaraAltınkepceArslan-1-480.webp",
+      "bytes": 16730,
+      "sha256": "172857ca94dcf7470188151714c99d3bb767388efaed35b079d56c5f31072b5d"
+    },
+    {
+      "path": "images/previews/DilaraAltınkepceArslan-1-960.webp",
+      "bytes": 50216,
+      "sha256": "4680ac1848853fc2c811155673f47897d86197777eb86e834c6e74cad2588dc6"
+    },
+    {
+      "path": "images/previews/DilaraAltınkepceArslan-2-480.webp",
+      "bytes": 12934,
+      "sha256": "f7bcd92d16d160b6766a65bdb5a3538d1de75e5eeda66165e5fc85d44d6ced4b"
+    },
+    {
+      "path": "images/previews/DilaraAltınkepceArslan-2-960.webp",
+      "bytes": 35752,
+      "sha256": "9c84760edc01ee2337b8a134e70bdb23140ac9a0522874bf734f3d4bc2dc83a6"
+    },
+    {
+      "path": "images/previews/DilaraAltınkepceArslan-3-480.webp",
+      "bytes": 8444,
+      "sha256": "dc7216cf44a5099864bff95f380b3379bbbc0e70f9cbc8fc379054e83759c4a4"
+    },
+    {
+      "path": "images/previews/DilaraAltınkepceArslan-3-960.webp",
+      "bytes": 27534,
+      "sha256": "fa47f90b858a25cd815763b226c52fccef5b20250f22ffb9f300a37ab38bb2e4"
+    },
+    {
+      "path": "images/previews/ENV_Acilis_Davetiyesi_Dijital-480.webp",
+      "bytes": 15744,
+      "sha256": "5681d358acc5ab90e4ac17e80283896c64aaa82628beb4eebbfea2110e7bd557"
+    },
+    {
+      "path": "images/previews/ENV_Acilis_Davetiyesi_Dijital-960.webp",
+      "bytes": 41200,
+      "sha256": "5c10aaf19e65562a20913eedc125b8790cb48a6585e54544b9570466a7bab9d5"
+    },
+    {
+      "path": "images/previews/ENV_Acilis_Davetiyesi_Web_Popup_Yatay-480.webp",
+      "bytes": 15044,
+      "sha256": "1f50cf8e2793c46fff642ad5d3fbe6c2c671a845eee37e4235d45ea16e46016b"
+    },
+    {
+      "path": "images/previews/ENV_Acilis_Davetiyesi_Web_Popup_Yatay-960.webp",
+      "bytes": 40380,
+      "sha256": "11acef3dbb09a1c2d025e8057feac80da693eaa3093bb39b1cc310e21e85d2ee"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-01-480.webp",
+      "bytes": 11362,
+      "sha256": "b33600aced810b2d57b0f1ba6b20bd84d4ae806b12c026a80198d2fd87e63d9d"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-01-960.webp",
+      "bytes": 37368,
+      "sha256": "62d4ba30c339e0fe0658adf68fed015ffeea166e2142866a8a4133f3abeaca20"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-02-480.webp",
+      "bytes": 23238,
+      "sha256": "d6e88cecc95693ee21c5b2f387a7723d6243d777c42b3f6d40ce1fd9ac730405"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-02-960.webp",
+      "bytes": 72224,
+      "sha256": "b119d048fc07c8c0cdcb122ca3b004cfdb84a26a81c7d19c60af990b3386ad20"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-03-480.webp",
+      "bytes": 13844,
+      "sha256": "0b9819d51659de307bbb359a913c0a33cb1e54f46fa73058c292e3104828d826"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-03-960.webp",
+      "bytes": 45626,
+      "sha256": "ad70df8d6aae2b8580c09942cbac980244e6ead602882b72f574a9b0dc29ee1e"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-04-480.webp",
+      "bytes": 27532,
+      "sha256": "7ba9238c521b26c328dea489c90c6acbdce797da6b4d56e00dee88822224aa62"
+    },
+    {
+      "path": "images/previews/daa-2025-gss-samankoyu-bozkirda-04-960.webp",
+      "bytes": 84870,
+      "sha256": "9cf88a5b7b51ca7cc076636ffb30ff97beb5e37e26e1678ea292a8193b6136df"
+    },
+    {
+      "path": "images/previews/daa-artworks-Awakened-Anew.-01-480.webp",
+      "bytes": 16244,
+      "sha256": "a93faa915a4d5504470b4da07332e4c5a804c3ab7bb2c70a1a20476e08ea5965"
+    },
+    {
+      "path": "images/previews/daa-artworks-Awakened-Anew.-01-960.webp",
+      "bytes": 52432,
+      "sha256": "f60b24bd6e85ac0760b58642cd31e0587754aa4d73f861406d365f9466c7ed41"
+    },
+    {
+      "path": "images/previews/daa-artworks-Awakened-Anew.-02-480.webp",
+      "bytes": 28742,
+      "sha256": "30b8f2f85bd78232702bb5221437a0cb19288998e2b814b2ed0e9a449639d967"
+    },
+    {
+      "path": "images/previews/daa-artworks-Awakened-Anew.-02-960.webp",
+      "bytes": 98530,
+      "sha256": "dcfb862ff550d90e9bfdaab5ae3da81d175e6965de3c0855d5b3884574676a74"
+    },
+    {
+      "path": "images/previews/daa-artworks-Awakened-Anew.-03-480.webp",
+      "bytes": 20256,
+      "sha256": "94c3ebe2bd28dd544c68da317ec32d12122547a913b2fbd132865e9f69296cfb"
+    },
+    {
+      "path": "images/previews/daa-artworks-Awakened-Anew.-03-960.webp",
+      "bytes": 64792,
+      "sha256": "2135655399a7c85d95270a26c3b2b71de385343012aa6eae08ab5e80dadb5f10"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-01-480.webp",
+      "bytes": 11274,
+      "sha256": "0727486ddf9c0cf1bcd0923f3ea009f87f80319f7edb2cd1d73f2418eaa4a27b"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-01-960.webp",
+      "bytes": 45944,
+      "sha256": "dfd438e1cf7554c7753530b62a6985fcba3a64ff419185f80f7907b1744cf290"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-02-480.webp",
+      "bytes": 25418,
+      "sha256": "9a878ac02e13503fd9095ea86abc91bc5811527415c6307348244381438ed898"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-02-960.webp",
+      "bytes": 126940,
+      "sha256": "cbc870904b8dd8f2ad525090ae23bba83c2338452b56491b0a56ba9312d2d69e"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-03-480.webp",
+      "bytes": 32088,
+      "sha256": "0f3e6d51be352cc0d766b4a32e39e927d9f2ea7bebf1e20acf17c2cdfbbd8d2c"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-03-960.webp",
+      "bytes": 156944,
+      "sha256": "1b313e53698111e3786963a01862c4e6821d36fa114b6cd9330290f1bc408c2e"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-04-480.webp",
+      "bytes": 26504,
+      "sha256": "bfa342ebefa606155716d3b66f919b2f6f447b02417c33d767597a28fe4b6045"
+    },
+    {
+      "path": "images/previews/daa-artworks-intestine-04-960.webp",
+      "bytes": 132820,
+      "sha256": "6d0fe9c452d1d4618d68be3ce2f502117f2c6728f567d5b50a0b3fa651a40500"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy-480.webp",
+      "bytes": 6862,
+      "sha256": "3ee617211dcebdd522238a2502676a409582fc46f6e381c534008ee9754e97c7"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy-960.webp",
+      "bytes": 20032,
+      "sha256": "5a8f1ed2655a06f4f722c3d6a7740cf0cd3639e4e20d3291dbd0f2cf2a5d03b9"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy1-1-480.webp",
+      "bytes": 5984,
+      "sha256": "be3f10486aaf8496f0270799d7589c5b4d6e3890fc83af14b6ee6611a262230e"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy1-1-960.webp",
+      "bytes": 20654,
+      "sha256": "d0cb54d05e2fd2aa78ecf68a325850aa8aa442856025c1e42d0234dd0aefd7a0"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy2-1-480.webp",
+      "bytes": 7890,
+      "sha256": "d46d32a034d1ec53729a6b376c99bad29f4a8cc536d7def404a27b33625e2ef3"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy2-1-960.webp",
+      "bytes": 28394,
+      "sha256": "99b824189dfead4b5c2961cb0c4bed2acfd97b4640bb6183e42246c795b1f909"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy3-1-480.webp",
+      "bytes": 7132,
+      "sha256": "51ae0b1bc280ff2888780f2e9887eab32c7e4b58d82a24a9d817e9f7fe369075"
+    },
+    {
+      "path": "images/previews/daa-artworks-toy3-1-960.webp",
+      "bytes": 24100,
+      "sha256": "94cf8b5040dd1afb6171de4710d41bb6beb79e5987ba8196d9dd7810fcf4cfb2"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-07-480.webp",
+      "bytes": 17406,
+      "sha256": "3be2e3f0be9916ba06cca423a525bac4b6d1668f5f54e10a6a6ad3db01beb97a"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-07-960.webp",
+      "bytes": 91352,
+      "sha256": "3e965999344cae6aa66e02a7c0954edc3e6eab8516704c8ea040e81863270c5a"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-08-480.webp",
+      "bytes": 19682,
+      "sha256": "6a7222d1c4f34a093f831ddfae4e1676d897b3456f39c6e8fe98b502ca5d9063"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-08-960.webp",
+      "bytes": 60156,
+      "sha256": "14e5f1af5a7aa28099405622b3bc9ff5250f1b488cfcd49e40acd4eae153fa13"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-09-480.webp",
+      "bytes": 10840,
+      "sha256": "2608d2221923b5f9eaf1fcd503ffad862753167ed898cbaabd23793ad0aeb215"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-09-960.webp",
+      "bytes": 31228,
+      "sha256": "ce76914592d0c4dbd05a30739c159332a53c2fc03325b9465a6e0e7fabaa1007"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-10-480.webp",
+      "bytes": 9024,
+      "sha256": "9dc45a1ce4474c4cc9ab27b19b262b99ecb3f39c3e09a723da48a0fe498c8afd"
+    },
+    {
+      "path": "images/previews/daa-base-verbasci-10-960.webp",
+      "bytes": 36304,
+      "sha256": "4aec362c8d350fc1fcc7b277010ac62828f32f0c4b4be1eb03b740c78da9327c"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-00-480.webp",
+      "bytes": 28200,
+      "sha256": "fa606a535e1b79ab18fb3774aa31e05629af7b4f8dbe51ba2679c4e82faffb91"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-00-960.webp",
+      "bytes": 98086,
+      "sha256": "39226a5013ad616ef292f4160450fea6fa9425bdd1c3fc691cf8218ac4990586"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-01-480.webp",
+      "bytes": 34304,
+      "sha256": "e697132839b5996cb3290a5fbe73608d45a2557731721bbfc2f145ea0b6d4e2c"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-01-960.webp",
+      "bytes": 111308,
+      "sha256": "90e1d96c761540433022577b5ffd32c3a8b4949f1e145d7130e0884774c0e592"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-02-480.webp",
+      "bytes": 31252,
+      "sha256": "8b339d081bc7b4a5e4e8c84a0eff29debf5003b35288e24cdc3697151f80bc81"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-02-960.webp",
+      "bytes": 111112,
+      "sha256": "897a724ab0ae5784db67081fcd50b796d2d90c6fd76b61698ff4a5fb9fca88e3"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-03-480.webp",
+      "bytes": 29816,
+      "sha256": "7d5c8c0551c5f55a7cc6818e888338fdefec1ac9a058dc938cdcb045f37f293c"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-03-960.webp",
+      "bytes": 121742,
+      "sha256": "9f4c8028b23fa1ae86a7fce23d106df865f88fd3fabfe7fb9956950cceab0efd"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-cover-480.webp",
+      "bytes": 26552,
+      "sha256": "52bb05dbee83ac6f406cae1f11708ce6fdaa902a091ce555948a75e210b958c0"
+    },
+    {
+      "path": "images/previews/daa-bienal-budun-cover-960.webp",
+      "bytes": 85284,
+      "sha256": "83beb406009aa7f3dbae0283b3bcecda9323a0101c58a9bf7c41b95afdd58e96"
+    },
+    {
+      "path": "images/previews/daa-eart-today-01-480.webp",
+      "bytes": 14694,
+      "sha256": "d629d29a3accfc9ea856079ed3add895dba862be3cf8e112a669615bfe682c76"
+    },
+    {
+      "path": "images/previews/daa-eart-today-01-960.webp",
+      "bytes": 50624,
+      "sha256": "692acc1fb00df38783ae7950923b84c4a1a9636f01a3189b8ed39c9d67f2c00b"
+    },
+    {
+      "path": "images/previews/daa-eart-today-02-480.webp",
+      "bytes": 15944,
+      "sha256": "ba130b5a3edf00fb1f2d935d1f4be84dd93c6d3897d318b8221770856ed0c960"
+    },
+    {
+      "path": "images/previews/daa-eart-today-02-960.webp",
+      "bytes": 51282,
+      "sha256": "03524e7de674605fb3375c2c1c1f33d123c32a37349344add56be7f34b94ae01"
+    },
+    {
+      "path": "images/previews/daa-eart-today-03-480.webp",
+      "bytes": 46726,
+      "sha256": "ccdf55ccee822b3a12ba1756e2b0bef21f41e6a36b438722a2346bd6cbc91e1e"
+    },
+    {
+      "path": "images/previews/daa-eart-today-03-960.webp",
+      "bytes": 115290,
+      "sha256": "b602af5b50d1be300f714195f97069319fdfff3bbf80a82fa2aa41736238fb03"
+    },
+    {
+      "path": "images/previews/daa-eart-today-04-480.webp",
+      "bytes": 8986,
+      "sha256": "2a96b91efcfbbd612b1539e32ae84b0589a7785924ac737e5e3e03d82e0de11c"
+    },
+    {
+      "path": "images/previews/daa-eart-today-04-960.webp",
+      "bytes": 28314,
+      "sha256": "f3ad3472b6ebe727c747c8cb56379480c282affdd4dd5d655ec055ce16b5632c"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-00-480.webp",
+      "bytes": 22784,
+      "sha256": "86b39e9c302998f5ef6467ddd78ff5ba2160fb36f48ea86b347a1aa9b01276b7"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-00-960.webp",
+      "bytes": 76070,
+      "sha256": "3d264d80a368e68c39b233665bbcec67206ebf889168b07d21796e63455bc0ad"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-01-480.webp",
+      "bytes": 17898,
+      "sha256": "c55ef6cfbd525d49d06c888a3819173eaa7bde8a62353531bf7514546ab57c67"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-01-960.webp",
+      "bytes": 56332,
+      "sha256": "29b8d406b55c8aa3f69d1b4d5b5c9cf0c45316d45c0d0f4859f39ca96ddc66cc"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-02-480.webp",
+      "bytes": 23992,
+      "sha256": "02425b7c0cc5eb240de193ad7c4e3409d5e85badee1ef3a5ccacd8586416d578"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-02-960.webp",
+      "bytes": 87516,
+      "sha256": "f9d1dfe356fb8079ee7a7faf3a070ce224298c89571b7b37274cb2666ccf721a"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-03-480.webp",
+      "bytes": 16990,
+      "sha256": "5638df62c34f4dc9a892d3719988c6158f7594ff2aff6c44bb36c2ecb2b93a49"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-03-960.webp",
+      "bytes": 54362,
+      "sha256": "e1bd03baf2714d06db883cc5f7a6ccbf864cfaa0f4b8b8ab7c7d934a2daf7664"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-04-480.webp",
+      "bytes": 31384,
+      "sha256": "583c13be418445094a65340bca0e9d65e2709aaa98cfcc0522a7a515b49a678f"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-04-960.webp",
+      "bytes": 104712,
+      "sha256": "6c31697c4216d8f5a11399cb386f42766dd84450b5ee389f1a76a58d54b8261c"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-05-480.webp",
+      "bytes": 34162,
+      "sha256": "594b92bc03a3179cc28f4b7be06d98a39c14e859c2342e4dfd4c4e20a2810950"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-05-960.webp",
+      "bytes": 110522,
+      "sha256": "9412e9f35b0913d144f1a8f8ba8d80d7f07b7b64d39f2fdae40d3e7c5a54a0aa"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-06-480.webp",
+      "bytes": 32804,
+      "sha256": "cba9391c05fd4ea253146b93f2e1e9ef9b1ff1908a06d168b2d0fcb9e87b2060"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-06-960.webp",
+      "bytes": 108034,
+      "sha256": "2a4c8ba581059f5ce095c25f3a910d11732b5422f4d66847203c0eba6adef20e"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-07-480.webp",
+      "bytes": 32210,
+      "sha256": "dab1715ce8f9f0efdfb4a789f64d68dd12b0543f60ad3a54331077da374a0f21"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-07-960.webp",
+      "bytes": 107606,
+      "sha256": "ec4b37e9547e9c91834107d9fd633f370270fcd5ddce2ae5a5e9945fa5b9ca50"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-08-480.webp",
+      "bytes": 30786,
+      "sha256": "b4029d89bc523452ec936d3153930ce72fcc3cf3e1b9e5ba51ff4ff431a19402"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-08-960.webp",
+      "bytes": 103992,
+      "sha256": "e6ca66844786391580ee18762c26c034a4ac3ea7d593a65b108075d2b56a38eb"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-09-480.webp",
+      "bytes": 19094,
+      "sha256": "04e63d4ec97b45836e170c10bc75e802b3305c27fc6e656b418e9e806395f605"
+    },
+    {
+      "path": "images/previews/daa-newmedia-alarm-grifon-09-960.webp",
+      "bytes": 55722,
+      "sha256": "7eb1ad2d928c0d01228bc8f26bb911f2fc3275b39a5516b101baaaf2b38feb3f"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-01-480.webp",
+      "bytes": 33916,
+      "sha256": "698e82fe5f8ecbd6a94738fa767b57684fc798f78f227777fced40f0f42851aa"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-01-960.webp",
+      "bytes": 111414,
+      "sha256": "5b09aac08374ec6ad5b6ab3315728a5b20274afd768fa1e37fc4c26f1cbec05d"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-02-480.webp",
+      "bytes": 34464,
+      "sha256": "38de80f3e41dcfae2d5c60aa566b8c024f6c8a281067868e970f399a726dd071"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-02-960.webp",
+      "bytes": 118658,
+      "sha256": "942c47903060264ccaf2eb87850a2b31867024622b84b2cf570411463798653a"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-03-480.webp",
+      "bytes": 16728,
+      "sha256": "705175ba8667faf596ae53f93a7302254f8554aa8332e0b167f8b0e10c02bae4"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-03-960.webp",
+      "bytes": 47696,
+      "sha256": "160fde6a2164711a73f24b1eedff71481adca4911ef813f9354d40a5e44e0654"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-04-480.webp",
+      "bytes": 32016,
+      "sha256": "00ebefefce197f72777498b26c1bb4291a0712886f50556d1e30ef871506f444"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-04-960.webp",
+      "bytes": 102624,
+      "sha256": "f15af8291e49a169a40bd78988b9131dfea8e5b10b6b17807ea4621bdc06da0a"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-05-480.webp",
+      "bytes": 22844,
+      "sha256": "cff7874714cfdbf656ca57df0e7167ca9e97504c99fa94e6251a1c9c0371647d"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-05-960.webp",
+      "bytes": 60882,
+      "sha256": "450b4021e73b067f9eb0a48f56e6d86fbfb92c9b9ea15b0ddf5b771887a84536"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-06-480.webp",
+      "bytes": 37900,
+      "sha256": "1051c807b928f368648a94cccf4d1454925560fe7e588a71f6b96c3b539fd5c9"
+    },
+    {
+      "path": "images/previews/daa-ortak-mekik-verbasci-06-960.webp",
+      "bytes": 125482,
+      "sha256": "3005ca152e99542baf20417ddbbf652f0d5de42d661e3f524e5a0d87788bceff"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-01-480.webp",
+      "bytes": 15068,
+      "sha256": "01dc53a8b6c40c2f0b4be21d62430eee27db770640b811ef7ed795af7b9852a1"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-01-960.webp",
+      "bytes": 43840,
+      "sha256": "7179e70a520f2aa5a4885477ea65b1946a221083590f7b06ca42b57b1fe7f0ac"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-02-480.webp",
+      "bytes": 16348,
+      "sha256": "3749b9b5ac0ae9a3cf458ffe2de43118ec825cf5ead7042921bb2bbe42211608"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-02-960.webp",
+      "bytes": 41568,
+      "sha256": "2cddc57820ff10eb929c4942bdfc2ca7dcd5cd49cd4868acc832abbdcb15646a"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-03-480.webp",
+      "bytes": 16892,
+      "sha256": "cd68f9002f8d50fd159aafc1399e6ccd48c2c8e54ea0c04a3a477b2b8863142a"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-03-960.webp",
+      "bytes": 48570,
+      "sha256": "c5d8a65ca0197a90859c27803ad4539f0637277156589f874b75b4d290b30d35"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-04-480.webp",
+      "bytes": 20030,
+      "sha256": "cfeb7277ed86ea7c8d0e9722ada2893b4027dfa7b50253b4fdc8276e46c12dea"
+    },
+    {
+      "path": "images/previews/daa-the-Exit-emphaty-04-960.webp",
+      "bytes": 56036,
+      "sha256": "37a84c1092797861c63b47d44f917702116295ef70b6849a9976f4852704a7f3"
+    },
+    {
+      "path": "images/previews/daa-upcoming-cover-480.webp",
+      "bytes": 42174,
+      "sha256": "583e11b28946930e0ead6d5fed50d674cda09adffbaf781f1068958f3d1a4ef9"
+    },
+    {
+      "path": "images/previews/daa-upcoming-cover-960.webp",
+      "bytes": 165766,
+      "sha256": "1b29bcb7760995fe1c1247a05b472491694d408c64b8f89858859a86c30c6959"
+    },
+    {
+      "path": "images/previews/env-cover-480.webp",
+      "bytes": 5278,
+      "sha256": "8c7460e2cb35d4173f7e5d845ac5f73c1e2394a525663dbb6138b254daa5ccb0"
+    },
+    {
+      "path": "images/previews/env-cover-960.webp",
+      "bytes": 18838,
+      "sha256": "0e403653738173dddf9552ad7709feb98c07693e38f83aae3445675cf2cae6d2"
+    },
+    {
+      "path": "images/previews/env-notebook-01-480.webp",
+      "bytes": 23716,
+      "sha256": "f7e9fe7ee28184c209005aacdd99b0c791372847a2dbb92e3b56bf93f1c20bf5"
+    },
+    {
+      "path": "images/previews/env-notebook-01-960.webp",
+      "bytes": 79038,
+      "sha256": "457424f66cbaf0ab876e1df458680932a31527a439518eac8b76976234d83cd5"
+    },
+    {
+      "path": "images/previews/env-notebook-02-480.webp",
+      "bytes": 8710,
+      "sha256": "234775586ae9a55bb176b341dbc90c9a80b326554f9f677280ff675ba6bad204"
+    },
+    {
+      "path": "images/previews/env-notebook-02-960.webp",
+      "bytes": 45576,
+      "sha256": "e02b9f94e9fa2d26bb6f877268d133e87c81ec0127e44b5b47c6250bc8583061"
+    },
+    {
+      "path": "images/previews/env-notebook-03-480.webp",
+      "bytes": 16484,
+      "sha256": "cd15f1093db9bd963bba01aeac17754f86f3ef3d4d9f602ef2acaaffc26111ef"
+    },
+    {
+      "path": "images/previews/env-notebook-03-960.webp",
+      "bytes": 51510,
+      "sha256": "afb3364717973f955c0a2ec0fb303990b339e93cf30a6f9f400c23e00e76e0d8"
+    },
+    {
+      "path": "images/previews/env-view-01-480.webp",
+      "bytes": 13208,
+      "sha256": "239b2d5f422f648025e5ef769571de2647329e55a940efbd963e62750d658efe"
+    },
+    {
+      "path": "images/previews/env-view-01-960.webp",
+      "bytes": 39476,
+      "sha256": "140a8cf4b1491762d3ed88b3f2c16ed9f1371ef092766788bfb1eed604ad3513"
+    },
+    {
+      "path": "images/previews/env-view-02-480.webp",
+      "bytes": 2318,
+      "sha256": "e3bc173f3388116a29b5f60363a21d3b176bdd68a6dfb4550dfd252a00d5ede5"
+    },
+    {
+      "path": "images/previews/env-view-02-960.webp",
+      "bytes": 7006,
+      "sha256": "0c514bad97dd45a04a6b3cbc9fee2ce34720f84e1c9ec9074ade92b1208d9a0c"
+    },
+    {
+      "path": "images/previews/env-view-03-480.webp",
+      "bytes": 28026,
+      "sha256": "1596b0ce98e5a323899f0dd51bf06ba002f6fc91375c4e1493db9b261db3a74a"
+    },
+    {
+      "path": "images/previews/env-view-03-960.webp",
+      "bytes": 99124,
+      "sha256": "67b7043bbc412048d7bf8965b4bc19a118b9700e70a73b46243402e0399abffb"
+    },
+    {
+      "path": "images/previews/invitation-ENV_Popup_Masaustu_Linkli-480.webp",
+      "bytes": 502,
+      "sha256": "644a8af1fffa3d8e77912ac4e20431d9b90c3a51596a763b39b5444a3ce756bb"
+    },
+    {
+      "path": "images/previews/invitation-ENV_Popup_Masaustu_Linkli-960.webp",
+      "bytes": 1416,
+      "sha256": "a75e52b7e3ef986c351a8b78f3f4bd173d4098613ce342a60e671ff7193b1d94"
+    },
+    {
+      "path": "images/previews/invitation-ENV_Popup_Mobil_Linkli-480.webp",
+      "bytes": 15696,
+      "sha256": "4026fcf0c696097d2922ec990b0564ef3a16b6195062b900a6e075e3f3986d36"
+    },
+    {
+      "path": "images/previews/invitation-ENV_Popup_Mobil_Linkli-960.webp",
+      "bytes": 41590,
+      "sha256": "4832263e4977b5f95be5a9892c9b667ade0ea0e648057b59065b8b90381659cd"
+    },
+    {
+      "path": "index.html",
+      "bytes": 12517,
+      "sha256": "f52ec8c40dea57fe149aeb22407106b589f674cc6e33c79151ebf393be49b02d"
+    },
+    {
+      "path": "lightbox.js",
+      "bytes": 2330,
+      "sha256": "9575ac608b54d58a9506dab45c82d611349d20fd10aa915134afdc5176180d23"
+    },
+    {
+      "path": "privacy.html",
+      "bytes": 5278,
+      "sha256": "d6eaaaa31b533675e93dfd832f0b81eb023c61e69ef99c95eb03fd90aa847715"
+    },
+    {
+      "path": "robots.txt",
+      "bytes": 124,
+      "sha256": "4dd50d2b6927a497806500a0bd8dc98fce5a3a3f30d7eced16e984330f4ac74d"
+    },
+    {
+      "path": "scripts/build_images.py",
+      "bytes": 1813,
+      "sha256": "6ba72ff9c6559bdce8d31899df701410136d2138b8ca89c463669627cefaf39d"
+    },
+    {
+      "path": "scripts/check_site.py",
+      "bytes": 3897,
+      "sha256": "fd27b24f50a45a6bce79ff8dc403e6575800bc1a587b9d3c7547c5425179d59a"
+    },
+    {
+      "path": "scripts/collect_public_feeds.py",
+      "bytes": 9724,
+      "sha256": "1af0a00a9d98388198627d2fc6038688a7473dbd114a58b8332472a8f9eecc2d"
+    },
+    {
+      "path": "scripts/configure_alarm.py",
+      "bytes": 1085,
+      "sha256": "b6528631a844673105faf98eeb220b3fecfce8f0074edf5de0cb3d5882d57f1f"
+    },
+    {
+      "path": "scripts/hourly_snapshot.py",
+      "bytes": 3859,
+      "sha256": "ae9859279aed3648ac9f2dd6c2f452d9f3a662d01ade21f48a665c91bd656564"
+    },
+    {
+      "path": "scripts/prepare_publish.py",
+      "bytes": 1592,
+      "sha256": "6ba8b41f87951b241f35469fd757dc61a208201857c625839d7272d13f5166c4"
+    },
+    {
+      "path": "scripts/sync_layout.py",
+      "bytes": 611,
+      "sha256": "751f944a9a13cd158ff54dbf5fa71cf2470f3cf5ffdbb628e982ce01734958f9"
+    },
+    {
+      "path": "scripts/test_collect_public_feeds.py",
+      "bytes": 1202,
+      "sha256": "eb8544b59ed1dd7620d71c1dde0bf6cde92701508cd2f8ac92f2a2d1597d9bd4"
+    },
+    {
+      "path": "scripts/test_hourly_snapshot.py",
+      "bytes": 1479,
+      "sha256": "ce9ce47e938fb83f7e8d9b15e88e603a456e438b640e71d7c87d73f958eb2de9"
+    },
+    {
+      "path": "selections.html",
+      "bytes": 17507,
+      "sha256": "de5ff9c87d2665b6433e3a571272e0598d6bb6e2149865bbc0033721e01c5d49"
+    },
+    {
+      "path": "series-griffin.html",
+      "bytes": 16553,
+      "sha256": "d961ba8c4a67ce77caf9ab3de5dc4d540fee517f87b58a313132ba3ebe87a80b"
+    },
+    {
+      "path": "series-intestine.html",
+      "bytes": 10233,
+      "sha256": "21f7deabe0a391958cf22bb8a0a9ea18e85a987cbf673ce149589f237589e486"
+    },
+    {
+      "path": "series-koy.html",
+      "bytes": 14427,
+      "sha256": "10bca1e7f4dac4e9d43327ebb4a57964644fa127453987dfc26cfcff85eef81b"
+    },
+    {
+      "path": "series-polaroid.html",
+      "bytes": 14930,
+      "sha256": "0979b622c2af7702b13a32f165bb6ccc54f8babff4acd982e4a61de8186e7a41"
+    },
+    {
+      "path": "series-ritual.html",
+      "bytes": 24230,
+      "sha256": "f1a25b300479f9e63be11a41b1db387493bc5a839eddad5fcaa942861e22431d"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 2278,
+      "sha256": "5c8a159144b130e34472cacf3d4aaaceb64406e7a6d85b37479297a1b165f6b7"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Tam web sitesi çalışma kopyası. Fotoğraflar, ALARM, 3D model, HTML/CSS/JS, veri toplama kodları ve GitHub yayın akışı dahildir. Git geçmişi, yerel ayarlar ve gizli bilgiler dahil değildir. ALARM üst menüden kaldırılmıştır; erişim Artworks > New Media içindedir.

@@ -1,0 +1,41 @@
+19 Kasım 2026 / R03 — SON ÇALIŞMA KOPYASI
+
+Bu paket canlıya aktarılmış sürüm olarak sunulmamaktadır. Kaydedilmiş son çalışma dosyalarını içerir.
+
+AÇMA
+1. ZIP dosyasını tamamen çıkartın.
+2. Python 3 bulunan bilgisayarda Mac için BASLAT.command, Windows için BASLAT.bat dosyasını açın.
+   Alternatif: bu klasörde terminal açıp python3 BASLAT.py yazın (Windows: py -3 BASLAT.py).
+3. Tarayıcı açılınca ALARM ekranlarına menüden girin. Sunucu penceresini açık tutun.
+4. Durdurmak için terminalde Control+C kullanın.
+Python 3 yoksa klasörü bir statik web sunucusunda veya barındırma hizmetinde açın.
+HTML dosyasını doğrudan çift tıklayarak file:// üzerinden açmak, 3D model ve veri yüklemelerini engelleyebilir.
+
+PAKETTEKİ DURUM
+- Beş hayvan/veri ekranı, merkez 3D grifon sayfası ve dikey tarih ekranı mevcut.
+- Özgün grifon GLB modeli: alarm/models/griffin-original.glb (yaklaşık 3,6 MB).
+- Modelde bir iskelet ve 16 animasyon var: IDLE, gövde, göz, kafa, kanat ve kuyruk için üçer seviye.
+- Tarayıcı sahnesi IDLE animasyonunu başlatacak şekilde yazılmıştır. Diğer 15 animasyon veri eşiklerine henüz bağlanmamıştır.
+- 360 derece inceleme, ilk açı, tam ekran ve kullanıcı tarafından açılan ortam sesi kodu mevcut.
+- Tablet hayvanları sabit illüstrasyonların hafif bütünsel hareketini kullanır; ayrı anatomik animasyonlar tamamlanmamıştır.
+- Kaynak verileri internet bağlantısına ve kaynakların yanıtına bağlıdır. Kaydedilmiş veri güncel canlı veri sayılmaz.
+- Beşli hayvan görsellerinin arka plan/çizgi/ton uyumu için son görsel onay henüz tamamlanmamıştır.
+- Bu teslimde son tarayıcı/görsel kontrol ve sergide kullanılacak cihazlarda uzun süre testi tamamlanmamıştır.
+
+KONTROLLER
+32 HTML sayfasının yerel bağlantı, varlık ve modül dosyası kontrolleri geçti.
+Veri işleme ile ilgili mevcut 19 test geçti.
+GLB dosya bütünlüğü, bir iskelet ve 16 animasyonun varlığı doğrulandı.
+Bu kontroller görsel/etkileşim testinin yerine geçmez.
+
+EKRAN ADRESLERİ
+ALARM ana menü: /alarm/index.html
+Merkez heykel: /alarm/griffin.html
+Tarih: /alarm/history.html
+Kuyruk: /alarm/moloch.html
+Gövde: /alarm/cheetah.html
+Kanatlar: /alarm/cockroach.html
+Baş: /alarm/raven.html
+Gözler: /alarm/gorilla.html
+
+Veri kaynakları, lisans ve kurulum ayrıntıları: alarm/INSTALLATION.md
