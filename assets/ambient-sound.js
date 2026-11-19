@@ -17,7 +17,7 @@
     const air=context.createOscillator(),airGain=context.createGain();air.frequency.value=439.7;airGain.gain.value=.002;air.connect(airGain);airGain.connect(master);air.start();
   }
   function level(){if(!master)return;const target=enabled&&!document.hidden?Number(volume?.value||.25):0;master.gain.setTargetAtTime(target,context.currentTime,.9);}
-  button.addEventListener('click',async()=>{try{if(!context)setup();await context.resume();enabled=!enabled;button.textContent=enabled?'Sesi kapat':'Sesi aç';button.setAttribute('aria-pressed',String(enabled));level();}catch{document.querySelector('[data-display-message]').textContent='Bu cihazda ses açılamadı.';}});
+  button.addEventListener('click',async()=>{try{if(!context)setup();await context.resume();enabled=!enabled;button.textContent=enabled?'Sound off':'Sound on';button.setAttribute('aria-pressed',String(enabled));level();}catch{document.querySelector('[data-display-message]').textContent='Audio is unavailable on this device.';}});
   volume?.addEventListener('input',level);document.addEventListener('visibilitychange',level);
   window.addEventListener('pagehide',()=>context?.close());
 })();
