@@ -1,9 +1,9 @@
 import * as THREE from './vendor/three.module.min.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
-import { MarchingCubes } from './vendor/MarchingCubes.js';
+import { GLTFLoader } from './vendor/GLTFLoader.js';
 import { RoomEnvironment } from './vendor/RoomEnvironment.js';
 
-// ALARM / 2076 — a procedural sculptural study. No external model or tracking.
+// ALARM / 2076 — the artist’s original rig in a locally rendered environment.
 const host = document.querySelector('[data-scene]');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let renderer;
@@ -33,10 +33,10 @@ scene.environment=pmrem.fromScene(studio,.08).texture;
 scene.environmentIntensity=.55;
 studio.dispose();pmrem.dispose();
 const camera = new THREE.PerspectiveCamera(36, 1, .1, 180);
-const home = new THREE.Vector3(-8.7, 4.5, 10.4);
+const home = new THREE.Vector3(-6.8, 3.8, 8.5);
 camera.position.copy(home);
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(0, 2.55, 0);
+controls.target.set(0, 2.3, 0);
 controls.enableDamping = true; controls.dampingFactor = .06;
 controls.minDistance = 7; controls.maxDistance = 19;
 controls.minPolarAngle = .45; controls.maxPolarAngle = Math.PI / 2.08;
@@ -70,115 +70,37 @@ function stoneTexture() {
   const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
 }
 const texture = stoneTexture();
-const ivory = new THREE.MeshPhysicalMaterial({color:'#e9e2ca', map:texture, roughness:.38, metalness:.17, bumpMap:texture, bumpScale:.045, clearcoat:.13, clearcoatRoughness:.65});
+const ivory = new THREE.MeshPhysicalMaterial({color:'#e9e2ca', map:texture, roughness:.38, metalness:.17, bumpMap:texture, bumpScale:.045, clearcoat:.13, clearcoatRoughness:.65,side:THREE.DoubleSide});
 const gold = new THREE.MeshStandardMaterial({color:'#bba36e', metalness:.65, roughness:.45});
 const vein = new THREE.LineBasicMaterial({color:'#d3c494', transparent:true, opacity:.47});
 const dark = new THREE.MeshStandardMaterial({color:'#1f2925', roughness:.96, bumpMap:texture, bumpScale:.07});
-const griffin = new THREE.Group(); scene.add(griffin);
-function ellipsoid(parent, position, scale, material = ivory) {
-  const m = new THREE.Mesh(new THREE.SphereGeometry(1, 36, 24), material);
-  m.position.set(...position); m.scale.set(...scale); m.castShadow = true; m.receiveShadow = true; parent.add(m); return m;
-}
-function line(parent, points, material = vein) {
-  const curve = new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(...p)));
-  const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(curve.getPoints(60)), material); parent.add(l); return l;
-}
-function tube(parent, points, radius, material = ivory) {
-  const curve = new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(...p)));
-  const m = new THREE.Mesh(new THREE.TubeGeometry(curve, 48, radius, 12, false), material);
-  m.castShadow = true; m.receiveShadow = true; parent.add(m); return m;
-}
-// Blended volumes merge the torso and limbs into a continuous carved form.
-const volumes = [
-  [0,2.48,0,1.55,.52,.43],[-1.03,2.52,0,.5,.66,.46],[1.02,2.5,0,.57,.58,.43],
-  [-1.0,1.95,.39,.22,.58,.21],[-1.0,1.14,.4,.135,.65,.14],[-1.03,.49,.43,.14,.44,.15],[-1.17,.17,.45,.28,.15,.22],
-  [-.78,1.95,-.39,.22,.57,.21],[-.79,1.14,-.4,.135,.66,.14],[-.83,.49,-.43,.14,.44,.15],[-.96,.17,-.45,.28,.15,.22],
-  [1.02,2.05,.37,.34,.52,.26],[1.25,1.59,.4,.22,.35,.19],[1.09,1.1,.4,.14,.43,.14],[1.17,.52,.4,.13,.38,.14],[1.0,.17,.44,.28,.15,.22],
-  [1.0,2.05,-.37,.34,.52,.26],[1.21,1.59,-.4,.22,.35,.19],[1.01,1.1,-.4,.14,.43,.14],[1.09,.52,-.4,.13,.38,.14],[.92,.17,-.44,.28,.15,.22],
-  [-1.3,2.93,0,.31,.66,.3],[-1.42,3.35,0,.255,.52,.24]
-];
-const mc = new MarchingCubes(88, ivory, true, false, 160000);
-mc.isolation = 0;
-const res = mc.resolution;
-for (let z = 0; z < res; z++) for (let y = 0; y < res; y++) for (let x = 0; x < res; x++) {
-  const px = (x / res * 2 - 1) * 3.7, py = (y / res * 2 - 1) * 3.7 + 2.3, pz = (z / res * 2 - 1) * 3.7;
-  let distance = 100;
-  for (const v of volumes) {
-    const dx=px-v[0],dy=py-v[1],dz=pz-v[2];
-    const k0=Math.sqrt((dx/v[3])**2+(dy/v[4])**2+(dz/v[5])**2);
-    const k1=Math.sqrt((dx/(v[3]*v[3]))**2+(dy/(v[4]*v[4]))**2+(dz/(v[5]*v[5]))**2);
-    const d=k1>1e-8?k0*(k0-1)/k1:-Math.min(v[3],v[4],v[5]);
-    const blend=Math.max(.18-Math.abs(distance-d),0)/.18;
-    distance=Math.min(distance,d)-blend*blend*.18*.25;
-  }
-  distance+=Math.sin(px*37+py*13)*Math.sin(pz*41+py*17)*.003;
-  mc.field[x + y * res + z * res * res] = -distance;
-}
-mc.update();
-mc.scale.setScalar(3.7); mc.position.y = 2.3; mc.castShadow = true; mc.receiveShadow = true; griffin.add(mc);
-// Fine inlaid seams are part of the sculpture, not a diagnostic UI overlay.
-for (const z of [-.4,.4]) for (let j = 0; j < 3; j++) {
-  line(griffin,[[-1.25+j*.08,.19,z+.06],[-1.16+j*.08,.27,z+.08],[-1.04+j*.06,.3,z+.06]],vein);
-  line(griffin,[[.78+j*.08,.19,z+.06],[.88+j*.08,.27,z+.08],[1.02+j*.06,.3,z+.06]],vein);
-}
-const head = new THREE.Group(); head.position.set(-1.42,3.42,0); griffin.add(head);
-ellipsoid(head,[-.12,.28,0],[.36,.355,.255]);
-// An elongated closed bill, lofted through elliptical sections rather than cones.
-const billProfile=[[-.31,.21,.145,.18],[-.48,.205,.13,.17],[-.72,.16,.095,.12],[-.98,.095,.035,.045],[-1.06,.07,.004,.004]],bp=[],bi=[];
-for(let i=0;i<billProfile.length;i++)for(let j=0;j<32;j++){const p=billProfile[i],a=j/32*Math.PI*2;bp.push(p[0],p[1]+Math.sin(a)*p[2],Math.cos(a)*p[3]);}
-for(let i=0;i<billProfile.length-1;i++)for(let j=0;j<32;j++){const a=i*32+j,b=i*32+(j+1)%32;bi.push(a,a+32,b,b,a+32,b+32);}
-const bg=new THREE.BufferGeometry();bg.setAttribute('position',new THREE.Float32BufferAttribute(bp,3));bg.setIndex(bi);bg.computeVertexNormals();const bill=new THREE.Mesh(bg,ivory);bill.castShadow=true;head.add(bill);
-const mouthMaterial=new THREE.LineBasicMaterial({color:'#6f6853',transparent:true,opacity:.6});
-for (const side of [-1,1]) {
-  ellipsoid(head,[-.24,.365,side*.215],[.105,.075,.037],ivory);
-  ellipsoid(head,[-.265,.354,side*.246],[.05,.043,.014],gold);
-  ellipsoid(head,[-.277,.354,side*.258],[.028,.03,.008],new THREE.MeshPhysicalMaterial({color:'#263b2b',roughness:.12,metalness:.5}));
-  line(head,[[-.43,.12,side*.154],[-.68,.102,side*.12],[-.98,.077,side*.04]],mouthMaterial);
-  for (let i=0;i<11;i++) {
-    const a=i/11*Math.PI*1.4;
-    line(head,[[-.05,.6-i*.025,side*.28],[.17,.4-i*.045,side*.31],[.12,.06-i*.018,side*.24]]);
-  }
-}
-const wings = [];
-for (const side of [-1,1]) {
-  const pivot = new THREE.Group(); pivot.position.set(-.55,2.85,side*.28); griffin.add(pivot); wings.push(pivot);
-  const positions=[], indices=[], normals=[];
-  const nu=32,nv=14;
-  function wp(t,u) {
-    const width = Math.sin(Math.PI*t)**.75 * .61;
-    return new THREE.Vector3(2.25*t + width*u*.72, 2.55*t - width*u*.42, side*(.09 + 1.05*t + width*u*.5));
-  }
-  for(let i=0;i<=nu;i++)for(let j=0;j<=nv;j++)positions.push(...wp(i/nu,j/nv*2-1).toArray());
-  for(let i=0;i<nu;i++)for(let j=0;j<nv;j++){const a=i*(nv+1)+j,b=a+nv+1;indices.push(a,b,a+1,b,b+1,a+1);}
-  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));g.setIndex(indices);g.computeVertexNormals();
-  const membrane = new THREE.MeshPhysicalMaterial({color:'#dbcda5',metalness:.17,roughness:.48,transparent:true,opacity:.73,side:THREE.DoubleSide,depthWrite:false});
-  const surface = new THREE.Mesh(g,membrane); surface.castShadow=true;pivot.add(surface);
-  for(const u of [-1,1]){const points=[];for(let i=0;i<=32;i++)points.push(wp(i/32,u).toArray());tube(pivot,points,.021,gold);}
-  for(let j=0;j<9;j++){const points=[];for(let i=0;i<=24;i++){const t=i/24;points.push(wp(t,(j/8*2-1)*Math.sin(t*Math.PI/2)).toArray());}line(pivot,points);}
-  for(let i=3;i<30;i+=2){const points=[];for(let j=0;j<=12;j++)points.push(wp(i/32,j/12*2-1).toArray());line(pivot,points);}
-}
-const tail = new THREE.Group(); tail.position.set(1.24,2.58,0); griffin.add(tail);
-const tailCurve = new THREE.CatmullRomCurve3([[0,0,0],[.8,.2,0],[1.4,.66,.05],[2.05,1.23,.12],[2.55,1.9,.13]].map(p=>new THREE.Vector3(...p)));
-// Varying cross-section gives the tail its long, reptilian taper.
-const frames=tailCurve.computeFrenetFrames(60,false), tp=[],ti=[];
-for(let i=0;i<=60;i++)for(let j=0;j<12;j++){
-  const t=i/60,a=j/12*Math.PI*2,r=.25*(1-t)+.012,p=tailCurve.getPoint(t);
-  p.addScaledVector(frames.normals[i],Math.cos(a)*r).addScaledVector(frames.binormals[i],Math.sin(a)*r);tp.push(...p.toArray());
-}
-for(let i=0;i<60;i++)for(let j=0;j<12;j++){const a=i*12+j,b=i*12+(j+1)%12,c=a+12,d=b+12;ti.push(a,c,b,b,c,d);}
-const tg=new THREE.BufferGeometry();tg.setAttribute('position',new THREE.Float32BufferAttribute(tp,3));tg.setIndex(ti);tg.computeVertexNormals();const tm=new THREE.Mesh(tg,ivory);tm.castShadow=true;tail.add(tm);
-for(let i=1;i<19;i++){
-  const t=i/20,p=tailCurve.getPoint(t),tangent=tailCurve.getTangent(t);
-  for(const side of [0,-1,1]){
-    const outward=new THREE.Vector3(-tangent.y,.8,side*.8).normalize();
-    const spike=new THREE.Mesh(new THREE.ConeGeometry(.09*(1-t)+.025,.35*(1-t)+.12,9),ivory);
-    spike.position.copy(p).addScaledVector(outward,.19*(1-t)+.12);
-    spike.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),outward);spike.castShadow=true;tail.add(spike);
-  }
-}
-for(let j=0;j<6;j++){
-  const pts=[];for(let i=0;i<=40;i++){const t=i/40,p=tailCurve.getPoint(t),a=j/6*Math.PI*2,r=.25*(1-t)+.015;p.y+=Math.cos(a)*r;p.z+=Math.sin(a)*r;pts.push(p.toArray());}line(tail,pts);
-}
+// The artist's original rig, optimized from ALARM ANIMATION.fbx. All 16 clips survive.
+let mixer;
+const sculpture = new THREE.Group();
+scene.add(sculpture);
+new GLTFLoader().load('models/griffin-original.glb', asset => {
+  const model=asset.scene;
+  model.rotation.y=-Math.PI/2;
+  sculpture.add(model);
+  const box=new THREE.Box3().setFromObject(model),size=box.getSize(new THREE.Vector3());
+  const scale=7.1/Math.max(size.x,size.y,size.z);
+  model.scale.setScalar(scale);
+  const normalized=new THREE.Box3().setFromObject(model),center=normalized.getCenter(new THREE.Vector3());
+  model.position.set(-center.x,-normalized.min.y+.075,-center.z);
+  model.traverse(object=>{if(object.isMesh){if(!object.geometry.attributes.uv){const g=object.geometry,a=g.attributes.position;g.computeBoundingBox();const b=g.boundingBox,uv=new Float32Array(a.count*2);for(let i=0;i<a.count;i++){uv[i*2]=(a.getX(i)-b.min.x)/Math.max(b.max.x-b.min.x,.001);uv[i*2+1]=(a.getY(i)-b.min.y)/Math.max(b.max.y-b.min.y,.001);}g.setAttribute('uv',new THREE.BufferAttribute(uv,2));}object.material=ivory;object.castShadow=true;object.receiveShadow=true;object.frustumCulled=false;}});
+  mixer=new THREE.AnimationMixer(model);
+  const idle=asset.animations.find(clip=>/IDLE/i.test(clip.name));
+  if(idle&&!reduced.matches)mixer.clipAction(idle).play();
+  reduced.addEventListener('change',()=>{if(!mixer)return;mixer.timeScale=reduced.matches?0:1;if(idle&&!reduced.matches)mixer.clipAction(idle).play();});
+  document.querySelector('[data-scene-poster]').hidden=true;
+  document.querySelector('[data-scene-loading]').hidden=true;
+  document.querySelector('[data-model-status]').textContent='Özgün ALARM modeli · IDLE';
+},undefined,()=>{
+  host.hidden=true;
+  document.querySelector('[data-scene-error]').hidden=false;
+  document.querySelector('[data-scene-error]').textContent='Heykel modeli yüklenemedi. Özgün eserin referans görseli gösteriliyor.';
+  document.querySelector('[data-scene-loading]').hidden=true;
+});
 
 // Plinth, weathered terrain and distant remains keep attention on the guardian.
 const plinth = new THREE.Mesh(new THREE.CylinderGeometry(3.65,3.88,.35,96),dark);
@@ -204,13 +126,11 @@ const dustG=new THREE.BufferGeometry(),dustP=new Float32Array(600*3),dustOrigina
 for(let i=0;i<600;i++){dustP[i*3]=(random()-.5)*35;dustP[i*3+1]=random()*10;dustP[i*3+2]=(random()-.5)*30;dustOriginal.push(dustP[i*3]);}
 dustG.setAttribute('position',new THREE.BufferAttribute(dustP,3));
 const dust=new THREE.Points(dustG,new THREE.PointsMaterial({color:'#d3c7a0',size:.025,transparent:true,opacity:.35,depthWrite:false}));scene.add(dust);
-document.querySelector('[data-scene-poster]').hidden=true;
-document.querySelector('[data-scene-loading]').hidden=true;
-document.querySelector('[data-camera-home]').addEventListener('click',()=>{camera.position.copy(home);controls.target.set(0,2.55,0);controls.autoRotate=false;document.querySelector('[data-orbit]').setAttribute('aria-pressed','false');});
+document.querySelector('[data-camera-home]').addEventListener('click',()=>{camera.position.copy(home);controls.target.set(0,2.3,0);controls.autoRotate=false;document.querySelector('[data-orbit]').setAttribute('aria-pressed','false');});
 document.querySelector('[data-orbit]').addEventListener('click',e=>{controls.autoRotate=!controls.autoRotate;e.currentTarget.setAttribute('aria-pressed',String(controls.autoRotate));});
 let last=0,elapsed=0;
 function frame(now){requestAnimationFrame(frame);if(document.hidden||now-last<1000/30)return;const dt=Math.min((now-last)/1000,.1);last=now;elapsed+=dt;
-  if(!reduced.matches){head.rotation.y=Math.sin(elapsed*.16)*.035;head.rotation.z=Math.sin(elapsed*.24)*.009;wings.forEach((w,i)=>w.rotation.x=Math.sin(elapsed*.42+i*.5)*.016);tail.rotation.y=Math.sin(elapsed*.25)*.032;griffin.scale.y=1+Math.sin(elapsed*.65)*.0015;
+  if(!reduced.matches){if(mixer)mixer.update(dt);
     for(let i=0;i<600;i++)dustP[i*3]=((dustOriginal[i]+elapsed*.12+18)%36)-18;dustG.attributes.position.needsUpdate=true;}
   controls.update(dt);renderer.render(scene,camera);
 }
