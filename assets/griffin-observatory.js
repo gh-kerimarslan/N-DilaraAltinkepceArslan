@@ -2,7 +2,7 @@ import * as THREE from './vendor/three.module.min.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
 import { RoomEnvironment } from './vendor/RoomEnvironment.js';
-import { createObservatory } from './observatory-world.js?v=2076-3';
+import { createObservatory } from './observatory-world.js?v=2076-4';
 
 const host=document.querySelector('[data-scene]');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');

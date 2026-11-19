@@ -224,7 +224,7 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
     const item={group,torso,head,legs,arms,angle,radius,walking,direction,phase:index*2.4};visitors.push(item);return item;
   }
   // One discreet, back-turned observer gives the artwork its human scale.
-  visitor(0,2.35,6.8,false).backTurned=true;
+  visitor(0,1.62,6.6,false).backTurned=true;
 
   const dustGeometry=new THREE.BufferGeometry(),dust=new Float32Array(180*3),original=[];
   for(let i=0;i<180;i++){dust[i*3]=(random()-.5)*20;dust[i*3+1]=random()*8;dust[i*3+2]=(random()-.5)*20;original.push(dust[i*3]);}
