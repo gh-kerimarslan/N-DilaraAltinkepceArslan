@@ -18,6 +18,10 @@
     text('[data-state-label]',!demo&&state==='unknown'&&Number.isFinite(current.value)?(language==='tr'?'Kayıt alındı · eşikler bekleniyor':'Record received · thresholds pending'):t(state));text('[data-value]',demo?'—':Number.isFinite(current.value)?current.value.toLocaleString(language==='tr'?'tr-TR':'en-GB',{maximumFractionDigits:3}):'—');
     text('[data-source]',demo?t('simulation'):(current.sourceLabel||t('notConfigured')));text('[data-measurement-label]',demo?t('units'):current.metricLabel||'—');text('[data-updated]',demo?'—':displayDate(current.observedAt));
     text('[data-signal-message]',demo?t('demoMessage'):networkError?t('network'):current.reason||(current.state==='unknown'?t('missing'):''));
+    if(screen.classList.contains('terminal-screen')&&language==='en'&&!demo){
+      text('[data-measurement-label]',screen.dataset.metricEn||current.metricLabel||'—');
+      if(!networkError&&current.reason){const threshold=/eşik/i.test(current.reason)?' Alarm thresholds have not been defined.':'';const age=current.state==='stale'?'The source record is out of date. ':'';text('[data-signal-message]',age+(screen.dataset.noteEn||'A limited source indicator is shown.')+threshold);}
+    }
     text('[data-demo-toggle]',t(demo?'endDemo':'demo'));text('[data-presentation]',t(document.fullscreenElement?'stop':'start'));
     document.querySelector('[data-demo-controls]').hidden=!demo;document.querySelector('[data-simulation]').hidden=!demo;text('[data-simulation]',t('simulation'));
     document.querySelectorAll('[data-demo-state]').forEach(button=>button.setAttribute('aria-pressed',String(demoState===button.dataset.demoState)));
@@ -38,6 +42,9 @@
     const generated=Date.parse(payload.generatedAt);
     if(state!=='unknown' && (!Number.isFinite(generated) || generated>Date.now()+300000))state='unknown';
     else if(state!=='unknown' && Date.now()-generated>9000000)state='stale';
+    // Thresholds may be undefined while an actual source record still becomes old.
+    // Treat stale records as stale even when their incoming signal was unknown.
+    if(typeof channel.value==='number'&&Number.isFinite(channel.value)&&Number.isFinite(observed)&&age>=0&&Number.isFinite(generated)&&generated<=Date.now()+300000&&(age>maxAgeSeconds||Date.now()-generated>9000000))state='stale';
     return{state,value:typeof channel.value==='number'&&Number.isFinite(channel.value)?channel.value:null,observedAt:Number.isFinite(observed)?channel.observedAt:null,maxAgeSeconds,sourceLabel:String(channel.sourceLabel||'').slice(0,160),metricLabel:String(channel.metricLabel||'').slice(0,160),reason:String(channel.reason||'').slice(0,300),unit:String(channel.unit||'').slice(0,30),scope:String(channel.scope||'').slice(0,160)};
   }
   async function refresh(){
