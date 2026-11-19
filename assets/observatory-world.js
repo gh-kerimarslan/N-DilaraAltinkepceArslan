@@ -15,6 +15,25 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
   const floorMaterial = new THREE.MeshPhysicalMaterial({ color: '#62665a', metalness: .08, roughness: .64, clearcoat: .1, map: stone, bumpMap: stone, bumpScale: .028 });
   const bronze = new THREE.MeshStandardMaterial({ color: '#8d805c', metalness: .65, roughness: .48 });
   const black = new THREE.MeshStandardMaterial({ color: '#171e1b', roughness: .7, metalness: .35 });
+  // World-space stone grain avoids stretching a small texture around tall columns
+  // and the 22-metre circumference of the pedestal.
+  for(const material of [concrete,edgeStone,podiumSide]){
+    material.onBeforeCompile=shader=>{
+      shader.vertexShader='varying vec3 vStoneP;varying vec3 vStoneN;\n'+shader.vertexShader;
+      shader.vertexShader=shader.vertexShader.replace('#include <project_vertex>','#include <project_vertex>\nvStoneP=(modelMatrix*vec4(transformed,1.0)).xyz;vStoneN=normalize(mat3(modelMatrix)*normal);');
+      shader.fragmentShader='varying vec3 vStoneP;varying vec3 vStoneN;\n'+shader.fragmentShader;
+      shader.fragmentShader=shader.fragmentShader.replace('#include <map_fragment>',`
+        #ifdef USE_MAP
+          vec3 weights=pow(abs(normalize(vStoneN)),vec3(4.0));weights/=max(dot(weights,vec3(1.0)),.0001);
+          vec4 mineral=texture2D(map,vStoneP.yz*.52)*weights.x;
+          mineral+=texture2D(map,vStoneP.xz*.52)*weights.y;
+          mineral+=texture2D(map,vStoneP.xy*.52)*weights.z;
+          diffuseColor*=mineral;
+        #endif
+      `);
+    };
+    material.customProgramCacheKey=()=> 'observatory-world-stone-1';
+  }
   const mesh = (geometry, material, x=0, y=0, z=0, parent=root) => {
     const object = new THREE.Mesh(geometry, material);
     object.position.set(x,y,z); object.receiveShadow=true; parent.add(object); return object;

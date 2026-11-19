@@ -2,7 +2,7 @@ import * as THREE from './vendor/three.module.min.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
 import { RoomEnvironment } from './vendor/RoomEnvironment.js';
-import { createObservatory } from './observatory-world.js?v=2076-2';
+import { createObservatory } from './observatory-world.js?v=2076-3';
 
 const host=document.querySelector('[data-scene]');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -187,8 +187,9 @@ renderer.domElement.addEventListener('pointerup',event=>{
   if(!pointerStart||Math.hypot(event.clientX-pointerStart.x,event.clientY-pointerStart.y)>5)return;
   const bounds=renderer.domElement.getBoundingClientRect();
   pointer.set((event.clientX-bounds.left)/bounds.width*2-1,-(event.clientY-bounds.top)/bounds.height*2+1);
-  raycaster.setFromCamera(pointer,camera);const hit=raycaster.intersectObjects(world.screens)[0];
-  if(hit)location.assign(hit.object.userData.href);
+  raycaster.setFromCamera(pointer,camera);
+  const hit=raycaster.intersectObjects([world.root,sculpture],true)[0];
+  if(hit?.object.userData.href)location.assign(hit.object.userData.href);
 });
 
 let last=0,elapsed=0,frames=0;
