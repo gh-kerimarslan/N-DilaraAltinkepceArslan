@@ -4,7 +4,7 @@ import * as THREE from './vendor/three.module.min.js';
 export function createObservatory(scene, { reduced, random, stoneTexture }) {
   const root = new THREE.Group();
   scene.add(root);
-  const visitors = [], screens = [], textures = [];
+  const visitors = [], screens = [], textures = [], distantRidges=[];
   const time = { value: 0 };
   const stone = stoneTexture();
   stone.repeat.set(2.2, 1.2);
@@ -21,7 +21,8 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
   };
   const cylinder = (radius,height,material,x=0,y=0,z=0,segments=64) => mesh(new THREE.CylinderGeometry(radius,radius,height,segments),material,x,y,z);
 
-  const podium = mesh(new THREE.CylinderGeometry(3.5,3.56,1.3,128),[podiumSide,floorMaterial,podiumSide],0,.65,0);
+  const podiumTopMaterial=floorMaterial.clone();
+  const podium = mesh(new THREE.CylinderGeometry(3.5,3.56,1.3,128),[podiumSide,podiumTopMaterial,podiumSide],0,.65,0);
   podium.castShadow=true;
   cylinder(3.53,.045,edgeStone,0,1.278,0,128);
   cylinder(3.62,.09,edgeStone,0,.045,0,128);
@@ -98,7 +99,7 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
       colors.push(color.r,color.g,color.b);
     }
     geometry.setAttribute('color',new THREE.Float32BufferAttribute(colors,3));geometry.computeVertexNormals();
-    mesh(geometry,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide,flatShading:true}));
+    distantRidges.push(mesh(geometry,new THREE.MeshStandardMaterial({vertexColors:true,roughness:1,side:THREE.DoubleSide,flatShading:true})));
   }
 
   // Sparse, moving atmospheric shafts under the open roof.
@@ -154,8 +155,9 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
 
   const loader=new THREE.TextureLoader();
   const channels=['moloch','cheetah','cockroach','raven','gorilla'];
+  const stationAngles=[-1.55,.7,1.95,3.3,4.35];
   for(let i=0;i<channels.length;i++){
-    const a=-1.6+i*1.26,station=new THREE.Group();station.position.set(Math.sin(a)*7.2,0,Math.cos(a)*7.2);station.rotation.y=a+Math.PI;root.add(station);
+    const a=stationAngles[i],station=new THREE.Group();station.position.set(Math.sin(a)*7.2,0,Math.cos(a)*7.2);station.rotation.y=a+Math.PI;root.add(station);
     mesh(new THREE.BoxGeometry(.45,.055,.38),black,0,.035,0,station);
     mesh(new THREE.BoxGeometry(.075,1.04,.08),black,0,.55,0,station);
     const panel=new THREE.Group();panel.position.y=1.12;panel.rotation.x=-.48;station.add(panel);
@@ -180,13 +182,12 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
     const group=new THREE.Group();root.add(group);
     const coat=new THREE.MeshStandardMaterial({color:coatColors[index],roughness:.95});
     const trousers=new THREE.MeshStandardMaterial({color:'#222723',roughness:1});
-    const skin=new THREE.MeshStandardMaterial({color:index%2?'#a3866b':'#7e6b57',roughness:.87});
+    const skin=new THREE.MeshStandardMaterial({color:'#615647',roughness:.95});
     const hair=new THREE.MeshStandardMaterial({color:index%2?'#302a23':'#45463e',roughness:1});
     const torso=mesh(new THREE.LatheGeometry([new THREE.Vector2(.16,0),new THREE.Vector2(.20,.05),new THREE.Vector2(.18,.45),new THREE.Vector2(.23,.61),new THREE.Vector2(.15,.70)],16),coat,0,.66,0,group);torso.scale.z=.7;torso.castShadow=true;
     const head=new THREE.Group();head.position.set(0,1.48,0);group.add(head);
     const face=mesh(new THREE.SphereGeometry(.12,16,12),skin,0,.09,0,head);face.scale.set(.82,1.17,.9);face.castShadow=true;
     const hairCap=mesh(new THREE.SphereGeometry(.121,16,10,0,Math.PI*2,0,Math.PI*.63),hair,0,.105,-.012,head);hairCap.scale.set(.85,1.17,.93);
-    mesh(new THREE.SphereGeometry(.027,8,6),skin,0,.095,.105,head).scale.set(.7,1,1);
     mesh(new THREE.CylinderGeometry(.048,.05,.11,10),skin,0,1.42,0,group);
     const legs=[],arms=[];
     for(const side of [-1,1]){
@@ -203,8 +204,8 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
     const scale=1.01+index*.025;group.scale.setScalar(scale);
     const item={group,torso,head,legs,arms,angle,radius,walking,direction,phase:index*2.4};visitors.push(item);return item;
   }
-  visitor(0,-1.16,6.0,true,1);visitor(1,1.75,6.4,true,-1);
-  visitor(2,.56,8.0,false);visitor(3,3.5,8.1,false);
+  // One discreet, back-turned observer gives the artwork its human scale.
+  visitor(0,2.35,6.8,false).backTurned=true;
 
   const dustGeometry=new THREE.BufferGeometry(),dust=new Float32Array(180*3),original=[];
   for(let i=0;i<180;i++){dust[i*3]=(random()-.5)*20;dust[i*3+1]=random()*8;dust[i*3+2]=(random()-.5)*20;original.push(dust[i*3]);}
@@ -216,7 +217,7 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
     for(const v of visitors){
       const a=v.angle+(v.walking?t*.035*v.direction:0);
       v.group.position.set(Math.sin(a)*v.radius,0,Math.cos(a)*v.radius);
-      v.group.rotation.y=v.walking?a+Math.PI/2*v.direction:a+Math.PI;
+      v.group.rotation.y=v.backTurned?a:(v.walking?a+Math.PI/2*v.direction:a+Math.PI);
       const gait=v.walking&&!reduced.matches?t*2.65+v.phase:0;
       v.group.position.y=v.walking&&!reduced.matches?Math.abs(Math.sin(gait))*.012:0;
       for(let i=0;i<2;i++){
@@ -231,7 +232,8 @@ export function createObservatory(scene, { reduced, random, stoneTexture }) {
     if(!reduced.matches){for(let i=0;i<180;i++)dust[i*3]=((original[i]+t*.035+10)%20)-10;dustGeometry.attributes.position.needsUpdate=true;}
   }
   update(0);
-  return {root,podium,floorMaterial,screens,update,
+  return {root,podium,floorMaterial:podiumTopMaterial,screens,update,
+    usePanorama(){sky.visible=false;for(const ridge of distantRidges)ridge.visible=false;},
     dispose(){for(const texture of textures)texture.dispose();root.traverse(object=>{object.geometry?.dispose();if(Array.isArray(object.material))object.material.forEach(m=>m.dispose());else object.material?.dispose();});}
   };
 }

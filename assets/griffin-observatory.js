@@ -2,7 +2,7 @@ import * as THREE from './vendor/three.module.min.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
 import { GLTFLoader } from './vendor/GLTFLoader.js';
 import { RoomEnvironment } from './vendor/RoomEnvironment.js';
-import { createObservatory } from './observatory-world.js';
+import { createObservatory } from './observatory-world.js?v=2076-2';
 
 const host=document.querySelector('[data-scene]');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -19,7 +19,7 @@ renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
 renderer.shadowMap.enabled=true;
 renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure=.96;
+renderer.toneMappingExposure=.85;
 host.appendChild(renderer.domElement);
 renderer.domElement.setAttribute('aria-label','2076 gözlemevindeki grifon. Sürükleyerek çevresini inceleyin.');
 renderer.domElement.setAttribute('role','img');
@@ -32,8 +32,8 @@ scene.environment=environmentRenderer.fromScene(studio,.12).texture;
 scene.environmentIntensity=.3;
 studio.dispose();environmentRenderer.dispose();
 
-const camera=new THREE.PerspectiveCamera(36,1,.1,220);
-const home=new THREE.Vector3(-7.3,1.85,11.1);
+const camera=new THREE.PerspectiveCamera(34,1,.1,220);
+const home=new THREE.Vector3(-4.8,1.85,11.6);
 const target=new THREE.Vector3(0,2.85,0);
 camera.position.copy(home);
 const controls=new OrbitControls(camera,renderer.domElement);
@@ -43,14 +43,14 @@ controls.minDistance=8.2;controls.maxDistance=25;
 controls.minPolarAngle=.52;controls.maxPolarAngle=Math.PI/2+.105;
 controls.enablePan=false;controls.rotateSpeed=.4;controls.autoRotateSpeed=.16;
 
-const skyLight=new THREE.HemisphereLight('#d5e2e8','#413f2d',1.45);scene.add(skyLight);
-const sun=new THREE.DirectionalLight('#ffe1a3',4.2);
+const skyLight=new THREE.HemisphereLight('#d5e2e8','#413f2d',.75);scene.add(skyLight);
+const sun=new THREE.DirectionalLight('#ffe1a3',3.4);
 sun.position.set(-10,15,-7);sun.castShadow=true;
 sun.shadow.mapSize.set(2048,2048);
 Object.assign(sun.shadow.camera,{left:-11,right:11,top:12,bottom:-10,near:.5,far:55});
 sun.shadow.normalBias=.018;sun.shadow.bias=-.00012;sun.shadow.radius=3;scene.add(sun);
-const rim=new THREE.DirectionalLight('#fff0d0',1.7);rim.position.set(4,10,-9);scene.add(rim);
-const fill=new THREE.DirectionalLight('#c2d8dc',.7);fill.position.set(-4,5,9);scene.add(fill);
+const rim=new THREE.DirectionalLight('#fff0d0',2.5);rim.position.set(4,10,-9);scene.add(rim);
+const fill=new THREE.DirectionalLight('#c2d8dc',.32);fill.position.set(-4,5,9);scene.add(fill);
 const baseLight=new THREE.PointLight('#e4b66b',7,7,2);baseLight.position.set(-2,1.8,3);scene.add(baseLight);
 
 let seed=2076;
@@ -79,12 +79,18 @@ function stoneTexture(){
 }
 
 const world=createObservatory(scene,{reduced,random,stoneTexture});
+new THREE.TextureLoader().load('images/observatory-panorama.webp',panorama=>{
+  panorama.colorSpace=THREE.SRGBColorSpace;panorama.mapping=THREE.EquirectangularReflectionMapping;
+  scene.background=panorama;scene.backgroundIntensity=.8;scene.backgroundRotation.y=.65;
+  const generator=new THREE.PMREMGenerator(renderer);scene.environment=generator.fromEquirectangular(panorama).texture;
+  scene.environmentIntensity=.48;generator.dispose();world.usePanorama();
+});
 const sculpture=new THREE.Group();scene.add(sculpture);
 const pulseTime={value:0};
 function marbleMaterial(geometry){
   geometry.computeBoundingBox();const bounds=geometry.boundingBox,extent=bounds.getSize(new THREE.Vector3());
   const material=new THREE.MeshPhysicalMaterial({
-    color:'#eeede5',roughness:.66,metalness:.015,clearcoat:0,
+    color:'#d9d9d0',roughness:.66,metalness:.015,clearcoat:0,
     transmission:.56,thickness:.07,ior:1.35,attenuationColor:'#e5e9db',attenuationDistance:3,
     side:THREE.DoubleSide
   });
@@ -109,7 +115,8 @@ function marbleMaterial(geometry){
       diffuseColor.rgb=mix(diffuseColor.rgb,vec3(.40,.46,.43),vein*.065);
       float membrane=smoothstep(.56,.85,localP.y);
       float nerve=sin(p.y*43.0+p.z*15.0+mineralNoise(p*19.0)*10.0);
-      float filament=(1.0-smoothstep(.008,.035,abs(nerve)))*smoothstep(.5,.74,mineralNoise(p*31.0));
+      float lineWidth=max(fwidth(nerve),.008);
+      float filament=(1.0-smoothstep(.008,.008+lineWidth,abs(nerve)))*smoothstep(.45,.71,mineralNoise(p*31.0));
       float pulse=pow(.5+.5*sin(p.y*23.0+p.z*8.0-guardianTime*.48),7.0);
     `);
     shader.fragmentShader=shader.fragmentShader.replace('#include <emissivemap_fragment>','#include <emissivemap_fragment>\ntotalEmissiveRadiance+=vec3(.27,.57,.43)*filament*(.12+pulse*.72);');
@@ -202,7 +209,7 @@ function frame(now){
 new ResizeObserver(()=>{
   const {width,height}=host.getBoundingClientRect();if(!width||!height)return;
   renderer.setSize(width,height,false);camera.aspect=width/height;
-  camera.fov=width/height<1.1?Math.min(76,THREE.MathUtils.radToDeg(2*Math.atan(Math.tan(THREE.MathUtils.degToRad(36)/2)*1.1/(width/height)))):36;
+  camera.fov=width/height<1.1?Math.min(76,THREE.MathUtils.radToDeg(2*Math.atan(Math.tan(THREE.MathUtils.degToRad(34)/2)*1.1/(width/height)))):34;
   camera.updateProjectionMatrix();
 }).observe(host);
 requestAnimationFrame(frame);
