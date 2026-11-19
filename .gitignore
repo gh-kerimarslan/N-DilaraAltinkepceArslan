@@ -8,3 +8,6 @@ backend/channels.local.json
 node_modules/
 artifacts/
 *.zip
+
+# Rebuilt from the authored rig during publication.
+alarm/models/griffin-r09.glb

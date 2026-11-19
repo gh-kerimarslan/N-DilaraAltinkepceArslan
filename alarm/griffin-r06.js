@@ -1,6 +1,7 @@
 import * as THREE from '../assets/vendor/three.module.min.js';
 import { OrbitControls } from '../assets/vendor/OrbitControls.js';
 import { GLTFLoader } from '../assets/vendor/GLTFLoader.js';
+import { createHistoryScreen } from './history-screen-r09.js';
 
 const root=document.querySelector('[data-display]'),host=document.querySelector('[data-scene]');
 const loading=document.querySelector('[data-scene-loading]'),errorBox=document.querySelector('[data-scene-error]'),poster=document.querySelector('[data-scene-poster]'),status=document.querySelector('[data-model-status]');
@@ -8,7 +9,7 @@ const motionButton=document.querySelector('[data-motion]'),qualityButton=documen
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const viewerControls=[...document.querySelectorAll('[data-camera-home],[data-orbit],[data-motion],[data-quality]')];
 let renderer,controls,mixer,environment,character,raf=0,last=0,elapsed=0,paused=reduce.matches,lightweight=false,ready=false,disposed=false;
-let idleAction=null,panorama=null,environmentMap=null;
+let idleAction=null,panorama=null,environmentMap=null,historyDisplay=null;
 const wind={value:0},resources=new Set();
 const path=name=>new URL(name,import.meta.url).href;
 document.querySelector('[data-retry-scene]').addEventListener('click',()=>location.reload());
@@ -20,7 +21,7 @@ try{
   renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'default'});
   renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.82;renderer.outputColorSpace=THREE.SRGBColorSpace;
-  host.append(renderer.domElement);renderer.domElement.setAttribute('role','img');renderer.domElement.setAttribute('aria-label','2076 gözlemevinde mermer grifon. Sürükleyerek çevresini inceleyin.');
+  host.append(renderer.domElement);renderer.domElement.setAttribute('role','img');renderer.domElement.setAttribute('aria-label','Marble griffin in the 2076 observatory. Drag to explore in 360 degrees.');
 }catch{
   fallback('3D is unavailable in this browser. The latest observatory preview is shown.');
 }
@@ -49,9 +50,13 @@ if(renderer){
  function environmentSetup(model){
   model.traverse(object=>{if(!object.isMesh)return;object.castShadow=true;object.receiveShadow=true;const name=object.name;
    if(/Tablet_(moloch|cheetah|cockroach|raven|gorilla)_Ekran/.test(name)){const id=name.match(/Tablet_(\w+)_Ekran/)[1];object.userData.href=id+'.html';object.userData.channel=id;
-    textureLoader.load(path('images/'+id+'-terminal-r04.png'),texture=>{texture.colorSpace=THREE.SRGBColorSpace;texture.flipY=false;texture.minFilter=THREE.LinearFilter;texture.generateMipmaps=false;object.material=new THREE.MeshBasicMaterial({map:texture,side:THREE.DoubleSide,toneMapped:false});object.castShadow=false;resources.add(texture);},undefined,()=>{});
+    textureLoader.load(path('images/'+id+'-terminal-r04.png'),texture=>{texture.colorSpace=THREE.SRGBColorSpace;texture.flipY=false;texture.center.set(.5,.5);texture.rotation=Math.PI;texture.minFilter=THREE.LinearFilter;texture.generateMipmaps=false;object.material=new THREE.MeshBasicMaterial({map:texture,side:THREE.DoubleSide,toneMapped:false});object.castShadow=false;resources.add(texture);},undefined,()=>{});
    }
-   if(/Dikey_Arsiv_Ekrani/.test(name))object.userData.href='history.html';
+   if(/Dikey_Arsiv_Ekrani/.test(name)){
+    object.userData.href='history.html';
+    historyDisplay=createHistoryScreen((record,offset)=>{root.dataset.historyRecord=String(record);root.dataset.historyOffset=String(offset);});
+    object.material=new THREE.MeshBasicMaterial({map:historyDisplay.texture,side:THREE.DoubleSide,toneMapped:false});object.castShadow=false;
+   }
    const mats=Array.isArray(object.material)?object.material:[object.material];
    for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);if(/Yaprak|Dal/.test(mat.name)||/Egrelti|Sarmasik|Bitki_Sap/.test(name))windMaterial(mat);}
   });
@@ -65,13 +70,13 @@ if(renderer){
   try{
    loading.textContent='Preparing the observatory · 1/2';const space=await loader.loadAsync(path('models/observatory-r06.glb'));
    if(disposed)return;environment=space.scene;environmentSetup(environment);scene.add(environment);
-   loading.textContent='Preparing the griffin · 2/2';const asset=await loader.loadAsync(path('models/griffin-r06.glb'));
+   loading.textContent='Preparing the griffin · 2/2';const asset=await loader.loadAsync(path('models/griffin-r09.glb'));
    if(disposed)return;character=asset.scene;
    // Keep the authored transforms, carved feather surfaces, iris, sclera and wing materials.
    character.traverse(object=>{if(object.isMesh){object.castShadow=true;object.receiveShadow=true;object.frustumCulled=false;const mats=Array.isArray(object.material)?object.material:[object.material];for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);}}});scene.add(character);
    mixer=new THREE.AnimationMixer(character);const idle=asset.animations.find(clip=>/IDLE/i.test(clip.name));
    if(idle){idleAction=mixer.clipAction(idle);idleAction.play();idleAction.paused=paused;}
-   root.dataset.sceneVersion='R06';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
+   root.dataset.sceneVersion='R09';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
    status.textContent='Observatory 2076 · '+(paused?'Idle movement off':'Idle movement on');loading.hidden=true;poster.hidden=true;ready=true;viewerControls.forEach(b=>b.disabled=false);syncMotion();controls.update();start();
   }catch(err){console.warn('ALARM scene load failed:',err);fallback('The 3D scene could not be loaded. The latest preview is shown. Check your connection and try again.');}
  }
@@ -86,10 +91,10 @@ if(renderer){
   const hits=ray.intersectObjects([environment,character],true);const hit=hits.find(h=>h.object.visible&&h.object.isMesh&&(!h.object.material.transparent||h.object.userData.href));
   if(hit?.object.userData.href)location.assign(hit.object.userData.href);
  });
- function frame(now){raf=0;if(disposed||document.hidden||!ready)return;if(!last)last=now;const delta=now-last;if(delta>=1000/30){const dt=Math.min(delta/1000,.1);last=now;if(!paused){elapsed+=dt;mixer?.update(dt);wind.value=elapsed;}controls.update(dt);camera.position.y=Math.max(1.45,camera.position.y);renderer.render(scene,camera);}raf=requestAnimationFrame(frame);}
+ function frame(now){raf=0;if(disposed||document.hidden||!ready)return;if(!last)last=now;const delta=now-last;if(delta>=1000/30){const dt=Math.min(delta/1000,.1);last=now;if(!paused){elapsed+=dt;mixer?.update(dt);wind.value=elapsed;}historyDisplay?.update(dt,!paused);controls.update(dt);camera.position.y=Math.max(1.45,camera.position.y);renderer.render(scene,camera);}raf=requestAnimationFrame(frame);}
  function start(){last=0;if(ready&&!document.hidden&&!disposed&&!raf)raf=requestAnimationFrame(frame);}
  document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0;}else start();});
  renderer.domElement.addEventListener('webglcontextlost',event=>{event.preventDefault();fallback('The 3D connection was lost. The scene preview remains available; you can try again.');});
- window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);resizeObserver.disconnect();controls.dispose();const geometries=new Set(),materials=new Set(),textures=new Set();scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material)for(const m of(Array.isArray(o.material)?o.material:[o.material])){materials.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();for(const resource of resources)if(resource?.isTexture)resource.dispose();panorama?.dispose();environmentMap?.dispose();renderer.dispose();});
+ window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);resizeObserver.disconnect();controls.dispose();historyDisplay?.dispose();const geometries=new Set(),materials=new Set(),textures=new Set();scene.traverse(o=>{if(o.geometry)geometries.add(o.geometry);if(o.material)for(const m of(Array.isArray(o.material)?o.material:[o.material])){materials.add(m);for(const v of Object.values(m))if(v?.isTexture)textures.add(v);}});for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();for(const resource of resources)if(resource?.isTexture)resource.dispose();panorama?.dispose();environmentMap?.dispose();renderer.dispose();});
  load();
 }
