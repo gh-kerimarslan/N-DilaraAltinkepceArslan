@@ -32,8 +32,8 @@ const studio=new RoomEnvironment();
 scene.environment=pmrem.fromScene(studio,.08).texture;
 scene.environmentIntensity=.34;
 studio.dispose();pmrem.dispose();
-const camera = new THREE.PerspectiveCamera(34, 1, .1, 180);
-const home = new THREE.Vector3(-7.4, 3.15, 10.7);
+const camera = new THREE.PerspectiveCamera(32, 1, .1, 180);
+const home = new THREE.Vector3(-6.6, 3.15, 9.6);
 camera.position.copy(home);
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target.set(0, 2.65, 0);
@@ -79,7 +79,7 @@ function guardianMaterial(geometry) {
   const bounds = geometry.boundingBox;
   const extent = bounds.getSize(new THREE.Vector3());
   const material = new THREE.MeshPhysicalMaterial({
-    color:'#8f805b', roughness:.34, metalness:.58,
+    color:'#9e9473', roughness:.4, metalness:.53,
     clearcoat:.28, clearcoatRoughness:.3,
     transmission:.72, thickness:.09, ior:1.28,
     attenuationColor:'#b8a56f', attenuationDistance:1.8,
@@ -98,7 +98,7 @@ function guardianMaterial(geometry) {
       float fineLine(float coordinate) {
         float edge = abs(fract(coordinate - .5) - .5);
         float width = max(fwidth(coordinate), .012);
-        return 1.0 - smoothstep(.012, .012 + width, edge);
+        return 1.0 - smoothstep(.007, .007 + width, edge);
       }
     ` + shader.fragmentShader;
     shader.fragmentShader = shader.fragmentShader.replace('#include <color_fragment>', `
@@ -106,13 +106,13 @@ function guardianMaterial(geometry) {
       vec3 localP = (vInlayPosition - inlayMin) / max(inlayExtent, vec3(.0001));
       vec3 p = (vInlayPosition - inlayMin) / max(max(inlayExtent.x, inlayExtent.y), inlayExtent.z);
       p += .006 * sin(p.yzx * 34.0 + sin(p.zxy * 18.0));
-      vec3 lattice = vec3(fineLine(p.x * 46.0), fineLine(p.y * 46.0), fineLine(p.z * 46.0));
+      vec3 lattice = vec3(fineLine(p.x * 72.0), fineLine(p.y * 72.0), fineLine(p.z * 72.0));
       vec3 weights = abs(normalize(vInlayNormal));
       weights = pow(weights, vec3(4.0)); weights /= max(dot(weights, vec3(1.0)), .0001);
       float inlay = dot(weights, vec3(max(lattice.y,lattice.z), max(lattice.x,lattice.z), max(lattice.x,lattice.y)));
       float membrane = smoothstep(.57, .83, localP.y);
       diffuseColor.rgb *= mix(.82, 1.12, .5 + .5 * sin(p.z * 53.0 + p.y * 24.0));
-      diffuseColor.rgb = mix(diffuseColor.rgb, vec3(.69,.52,.23), inlay * .68);
+      diffuseColor.rgb = mix(diffuseColor.rgb, vec3(.69,.52,.23), inlay * .38);
     `);
     shader.fragmentShader = shader.fragmentShader.replace('#include <emissivemap_fragment>', '#include <emissivemap_fragment>\ntotalEmissiveRadiance += vec3(.28,.19,.065) * inlay * (.22 + .22 * membrane);');
     shader.fragmentShader = shader.fragmentShader.replace('#include <transmission_fragment>', THREE.ShaderChunk.transmission_fragment.replace('material.transmission = transmission;', 'material.transmission = transmission * membrane;'));
@@ -151,7 +151,7 @@ new GLTFLoader().load('models/griffin-original.glb', asset => {
 });
 
 // A low observatory floor, with subdued engraved instruments instead of a pedestal.
-const floorMaterial = new THREE.MeshPhysicalMaterial({color:'#24251c', metalness:.62, roughness:.4, clearcoat:.3, clearcoatRoughness:.4, bumpMap:texture, bumpScale:.025});
+const floorMaterial = new THREE.MeshPhysicalMaterial({color:'#11120d', metalness:.82, roughness:.5, clearcoat:.12, clearcoatRoughness:.4, bumpMap:texture, bumpScale:.025});
 // A small, infrequently refreshed planar reflection keeps the floor grounded.
 // Only the guardian and lights enter this pass; terrain and floor never recurse.
 const reflectionTarget = new THREE.WebGLRenderTarget(384,384,{depthBuffer:true});
@@ -167,16 +167,20 @@ floorMaterial.onBeforeCompile = shader => {
   shader.fragmentShader = 'uniform sampler2D guardianReflection; varying vec4 vFloorReflection;\n' + shader.fragmentShader;
   shader.fragmentShader = shader.fragmentShader.replace('#include <lights_fragment_end>', `
     #include <lights_fragment_end>
+    reflectedLight.directDiffuse *= .35;
+    reflectedLight.directSpecular *= .22;
+    reflectedLight.indirectDiffuse *= .45;
+    reflectedLight.indirectSpecular *= .4;
     vec2 reflectionUV = vFloorReflection.xy / vFloorReflection.w * .5 + .5;
     if(vFloorReflection.w > 0.0 && all(greaterThan(reflectionUV,vec2(0.0))) && all(lessThan(reflectionUV,vec2(1.0)))) {
       vec3 reflectionLight = texture2D(guardianReflection,reflectionUV).rgb * .5;
       reflectionLight += texture2D(guardianReflection,reflectionUV + vec2(.003,0.0)).rgb * .25;
       reflectionLight += texture2D(guardianReflection,reflectionUV - vec2(.003,0.0)).rgb * .25;
-      reflectedLight.indirectSpecular += reflectionLight * .16;
+      reflectedLight.indirectSpecular += reflectionLight * .1;
     }
   `);
 };
-floorMaterial.customProgramCacheKey = () => 'alarm-observatory-floor-1';
+floorMaterial.customProgramCacheKey = () => 'alarm-observatory-floor-2';
 const plinth = new THREE.Mesh(new THREE.CylinderGeometry(4.7,4.73,.09,128),floorMaterial);
 plinth.position.y=.008;plinth.receiveShadow=true;scene.add(plinth);
 for(const radius of [4.12,4.48,4.61]){
