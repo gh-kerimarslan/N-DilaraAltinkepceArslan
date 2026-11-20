@@ -70,13 +70,13 @@ if(renderer){
   try{
    loading.textContent='Preparing the observatory · 1/2';const space=await loader.loadAsync(path('models/observatory-r12.glb'));
    if(disposed)return;environment=space.scene;environmentSetup(environment);scene.add(environment);
-   loading.textContent='Preparing the griffin · 2/2';const asset=await loader.loadAsync(path('models/griffin-r12.glb'));
+   loading.textContent='Preparing the griffin · 2/2';const asset=await loader.loadAsync(path('models/griffin-r12b.glb'));
    if(disposed)return;character=asset.scene;
    // Keep the authored transforms, carved feather surfaces, iris, sclera and wing materials.
    character.traverse(object=>{if(object.isMesh){object.castShadow=true;object.receiveShadow=true;object.frustumCulled=false;const mats=Array.isArray(object.material)?object.material:[object.material];for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);}}});scene.add(character);
    mixer=new THREE.AnimationMixer(character);const idle=asset.animations.find(clip=>/IDLE/i.test(clip.name));
    if(idle){idleAction=mixer.clipAction(idle);idleAction.play();idleAction.paused=paused;}
-   root.dataset.sceneVersion='R12';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
+   root.dataset.sceneVersion='R12b';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
    status.textContent='Observatory 2076 · '+(paused?'Idle movement off':'Idle movement on');loading.hidden=true;poster.hidden=true;ready=true;viewerControls.forEach(b=>b.disabled=false);syncMotion();controls.update();start();
   }catch(err){console.warn('ALARM scene load failed:',err);fallback('The 3D scene could not be loaded. The latest preview is shown. Check your connection and try again.');}
  }

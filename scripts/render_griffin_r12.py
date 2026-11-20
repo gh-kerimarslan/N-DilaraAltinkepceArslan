@@ -6,7 +6,7 @@ from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parent.parent
 bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
-for name in ['observatory-r12.glb','griffin-r12.glb']:
+for name in ['observatory-r12.glb','griffin-r12b.glb']:
     bpy.ops.import_scene.gltf(filepath=str(ROOT/'alarm/models'/name))
 scene=bpy.context.scene
 scene.render.engine='CYCLES'; scene.cycles.samples=48

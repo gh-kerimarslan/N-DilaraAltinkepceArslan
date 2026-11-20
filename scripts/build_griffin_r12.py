@@ -159,7 +159,7 @@ def character():
     attr = prim['attributes']; p = model.read(attr['POSITION'])
     # Sparse, irregular cheetah markings restricted to torso and limbs. They are
     # vertex colors, so they follow every authored pose without UV stretching.
-    eligible = (p[:,1] < 3.42) & (p[:,2] > -1.65) & (p[:,2] < 1.95)
+    eligible = (p[:,1] < 3.42) & (p[:,2] > -1.65) & (p[:,2] < 2.80)
     centers = []
     for index in RNG.permutation(np.flatnonzero(eligible)):
         if not centers or np.min(np.linalg.norm(np.array(centers)-p[index], axis=1)) > .19:
@@ -168,38 +168,14 @@ def character():
     widths = RNG.uniform(.038, .065, len(centers))
     spots = (1 - np.clip((d - widths[nearest]*.75) / .025, 0, 1)) * eligible
     colors = np.tile([.79, .725, .59, 1.], (len(p), 1))
-    colors[:,:3] *= (1 - .68*spots[:,None])
+    colors[:,:3] = colors[:,:3]*(1-spots[:,None]) + np.array([.23,.12,.055])*spots[:,None]
     colors[:,:3] *= (.96 + .04*np.sin(p[:,1:2]*87+p[:,2:3]*41))
     attr['COLOR_0'] = model.accessor(colors, 'VEC4')
     g['materials'][prim['material']]['pbrMetallicRoughness'].update(baseColorFactor=[1,1,1,1], roughnessFactor=.48, metallicFactor=0)
     g['materials'][0]['pbrMetallicRoughness'].update(baseColorFactor=[.79,.735,.62,1], roughnessFactor=.46, metallicFactor=0)
-    # Small raised scales produce physical highlights even in the lightweight
-    # viewer. Skin weights come from the original body, never the wing rig.
-    normals = model.read(attr['NORMAL'])
-    skin = (cKDTree(p), model.read(attr['JOINTS_0']), model.read(attr['WEIGHTS_0']))
-    verts, faces, scale_colors, grid_used = [], [], [], set()
-    for index in RNG.permutation(np.flatnonzero(eligible)):
-        point, n = p[index], normals[index]
-        key = tuple(np.floor(point/.079).astype(int))
-        if key in grid_used or len(grid_used) >= 1250:
-            continue
-        grid_used.add(key)
-        axis = np.array([0.,-1.,.15]); axis -= n*np.dot(axis,n)
-        axis /= max(np.linalg.norm(axis),1e-9)
-        cross = np.cross(n,axis); cross /= max(np.linalg.norm(cross),1e-9)
-        start=len(verts)
-        verts.append(point+n*.011)
-        for x,y in [(-.6,-.75),(.6,-.75),(1,0),(.6,.65),(0,1),(-.6,.65),(-1,0)]:
-            verts.append(point + cross*x*.029 + axis*y*.043 + n*.001)
-        for j in range(7):
-            faces.append((start,start+1+j,start+1+(j+1)%7))
-        scale_colors.extend([colors[index]]*8)
-    primitive = model.primitive(verts,faces,prim['material'],colors=scale_colors,skin=skin)
-    # Reusing the body mesh also retains its exact node transform and skin.
-    g['meshes'][body['mesh']]['primitives'].append(primitive)
-    g['asset'].setdefault('extras', {})['look_revision'] = 'R12: free reference-guided wings, ivory scales and cheetah markings'
+    g['asset'].setdefault('extras', {})['look_revision'] = 'R12: free reference-guided wings, ivory surface and cheetah markings'
     assert len(g['animations']) == 16
-    model.save('griffin-r12.glb')
+    model.save('griffin-r12b.glb')
 
 
 def observatory():

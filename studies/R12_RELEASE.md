@@ -10,7 +10,7 @@ scan or an exact reconstruction of the concept image.
 
 The authored head, gorilla eyes, skeleton, node transforms and all 16 animation
 clips are preserved. The torso and limbs gain restrained cheetah markings and
-small raised scales. The observatory gains staggered stonework, stone terminal
+fine ivory surface variation. The observatory gains staggered stonework, stone terminal
 cases, additional ferns and the approved mountain panorama. Live history, terminal
 links, pause, orbit and lightweight rendering remain available.
 
