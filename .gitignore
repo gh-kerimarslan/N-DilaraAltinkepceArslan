@@ -11,3 +11,6 @@ artifacts/
 
 # Rebuilt from the authored rig during publication.
 alarm/models/griffin-r09.glb
+
+alarm/models/griffin-r12.glb
+alarm/models/observatory-r12.glb
