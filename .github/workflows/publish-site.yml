@@ -23,8 +23,8 @@ jobs:
           python3 -m venv "$RUNNER_TEMP/image-build-venv"
           "$RUNNER_TEMP/image-build-venv/bin/pip" install --disable-pip-version-check Pillow==13.0.0 numpy==2.3.5 scipy==1.17.0
           "$RUNNER_TEMP/image-build-venv/bin/python" scripts/build_images.py
-      - name: Build the refined griffin with its original animation rig
-        run: '"$RUNNER_TEMP/image-build-venv/bin/python" scripts/build_griffin_r12.py'
+      - name: Build the matte marble griffin and restrained dry city
+        run: '"$RUNNER_TEMP/image-build-venv/bin/python" scripts/build_griffin_r13.py'
       - name: Check website integrity
         run: python3 scripts/check_site.py
       - name: Check signal rules

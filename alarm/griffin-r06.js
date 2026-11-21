@@ -15,29 +15,26 @@ const path=name=>new URL(name,import.meta.url).href;
 document.querySelector('[data-retry-scene]').addEventListener('click',()=>location.reload());
 function fallback(message){
   ready=false;cancelAnimationFrame(raf);raf=0;host.hidden=true;poster.hidden=false;loading.hidden=true;errorBox.hidden=false;root.dataset.fallback='true';
-  errorBox.querySelector('p').textContent=message;status.textContent='Still preview of the latest observatory scene';viewerControls.forEach(b=>b.disabled=true);
+  errorBox.querySelector('p').textContent=message;status.textContent='Still preview of the latest city scene';viewerControls.forEach(b=>b.disabled=true);
 }
 try{
   renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'default'});
   renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;
   renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.94;renderer.outputColorSpace=THREE.SRGBColorSpace;
-  host.append(renderer.domElement);renderer.domElement.setAttribute('role','img');renderer.domElement.setAttribute('aria-label','Marble griffin in the 2076 observatory. Drag to explore in 360 degrees.');
+  host.append(renderer.domElement);renderer.domElement.setAttribute('role','img');renderer.domElement.setAttribute('aria-label','Marble griffin in the 2076 dry city. Drag to explore in 360 degrees.');
 }catch{
-  fallback('3D is unavailable in this browser. The latest observatory preview is shown.');
+  fallback('3D is unavailable in this browser. The latest city preview is shown.');
 }
 
 if(renderer){
- const scene=new THREE.Scene();scene.background=new THREE.Color('#84918a');scene.fog=new THREE.FogExp2('#9da99f',.004);
+ const scene=new THREE.Scene();scene.background=new THREE.Color('#b6b8b4');scene.fog=new THREE.FogExp2('#b6b8b4',.012);
  const camera=new THREE.PerspectiveCamera(28,1,.08,350);
  // Both exported GLBs already use metres and glTF's Y-up coordinates.
- const home=new THREE.Vector3(12,2.4,8),target=new THREE.Vector3(0,2.75,0);camera.position.copy(home);
+ const home=new THREE.Vector3(12,2.25,8),target=new THREE.Vector3(0,1.90,0);camera.position.copy(home);
  controls=new OrbitControls(camera,renderer.domElement);controls.target.copy(target);controls.enableDamping=true;controls.dampingFactor=.065;controls.enablePan=false;controls.minDistance=6.3;controls.maxDistance=29;controls.minPolarAngle=.36;controls.maxPolarAngle=Math.PI/2+.025;controls.rotateSpeed=.38;controls.autoRotateSpeed=.14;
- const sky=new THREE.HemisphereLight('#dce6ef','#3f4935',.65);scene.add(sky);
- const sun=new THREE.DirectionalLight('#ffdfad',4.0);sun.position.set(-10,22,9);sun.target.position.set(0,0,0);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-15,right:15,top:15,bottom:-15,near:1,far:60});sun.shadow.normalBias=.022;sun.shadow.bias=-.0001;scene.add(sun,sun.target);
- const fill=new THREE.DirectionalLight('#bfd4ff',.30);fill.position.set(8,7,4);scene.add(fill);
- const front=new THREE.DirectionalLight('#e5eeff',.50);front.position.set(6,5,10);scene.add(front);
- const top=new THREE.DirectionalLight('#dce6ff',.25);top.position.set(0,8,0);scene.add(top);
- const rim=new THREE.DirectionalLight('#ffd29a',1.8);rim.position.set(3.5,7,6);scene.add(rim);
+ const sky=new THREE.HemisphereLight('#e4e6e3','#857866',1.5);scene.add(sky);
+ const sun=new THREE.DirectionalLight('#fff4e5',2.5);sun.position.set(-10,22,9);sun.target.position.set(0,0,0);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-15,right:15,top:15,bottom:-15,near:1,far:60});sun.shadow.normalBias=.022;sun.shadow.bias=-.0001;scene.add(sun,sun.target);
+ const fill=new THREE.DirectionalLight('#e3e7e7',.5);fill.position.set(8,7,4);scene.add(fill);
  const textureLoader=new THREE.TextureLoader(),loader=new GLTFLoader();
  function resize(){const {width,height}=host.getBoundingClientRect();if(!width||!height)return;renderer.setSize(width,height,false);camera.aspect=width/height;camera.fov=camera.aspect<1.35?Math.min(70,THREE.MathUtils.radToDeg(2*Math.atan(Math.tan(THREE.MathUtils.degToRad(28)/2)*1.35/camera.aspect))):28;camera.updateProjectionMatrix();}
  const resizeObserver=new ResizeObserver(resize);resizeObserver.observe(host);resize();
@@ -61,26 +58,21 @@ if(renderer){
    for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);if(/Yaprak|Dal/.test(mat.name)||/Egrelti|Sarmasik|Bitki_Sap/.test(name))windMaterial(mat);}
   });
  }
- textureLoader.load(path('images/reference/observatory-panorama-r12.webp'),texture=>{
-  if(disposed){texture.dispose();return;}texture.colorSpace=THREE.SRGBColorSpace;texture.mapping=THREE.EquirectangularReflectionMapping;
-  panorama=texture;scene.background=texture;scene.backgroundIntensity=.75;scene.backgroundRotation.y=4.141592653589793;
-  const gen=new THREE.PMREMGenerator(renderer);environmentMap=gen.fromEquirectangular(texture);scene.environment=environmentMap.texture;scene.environmentIntensity=.42;scene.environmentRotation.y=4.141592653589793;gen.dispose();
- },undefined,()=>{});
  async function load(){
   try{
-   loading.textContent='Preparing the observatory · 1/2';const space=await loader.loadAsync(path('models/observatory-r12.glb'));
+   loading.textContent='Preparing the city · 1/2';const space=await loader.loadAsync(path('models/city-r13.glb'));
    if(disposed)return;environment=space.scene;environmentSetup(environment);scene.add(environment);
-   loading.textContent='Preparing the griffin · 2/2';const asset=await loader.loadAsync(path('models/griffin-r12b.glb'));
+   loading.textContent='Preparing the griffin · 2/2';const asset=await loader.loadAsync(path('models/griffin-r13.glb'));
    if(disposed)return;character=asset.scene;
-   // Keep the authored transforms, carved feather surfaces, iris, sclera and wing materials.
+   // The matte marble asset preserves the authored rig; its root lowers the feet onto the low slab.
    character.traverse(object=>{if(object.isMesh){object.castShadow=true;object.receiveShadow=true;object.frustumCulled=false;const mats=Array.isArray(object.material)?object.material:[object.material];for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);}}});scene.add(character);
    mixer=new THREE.AnimationMixer(character);const idle=asset.animations.find(clip=>/IDLE/i.test(clip.name));
    if(idle){idleAction=mixer.clipAction(idle);idleAction.play();idleAction.paused=paused;}
-   root.dataset.sceneVersion='R12b';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
-   status.textContent='Observatory 2076 · '+(paused?'Idle movement off':'Idle movement on');loading.hidden=true;poster.hidden=true;ready=true;viewerControls.forEach(b=>b.disabled=false);syncMotion();controls.update();start();
+   root.dataset.sceneVersion='R13';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
+   status.textContent='ALARM 2076 · '+(paused?'Idle movement off':'Idle movement on');loading.hidden=true;poster.hidden=true;ready=true;viewerControls.forEach(b=>b.disabled=false);syncMotion();controls.update();start();
   }catch(err){console.warn('ALARM scene load failed:',err);fallback('The 3D scene could not be loaded. The latest preview is shown. Check your connection and try again.');}
  }
- function syncMotion(){if(idleAction)idleAction.paused=paused;motionButton.textContent=paused?'MOTION: OFF':'MOTION: ON';motionButton.setAttribute('aria-pressed',String(!paused));if(ready)status.textContent='Observatory 2076 · '+(paused?'Idle movement off':'Idle movement on');}
+ function syncMotion(){if(idleAction)idleAction.paused=paused;motionButton.textContent=paused?'MOTION: OFF':'MOTION: ON';motionButton.setAttribute('aria-pressed',String(!paused));if(ready)status.textContent='ALARM 2076 · '+(paused?'Idle movement off':'Idle movement on');}
  motionButton.addEventListener('click',()=>{paused=!paused;syncMotion();});reduce.addEventListener('change',()=>{paused=reduce.matches;syncMotion();});
  qualityButton.addEventListener('click',()=>{lightweight=!lightweight;renderer.setPixelRatio(lightweight?Math.min(devicePixelRatio,.85):Math.min(devicePixelRatio,1.25));renderer.shadowMap.enabled=!lightweight;scene.traverse(object=>{if(object.isMesh){for(const mat of(Array.isArray(object.material)?object.material:[object.material]))mat.needsUpdate=true;}});qualityButton.textContent=lightweight?'QUALITY: LIGHT':'QUALITY: BALANCED';qualityButton.setAttribute('aria-pressed',String(lightweight));resize();});
  document.querySelector('[data-camera-home]').addEventListener('click',()=>{camera.position.copy(home);controls.target.copy(target);controls.autoRotate=false;document.querySelector('[data-orbit]').setAttribute('aria-pressed','false');controls.update();});
