@@ -35,7 +35,7 @@ if(renderer){
  const home=new THREE.Vector3(8.5,2.9,18),target=new THREE.Vector3(-3,2.8,-3);camera.position.copy(home);
  controls=new OrbitControls(camera,renderer.domElement);controls.target.copy(target);controls.enableDamping=true;controls.dampingFactor=.065;controls.enablePan=false;controls.minDistance=6.3;controls.maxDistance=40;controls.minPolarAngle=.36;controls.maxPolarAngle=Math.PI/2+.025;controls.rotateSpeed=.38;controls.autoRotateSpeed=.14;
  const sky=new THREE.HemisphereLight('#e4e6e3','#857866',1.5);scene.add(sky);
- const sun=new THREE.DirectionalLight('#fff4e5',2.5);sun.position.set(-10,22,9);sun.target.position.set(0,0,0);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-26,right:26,top:26,bottom:-26,near:1,far:100});sun.shadow.normalBias=.022;sun.shadow.bias=-.0001;scene.add(sun,sun.target);
+ const sun=new THREE.DirectionalLight('#fff4e5',2.5);sun.position.set(-10,22,9);sun.target.position.set(0,0,0);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-20,right:20,top:20,bottom:-20,near:1,far:75});sun.shadow.normalBias=.055;sun.shadow.bias=-.00025;scene.add(sun,sun.target);
  const fill=new THREE.DirectionalLight('#e3e7e7',.5);fill.position.set(8,7,4);scene.add(fill);
  const lobbyLight=new THREE.PointLight('#e3debd',45,17,2);lobbyLight.position.set(5.5,4.2,-11);scene.add(lobbyLight);
  const displayLight=new THREE.PointLight('#a0d6ac',14,8,2);displayLight.position.set(4.85,2.8,-12.5);scene.add(displayLight);
@@ -63,8 +63,9 @@ if(renderer){
     historyDisplay.texture.repeat.x=1;historyDisplay.texture.offset.x=0;
     object.material=new THREE.MeshBasicMaterial({map:historyDisplay.texture,side:THREE.DoubleSide,toneMapped:false});object.castShadow=false;
    }
+   if(/^ALARM_R14_(Dust|Square)$/.test(name))object.castShadow=false;
    const mats=Array.isArray(object.material)?object.material:[object.material];
-   for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);if(/Yaprak|Dal/.test(mat.name)||/Egrelti|Sarmasik|Bitki_Sap/.test(name))windMaterial(mat);}
+   for(const mat of mats){mat.shadowSide=THREE.BackSide;if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);if(/Yaprak|Dal/.test(mat.name)||/Egrelti|Sarmasik|Bitki_Sap/.test(name))windMaterial(mat);}
   });
  }
  async function load(){
@@ -77,7 +78,7 @@ if(renderer){
    character.traverse(object=>{if(object.isMesh){object.castShadow=true;object.receiveShadow=true;object.frustumCulled=false;const mats=Array.isArray(object.material)?object.material:[object.material];for(const mat of mats){if(mat.map)mat.map.anisotropy=Math.min(renderer.capabilities.getMaxAnisotropy(),4);}}});scene.add(character);
    mixer=new THREE.AnimationMixer(character);const idle=asset.animations.find(clip=>/IDLE/i.test(clip.name));
    if(idle){idleAction=mixer.clipAction(idle);idleAction.play();idleAction.paused=paused;}
-   root.dataset.sceneVersion='R14';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
+   root.dataset.sceneVersion='R14b';root.dataset.animations=String(asset.animations.length);root.dataset.renderMode='webgl2';
    status.textContent='ALARM 2076 · '+(paused?'Idle movement off':'Idle movement on');loading.hidden=true;poster.hidden=true;ready=true;viewerControls.forEach(b=>b.disabled=false);syncMotion();controls.update();start();
   }catch(err){console.warn('ALARM scene load failed:',err);fallback('The 3D scene could not be loaded. The latest preview is shown. Check your connection and try again.');}
  }
